@@ -1,7 +1,28 @@
-node_modules/
-dist/
+# Credentials and environment
 .env
+.env.*
+*.pem
+*.key
+
+# AI tool configuration (contains local paths)
+.claude/.env
+
+# OS and editor metadata
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Database files
 *.db
 *.db-journal
+
+# Logs
 *.log
-.DS_Store
