@@ -1,0 +1,227 @@
+[
+  {
+    "clauseNumber": "4.1",
+    "clauseTitle": "Understanding the organization and its context",
+    "requirement": "The organization shall determine external and internal issues that are relevant to its purpose and that affect its ability to achieve the intended outcomes of its service management system."
+  },
+  {
+    "clauseNumber": "4.2",
+    "clauseTitle": "Understanding the needs and expectations of interested parties",
+    "requirement": "The organization shall determine the interested parties that are relevant to the service management system and the requirements of these interested parties relevant to the SMS, including applicable legal, regulatory and contractual obligations."
+  },
+  {
+    "clauseNumber": "4.3",
+    "clauseTitle": "Determining the scope of the service management system",
+    "requirement": "The organization shall determine the boundaries and applicability of the SMS to establish its scope. The scope shall specify the services included and shall consider the internal and external issues referred to in 4.1 and the requirements referred to in 4.2. The scope shall be available as documented information."
+  },
+  {
+    "clauseNumber": "4.4",
+    "clauseTitle": "Service management system",
+    "requirement": "The organization shall establish, implement, maintain and continually improve a service management system, including the processes needed and their interactions, in accordance with the requirements of this standard. The organization shall determine the processes needed for the SMS, the application of these processes, the sequence and interaction of these processes, and the methods needed to ensure effective operation and control."
+  },
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "Leadership and commitment",
+    "requirement": "Top management shall demonstrate leadership and commitment with respect to the SMS by ensuring that the service management policy and service management objectives are established and are compatible with the strategic direction of the organization, ensuring the integration of the SMS requirements into the organization's business processes, ensuring that the resources needed for the SMS are available, communicating the importance of effective service management, ensuring the SMS achieves its intended outcomes, directing and supporting persons to contribute to the effectiveness of the SMS, and promoting continual improvement."
+  },
+  {
+    "clauseNumber": "5.2",
+    "clauseTitle": "Policy",
+    "requirement": "Top management shall establish a service management policy that is appropriate to the purpose of the organization, provides a framework for setting service management objectives, includes a commitment to satisfy applicable requirements, and includes a commitment to continual improvement of the SMS. The policy shall be available as documented information, be communicated within the organization, and be available to interested parties as appropriate."
+  },
+  {
+    "clauseNumber": "5.3",
+    "clauseTitle": "Organizational roles, responsibilities and authorities",
+    "requirement": "Top management shall ensure that the responsibilities and authorities for relevant roles are assigned and communicated within the organization. Top management shall assign the responsibility and authority for ensuring that the SMS conforms to the requirements of this standard, and for reporting on the performance of the SMS to top management. Top management shall appoint a management representative with the authority and responsibility for coordination and management of all activities related to the planning, design, transition, delivery and improvement of services."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Actions to address risks and opportunities",
+    "requirement": "When planning for the SMS, the organization shall consider the issues referred to in 4.1 and the requirements referred to in 4.2 and determine the risks and opportunities that need to be addressed to ensure the SMS can achieve its intended outcomes, prevent or reduce undesired effects, and achieve continual improvement. The organization shall plan actions to address these risks and opportunities, integrate and implement the actions into its SMS processes, and evaluate the effectiveness of these actions."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Service management objectives and planning to achieve them",
+    "requirement": "The organization shall establish service management objectives at relevant functions, levels and processes. The objectives shall be consistent with the service management policy, be measurable, take into account applicable requirements, be monitored, be communicated, and be updated as appropriate. The organization shall determine what will be done, what resources will be required, who will be responsible, when it will be completed, and how the results will be evaluated."
+  },
+  {
+    "clauseNumber": "6.3",
+    "clauseTitle": "Planning of changes",
+    "requirement": "When the organization determines the need for changes to the service management system, the changes shall be carried out in a planned and systematic manner. The organization shall consider the purpose of the changes and their potential consequences, the integrity of the SMS, the availability of resources, and the allocation or reallocation of responsibilities and authorities."
+  },
+  {
+    "clauseNumber": "7.1",
+    "clauseTitle": "Resources",
+    "requirement": "The organization shall determine and provide the resources needed for the establishment, implementation, maintenance and continual improvement of the SMS."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "Competence",
+    "requirement": "The organization shall determine the necessary competence of persons doing work under its control that affects the performance and effectiveness of the SMS, ensure that these persons are competent on the basis of appropriate education, training or experience, where applicable take actions to acquire the necessary competence and evaluate the effectiveness of the actions taken, and retain appropriate documented information as evidence of competence."
+  },
+  {
+    "clauseNumber": "7.3",
+    "clauseTitle": "Awareness",
+    "requirement": "Persons doing work under the organization's control shall be aware of the service management policy, relevant service management objectives, their contribution to the effectiveness of the SMS including the benefits of improved service management performance, and the implications of not conforming with the SMS requirements."
+  },
+  {
+    "clauseNumber": "7.4",
+    "clauseTitle": "Communication",
+    "requirement": "The organization shall determine the internal and external communications relevant to the SMS, including on what it will communicate, when to communicate, with whom to communicate, and how to communicate."
+  },
+  {
+    "clauseNumber": "7.5",
+    "clauseTitle": "Documented information",
+    "requirement": "The organization's SMS shall include documented information required by this standard and documented information determined by the organization as being necessary for the effectiveness of the SMS. When creating and updating documented information, the organization shall ensure appropriate identification and description, format and media, and review and approval for suitability and adequacy. Documented information shall be controlled to ensure it is available and suitable for use where and when needed, and is adequately protected."
+  },
+  {
+    "clauseNumber": "7.6",
+    "clauseTitle": "Knowledge",
+    "requirement": "The organization shall determine the knowledge necessary for the operation of the SMS and the delivery of services. This knowledge shall be maintained and made available to the extent necessary. When addressing changing needs and trends, the organization shall consider its current knowledge and determine how to acquire or access any necessary additional knowledge and required updates."
+  },
+  {
+    "clauseNumber": "8.1",
+    "clauseTitle": "Operational planning and control",
+    "requirement": "The organization shall plan, implement and control the processes needed to meet the requirements for the delivery of services and to implement the actions determined in clause 6. The organization shall establish criteria for the processes, implement control of the processes in accordance with the criteria, and keep documented information to the extent necessary to have confidence that the processes have been carried out as planned. The organization shall control planned changes and review the consequences of unintended changes, taking action to mitigate any adverse effects as necessary."
+  },
+  {
+    "clauseNumber": "8.2.1",
+    "clauseTitle": "Service portfolio - Service delivery",
+    "requirement": "The organization shall manage the delivery of services according to the service management policy, service management objectives, and service requirements. The organization shall determine and manage the services offered as part of the service portfolio."
+  },
+  {
+    "clauseNumber": "8.2.2",
+    "clauseTitle": "Service portfolio - Plan the services",
+    "requirement": "The organization shall plan new or changed services. Planning of new services or changes to existing services shall include the financial resources and budget, human resources, technical resources and infrastructure, new or changed policies and procedures, plans for the design, development, transition and delivery of the new or changed service, and service level agreements."
+  },
+  {
+    "clauseNumber": "8.2.3",
+    "clauseTitle": "Service portfolio - Control of parties involved in the service lifecycle",
+    "requirement": "The organization shall identify and manage other parties involved in the service lifecycle. The organization shall determine the types of other parties and their coordination requirements and shall define interfaces between the service management processes and other parties. For any process or part of a process that is performed by other parties, the organization shall ensure that the requirements of this standard are met."
+  },
+  {
+    "clauseNumber": "8.2.4",
+    "clauseTitle": "Service portfolio - Service catalogue management",
+    "requirement": "The organization shall create and maintain one or more service catalogues. The service catalogue shall include, for each service, the name and description, the service levels, the customer or customer group, and the dependencies between services and service components."
+  },
+  {
+    "clauseNumber": "8.2.5",
+    "clauseTitle": "Service portfolio - Asset management",
+    "requirement": "The organization shall ensure that service assets, including configuration items, are managed to support the delivery of services according to the agreed requirements. The organization shall define types of assets to be managed and establish mechanisms for managing assets throughout their lifecycle."
+  },
+  {
+    "clauseNumber": "8.2.6",
+    "clauseTitle": "Service portfolio - Configuration management",
+    "requirement": "The organization shall define and record the types of configuration items and their attributes. The organization shall control changes to configuration items, manage configuration information, and report on the status of configuration items. Configuration information shall be maintained so as to accurately reflect the current status of service items including their relationships with other items."
+  },
+  {
+    "clauseNumber": "8.3.1",
+    "clauseTitle": "Relationship and agreement - General",
+    "requirement": "The organization shall identify and manage internal and external relationships that are needed for the effective delivery of services. The organization shall designate a responsible individual for the management of each customer relationship and for customer satisfaction."
+  },
+  {
+    "clauseNumber": "8.3.2",
+    "clauseTitle": "Relationship and agreement - Business relationship management",
+    "requirement": "The organization shall identify its customers and establish and maintain a business relationship management process. The organization shall identify and document the service requirements and communication mechanisms for each customer or customer group. Complaints from customers shall be managed in accordance with a defined process. Customer satisfaction shall be managed and measured at planned intervals."
+  },
+  {
+    "clauseNumber": "8.3.3",
+    "clauseTitle": "Relationship and agreement - Service level management",
+    "requirement": "The organization shall agree with the customer on the services to be delivered, the service level targets and workload characteristics. Service level agreements shall be documented and, together with any supporting documents, be agreed upon by the customer. The organization shall monitor the level of service, compare with targets, and report on actual results. Service performance against agreed targets shall be reviewed at planned intervals and actions taken to address identified issues."
+  },
+  {
+    "clauseNumber": "8.3.4",
+    "clauseTitle": "Relationship and agreement - Supplier management",
+    "requirement": "The organization shall maintain a process for managing suppliers. For each supplier, the organization shall designate a responsible individual for relationship and contract management. Contracts shall be documented and shall include or reference the scope of service, service level targets, authorities and responsibilities, and processes for managing disputes. The organization shall monitor the performance of the supplier, review contracts at planned intervals, and maintain documented information on suppliers."
+  },
+  {
+    "clauseNumber": "8.4.1",
+    "clauseTitle": "Supply and demand - Budgeting and accounting for services",
+    "requirement": "The organization shall budget and account for services or groups of services. The organization shall budget and account for service components, shared resources, overhead and capital expenditure. Costs shall be tracked and reported against the budget. Financial forecasts and records shall be kept and managed."
+  },
+  {
+    "clauseNumber": "8.4.2",
+    "clauseTitle": "Supply and demand - Demand management",
+    "requirement": "The organization shall determine and manage the current and future demand for services. The organization shall monitor demand for services, identify trends, and forecast future demand. The organization shall maintain a capacity plan and ensure that current and projected demands for services can be met."
+  },
+  {
+    "clauseNumber": "8.4.3",
+    "clauseTitle": "Supply and demand - Capacity management",
+    "requirement": "The organization shall determine and manage the capacity required to meet current and projected demands for services. Capacity plans shall include current and forecast capacity and performance data, expected impacts of agreed service levels and service requirements, time periods, thresholds and costs for service upgrades, and the potential impact of legal, regulatory and contractual obligations, organizational changes, new technologies and industry best practices."
+  },
+  {
+    "clauseNumber": "8.5.1",
+    "clauseTitle": "Service design, build and transition - Change management",
+    "requirement": "The organization shall manage all changes to services, service components and the SMS in a controlled manner. A change management policy shall be established and documented, addressing all changes including the addition, modification, and removal of services or service components. Changes shall be recorded, classified, assessed, approved, scheduled, and reviewed. Emergency changes shall follow a defined procedure. Changes shall not be implemented until authorized except for emergency changes where retrospective authorization is obtained."
+  },
+  {
+    "clauseNumber": "8.5.2",
+    "clauseTitle": "Service design, build and transition - Service design and transition",
+    "requirement": "The organization shall plan the design and transition of new or changed services. The plan shall include authorities and responsibilities, activities to be performed, resources including financial, human and technical, identification of new or changed service level agreements, changes to existing policies, processes, procedures and agreements, service acceptance criteria, and the expected outcomes of transitioning the service as expressed in measurable terms."
+  },
+  {
+    "clauseNumber": "8.5.3",
+    "clauseTitle": "Service design, build and transition - Release and deployment management",
+    "requirement": "The organization shall plan release and deployment of services and service components into the live environment. The organization shall define the release types and frequency, and the approach for release and deployment. Release and deployment plans shall be agreed with relevant interested parties. The organization shall build and test releases prior to deployment, verify that the release meets the acceptance criteria, deploy releases in the live environment, track and manage the success and failure of releases, and record and manage any issues arising during deployment."
+  },
+  {
+    "clauseNumber": "8.5.4",
+    "clauseTitle": "Service design, build and transition - Service availability management",
+    "requirement": "The organization shall assess and document the risks to service availability. The organization shall establish, implement and maintain an availability plan based on the service requirements. Availability requirements shall be agreed and documented and shall include the access rights and response times for each service. The organization shall monitor service availability, analyse unplanned unavailability, compare actual availability to agreed targets, and take action when availability targets are not met."
+  },
+  {
+    "clauseNumber": "8.6.1",
+    "clauseTitle": "Resolution and fulfilment - Incident management",
+    "requirement": "The organization shall establish and maintain an incident management process. All incidents shall be recorded, classified, prioritized and resolved. The priority of incidents shall be determined by the impact and urgency. The organization shall define what constitutes a major incident, apply the major incident procedure where appropriate, and ensure that relevant personnel are trained and aware of their roles during incident resolution. The organization shall manage incidents to resolution and communicate with the affected parties throughout the lifecycle of the incident."
+  },
+  {
+    "clauseNumber": "8.6.2",
+    "clauseTitle": "Resolution and fulfilment - Service request management",
+    "requirement": "The organization shall establish and maintain a service request management process. Service requests shall be recorded, classified, prioritized and fulfilled. The organization shall agree with the customer which service requests are to be fulfilled and publish available service requests to users. The process shall define the approval, fulfilment and escalation procedures for each type of service request. The organization shall monitor and report on the fulfilment of service requests."
+  },
+  {
+    "clauseNumber": "8.6.3",
+    "clauseTitle": "Resolution and fulfilment - Problem management",
+    "requirement": "The organization shall establish and maintain a problem management process. The organization shall identify, record, classify and prioritize problems. Root cause analysis shall be performed and actions taken to prevent recurrence of incidents. Known errors shall be recorded and maintained. Changes needed to resolve problems shall be managed through the change management process. The effectiveness of problem resolution shall be monitored and reviewed."
+  },
+  {
+    "clauseNumber": "8.7.1",
+    "clauseTitle": "Service assurance - Service continuity management",
+    "requirement": "The organization shall assess and document the risks to service continuity. The organization shall establish, implement and maintain one or more service continuity plans based on the results of the risk assessment. Service continuity plans shall include the information and resources necessary to enable the organization to manage a service continuity event and restore the services within agreed timeframes. Service continuity plans shall be tested at planned intervals and after significant changes. Service continuity plans shall be reviewed at planned intervals and after testing or activation."
+  },
+  {
+    "clauseNumber": "8.7.2",
+    "clauseTitle": "Service assurance - Information security management",
+    "requirement": "The organization shall establish and agree an information security policy taking into consideration the requirements of the SMS, the services and the interested parties. The organization shall implement and operate physical, administrative and technical information security controls. Information security incidents shall be managed using the incident management process. The organization shall analyse information security incidents, identify causes and take actions to prevent recurrence. Information security risks shall be assessed and managed."
+  },
+  {
+    "clauseNumber": "8.7.3",
+    "clauseTitle": "Service assurance - Service reporting",
+    "requirement": "The organization shall produce service reports that meet the needs of decision makers and interested parties. Service reports shall include the identity of the report, its purpose, audience and frequency, the data sources, a description of the reporting period, and the details of the information to be reported. Service reports shall include performance against service level targets, information about significant events such as major incidents and changes, workload characteristics and trend information, and identified nonconformities, corrective actions and opportunities for improvement."
+  },
+  {
+    "clauseNumber": "9.1",
+    "clauseTitle": "Monitoring, measurement, analysis and evaluation",
+    "requirement": "The organization shall determine what needs to be monitored and measured, the methods for monitoring, measurement, analysis and evaluation to ensure valid results, when the monitoring and measuring shall be performed, and when the results from monitoring and measurement shall be analysed and evaluated. The organization shall evaluate the SMS performance and the effectiveness of the SMS and retain appropriate documented information as evidence of the results."
+  },
+  {
+    "clauseNumber": "9.2",
+    "clauseTitle": "Internal audit",
+    "requirement": "The organization shall conduct internal audits at planned intervals to provide information on whether the SMS conforms to the organization's own requirements for its SMS and the requirements of this standard, and is effectively implemented and maintained. The organization shall plan, establish, implement and maintain an audit programme, define the audit criteria and scope for each audit, select auditors to ensure objectivity and impartiality, ensure results are reported to relevant management, and retain documented information as evidence of the audit programme and audit results."
+  },
+  {
+    "clauseNumber": "9.3",
+    "clauseTitle": "Management review",
+    "requirement": "Top management shall review the organization's SMS at planned intervals to ensure its continuing suitability, adequacy and effectiveness. The management review shall include consideration of the status of actions from previous reviews, changes in external and internal issues, information on SMS performance including trends in nonconformities and corrective actions, monitoring and measurement results, audit results, fulfilment of the service management objectives and of service requirements, the performance of services and of processes, the performance of other parties involved in the service lifecycle, and opportunities for improvement. The outputs shall include decisions related to continual improvement and any need for changes to the SMS."
+  },
+  {
+    "clauseNumber": "10.1",
+    "clauseTitle": "Nonconformity and corrective action",
+    "requirement": "When a nonconformity occurs, the organization shall react to the nonconformity by taking action to control and correct it and dealing with the consequences. The organization shall evaluate the need for action to eliminate the causes of the nonconformity in order that it does not recur or occur elsewhere, implement any action needed, review the effectiveness of any corrective action taken, and make changes to the SMS if necessary. The organization shall retain documented information as evidence of the nature of the nonconformities, any subsequent actions taken, and the results of any corrective action."
+  },
+  {
+    "clauseNumber": "10.2",
+    "clauseTitle": "Continual improvement",
+    "requirement": "The organization shall continually improve the suitability, adequacy and effectiveness of the SMS and the services. The organization shall determine criteria and methods for identifying and evaluating improvements including the criteria used for evaluating them. The organization shall determine and manage improvement activities for the SMS and the services. Improvement activities shall include evaluation of analysis outputs, setting targets for improvement, identifying, implementing and measuring solutions, and reviewing whether those targets have been met."
+  }
+]

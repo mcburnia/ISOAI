@@ -1,0 +1,172 @@
+[
+  {
+    "clauseNumber": "4.1",
+    "clauseTitle": "Understanding the organization and its context",
+    "requirement": "The organization shall determine external and internal issues that are relevant to its purpose and that affect its ability to achieve the intended outcomes of its business continuity management system. The organization shall identify and document external and internal factors that create the uncertainty that gives rise to risk."
+  },
+  {
+    "clauseNumber": "4.2",
+    "clauseTitle": "Understanding the needs and expectations of interested parties",
+    "requirement": "The organization shall determine the interested parties that are relevant to the business continuity management system, the requirements of these interested parties including applicable legal, regulatory and contractual obligations, and identify which of these needs and expectations will be addressed through the BCMS."
+  },
+  {
+    "clauseNumber": "4.3",
+    "clauseTitle": "Determining the scope of the BCMS",
+    "requirement": "The organization shall determine the boundaries and applicability of the BCMS to establish its scope. When determining this scope, the organization shall consider the internal and external issues referred to in 4.1, the requirements referred to in 4.2, and the products, services and activities of the organization. The scope shall be available as documented information."
+  },
+  {
+    "clauseNumber": "4.4",
+    "clauseTitle": "Business continuity management system",
+    "requirement": "The organization shall establish, implement, maintain and continually improve a business continuity management system, including the processes needed and their interactions, in accordance with the requirements of this standard."
+  },
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "Leadership and commitment",
+    "requirement": "Top management shall demonstrate leadership and commitment with respect to the BCMS by ensuring that the business continuity policy and business continuity objectives are established and are compatible with the strategic direction of the organization, ensuring the integration of the BCMS requirements into the organization's business processes, ensuring that the resources needed for the BCMS are available, communicating the importance of effective business continuity management, ensuring that the BCMS achieves its intended outcomes, directing and supporting persons to contribute to the effectiveness of the BCMS, promoting continual improvement, and supporting other relevant management roles to demonstrate their leadership."
+  },
+  {
+    "clauseNumber": "5.2",
+    "clauseTitle": "Policy",
+    "requirement": "Top management shall establish a business continuity policy that is appropriate to the purpose of the organization, provides a framework for setting business continuity objectives, includes a commitment to satisfy applicable requirements, and includes a commitment to continual improvement of the BCMS. The business continuity policy shall be available as documented information, be communicated within the organization, and be available to interested parties as appropriate."
+  },
+  {
+    "clauseNumber": "5.3",
+    "clauseTitle": "Organizational roles, responsibilities and authorities",
+    "requirement": "Top management shall ensure that the responsibilities and authorities for relevant roles are assigned and communicated within the organization. Top management shall assign the responsibility and authority for ensuring that the BCMS conforms to the requirements of this standard, and reporting on the performance of the BCMS to top management."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Actions to address risks and opportunities",
+    "requirement": "When planning for the BCMS, the organization shall consider the issues referred to in 4.1 and the requirements referred to in 4.2 and determine the risks and opportunities that need to be addressed to ensure the BCMS can achieve its intended outcomes, prevent or reduce undesired effects, and achieve continual improvement. The organization shall plan actions to address these risks and opportunities and how to integrate and implement the actions into its BCMS processes and evaluate the effectiveness of these actions."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Business continuity objectives and plans to achieve them",
+    "requirement": "The organization shall establish business continuity objectives at relevant functions, levels and processes. The business continuity objectives shall be consistent with the business continuity policy, be measurable if practicable, take into account applicable requirements, be monitored, be communicated, and be updated as appropriate. The organization shall determine what will be done, what resources will be required, who will be responsible, when it will be completed, and how the results will be evaluated."
+  },
+  {
+    "clauseNumber": "6.3",
+    "clauseTitle": "Planning of changes",
+    "requirement": "When the organization determines the need for changes to the business continuity management system, the changes shall be carried out in a planned and systematic manner."
+  },
+  {
+    "clauseNumber": "7.1",
+    "clauseTitle": "Resources",
+    "requirement": "The organization shall determine and provide the resources needed for the establishment, implementation, maintenance and continual improvement of the BCMS."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "Competence",
+    "requirement": "The organization shall determine the necessary competence of persons doing work under its control that affects the performance and effectiveness of the BCMS, ensure that these persons are competent on the basis of appropriate education, training or experience, where applicable take actions to acquire the necessary competence and evaluate the effectiveness of the actions taken, and retain appropriate documented information as evidence of competence."
+  },
+  {
+    "clauseNumber": "7.3",
+    "clauseTitle": "Awareness",
+    "requirement": "Persons doing work under the organization's control shall be aware of the business continuity policy, their contribution to the effectiveness of the BCMS including the benefits of improved business continuity performance, the implications of not conforming with the BCMS requirements, and their own role during a disruptive incident."
+  },
+  {
+    "clauseNumber": "7.4",
+    "clauseTitle": "Communication",
+    "requirement": "The organization shall determine the need for internal and external communications relevant to the BCMS, including on what it will communicate, when to communicate, with whom to communicate, and how to communicate. The organization shall establish, implement and maintain procedures for internal communication with interested parties and employees, external communication with interested parties including the media, receiving, documenting and responding to communications from interested parties, and ensuring the availability of means of communication during a disruptive incident."
+  },
+  {
+    "clauseNumber": "7.5",
+    "clauseTitle": "Documented information",
+    "requirement": "The organization's BCMS shall include documented information required by this standard and documented information determined by the organization as being necessary for the effectiveness of the BCMS. When creating and updating documented information, the organization shall ensure appropriate identification, format, and review and approval. Documented information shall be controlled to ensure it is available and suitable for use where and when it is needed, and is adequately protected from loss of confidentiality, improper use, or loss of integrity."
+  },
+  {
+    "clauseNumber": "8.1",
+    "clauseTitle": "Operational planning and control",
+    "requirement": "The organization shall plan, implement and control the processes needed to meet requirements and to implement the actions determined in clause 6 by establishing criteria for the processes, implementing control of the processes in accordance with the criteria, and keeping documented information to the extent necessary to have confidence that the processes have been carried out as planned. The organization shall control planned changes and review the consequences of unintended changes, taking action to mitigate any adverse effects as necessary."
+  },
+  {
+    "clauseNumber": "8.2.1",
+    "clauseTitle": "Business impact analysis and risk assessment - General",
+    "requirement": "The organization shall establish, implement and maintain a formal and documented process for business impact analysis and risk assessment that defines the criteria for evaluating the potential impacts of a disruptive incident and the approach to risk assessment. The business impact analysis and risk assessment shall be reviewed at planned intervals and whenever there are significant changes to the organization or the context in which it operates."
+  },
+  {
+    "clauseNumber": "8.2.2",
+    "clauseTitle": "Business impact analysis",
+    "requirement": "The organization shall identify activities that support the provision of products and services, assess the impacts over time of not performing these activities, set prioritized timeframes for resuming these activities at a specified minimum acceptable level taking into consideration the time within which the impacts of not resuming them would become unacceptable, and identify dependencies and supporting resources for these activities including suppliers, outsourced partners and other relevant interested parties."
+  },
+  {
+    "clauseNumber": "8.2.3",
+    "clauseTitle": "Risk assessment",
+    "requirement": "The organization shall identify risks of disruption to the organization's prioritized activities and associated resources, systematically analyse these risks, evaluate which risks require treatment, and identify treatments in keeping with business continuity objectives and in accordance with the organization's risk appetite."
+  },
+  {
+    "clauseNumber": "8.3.1",
+    "clauseTitle": "Business continuity strategies and solutions - General",
+    "requirement": "The organization shall identify and select business continuity strategies and solutions that are appropriate to ensure continuity and recovery of prioritized activities within required timeframes. Strategies and solutions shall address the protection and mitigation, response, and recovery and restoration requirements of the organization."
+  },
+  {
+    "clauseNumber": "8.3.2",
+    "clauseTitle": "Business continuity strategies and solutions - Identification",
+    "requirement": "The organization shall identify business continuity strategies and solutions based on the outputs from the business impact analysis and risk assessment. Strategies and solutions identified shall address requirements for before, during, and after a disruption, and shall consider the resources required to support them."
+  },
+  {
+    "clauseNumber": "8.3.3",
+    "clauseTitle": "Business continuity strategies and solutions - Selection",
+    "requirement": "The organization shall select business continuity strategies and solutions based on their ability to meet the requirements identified from the business impact analysis and risk assessment. The selected strategies and solutions shall be approved by top management and shall have adequate resources allocated for their implementation and maintenance."
+  },
+  {
+    "clauseNumber": "8.4.1",
+    "clauseTitle": "Business continuity plans and procedures - General",
+    "requirement": "The organization shall establish, implement and maintain business continuity plans and procedures to manage the organization during a disruption. The business continuity plans and procedures shall be documented and shall provide a framework for ensuring continuity of the organization's prioritized activities."
+  },
+  {
+    "clauseNumber": "8.4.2",
+    "clauseTitle": "Business continuity plans and procedures - Incident response structure",
+    "requirement": "The organization shall establish and document an incident response structure that provides for the identification of thresholds for activation and of the entity responsible for activating the response, assessment of the nature and extent of a disruptive incident, activation of an appropriate business continuity response, and a process for activation, operation, coordination and communication of the response."
+  },
+  {
+    "clauseNumber": "8.4.3",
+    "clauseTitle": "Business continuity plans and procedures - Warning and communication",
+    "requirement": "The organization shall establish, implement and maintain procedures for detecting a potential disruptive incident, monitoring a disruptive incident that has been detected, internal communication within the organization and receipt and response to communications, receiving, documenting and responding to communications from interested parties, ensuring the availability of the means of communication during a disruptive incident, facilitating structured communication with emergency responders, and recording vital information about the disruptive incident and the actions taken."
+  },
+  {
+    "clauseNumber": "8.4.4",
+    "clauseTitle": "Business continuity plans and procedures - Business continuity plans",
+    "requirement": "Each plan shall define the purpose, scope and objectives, the roles and responsibilities of the team implementing the plan, the actions required to implement the business continuity strategies and solutions, essential information and resources needed, interdependencies and linkages with other relevant plans. Each plan shall establish communication protocols and shall be available and understandable to those who will use it."
+  },
+  {
+    "clauseNumber": "8.4.5",
+    "clauseTitle": "Business continuity plans and procedures - Recovery",
+    "requirement": "The organization shall document procedures for restoring and returning business activities from the temporary measures adopted during and after a disruption to the normal state of business operations. Recovery procedures shall address the prioritized timeframes established in the business impact analysis and shall take into account the validation of data integrity and completeness upon restoration."
+  },
+  {
+    "clauseNumber": "8.5",
+    "clauseTitle": "Exercise programme",
+    "requirement": "The organization shall exercise and test its business continuity plans and procedures to ensure they are consistent with its business continuity objectives. The organization shall conduct exercises and tests that are consistent with the scope and objectives of the BCMS, are based on appropriate scenarios that are well planned with clearly defined aims and objectives, taken together over time validate the whole of its business continuity arrangements, minimize the risk of disruption of operations, produce formalized post-exercise reports that contain outcomes, recommendations and actions to implement improvements, are reviewed within the context of promoting continual improvement, and are conducted at planned intervals and when there are significant changes within the organization or to the context in which it operates."
+  },
+  {
+    "clauseNumber": "8.6",
+    "clauseTitle": "Evaluation of documentation and capabilities",
+    "requirement": "The organization shall evaluate the adequacy of the business continuity documentation and capabilities through the conduct of reviews, exercises and tests, analyses of disruptive incidents, and lessons learned. Changes in the organization's risks, strategies, and solutions shall trigger a review and update of the documentation and capabilities. The organization shall conduct evaluations of its business continuity procedures and capabilities at planned intervals to ensure their continuing suitability, adequacy and effectiveness."
+  },
+  {
+    "clauseNumber": "9.1",
+    "clauseTitle": "Monitoring, measurement, analysis and evaluation",
+    "requirement": "The organization shall determine what needs to be monitored and measured, the methods for monitoring, measurement, analysis and evaluation to ensure valid results, when the monitoring and measuring shall be performed, when the results from monitoring and measurement shall be analysed and evaluated, and who shall analyse and evaluate these results. The organization shall retain appropriate documented information as evidence of the results. The organization shall evaluate the BCMS performance and the effectiveness of the BCMS."
+  },
+  {
+    "clauseNumber": "9.2",
+    "clauseTitle": "Internal audit",
+    "requirement": "The organization shall conduct internal audits at planned intervals to provide information on whether the BCMS conforms to the organization's own requirements for its BCMS and the requirements of this standard, and is effectively implemented and maintained. The organization shall plan, establish, implement and maintain an audit programme, define the audit criteria and scope for each audit, select auditors and conduct audits to ensure objectivity and impartiality, ensure results are reported to relevant management, and retain documented information as evidence of the audit programme and audit results."
+  },
+  {
+    "clauseNumber": "9.3",
+    "clauseTitle": "Management review",
+    "requirement": "Top management shall review the organization's BCMS at planned intervals to ensure its continuing suitability, adequacy and effectiveness. The management review shall include consideration of the status of actions from previous management reviews, changes in external and internal issues relevant to the BCMS, information on the BCMS performance including trends in nonconformities and corrective actions, monitoring and measurement results, audit results, business continuity risks, opportunities for improvement, and the results of exercises and tests. The outputs of the management review shall include decisions related to continual improvement opportunities and any need for changes to the BCMS."
+  },
+  {
+    "clauseNumber": "10.1",
+    "clauseTitle": "Nonconformity and corrective action",
+    "requirement": "When a nonconformity occurs, the organization shall react to the nonconformity by taking action to control and correct it and dealing with the consequences. The organization shall evaluate the need for action to eliminate the causes of the nonconformity in order that it does not recur or occur elsewhere, by reviewing the nonconformity, determining the causes of the nonconformity, and determining if similar nonconformities exist or could potentially occur. The organization shall implement any action needed, review the effectiveness of any corrective action taken, and make changes to the BCMS if necessary. The organization shall retain documented information as evidence of the nature of the nonconformities, any subsequent actions taken, and the results of any corrective action."
+  },
+  {
+    "clauseNumber": "10.2",
+    "clauseTitle": "Continual improvement",
+    "requirement": "The organization shall continually improve the suitability, adequacy and effectiveness of the BCMS. The organization shall consider the results of analysis and evaluation and the outputs from management review to determine if there are needs or opportunities that shall be addressed as part of continual improvement. Where applicable, the organization shall select and use applicable tools and methodologies for investigating the causes of underperformance and for supporting continual improvement."
+  }
+]

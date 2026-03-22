@@ -1,0 +1,287 @@
+[
+  {
+    "clauseNumber": "4.1",
+    "clauseTitle": "Understanding the organization and its context",
+    "requirement": "The organization shall determine external and internal issues that are relevant to its purpose and its strategic direction and that affect its ability to achieve the intended results of its quality management system."
+  },
+  {
+    "clauseNumber": "4.2",
+    "clauseTitle": "Understanding the needs and expectations of interested parties",
+    "requirement": "The organization shall determine the interested parties that are relevant to the quality management system, and the requirements of these interested parties that are relevant to the quality management system. The organization shall monitor and review information about these interested parties and their relevant requirements."
+  },
+  {
+    "clauseNumber": "4.3",
+    "clauseTitle": "Determining the scope of the quality management system",
+    "requirement": "The organization shall determine the boundaries and applicability of the quality management system to establish its scope. The scope shall state the types of products and services covered, and provide justification for any requirement that the organization determines is not applicable to the scope of its QMS."
+  },
+  {
+    "clauseNumber": "4.4",
+    "clauseTitle": "Quality management system and its processes",
+    "requirement": "The organization shall establish, implement, maintain and continually improve a quality management system, including the processes needed and their interactions. The organization shall determine the inputs required and outputs expected, the sequence and interaction of processes, criteria and methods needed to ensure effective operation and control, resources needed, responsibilities and authorities, risks and opportunities, and maintain documented information to support process operation."
+  },
+  {
+    "clauseNumber": "5.1.1",
+    "clauseTitle": "Leadership and commitment - General",
+    "requirement": "Top management shall demonstrate leadership and commitment with respect to the quality management system by taking accountability for the effectiveness of the QMS, ensuring the quality policy and quality objectives are established and are compatible with the strategic direction, ensuring integration of QMS requirements into the organization's business processes, promoting the use of the process approach and risk-based thinking, and engaging, directing and supporting persons to contribute to the effectiveness of the QMS."
+  },
+  {
+    "clauseNumber": "5.1.2",
+    "clauseTitle": "Leadership and commitment - Customer focus",
+    "requirement": "Top management shall demonstrate leadership and commitment with respect to customer focus by ensuring that customer and applicable statutory and regulatory requirements are determined, understood and consistently met, the risks and opportunities that can affect conformity of products and services and the ability to enhance customer satisfaction are determined and addressed, and the focus on enhancing customer satisfaction is maintained."
+  },
+  {
+    "clauseNumber": "5.2.1",
+    "clauseTitle": "Establishing the quality policy",
+    "requirement": "Top management shall establish, implement and maintain a quality policy that is appropriate to the purpose and context of the organization and supports its strategic direction, provides a framework for setting quality objectives, includes a commitment to satisfy applicable requirements, and includes a commitment to continual improvement of the quality management system."
+  },
+  {
+    "clauseNumber": "5.2.2",
+    "clauseTitle": "Communicating the quality policy",
+    "requirement": "The quality policy shall be available and be maintained as documented information, be communicated, understood and applied within the organization, and be available to relevant interested parties as appropriate."
+  },
+  {
+    "clauseNumber": "5.3",
+    "clauseTitle": "Organizational roles, responsibilities and authorities",
+    "requirement": "Top management shall ensure that the responsibilities and authorities for relevant roles are assigned, communicated and understood within the organization. Top management shall assign the responsibility and authority for ensuring that the QMS conforms to the requirements of this standard, ensuring that the processes are delivering their intended outputs, reporting on the performance of the QMS and on opportunities for improvement, ensuring the promotion of customer focus, and ensuring that the integrity of the QMS is maintained when changes are planned and implemented."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Actions to address risks and opportunities",
+    "requirement": "When planning for the quality management system, the organization shall consider the issues referred to in 4.1 and the requirements referred to in 4.2 and determine the risks and opportunities that need to be addressed to give assurance that the QMS can achieve its intended results, enhance desirable effects, prevent or reduce undesired effects, and achieve improvement. The organization shall plan actions to address these risks and opportunities and evaluate the effectiveness of these actions."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Quality objectives and planning to achieve them",
+    "requirement": "The organization shall establish quality objectives at relevant functions, levels and processes needed for the quality management system. Quality objectives shall be consistent with the quality policy, be measurable, take into account applicable requirements, be relevant to conformity of products and services and to enhancement of customer satisfaction, be monitored, be communicated, and be updated as appropriate. The organization shall determine what will be done, what resources will be required, who will be responsible, when it will be completed, and how the results will be evaluated."
+  },
+  {
+    "clauseNumber": "6.3",
+    "clauseTitle": "Planning of changes",
+    "requirement": "When the organization determines the need for changes to the quality management system, the changes shall be carried out in a planned manner. The organization shall consider the purpose of the changes and their potential consequences, the integrity of the quality management system, the availability of resources, and the allocation or reallocation of responsibilities and authorities."
+  },
+  {
+    "clauseNumber": "7.1.1",
+    "clauseTitle": "Resources - General",
+    "requirement": "The organization shall determine and provide the resources needed for the establishment, implementation, maintenance and continual improvement of the quality management system. The organization shall consider the capabilities of, and constraints on, existing internal resources and what needs to be obtained from external providers."
+  },
+  {
+    "clauseNumber": "7.1.2",
+    "clauseTitle": "Resources - People",
+    "requirement": "The organization shall determine and provide the persons necessary for the effective implementation of its quality management system and for the operation and control of its processes."
+  },
+  {
+    "clauseNumber": "7.1.3",
+    "clauseTitle": "Resources - Infrastructure",
+    "requirement": "The organization shall determine, provide and maintain the infrastructure necessary for the operation of its processes and to achieve conformity of products and services. Infrastructure can include buildings and associated utilities, equipment including hardware and software, transportation resources, and information and communication technology."
+  },
+  {
+    "clauseNumber": "7.1.4",
+    "clauseTitle": "Resources - Environment for the operation of processes",
+    "requirement": "The organization shall determine, provide and maintain the environment necessary for the operation of its processes and to achieve conformity of products and services. A suitable environment can include social, psychological, and physical factors such as temperature, heat, humidity, light, airflow, hygiene, and noise."
+  },
+  {
+    "clauseNumber": "7.1.5",
+    "clauseTitle": "Resources - Monitoring and measuring resources",
+    "requirement": "The organization shall determine and provide the resources needed to ensure valid and reliable results when monitoring or measuring is used to verify the conformity of products and services to requirements. The organization shall ensure that the resources provided are suitable for the specific type of monitoring and measurement activities being undertaken and are maintained to ensure their continuing fitness for their purpose. The organization shall retain appropriate documented information as evidence of fitness for purpose of the monitoring and measurement resources."
+  },
+  {
+    "clauseNumber": "7.1.6",
+    "clauseTitle": "Resources - Organizational knowledge",
+    "requirement": "The organization shall determine the knowledge necessary for the operation of its processes and to achieve conformity of products and services. This knowledge shall be maintained and made available to the extent necessary. When addressing changing needs and trends, the organization shall consider its current knowledge and determine how to acquire or access any necessary additional knowledge and required updates."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "Competence",
+    "requirement": "The organization shall determine the necessary competence of persons doing work under its control that affects the performance and effectiveness of the quality management system, ensure that these persons are competent on the basis of appropriate education, training, or experience, where applicable take actions to acquire the necessary competence and evaluate the effectiveness of the actions taken, and retain appropriate documented information as evidence of competence."
+  },
+  {
+    "clauseNumber": "7.3",
+    "clauseTitle": "Awareness",
+    "requirement": "The organization shall ensure that persons doing work under the organization's control are aware of the quality policy, relevant quality objectives, their contribution to the effectiveness of the quality management system including the benefits of improved performance, and the implications of not conforming with the quality management system requirements."
+  },
+  {
+    "clauseNumber": "7.4",
+    "clauseTitle": "Communication",
+    "requirement": "The organization shall determine the internal and external communications relevant to the quality management system, including on what it will communicate, when to communicate, with whom to communicate, how to communicate, and who communicates."
+  },
+  {
+    "clauseNumber": "7.5.1",
+    "clauseTitle": "Documented information - General",
+    "requirement": "The organization's quality management system shall include documented information required by this standard and documented information determined by the organization as being necessary for the effectiveness of the quality management system."
+  },
+  {
+    "clauseNumber": "7.5.2",
+    "clauseTitle": "Documented information - Creating and updating",
+    "requirement": "When creating and updating documented information, the organization shall ensure appropriate identification and description, format and media, and review and approval for suitability and adequacy."
+  },
+  {
+    "clauseNumber": "7.5.3",
+    "clauseTitle": "Documented information - Control of documented information",
+    "requirement": "Documented information required by the quality management system and by this standard shall be controlled to ensure it is available and suitable for use where and when it is needed, and it is adequately protected from loss of confidentiality, improper use, or loss of integrity. For the control of documented information, the organization shall address distribution, access, retrieval and use, storage and preservation, control of changes, retention and disposition."
+  },
+  {
+    "clauseNumber": "8.1",
+    "clauseTitle": "Operational planning and control",
+    "requirement": "The organization shall plan, implement and control the processes needed to meet the requirements for the provision of products and services, and to implement the actions determined in clause 6, by establishing criteria for the processes, implementing control of the processes in accordance with the criteria, and maintaining documented information to the extent necessary to have confidence that the processes have been carried out as planned and to demonstrate the conformity of products and services to their requirements."
+  },
+  {
+    "clauseNumber": "8.2.1",
+    "clauseTitle": "Requirements for products and services - Customer communication",
+    "requirement": "Communication with customers shall include providing information relating to products and services, handling enquiries, contracts or orders including changes, obtaining customer feedback relating to products and services including customer complaints, handling or controlling customer property, and establishing specific requirements for contingency actions when relevant."
+  },
+  {
+    "clauseNumber": "8.2.2",
+    "clauseTitle": "Requirements for products and services - Determining the requirements",
+    "requirement": "When determining the requirements for the products and services to be offered to customers, the organization shall ensure that the requirements for the products and services are defined, including any applicable statutory and regulatory requirements, and those considered necessary by the organization. The organization shall ensure that it can meet the claims for the products and services it offers."
+  },
+  {
+    "clauseNumber": "8.2.3",
+    "clauseTitle": "Requirements for products and services - Review of requirements",
+    "requirement": "The organization shall ensure that it has the ability to meet the requirements for products and services to be offered to customers. The organization shall conduct a review before committing to supply products and services to a customer, to include requirements specified by the customer including requirements for delivery and post-delivery activities, requirements not stated by the customer but necessary for the specified or intended use, requirements specified by the organization, and statutory and regulatory requirements applicable to the products and services."
+  },
+  {
+    "clauseNumber": "8.2.4",
+    "clauseTitle": "Requirements for products and services - Changes to requirements",
+    "requirement": "The organization shall ensure that relevant documented information is amended, and that relevant persons are made aware of the changed requirements, when the requirements for products and services are changed."
+  },
+  {
+    "clauseNumber": "8.3.1",
+    "clauseTitle": "Design and development of products and services - General",
+    "requirement": "The organization shall establish, implement and maintain a design and development process that is appropriate to ensure the subsequent provision of products and services."
+  },
+  {
+    "clauseNumber": "8.3.2",
+    "clauseTitle": "Design and development of products and services - Design and development planning",
+    "requirement": "In determining the stages and controls for design and development, the organization shall consider the nature, duration and complexity of the design and development activities, the required process stages including applicable design and development reviews, the required design and development verification and validation activities, the responsibilities and authorities involved, the internal and external resource needs, the need to control interfaces between persons involved, the need for involvement of customers and users, the requirements for subsequent provision of products and services, the level of control expected by customers and other relevant interested parties, and the documented information needed to demonstrate that design and development requirements have been met."
+  },
+  {
+    "clauseNumber": "8.3.3",
+    "clauseTitle": "Design and development of products and services - Design and development inputs",
+    "requirement": "The organization shall determine the requirements essential for the specific types of products and services to be designed and developed, including functional and performance requirements, information derived from previous similar design and development activities, statutory and regulatory requirements, standards or codes of practice that the organization has committed to implement, and potential consequences of failure due to the nature of the products and services."
+  },
+  {
+    "clauseNumber": "8.3.4",
+    "clauseTitle": "Design and development of products and services - Design and development controls",
+    "requirement": "The organization shall apply controls to the design and development process to ensure that the results to be achieved are defined, reviews are conducted to evaluate the ability of the results to meet requirements, verification activities are conducted to ensure that the design and development outputs meet the input requirements, and validation activities are conducted to ensure that the resulting products and services meet the requirements for the specified application or intended use."
+  },
+  {
+    "clauseNumber": "8.3.5",
+    "clauseTitle": "Design and development of products and services - Design and development outputs",
+    "requirement": "The organization shall ensure that design and development outputs meet the input requirements, are adequate for the subsequent processes for the provision of products and services, include or reference monitoring and measuring requirements as appropriate and acceptance criteria, and specify the characteristics of the products and services that are essential for their intended purpose and their safe and proper provision."
+  },
+  {
+    "clauseNumber": "8.3.6",
+    "clauseTitle": "Design and development of products and services - Design and development changes",
+    "requirement": "The organization shall identify, review and control changes made during or after the design and development of products and services, to the extent necessary to ensure that there is no adverse impact on conformity to requirements. The organization shall retain documented information on design and development changes, the results of reviews, the authorization of the changes, and the actions taken to prevent adverse impacts."
+  },
+  {
+    "clauseNumber": "8.4.1",
+    "clauseTitle": "Control of externally provided processes, products and services - General",
+    "requirement": "The organization shall ensure that externally provided processes, products and services conform to requirements. The organization shall determine the controls to be applied to externally provided processes, products and services when products and services from external providers are intended for incorporation into the organization's own products and services, products and services are provided directly to the customer by external providers on behalf of the organization, or a process or part of a process is provided by an external provider as a result of a decision by the organization."
+  },
+  {
+    "clauseNumber": "8.4.2",
+    "clauseTitle": "Control of externally provided processes, products and services - Type and extent of control",
+    "requirement": "The organization shall ensure that externally provided processes, products and services do not adversely affect the organization's ability to consistently deliver conforming products and services to its customers. The organization shall ensure that externally provided processes remain within the control of its quality management system, define both the controls that it intends to apply to an external provider and those it intends to apply to the resulting output, and take into consideration the potential impact of the externally provided processes, products and services on the organization's ability to consistently meet customer and applicable statutory and regulatory requirements and the effectiveness of the controls applied by the external provider."
+  },
+  {
+    "clauseNumber": "8.4.3",
+    "clauseTitle": "Control of externally provided processes, products and services - Information for external providers",
+    "requirement": "The organization shall ensure the adequacy of requirements prior to their communication to the external provider. The organization shall communicate to external providers its requirements for the processes, products and services to be provided, the approval of products and services, methods, processes and equipment, the release of products and services, competence including any required qualification of persons, the external provider's interactions with the organization, control and monitoring of the external provider's performance to be applied by the organization, and verification or validation activities that the organization or its customer intends to perform at the external provider's premises."
+  },
+  {
+    "clauseNumber": "8.5.1",
+    "clauseTitle": "Production and service provision - Control of production and service provision",
+    "requirement": "The organization shall implement production and service provision under controlled conditions. Controlled conditions shall include, as applicable, the availability of documented information that defines the characteristics of the products to be produced, the services to be provided, or the activities to be performed and the results to be achieved, the availability and use of suitable monitoring and measuring resources, the implementation of monitoring and measurement activities at appropriate stages, the use of suitable infrastructure and environment for the operation of processes, the appointment of competent persons, the validation and periodic revalidation of the ability to achieve planned results of processes for production and service provision where the resulting output cannot be verified by subsequent monitoring or measurement, and the implementation of actions to prevent human error."
+  },
+  {
+    "clauseNumber": "8.5.2",
+    "clauseTitle": "Production and service provision - Identification and traceability",
+    "requirement": "The organization shall use suitable means to identify outputs when it is necessary to ensure the conformity of products and services. The organization shall identify the status of outputs with respect to monitoring and measurement requirements throughout production and service provision. The organization shall control the unique identification of the outputs when traceability is a requirement, and shall retain the documented information necessary to enable traceability."
+  },
+  {
+    "clauseNumber": "8.5.3",
+    "clauseTitle": "Production and service provision - Property belonging to customers or external providers",
+    "requirement": "The organization shall exercise care with property belonging to customers or external providers while it is under the organization's control or being used by the organization. The organization shall identify, verify, protect and safeguard customers' or external providers' property provided for use or incorporation into the products and services. When the property of a customer or external provider is lost, damaged or otherwise found to be unsuitable for use, the organization shall report this to the customer or external provider and retain documented information on what has occurred."
+  },
+  {
+    "clauseNumber": "8.5.4",
+    "clauseTitle": "Production and service provision - Preservation",
+    "requirement": "The organization shall preserve the outputs during production and service provision, to the extent necessary to ensure conformity to requirements. Preservation can include identification, handling, contamination control, packaging, storage, transmission or transportation, and protection."
+  },
+  {
+    "clauseNumber": "8.5.5",
+    "clauseTitle": "Production and service provision - Post-delivery activities",
+    "requirement": "The organization shall meet requirements for post-delivery activities associated with the products and services. In determining the extent of post-delivery activities that are required, the organization shall consider statutory and regulatory requirements, the potential undesired consequences associated with its products and services, the nature, use and intended lifetime of its products and services, customer requirements, and customer feedback."
+  },
+  {
+    "clauseNumber": "8.5.6",
+    "clauseTitle": "Production and service provision - Control of changes",
+    "requirement": "The organization shall review and control changes for production or service provision, to the extent necessary to ensure continuing conformity with requirements. The organization shall retain documented information describing the results of the review of changes, the persons authorizing the change, and any necessary actions arising from the review."
+  },
+  {
+    "clauseNumber": "8.6",
+    "clauseTitle": "Release of products and services",
+    "requirement": "The organization shall implement planned arrangements at appropriate stages to verify that the product and service requirements have been met. The release of products and services to the customer shall not proceed until the planned arrangements have been satisfactorily completed, unless otherwise approved by a relevant authority and, as applicable, by the customer. The organization shall retain documented information on the release of products and services, including evidence of conformity with the acceptance criteria and traceability to the persons authorizing the release."
+  },
+  {
+    "clauseNumber": "8.7",
+    "clauseTitle": "Control of nonconforming outputs",
+    "requirement": "The organization shall ensure that outputs that do not conform to their requirements are identified and controlled to prevent their unintended use or delivery. The organization shall take appropriate action based on the nature of the nonconformity and its effect on the conformity of products and services, including dealing with nonconforming outputs by correction, segregation, containment, return or suspension of provision of products and services, informing the customer, or obtaining authorization for acceptance under concession. Conformity to the requirements shall be verified when nonconforming outputs are corrected."
+  },
+  {
+    "clauseNumber": "9.1.1",
+    "clauseTitle": "Monitoring, measurement, analysis and evaluation - General",
+    "requirement": "The organization shall determine what needs to be monitored and measured, the methods for monitoring, measurement, analysis and evaluation needed to ensure valid results, when the monitoring and measuring shall be performed, and when the results from monitoring and measurement shall be analysed and evaluated. The organization shall evaluate the performance and the effectiveness of the quality management system and retain appropriate documented information as evidence of the results."
+  },
+  {
+    "clauseNumber": "9.1.2",
+    "clauseTitle": "Monitoring, measurement, analysis and evaluation - Customer satisfaction",
+    "requirement": "The organization shall monitor customers' perceptions of the degree to which their needs and expectations have been fulfilled. The organization shall determine the methods for obtaining, monitoring and reviewing this information."
+  },
+  {
+    "clauseNumber": "9.1.3",
+    "clauseTitle": "Monitoring, measurement, analysis and evaluation - Analysis and evaluation",
+    "requirement": "The organization shall analyse and evaluate appropriate data and information arising from monitoring and measurement. The results of analysis shall be used to evaluate conformity of products and services, the degree of customer satisfaction, the performance and effectiveness of the quality management system, if planning has been implemented effectively, the effectiveness of actions taken to address risks and opportunities, the performance of external providers, and the need for improvements to the quality management system."
+  },
+  {
+    "clauseNumber": "9.2.1",
+    "clauseTitle": "Internal audit - General",
+    "requirement": "The organization shall conduct internal audits at planned intervals to provide information on whether the quality management system conforms to the organization's own requirements for its quality management system and the requirements of this standard, and is effectively implemented and maintained."
+  },
+  {
+    "clauseNumber": "9.2.2",
+    "clauseTitle": "Internal audit - Audit programme",
+    "requirement": "The organization shall plan, establish, implement and maintain an audit programme including the frequency, methods, responsibilities, planning requirements and reporting, which shall take into consideration the importance of the processes concerned, changes affecting the organization, and the results of previous audits. The organization shall define the audit criteria and scope for each audit, select auditors and conduct audits to ensure objectivity and impartiality of the audit process, ensure that the results of the audits are reported to relevant management, take appropriate correction and corrective actions without undue delay, and retain documented information as evidence of the implementation of the audit programme and the audit results."
+  },
+  {
+    "clauseNumber": "9.3.1",
+    "clauseTitle": "Management review - General",
+    "requirement": "Top management shall review the organization's quality management system at planned intervals to ensure its continuing suitability, adequacy, effectiveness and alignment with the strategic direction of the organization."
+  },
+  {
+    "clauseNumber": "9.3.2",
+    "clauseTitle": "Management review - Management review inputs",
+    "requirement": "The management review shall be planned and carried out taking into consideration the status of actions from previous management reviews, changes in external and internal issues that are relevant to the quality management system, information on the performance and effectiveness of the quality management system including trends in customer satisfaction and feedback from relevant interested parties, the extent to which quality objectives have been met, process performance and conformity of products and services, nonconformities and corrective actions, monitoring and measurement results, audit results, the performance of external providers, and the adequacy of resources."
+  },
+  {
+    "clauseNumber": "9.3.3",
+    "clauseTitle": "Management review - Management review outputs",
+    "requirement": "The outputs of the management review shall include decisions and actions related to opportunities for improvement, any need for changes to the quality management system, and resource needs. The organization shall retain documented information as evidence of the results of management reviews."
+  },
+  {
+    "clauseNumber": "10.1",
+    "clauseTitle": "Improvement - General",
+    "requirement": "The organization shall determine and select opportunities for improvement and implement any necessary actions to meet customer requirements and enhance customer satisfaction. These shall include improving products and services to meet requirements as well as to address future needs and expectations, correcting, preventing or reducing undesired effects, and improving the performance and effectiveness of the quality management system."
+  },
+  {
+    "clauseNumber": "10.2",
+    "clauseTitle": "Nonconformity and corrective action",
+    "requirement": "When a nonconformity occurs, including any arising from complaints, the organization shall react to the nonconformity by taking action to control and correct it and dealing with the consequences. The organization shall evaluate the need for action to eliminate the causes of the nonconformity in order that it does not recur or occur elsewhere, by reviewing and analysing the nonconformity, determining the causes, and determining if similar nonconformities exist or could potentially occur. The organization shall implement any action needed, review the effectiveness of any corrective action taken, and update risks and opportunities determined during planning if necessary. The organization shall retain documented information as evidence of the nature of the nonconformities, any subsequent actions taken, and the results of any corrective action."
+  },
+  {
+    "clauseNumber": "10.3",
+    "clauseTitle": "Continual improvement",
+    "requirement": "The organization shall continually improve the suitability, adequacy and effectiveness of the quality management system. The organization shall consider the results of analysis and evaluation and the outputs from management review to determine if there are needs or opportunities that shall be addressed as part of continual improvement."
+  }
+]

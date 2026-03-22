@@ -1,0 +1,127 @@
+[
+  {
+    "clauseNumber": "A.1.1",
+    "clauseTitle": "Consent and choice — Obligation to cooperate regarding PII principals' rights",
+    "requirement": "The public cloud PII processor shall provide the cloud service customer with the means to enable fulfillment of obligations related to PII principals' rights to access, correct, erase, and object to the processing of their PII."
+  },
+  {
+    "clauseNumber": "A.2.1",
+    "clauseTitle": "Purpose legitimacy and specification — Public cloud PII processor's purpose",
+    "requirement": "The public cloud PII processor shall not process PII for any purpose other than those expressly specified in the contract with the cloud service customer, and shall not use PII for marketing or advertising purposes unless expressly instructed."
+  },
+  {
+    "clauseNumber": "A.2.2",
+    "clauseTitle": "Purpose legitimacy and specification — Commercial use of PII",
+    "requirement": "The public cloud PII processor shall not use PII processed under a cloud service agreement for commercial purposes, including advertising, marketing, or sale to third parties, unless explicitly authorized by the cloud service customer."
+  },
+  {
+    "clauseNumber": "A.3.1",
+    "clauseTitle": "Collection limitation",
+    "requirement": "The public cloud PII processor shall limit the collection of PII to that which is directly relevant and necessary for the specified purposes of processing as defined in the agreement with the cloud service customer."
+  },
+  {
+    "clauseNumber": "A.4.1",
+    "clauseTitle": "Data minimization — Temporary files and documents",
+    "requirement": "The public cloud PII processor shall delete temporary files and documents containing PII within a specified, documented period, and shall make information about such policies available to the cloud service customer."
+  },
+  {
+    "clauseNumber": "A.5.1",
+    "clauseTitle": "Use, retention and disclosure limitation — PII disclosure notification",
+    "requirement": "The public cloud PII processor shall notify the cloud service customer promptly of any legally binding request for disclosure of PII by a law enforcement authority, unless such notification is prohibited by law."
+  },
+  {
+    "clauseNumber": "A.5.2",
+    "clauseTitle": "Use, retention and disclosure limitation — Recording of PII disclosures",
+    "requirement": "The public cloud PII processor shall record and maintain documentation of PII disclosures to third parties, including the identity of the third party, the legal basis, and the date of disclosure, and make these records available to the cloud service customer."
+  },
+  {
+    "clauseNumber": "A.6.1",
+    "clauseTitle": "Accuracy and quality",
+    "requirement": "The public cloud PII processor shall not have an obligation regarding the accuracy of PII other than as specified in the contract with the cloud service customer, but shall enable the customer to correct or update PII as needed."
+  },
+  {
+    "clauseNumber": "A.7.1",
+    "clauseTitle": "Openness, transparency and notice — Disclosure of sub-processors",
+    "requirement": "The public cloud PII processor shall disclose to the cloud service customer the identity of any sub-processors used for PII processing before their engagement, and shall obtain agreement from the customer before changing sub-processors."
+  },
+  {
+    "clauseNumber": "A.8.1",
+    "clauseTitle": "Individual participation and access — Notification of government access requests",
+    "requirement": "The public cloud PII processor shall notify the cloud service customer of any government or law enforcement access to PII where legally permitted, providing details of the request and the information disclosed."
+  },
+  {
+    "clauseNumber": "A.9.1",
+    "clauseTitle": "Accountability — PII breach notification",
+    "requirement": "The public cloud PII processor shall provide a mechanism for the timely notification of the cloud service customer in the event of any PII breach, including the nature of the breach, the PII affected, and the measures taken or proposed to address the breach."
+  },
+  {
+    "clauseNumber": "A.9.2",
+    "clauseTitle": "Accountability — Data breach record keeping",
+    "requirement": "The public cloud PII processor shall maintain a record of all PII breaches, including the facts surrounding the breach, its effects, and the remedial actions taken, and shall make these records available for review by the cloud service customer."
+  },
+  {
+    "clauseNumber": "A.10.1",
+    "clauseTitle": "Return, transfer and disposal of PII",
+    "requirement": "The public cloud PII processor shall provide the ability to return all PII to the cloud service customer in a structured, commonly used format, and shall securely dispose of all copies of PII upon termination of the service agreement."
+  },
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "Information security policies for PII protection in public cloud",
+    "requirement": "The organization shall define a set of policies for information security specifically addressing the protection of PII in the public cloud computing environment, approved by management, and communicated to all relevant parties."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Organization of information security for PII protection",
+    "requirement": "The organization shall define and assign roles and responsibilities for the protection of PII processed in the public cloud, including the designation of a contact point for PII-related inquiries and incidents."
+  },
+  {
+    "clauseNumber": "8.1",
+    "clauseTitle": "Asset management — PII inventory and classification",
+    "requirement": "The organization shall maintain an inventory of PII processed in the public cloud, classify PII according to applicable legal and regulatory requirements, and implement handling procedures appropriate to each classification level."
+  },
+  {
+    "clauseNumber": "9.1",
+    "clauseTitle": "Access control — Access control policy for PII in public cloud",
+    "requirement": "The organization shall implement access control policies that restrict access to PII in the public cloud to authorized personnel only, applying the principle of least privilege and implementing multi-factor authentication for administrative access to PII."
+  },
+  {
+    "clauseNumber": "9.2",
+    "clauseTitle": "Access control — User access management for PII",
+    "requirement": "The organization shall implement formal processes for granting, reviewing, and revoking access rights to PII in the public cloud, including regular reviews of access privileges and timely removal of access upon termination of duties."
+  },
+  {
+    "clauseNumber": "10.1",
+    "clauseTitle": "Cryptography — Cryptographic protection of PII",
+    "requirement": "The organization shall implement cryptographic measures to protect PII at rest and in transit within the public cloud environment, maintain control of encryption keys, and implement key management procedures appropriate to the sensitivity of the PII."
+  },
+  {
+    "clauseNumber": "11.1",
+    "clauseTitle": "Physical and environmental security — Secure disposal of PII storage media",
+    "requirement": "The organization shall implement procedures for the secure disposal or reuse of equipment and storage media used to process PII in the public cloud, ensuring that PII is irrecoverably destroyed prior to disposal or reuse."
+  },
+  {
+    "clauseNumber": "12.1",
+    "clauseTitle": "Operations security — Operational procedures for PII protection",
+    "requirement": "The organization shall document and implement operational procedures to ensure the protection of PII during cloud processing operations, including change management, capacity management, and protection against malware targeting PII."
+  },
+  {
+    "clauseNumber": "12.3",
+    "clauseTitle": "Operations security — Logging and monitoring of PII access",
+    "requirement": "The organization shall log and monitor access to PII in the public cloud environment, maintaining audit trails of all access events, and shall make relevant logs available to the cloud service customer for verification and investigation purposes."
+  },
+  {
+    "clauseNumber": "13.1",
+    "clauseTitle": "Communications security — Network controls for PII protection",
+    "requirement": "The organization shall implement network security controls to protect PII during transmission across public and shared networks, including the use of encrypted communication channels and network segmentation to isolate PII processing."
+  },
+  {
+    "clauseNumber": "16.1",
+    "clauseTitle": "Information security incident management — PII breach management",
+    "requirement": "The organization shall establish and maintain incident management procedures that specifically address PII breaches in the public cloud, including procedures for identification, containment, notification to affected parties, and post-incident review."
+  },
+  {
+    "clauseNumber": "18.1",
+    "clauseTitle": "Compliance — Identification of applicable PII legislation",
+    "requirement": "The organization shall identify, document, and keep current all applicable legislative, regulatory, and contractual requirements related to PII protection in the public cloud, including data localization requirements and cross-border PII transfer restrictions."
+  }
+]

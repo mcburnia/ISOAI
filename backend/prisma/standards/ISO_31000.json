@@ -1,0 +1,152 @@
+[
+  {
+    "clauseNumber": "4",
+    "clauseTitle": "Principles",
+    "requirement": "Risk management shall be based on principles that create and protect value and are an integral part of all organizational processes."
+  },
+  {
+    "clauseNumber": "4.1",
+    "clauseTitle": "Integrated",
+    "requirement": "Risk management shall be an integral part of all organizational activities and shall not be treated as a separate or standalone process."
+  },
+  {
+    "clauseNumber": "4.2",
+    "clauseTitle": "Structured and comprehensive",
+    "requirement": "A structured and comprehensive approach to risk management shall contribute to consistent and comparable results across the organization."
+  },
+  {
+    "clauseNumber": "4.3",
+    "clauseTitle": "Customized",
+    "requirement": "The risk management framework and process shall be customized and proportionate to the organization's external and internal context related to its objectives."
+  },
+  {
+    "clauseNumber": "4.4",
+    "clauseTitle": "Inclusive",
+    "requirement": "Appropriate and timely involvement of stakeholders shall enable their knowledge, views, and perceptions to be considered, resulting in improved awareness and informed risk management."
+  },
+  {
+    "clauseNumber": "4.5",
+    "clauseTitle": "Dynamic",
+    "requirement": "Risks can emerge, change, or disappear as an organization's external and internal context changes. Risk management shall anticipate, detect, acknowledge, and respond to those changes and events in an appropriate and timely manner."
+  },
+  {
+    "clauseNumber": "4.6",
+    "clauseTitle": "Best available information",
+    "requirement": "The inputs to risk management shall be based on historical and current information, as well as on future expectations. Risk management shall explicitly take into account any limitations and uncertainties associated with such information and expectations."
+  },
+  {
+    "clauseNumber": "4.7",
+    "clauseTitle": "Human and cultural factors",
+    "requirement": "Human behaviour and culture shall be recognized as factors that significantly influence all aspects of risk management at each level and stage."
+  },
+  {
+    "clauseNumber": "4.8",
+    "clauseTitle": "Continual improvement",
+    "requirement": "Risk management shall be continually improved through learning and experience, ensuring the framework and processes remain effective and aligned with organizational objectives."
+  },
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "General",
+    "requirement": "The purpose of the risk management framework is to assist the organization in integrating risk management into significant activities and functions. The effectiveness of risk management depends on its integration into the governance of the organization."
+  },
+  {
+    "clauseNumber": "5.2",
+    "clauseTitle": "Leadership and commitment",
+    "requirement": "Top management and oversight bodies shall demonstrate leadership and commitment by ensuring that risk management is integrated into all organizational activities and shall assign authority, responsibility, and accountability at appropriate levels within the organization."
+  },
+  {
+    "clauseNumber": "5.3",
+    "clauseTitle": "Integration",
+    "requirement": "Integrating risk management into an organization is a dynamic and iterative process, and shall be customized to the organization's needs and culture. Risk management shall be a part of, and not separate from, the organizational purpose, governance, leadership, strategy, objectives, and operations."
+  },
+  {
+    "clauseNumber": "5.4.1",
+    "clauseTitle": "Design — Understanding the organization and its context",
+    "requirement": "The organization shall examine and understand its external and internal context when designing the framework for managing risk."
+  },
+  {
+    "clauseNumber": "5.4.2",
+    "clauseTitle": "Design — Articulating risk management commitment",
+    "requirement": "Top management and oversight bodies shall articulate and demonstrate their ongoing commitment to risk management through a policy, statement, or other forms that clearly convey the organization's objectives and commitment."
+  },
+  {
+    "clauseNumber": "5.4.3",
+    "clauseTitle": "Design — Assigning organizational roles, authorities, responsibilities, and accountabilities",
+    "requirement": "Top management shall ensure that the authorities, responsibilities, and accountabilities for relevant roles with respect to risk management are assigned and communicated at all levels of the organization."
+  },
+  {
+    "clauseNumber": "5.4.4",
+    "clauseTitle": "Design — Allocating resources",
+    "requirement": "Top management shall ensure the allocation of appropriate resources for risk management, including people, skills, experience, competence, processes, methods, and tools."
+  },
+  {
+    "clauseNumber": "5.4.5",
+    "clauseTitle": "Design — Establishing communication and consultation",
+    "requirement": "The organization shall establish an approved approach to communication and consultation to support the risk management framework and facilitate the effective application of risk management."
+  },
+  {
+    "clauseNumber": "5.5",
+    "clauseTitle": "Implementation",
+    "requirement": "The organization shall implement the risk management framework by developing an appropriate plan including timelines, ensuring that the risk management process is applied through a management plan, and embedding risk management into organizational practices."
+  },
+  {
+    "clauseNumber": "5.6",
+    "clauseTitle": "Evaluation",
+    "requirement": "The organization shall periodically measure risk management framework performance against its purpose, implementation plans, indicators, and expected behaviour, and determine whether it remains suitable to support achieving the objectives of the organization."
+  },
+  {
+    "clauseNumber": "5.7",
+    "clauseTitle": "Improvement",
+    "requirement": "The organization shall continually monitor and adapt the risk management framework to address external and internal changes, and improve the value of risk management by continually improving the suitability, adequacy, and effectiveness of the framework."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Process — General",
+    "requirement": "The risk management process shall involve the systematic application of policies, procedures, and practices to the activities of communicating, consulting, establishing context, identifying, analysing, evaluating, treating, monitoring, and reviewing risk."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Communication and consultation",
+    "requirement": "The organization shall communicate and consult with internal and external stakeholders during all steps of the risk management process. Communication and consultation shall facilitate truthful, relevant, accurate, and understandable exchange of information, taking into account confidentiality and integrity."
+  },
+  {
+    "clauseNumber": "6.3",
+    "clauseTitle": "Scope, context, and criteria",
+    "requirement": "The organization shall define the scope of risk management activities, understand the external and internal context, and define risk criteria to evaluate the significance of risk. Risk criteria shall be aligned with the risk management framework and customized to the purpose and scope of the activity under consideration."
+  },
+  {
+    "clauseNumber": "6.4.1",
+    "clauseTitle": "Risk assessment — General",
+    "requirement": "Risk assessment shall be conducted systematically, iteratively, and collaboratively, drawing on the knowledge and views of stakeholders. It shall use the best available information, supplemented by further enquiry as necessary."
+  },
+  {
+    "clauseNumber": "6.4.2",
+    "clauseTitle": "Risk identification",
+    "requirement": "The organization shall identify sources of risk, areas of impacts, events, their causes, and potential consequences. The aim shall be to generate a comprehensive list of risks based on those events that might create, enhance, prevent, degrade, accelerate, or delay the achievement of objectives."
+  },
+  {
+    "clauseNumber": "6.4.3",
+    "clauseTitle": "Risk analysis",
+    "requirement": "The organization shall comprehend the nature of risk and its characteristics, including the level of risk where appropriate. Risk analysis shall consider factors such as the likelihood of events, the nature and magnitude of consequences, complexity, connectivity, time-related factors, and the effectiveness of existing controls."
+  },
+  {
+    "clauseNumber": "6.4.4",
+    "clauseTitle": "Risk evaluation",
+    "requirement": "The organization shall compare the results of risk analysis with established risk criteria to determine where additional action is required. Risk evaluation shall support decisions about which risks need treatment and the priority for treatment implementation."
+  },
+  {
+    "clauseNumber": "6.5",
+    "clauseTitle": "Risk treatment",
+    "requirement": "The organization shall select and implement risk treatment options. Risk treatment shall involve an iterative process of formulating and selecting treatment options, planning and implementing treatment, assessing the effectiveness of treatment, deciding whether the remaining risk is acceptable, and taking further treatment if not acceptable."
+  },
+  {
+    "clauseNumber": "6.6",
+    "clauseTitle": "Monitoring and review",
+    "requirement": "The organization shall plan and implement monitoring and review processes to assure and improve the quality and effectiveness of process design, implementation, and outcomes. Monitoring and review shall take place in all stages of the risk management process."
+  },
+  {
+    "clauseNumber": "6.7",
+    "clauseTitle": "Recording and reporting",
+    "requirement": "The risk management process and its outcomes shall be documented and reported through appropriate mechanisms. Recording and reporting shall aim to communicate risk management activities and outcomes across the organization, provide information for decision-making, and improve risk management activities."
+  }
+]

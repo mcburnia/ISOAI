@@ -1,0 +1,592 @@
+[
+  {
+    "clauseNumber": "4.1",
+    "clauseTitle": "Understanding the organisation and its context",
+    "requirement": "The organisation shall determine external and internal issues that are relevant to its purpose and that affect its ability to achieve the intended outcome(s) of its information security management system."
+  },
+  {
+    "clauseNumber": "4.2",
+    "clauseTitle": "Understanding the needs and expectations of interested parties",
+    "requirement": "The organisation shall determine interested parties that are relevant to the information security management system, the relevant requirements of these interested parties, and which of these requirements will be addressed through the information security management system."
+  },
+  {
+    "clauseNumber": "4.3",
+    "clauseTitle": "Determining the scope of the information security management system",
+    "requirement": "The organisation shall determine the boundaries and applicability of the information security management system to establish its scope, considering the external and internal issues, the requirements of interested parties, and interfaces and dependencies between activities performed by the organisation and those performed by other organisations."
+  },
+  {
+    "clauseNumber": "4.4",
+    "clauseTitle": "Information security management system",
+    "requirement": "The organisation shall establish, implement, maintain and continually improve an information security management system, including the processes needed and their interactions, in accordance with the requirements of this document."
+  },
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "Leadership and commitment",
+    "requirement": "Top management shall demonstrate leadership and commitment with respect to the information security management system by ensuring the information security policy and objectives are established and compatible with the strategic direction, ensuring integration of the ISMS requirements into the organisation's processes, ensuring resources are available, communicating the importance of effective information security management, ensuring the ISMS achieves its intended outcomes, directing and supporting persons to contribute to the effectiveness of the ISMS, promoting continual improvement, and supporting other relevant management roles to demonstrate their leadership."
+  },
+  {
+    "clauseNumber": "5.2",
+    "clauseTitle": "Policy",
+    "requirement": "Top management shall establish an information security policy that is appropriate to the purpose of the organisation, includes information security objectives or provides the framework for setting information security objectives, includes a commitment to satisfy applicable requirements related to information security, and includes a commitment to continual improvement of the information security management system. The policy shall be available as documented information, be communicated within the organisation, and be available to interested parties as appropriate."
+  },
+  {
+    "clauseNumber": "5.3",
+    "clauseTitle": "Organisational roles, responsibilities and authorities",
+    "requirement": "Top management shall ensure that the responsibilities and authorities for roles relevant to information security are assigned and communicated. Top management shall assign the responsibility and authority for ensuring that the information security management system conforms to the requirements of this document and for reporting on the performance of the information security management system to top management."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Actions to address risks and opportunities",
+    "requirement": "When planning for the information security management system, the organisation shall consider the issues referred to in 4.1 and the requirements referred to in 4.2 and determine the risks and opportunities that need to be addressed to ensure the ISMS can achieve its intended outcomes, prevent or reduce undesired effects, and achieve continual improvement."
+  },
+  {
+    "clauseNumber": "6.1.2",
+    "clauseTitle": "Information security risk assessment",
+    "requirement": "The organisation shall define and apply an information security risk assessment process that establishes and maintains information security risk criteria including risk acceptance criteria and criteria for performing information security risk assessments, ensures that repeated risk assessments produce consistent valid and comparable results, identifies information security risks associated with the loss of confidentiality integrity and availability for information within the scope of the ISMS, identifies the risk owners, analyses and evaluates the information security risks, and retains documented information about the process."
+  },
+  {
+    "clauseNumber": "6.1.3",
+    "clauseTitle": "Information security risk treatment",
+    "requirement": "The organisation shall define and apply an information security risk treatment process to select appropriate risk treatment options taking account of the risk assessment results, determine all controls that are necessary to implement the chosen risk treatment options, compare the controls with those in Annex A to verify no necessary controls have been omitted, produce a Statement of Applicability containing the necessary controls and justification for their inclusion or exclusion, formulate an information security risk treatment plan, and obtain risk owners' approval of the risk treatment plan and acceptance of the residual information security risks."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Information security objectives and planning to achieve them",
+    "requirement": "The organisation shall establish information security objectives at relevant functions and levels. The objectives shall be consistent with the information security policy, be measurable, take into account applicable information security requirements and results from risk assessment and risk treatment, be monitored, be communicated, be updated as appropriate, and be available as documented information. The organisation shall determine what will be done, what resources will be required, who will be responsible, when it will be completed, and how the results will be evaluated."
+  },
+  {
+    "clauseNumber": "6.3",
+    "clauseTitle": "Planning of changes",
+    "requirement": "When the organisation determines the need for changes to the information security management system, the changes shall be carried out in a planned manner."
+  },
+  {
+    "clauseNumber": "7.1",
+    "clauseTitle": "Resources",
+    "requirement": "The organisation shall determine and provide the resources needed for the establishment, implementation, maintenance and continual improvement of the information security management system."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "Competence",
+    "requirement": "The organisation shall determine the necessary competence of persons doing work under its control that affects its information security performance, ensure that these persons are competent on the basis of appropriate education training or experience, where applicable take actions to acquire the necessary competence and evaluate the effectiveness of the actions taken, and retain appropriate documented information as evidence of competence."
+  },
+  {
+    "clauseNumber": "7.3",
+    "clauseTitle": "Awareness",
+    "requirement": "Persons doing work under the organisation's control shall be aware of the information security policy, their contribution to the effectiveness of the information security management system including the benefits of improved information security performance, and the implications of not conforming with the information security management system requirements."
+  },
+  {
+    "clauseNumber": "7.4",
+    "clauseTitle": "Communication",
+    "requirement": "The organisation shall determine the need for internal and external communications relevant to the information security management system including on what to communicate, when to communicate, with whom to communicate, and how to communicate."
+  },
+  {
+    "clauseNumber": "7.5",
+    "clauseTitle": "Documented information",
+    "requirement": "The organisation's information security management system shall include documented information required by this document and documented information determined by the organisation as being necessary for the effectiveness of the information security management system. Documented information shall be appropriately created, updated, and controlled to ensure it is available and suitable for use where and when it is needed and is adequately protected."
+  },
+  {
+    "clauseNumber": "8.1",
+    "clauseTitle": "Operational planning and control",
+    "requirement": "The organisation shall plan, implement and control the processes needed to meet information security requirements and to implement the actions determined in clause 6 by establishing criteria for the processes, implementing control of the processes in accordance with the criteria, and keeping documented information to the extent necessary to have confidence that the processes have been carried out as planned. The organisation shall control planned changes and review the consequences of unintended changes, taking action to mitigate any adverse effects as necessary."
+  },
+  {
+    "clauseNumber": "8.2",
+    "clauseTitle": "Information security risk assessment",
+    "requirement": "The organisation shall perform information security risk assessments at planned intervals or when significant changes are proposed or occur, taking account of the criteria established in 6.1.2, and shall retain documented information of the results of the information security risk assessments."
+  },
+  {
+    "clauseNumber": "8.3",
+    "clauseTitle": "Information security risk treatment",
+    "requirement": "The organisation shall implement the information security risk treatment plan and retain documented information of the results of the information security risk treatment."
+  },
+  {
+    "clauseNumber": "9.1",
+    "clauseTitle": "Monitoring, measurement, analysis and evaluation",
+    "requirement": "The organisation shall determine what needs to be monitored and measured including information security processes and controls, the methods for monitoring measurement analysis and evaluation to ensure valid results, when the monitoring and measuring shall be performed, who shall monitor and measure, when the results from monitoring and measurement shall be analysed and evaluated, and who shall analyse and evaluate these results. The organisation shall retain appropriate documented information as evidence of the results."
+  },
+  {
+    "clauseNumber": "9.2",
+    "clauseTitle": "Internal audit",
+    "requirement": "The organisation shall conduct internal audits at planned intervals to provide information on whether the information security management system conforms to the organisation's own requirements and the requirements of this document, and is effectively implemented and maintained. The organisation shall plan, establish, implement and maintain an audit programme, define the audit criteria and scope for each audit, select auditors and conduct audits that ensure objectivity and impartiality, ensure results are reported to relevant management, and retain documented information as evidence of the audit programme and audit results."
+  },
+  {
+    "clauseNumber": "9.3",
+    "clauseTitle": "Management review",
+    "requirement": "Top management shall review the organisation's information security management system at planned intervals to ensure its continuing suitability, adequacy and effectiveness. The management review shall consider the status of actions from previous reviews, changes in external and internal issues, nonconformities and corrective actions, monitoring and measurement results, audit results, fulfilment of information security objectives, feedback from interested parties, results of risk assessment and status of risk treatment plan, and opportunities for continual improvement. The results shall include decisions related to continual improvement opportunities and any needs for changes to the ISMS."
+  },
+  {
+    "clauseNumber": "10.1",
+    "clauseTitle": "Continual improvement",
+    "requirement": "The organisation shall continually improve the suitability, adequacy and effectiveness of the information security management system."
+  },
+  {
+    "clauseNumber": "10.2",
+    "clauseTitle": "Nonconformity and corrective action",
+    "requirement": "When a nonconformity occurs, the organisation shall react to the nonconformity by taking action to control and correct it and deal with the consequences, evaluate the need for action to eliminate the causes of nonconformity so that it does not recur or occur elsewhere, implement any action needed, review the effectiveness of any corrective action taken, and make changes to the information security management system if necessary. The organisation shall retain documented information as evidence of the nature of the nonconformities, any actions taken, and the results of any corrective action."
+  },
+  {
+    "clauseNumber": "A.5.1",
+    "clauseTitle": "Policies for information security",
+    "requirement": "A set of policies for information security shall be defined, approved by management, published, communicated to and acknowledged by relevant personnel and relevant interested parties, and reviewed at planned intervals or if significant changes occur."
+  },
+  {
+    "clauseNumber": "A.5.2",
+    "clauseTitle": "Information security roles and responsibilities",
+    "requirement": "Information security roles and responsibilities shall be defined and allocated according to the organisation's needs."
+  },
+  {
+    "clauseNumber": "A.5.3",
+    "clauseTitle": "Segregation of duties",
+    "requirement": "Conflicting duties and conflicting areas of responsibility shall be segregated to reduce opportunities for unauthorised or unintentional modification or misuse of the organisation's assets."
+  },
+  {
+    "clauseNumber": "A.5.4",
+    "clauseTitle": "Management responsibilities",
+    "requirement": "Management shall require all personnel to apply information security in accordance with the established information security policy, topic-specific policies and procedures of the organisation."
+  },
+  {
+    "clauseNumber": "A.5.5",
+    "clauseTitle": "Contact with authorities",
+    "requirement": "The organisation shall establish and maintain contact with relevant authorities."
+  },
+  {
+    "clauseNumber": "A.5.6",
+    "clauseTitle": "Contact with special interest groups",
+    "requirement": "The organisation shall establish and maintain contact with special interest groups or other specialist security forums and professional associations."
+  },
+  {
+    "clauseNumber": "A.5.7",
+    "clauseTitle": "Threat intelligence",
+    "requirement": "Information relating to information security threats shall be collected and analysed to produce threat intelligence."
+  },
+  {
+    "clauseNumber": "A.5.8",
+    "clauseTitle": "Information security in project management",
+    "requirement": "Information security shall be integrated into project management regardless of the type of project."
+  },
+  {
+    "clauseNumber": "A.5.9",
+    "clauseTitle": "Inventory of information and other associated assets",
+    "requirement": "An inventory of information and other associated assets, including owners, shall be developed and maintained."
+  },
+  {
+    "clauseNumber": "A.5.10",
+    "clauseTitle": "Acceptable use of information and other associated assets",
+    "requirement": "Rules for the acceptable use and procedures for handling information and other associated assets shall be identified, documented and implemented."
+  },
+  {
+    "clauseNumber": "A.5.11",
+    "clauseTitle": "Return of assets",
+    "requirement": "Personnel and other interested parties as appropriate shall return all the organisation's assets in their possession upon change or termination of their employment, contract or agreement."
+  },
+  {
+    "clauseNumber": "A.5.12",
+    "clauseTitle": "Classification of information",
+    "requirement": "Information shall be classified according to the information security needs of the organisation based on confidentiality, integrity, availability and relevant interested party requirements."
+  },
+  {
+    "clauseNumber": "A.5.13",
+    "clauseTitle": "Labelling of information",
+    "requirement": "An appropriate set of procedures for information labelling shall be developed and implemented in accordance with the information classification scheme adopted by the organisation."
+  },
+  {
+    "clauseNumber": "A.5.14",
+    "clauseTitle": "Information transfer",
+    "requirement": "Information transfer rules, procedures or agreements shall be in place for all types of transfer facilities within the organisation and between the organisation and other parties."
+  },
+  {
+    "clauseNumber": "A.5.15",
+    "clauseTitle": "Access control",
+    "requirement": "Rules to control physical and logical access to information and other associated assets shall be established and implemented based on business and information security requirements."
+  },
+  {
+    "clauseNumber": "A.5.16",
+    "clauseTitle": "Identity management",
+    "requirement": "The full life cycle of identities shall be managed."
+  },
+  {
+    "clauseNumber": "A.5.17",
+    "clauseTitle": "Authentication information",
+    "requirement": "Allocation and management of authentication information shall be controlled by a management process including advising personnel on appropriate handling of authentication information."
+  },
+  {
+    "clauseNumber": "A.5.18",
+    "clauseTitle": "Access rights",
+    "requirement": "Access rights to information and other associated assets shall be provisioned, reviewed, modified and removed in accordance with the organisation's topic-specific policy on and rules for access control."
+  },
+  {
+    "clauseNumber": "A.5.19",
+    "clauseTitle": "Information security in supplier relationships",
+    "requirement": "Processes and procedures shall be defined and implemented to manage the information security risks associated with the use of supplier's products or services."
+  },
+  {
+    "clauseNumber": "A.5.20",
+    "clauseTitle": "Addressing information security within supplier agreements",
+    "requirement": "Relevant information security requirements shall be established and agreed with each supplier based on the type of supplier relationship."
+  },
+  {
+    "clauseNumber": "A.5.21",
+    "clauseTitle": "Managing information security in the ICT supply chain",
+    "requirement": "Processes and procedures shall be defined and implemented to manage the information security risks associated with the ICT products and services supply chain."
+  },
+  {
+    "clauseNumber": "A.5.22",
+    "clauseTitle": "Monitoring, review and change management of supplier services",
+    "requirement": "The organisation shall regularly monitor, review, evaluate and manage change in supplier information security practices and service delivery."
+  },
+  {
+    "clauseNumber": "A.5.23",
+    "clauseTitle": "Information security for use of cloud services",
+    "requirement": "Processes for acquisition, use, management and exit from cloud services shall be established in accordance with the organisation's information security requirements."
+  },
+  {
+    "clauseNumber": "A.5.24",
+    "clauseTitle": "Information security incident management planning and preparation",
+    "requirement": "The organisation shall plan and prepare for managing information security incidents by defining, establishing and communicating information security incident management processes, roles and responsibilities."
+  },
+  {
+    "clauseNumber": "A.5.25",
+    "clauseTitle": "Assessment and decision on information security events",
+    "requirement": "The organisation shall assess information security events and decide if they are to be categorised as information security incidents."
+  },
+  {
+    "clauseNumber": "A.5.26",
+    "clauseTitle": "Response to information security incidents",
+    "requirement": "Information security incidents shall be responded to in accordance with the documented procedures."
+  },
+  {
+    "clauseNumber": "A.5.27",
+    "clauseTitle": "Learning from information security incidents",
+    "requirement": "Knowledge gained from information security incidents shall be used to strengthen and improve the information security controls."
+  },
+  {
+    "clauseNumber": "A.5.28",
+    "clauseTitle": "Collection of evidence",
+    "requirement": "The organisation shall establish and implement procedures for the identification, collection, acquisition and preservation of evidence related to information security events."
+  },
+  {
+    "clauseNumber": "A.5.29",
+    "clauseTitle": "Information security during disruption",
+    "requirement": "The organisation shall plan how to maintain information security at an appropriate level during disruption."
+  },
+  {
+    "clauseNumber": "A.5.30",
+    "clauseTitle": "ICT readiness for business continuity",
+    "requirement": "ICT readiness shall be planned, implemented, maintained and tested based on business continuity objectives and ICT continuity requirements."
+  },
+  {
+    "clauseNumber": "A.5.31",
+    "clauseTitle": "Legal, statutory, regulatory and contractual requirements",
+    "requirement": "Legal, statutory, regulatory and contractual requirements relevant to information security and the organisation's approach to meet these requirements shall be identified, documented and kept up to date."
+  },
+  {
+    "clauseNumber": "A.5.32",
+    "clauseTitle": "Intellectual property rights",
+    "requirement": "The organisation shall implement appropriate procedures to protect intellectual property rights."
+  },
+  {
+    "clauseNumber": "A.5.33",
+    "clauseTitle": "Protection of records",
+    "requirement": "Records shall be protected from loss, destruction, falsification, unauthorised access and unauthorised release."
+  },
+  {
+    "clauseNumber": "A.5.34",
+    "clauseTitle": "Privacy and protection of personal identifiable information (PII)",
+    "requirement": "The organisation shall identify and meet the requirements regarding the preservation of privacy and protection of PII according to applicable laws and regulations and contractual requirements."
+  },
+  {
+    "clauseNumber": "A.5.35",
+    "clauseTitle": "Independent review of information security",
+    "requirement": "The organisation's approach to managing information security and its implementation including people, processes and technologies shall be reviewed independently at planned intervals or when significant changes occur."
+  },
+  {
+    "clauseNumber": "A.5.36",
+    "clauseTitle": "Compliance with policies, rules and standards for information security",
+    "requirement": "Compliance with the organisation's information security policy, topic-specific policies, rules and standards shall be regularly reviewed."
+  },
+  {
+    "clauseNumber": "A.5.37",
+    "clauseTitle": "Documented operating procedures",
+    "requirement": "Operating procedures for information processing facilities shall be documented and made available to personnel who need them."
+  },
+  {
+    "clauseNumber": "A.6.1",
+    "clauseTitle": "Screening",
+    "requirement": "Background verification checks on all candidates to become personnel shall be carried out prior to joining the organisation and on an ongoing basis taking into account applicable laws, regulations and ethics and be proportional to the business requirements, the classification of the information to be accessed and the perceived risks."
+  },
+  {
+    "clauseNumber": "A.6.2",
+    "clauseTitle": "Terms and conditions of employment",
+    "requirement": "The employment contractual agreements shall state the personnel's and the organisation's responsibilities for information security."
+  },
+  {
+    "clauseNumber": "A.6.3",
+    "clauseTitle": "Information security awareness, education and training",
+    "requirement": "Personnel of the organisation and relevant interested parties shall receive appropriate information security awareness, education and training and regular updates of the organisation's information security policy, topic-specific policies and procedures as relevant for their job function."
+  },
+  {
+    "clauseNumber": "A.6.4",
+    "clauseTitle": "Disciplinary process",
+    "requirement": "A disciplinary process shall be formalised and communicated to take actions against personnel and other relevant interested parties who have committed an information security policy violation."
+  },
+  {
+    "clauseNumber": "A.6.5",
+    "clauseTitle": "Responsibilities after termination or change of employment",
+    "requirement": "Information security responsibilities and duties that remain valid after termination or change of employment shall be defined, enforced and communicated to relevant personnel and other interested parties."
+  },
+  {
+    "clauseNumber": "A.6.6",
+    "clauseTitle": "Confidentiality or non-disclosure agreements",
+    "requirement": "Confidentiality or non-disclosure agreements reflecting the organisation's needs for the protection of information shall be identified, documented, regularly reviewed and signed by personnel and other relevant interested parties."
+  },
+  {
+    "clauseNumber": "A.6.7",
+    "clauseTitle": "Remote working",
+    "requirement": "Security measures shall be implemented when personnel are working remotely to protect information accessed, processed or stored outside the organisation's premises."
+  },
+  {
+    "clauseNumber": "A.6.8",
+    "clauseTitle": "Information security event reporting",
+    "requirement": "The organisation shall provide a mechanism for personnel to report observed or suspected information security events through appropriate channels in a timely manner."
+  },
+  {
+    "clauseNumber": "A.7.1",
+    "clauseTitle": "Physical security perimeters",
+    "requirement": "Security perimeters shall be defined and used to protect areas that contain information and other associated assets."
+  },
+  {
+    "clauseNumber": "A.7.2",
+    "clauseTitle": "Physical entry",
+    "requirement": "Secure areas shall be protected by appropriate entry controls and access points."
+  },
+  {
+    "clauseNumber": "A.7.3",
+    "clauseTitle": "Securing offices, rooms and facilities",
+    "requirement": "Physical security for offices, rooms and facilities shall be designed and implemented."
+  },
+  {
+    "clauseNumber": "A.7.4",
+    "clauseTitle": "Physical security monitoring",
+    "requirement": "Premises shall be continuously monitored for unauthorised physical access."
+  },
+  {
+    "clauseNumber": "A.7.5",
+    "clauseTitle": "Protecting against physical and environmental threats",
+    "requirement": "Protection against physical and environmental threats such as natural disasters and other intentional or unintentional physical threats to infrastructure shall be designed and implemented."
+  },
+  {
+    "clauseNumber": "A.7.6",
+    "clauseTitle": "Working in secure areas",
+    "requirement": "Security measures for working in secure areas shall be designed and implemented."
+  },
+  {
+    "clauseNumber": "A.7.7",
+    "clauseTitle": "Clear desk and clear screen",
+    "requirement": "Clear desk rules for papers and removable storage media and clear screen rules for information processing facilities shall be defined and appropriately enforced."
+  },
+  {
+    "clauseNumber": "A.7.8",
+    "clauseTitle": "Equipment siting and protection",
+    "requirement": "Equipment shall be sited securely and protected."
+  },
+  {
+    "clauseNumber": "A.7.9",
+    "clauseTitle": "Security of assets off-premises",
+    "requirement": "Off-site assets shall be protected."
+  },
+  {
+    "clauseNumber": "A.7.10",
+    "clauseTitle": "Storage media",
+    "requirement": "Storage media shall be managed through their life cycle of acquisition, use, transportation and disposal in accordance with the organisation's classification scheme and handling requirements."
+  },
+  {
+    "clauseNumber": "A.7.11",
+    "clauseTitle": "Supporting utilities",
+    "requirement": "Information processing facilities shall be protected from power failures and other disruptions caused by failures in supporting utilities."
+  },
+  {
+    "clauseNumber": "A.7.12",
+    "clauseTitle": "Cabling security",
+    "requirement": "Cables carrying power, data or supporting information services shall be protected from interception, interference or damage."
+  },
+  {
+    "clauseNumber": "A.7.13",
+    "clauseTitle": "Equipment maintenance",
+    "requirement": "Equipment shall be maintained correctly to ensure availability, integrity and confidentiality of information."
+  },
+  {
+    "clauseNumber": "A.7.14",
+    "clauseTitle": "Secure disposal or re-use of equipment",
+    "requirement": "Items of equipment containing storage media shall be verified to ensure that any sensitive data and licensed software has been removed or securely overwritten prior to disposal or re-use."
+  },
+  {
+    "clauseNumber": "A.8.1",
+    "clauseTitle": "User endpoint devices",
+    "requirement": "Information stored on, processed by or accessible via user endpoint devices shall be protected."
+  },
+  {
+    "clauseNumber": "A.8.2",
+    "clauseTitle": "Privileged access rights",
+    "requirement": "The allocation and use of privileged access rights shall be restricted and managed."
+  },
+  {
+    "clauseNumber": "A.8.3",
+    "clauseTitle": "Information access restriction",
+    "requirement": "Access to information and other associated assets shall be restricted in accordance with the established topic-specific policy on access control."
+  },
+  {
+    "clauseNumber": "A.8.4",
+    "clauseTitle": "Access to source code",
+    "requirement": "Read and write access to source code, development tools and software libraries shall be appropriately managed."
+  },
+  {
+    "clauseNumber": "A.8.5",
+    "clauseTitle": "Secure authentication",
+    "requirement": "Secure authentication technologies and procedures shall be established and implemented based on information access restrictions and the topic-specific policy on access control."
+  },
+  {
+    "clauseNumber": "A.8.6",
+    "clauseTitle": "Capacity management",
+    "requirement": "The use of resources shall be monitored and adjusted in line with current and expected capacity requirements."
+  },
+  {
+    "clauseNumber": "A.8.7",
+    "clauseTitle": "Protection against malware",
+    "requirement": "Protection against malware shall be implemented and supported by appropriate user awareness."
+  },
+  {
+    "clauseNumber": "A.8.8",
+    "clauseTitle": "Management of technical vulnerabilities",
+    "requirement": "Information about technical vulnerabilities of information systems in use shall be obtained, the organisation's exposure to such vulnerabilities shall be evaluated and appropriate measures shall be taken."
+  },
+  {
+    "clauseNumber": "A.8.9",
+    "clauseTitle": "Configuration management",
+    "requirement": "Configurations, including security configurations, of hardware, software, services and networks shall be established, documented, implemented, monitored and reviewed."
+  },
+  {
+    "clauseNumber": "A.8.10",
+    "clauseTitle": "Information deletion",
+    "requirement": "Information stored in information systems, devices or in any other storage media shall be deleted when no longer required."
+  },
+  {
+    "clauseNumber": "A.8.11",
+    "clauseTitle": "Data masking",
+    "requirement": "Data masking shall be used in accordance with the organisation's topic-specific policy on access control and other related topic-specific policies and business requirements, taking applicable legislation into consideration."
+  },
+  {
+    "clauseNumber": "A.8.12",
+    "clauseTitle": "Data leakage prevention",
+    "requirement": "Data leakage prevention measures shall be applied to systems, networks and any other devices that process, store or transmit sensitive information."
+  },
+  {
+    "clauseNumber": "A.8.13",
+    "clauseTitle": "Information backup",
+    "requirement": "Backup copies of information, software and systems shall be maintained and regularly tested in accordance with the agreed topic-specific policy on backup."
+  },
+  {
+    "clauseNumber": "A.8.14",
+    "clauseTitle": "Redundancy of information processing facilities",
+    "requirement": "Information processing facilities shall be implemented with redundancy sufficient to meet availability requirements."
+  },
+  {
+    "clauseNumber": "A.8.15",
+    "clauseTitle": "Logging",
+    "requirement": "Logs that record activities, exceptions, faults and other relevant events shall be produced, stored, protected and analysed."
+  },
+  {
+    "clauseNumber": "A.8.16",
+    "clauseTitle": "Monitoring activities",
+    "requirement": "Networks, systems and applications shall be monitored for anomalous behaviour and appropriate actions taken to evaluate potential information security incidents."
+  },
+  {
+    "clauseNumber": "A.8.17",
+    "clauseTitle": "Clock synchronisation",
+    "requirement": "The clocks of information processing systems used by the organisation shall be synchronised to approved time sources."
+  },
+  {
+    "clauseNumber": "A.8.18",
+    "clauseTitle": "Use of privileged utility programs",
+    "requirement": "The use of utility programs that can be capable of overriding system and application controls shall be restricted and tightly controlled."
+  },
+  {
+    "clauseNumber": "A.8.19",
+    "clauseTitle": "Installation of software on operational systems",
+    "requirement": "Procedures and measures shall be implemented to securely manage software installation on operational systems."
+  },
+  {
+    "clauseNumber": "A.8.20",
+    "clauseTitle": "Networks security",
+    "requirement": "Networks and network devices shall be secured, managed and controlled to protect information in systems and applications."
+  },
+  {
+    "clauseNumber": "A.8.21",
+    "clauseTitle": "Security of network services",
+    "requirement": "Security mechanisms, service levels and service requirements of network services shall be identified, implemented and monitored."
+  },
+  {
+    "clauseNumber": "A.8.22",
+    "clauseTitle": "Segregation of networks",
+    "requirement": "Groups of information services, users and information systems shall be segregated in the organisation's networks."
+  },
+  {
+    "clauseNumber": "A.8.23",
+    "clauseTitle": "Web filtering",
+    "requirement": "Access to external websites shall be managed to reduce exposure to malicious content."
+  },
+  {
+    "clauseNumber": "A.8.24",
+    "clauseTitle": "Use of cryptography",
+    "requirement": "Rules for the effective use of cryptography, including cryptographic key management, shall be defined and implemented."
+  },
+  {
+    "clauseNumber": "A.8.25",
+    "clauseTitle": "Secure development life cycle",
+    "requirement": "Rules for the secure development of software and systems shall be established and applied."
+  },
+  {
+    "clauseNumber": "A.8.26",
+    "clauseTitle": "Application security requirements",
+    "requirement": "Information security requirements shall be identified, specified and approved when developing or acquiring applications."
+  },
+  {
+    "clauseNumber": "A.8.27",
+    "clauseTitle": "Secure system architecture and engineering principles",
+    "requirement": "Principles for engineering secure systems shall be established, documented, maintained and applied to any information system development activities."
+  },
+  {
+    "clauseNumber": "A.8.28",
+    "clauseTitle": "Secure coding",
+    "requirement": "Secure coding principles shall be applied to software development."
+  },
+  {
+    "clauseNumber": "A.8.29",
+    "clauseTitle": "Security testing in development and acceptance",
+    "requirement": "Security testing processes shall be defined and implemented in the development life cycle."
+  },
+  {
+    "clauseNumber": "A.8.30",
+    "clauseTitle": "Outsourced development",
+    "requirement": "The organisation shall direct, monitor and review the activities related to outsourced system development."
+  },
+  {
+    "clauseNumber": "A.8.31",
+    "clauseTitle": "Separation of development, test and production environments",
+    "requirement": "Development, testing and production environments shall be separated and secured."
+  },
+  {
+    "clauseNumber": "A.8.32",
+    "clauseTitle": "Change management",
+    "requirement": "Changes to information processing facilities and information systems shall be subject to change management procedures."
+  },
+  {
+    "clauseNumber": "A.8.33",
+    "clauseTitle": "Test information",
+    "requirement": "Test information shall be appropriately selected, protected and managed."
+  },
+  {
+    "clauseNumber": "A.8.34",
+    "clauseTitle": "Protection of information systems during audit testing",
+    "requirement": "Audit tests and other assurance activities involving assessment of operational systems shall be planned and agreed between the tester and appropriate management."
+  }
+]

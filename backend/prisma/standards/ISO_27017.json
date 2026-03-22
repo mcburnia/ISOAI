@@ -1,0 +1,177 @@
+[
+  {
+    "clauseNumber": "CLD.6.3.1",
+    "clauseTitle": "Shared roles and responsibilities within a cloud computing environment",
+    "requirement": "The cloud service provider and cloud service customer shall define and document shared responsibilities for information security controls, clearly allocating roles for implementation and management of each control within the cloud computing environment."
+  },
+  {
+    "clauseNumber": "CLD.8.1.5",
+    "clauseTitle": "Removal of cloud service customer assets",
+    "requirement": "The cloud service provider shall provide the cloud service customer with the ability to retrieve and securely delete their assets, including data and virtual resources, upon termination or expiration of the service agreement."
+  },
+  {
+    "clauseNumber": "CLD.9.5.1",
+    "clauseTitle": "Segregation in virtual computing environments",
+    "requirement": "The cloud service provider shall implement appropriate segregation between cloud service customers in multi-tenant virtual computing environments, ensuring that one customer's data and processing cannot be accessed by another customer."
+  },
+  {
+    "clauseNumber": "CLD.9.5.2",
+    "clauseTitle": "Virtual machine hardening",
+    "requirement": "The cloud service provider shall configure and harden virtual machines used to provide cloud services, applying security baselines, disabling unnecessary services, and implementing integrity monitoring mechanisms."
+  },
+  {
+    "clauseNumber": "CLD.12.1.5",
+    "clauseTitle": "Administrator's operational security",
+    "requirement": "The cloud service provider shall define and implement operational procedures for administrative operations that can affect cloud service customer information security, including privileged access controls and audit logging of administrative activities."
+  },
+  {
+    "clauseNumber": "CLD.12.4.5",
+    "clauseTitle": "Monitoring of cloud services",
+    "requirement": "The cloud service customer shall have the capability to monitor specified aspects of the operation of cloud services that the customer uses, and the cloud service provider shall provide monitoring capabilities and access to relevant logs."
+  },
+  {
+    "clauseNumber": "CLD.13.1.4",
+    "clauseTitle": "Alignment of security management for virtual and physical networks",
+    "requirement": "The cloud service provider shall define and implement a policy for the consistent management of virtual and physical network security, ensuring that virtual network configurations are subject to the same rigor as physical network controls."
+  },
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "Information security policies for cloud services",
+    "requirement": "The organization shall define and implement information security policies that address the specific risks and requirements of cloud service provision or consumption, including policies for data residency, multi-tenancy, and shared security responsibilities."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Internal organization — Cloud service information security",
+    "requirement": "The organization shall define information security roles and responsibilities specific to cloud computing, including clear allocation of duties between cloud service providers and customers for security controls implementation."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Mobile devices and teleworking — Cloud service considerations",
+    "requirement": "The organization shall address risks associated with accessing cloud services from mobile devices and teleworking environments, implementing appropriate authentication and access controls for remote cloud service access."
+  },
+  {
+    "clauseNumber": "7.1",
+    "clauseTitle": "Human resource security — Prior to employment for cloud services",
+    "requirement": "The organization shall include cloud service-specific security responsibilities in employment terms and conditions, ensuring personnel involved in cloud service delivery or consumption are aware of their information security obligations."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "Human resource security — During employment for cloud services",
+    "requirement": "The organization shall ensure that employees and contractors involved in cloud service operations receive appropriate awareness education and training on cloud-specific information security policies and procedures."
+  },
+  {
+    "clauseNumber": "8.1",
+    "clauseTitle": "Asset management — Responsibility for assets in cloud services",
+    "requirement": "The organization shall identify and maintain an inventory of cloud service customer data and assets stored within the cloud environment, assigning ownership and classification responsibilities that account for shared cloud infrastructure."
+  },
+  {
+    "clauseNumber": "8.2",
+    "clauseTitle": "Asset management — Information classification for cloud services",
+    "requirement": "The organization shall classify information processed and stored in cloud services according to its sensitivity and criticality, and implement appropriate protection measures consistent with the classification in the cloud environment."
+  },
+  {
+    "clauseNumber": "9.1",
+    "clauseTitle": "Access control — Business requirements for cloud services",
+    "requirement": "The organization shall establish and implement an access control policy for cloud services that addresses cloud-specific risks, including multi-tenant access isolation, federated identity management, and cloud administrative access controls."
+  },
+  {
+    "clauseNumber": "9.2",
+    "clauseTitle": "Access control — User access management for cloud services",
+    "requirement": "The organization shall implement formal user registration and de-registration processes for granting and revoking access to cloud services, including provisioning and de-provisioning of cloud service customer user accounts."
+  },
+  {
+    "clauseNumber": "9.3",
+    "clauseTitle": "Access control — User responsibilities in cloud services",
+    "requirement": "The organization shall require cloud service users to follow secure authentication practices, including the use of strong authentication credentials and multi-factor authentication where appropriate for cloud service access."
+  },
+  {
+    "clauseNumber": "9.4",
+    "clauseTitle": "Access control — System and application access for cloud services",
+    "requirement": "The organization shall restrict and control access to cloud service systems and applications using secure log-on procedures, appropriate password management, and access control mechanisms that enforce the principle of least privilege."
+  },
+  {
+    "clauseNumber": "10.1",
+    "clauseTitle": "Cryptography — Cryptographic controls for cloud services",
+    "requirement": "The organization shall implement a policy on the use of cryptographic controls for protection of information in cloud services, including encryption of data at rest and in transit, and management of cryptographic keys throughout their lifecycle."
+  },
+  {
+    "clauseNumber": "11.1",
+    "clauseTitle": "Physical and environmental security — Secure areas for cloud services",
+    "requirement": "The cloud service provider shall implement physical security perimeters and controls to protect areas housing cloud infrastructure, and shall provide cloud service customers with relevant information about the physical security measures in place."
+  },
+  {
+    "clauseNumber": "11.2",
+    "clauseTitle": "Physical and environmental security — Equipment for cloud services",
+    "requirement": "The cloud service provider shall protect cloud infrastructure equipment from physical and environmental threats, and implement secure disposal and reuse procedures that prevent unauthorized recovery of cloud service customer data."
+  },
+  {
+    "clauseNumber": "12.1",
+    "clauseTitle": "Operations security — Operational procedures for cloud services",
+    "requirement": "The organization shall document and implement operational procedures for the management of cloud computing infrastructure, including change management, capacity management, and separation of development, testing, and operational environments."
+  },
+  {
+    "clauseNumber": "12.2",
+    "clauseTitle": "Operations security — Protection from malware in cloud services",
+    "requirement": "The organization shall implement detection, prevention, and recovery controls to protect against malware in cloud computing environments, including monitoring of cloud workloads and virtual infrastructure for malicious activity."
+  },
+  {
+    "clauseNumber": "12.3",
+    "clauseTitle": "Operations security — Backup for cloud services",
+    "requirement": "The organization shall implement backup procedures for cloud service customer data in accordance with agreed backup policies, and the cloud service provider shall communicate backup capabilities, limitations, and responsibilities to customers."
+  },
+  {
+    "clauseNumber": "12.4",
+    "clauseTitle": "Operations security — Logging and monitoring for cloud services",
+    "requirement": "The organization shall produce, maintain, and regularly review event logs recording user activities, exceptions, faults, and information security events within the cloud environment, and make relevant logs available to cloud service customers."
+  },
+  {
+    "clauseNumber": "13.1",
+    "clauseTitle": "Communications security — Network security for cloud services",
+    "requirement": "The organization shall manage and control networks used for cloud services to protect information in transit, implementing segregation in networks, and ensuring that virtual network security configurations are maintained and monitored."
+  },
+  {
+    "clauseNumber": "13.2",
+    "clauseTitle": "Communications security — Information transfer in cloud services",
+    "requirement": "The organization shall implement policies and procedures to protect the transfer of information to and from cloud services, using secure communication protocols and encryption appropriate to the classification of the information."
+  },
+  {
+    "clauseNumber": "14.1",
+    "clauseTitle": "System acquisition, development and maintenance — Security requirements for cloud services",
+    "requirement": "The organization shall include information security requirements specific to cloud services in the requirements analysis for new systems or enhancements, addressing cloud API security, data isolation, and secure cloud application development."
+  },
+  {
+    "clauseNumber": "14.2",
+    "clauseTitle": "System acquisition, development and maintenance — Development security for cloud services",
+    "requirement": "The organization shall establish and apply rules for the secure development of cloud-based applications and systems, including secure coding practices, cloud-specific vulnerability testing, and secure deployment procedures."
+  },
+  {
+    "clauseNumber": "15.1",
+    "clauseTitle": "Supplier relationships — Information security in cloud supplier relationships",
+    "requirement": "The organization shall establish and agree upon information security requirements with cloud service providers, documenting these in service agreements that address data protection, security controls, audit rights, and incident notification."
+  },
+  {
+    "clauseNumber": "15.2",
+    "clauseTitle": "Supplier relationships — Cloud service delivery management",
+    "requirement": "The organization shall regularly monitor, review, and audit cloud service provider service delivery to ensure that information security terms and conditions of agreements are being met, and manage changes to cloud services."
+  },
+  {
+    "clauseNumber": "16.1",
+    "clauseTitle": "Information security incident management for cloud services",
+    "requirement": "The organization shall establish responsibilities and procedures for managing information security incidents in the cloud environment, including clear communication channels between cloud service providers and customers for incident reporting and response."
+  },
+  {
+    "clauseNumber": "17.1",
+    "clauseTitle": "Business continuity management — Information security continuity for cloud services",
+    "requirement": "The organization shall plan, implement, and verify information security continuity for cloud services, including redundancy arrangements, failover mechanisms, and recovery procedures to ensure availability of cloud-based systems."
+  },
+  {
+    "clauseNumber": "18.1",
+    "clauseTitle": "Compliance — Legal requirements for cloud services",
+    "requirement": "The organization shall identify and document all relevant legislative, regulatory, and contractual requirements related to cloud services, including data residency requirements, cross-border data transfer restrictions, and applicable privacy laws."
+  },
+  {
+    "clauseNumber": "18.2",
+    "clauseTitle": "Compliance — Information security reviews for cloud services",
+    "requirement": "The organization shall conduct regular independent reviews of its approach to managing information security for cloud services, and shall have the right to audit or obtain evidence of cloud service provider compliance with agreed security requirements."
+  }
+]

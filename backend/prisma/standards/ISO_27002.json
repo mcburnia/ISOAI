@@ -1,0 +1,467 @@
+[
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "Policies for information security",
+    "requirement": "An information security policy and topic-specific policies should be defined, approved by management, published, communicated to and acknowledged by relevant personnel and interested parties. Policies should be reviewed at planned intervals or when significant changes occur to ensure their continuing suitability, adequacy and effectiveness. Policies should address the organisation's strategy, requirements, legislation and contracts, and the current and projected information security threat environment."
+  },
+  {
+    "clauseNumber": "5.2",
+    "clauseTitle": "Information security roles and responsibilities",
+    "requirement": "Information security roles and responsibilities should be defined and allocated. Responsibilities should be assigned for the protection of individual assets and for carrying out specific information security processes. Responsibilities for information security risk management activities and in particular for acceptance of residual risks should be defined. Roles should be supplemented with guidance on expected competencies where necessary."
+  },
+  {
+    "clauseNumber": "5.3",
+    "clauseTitle": "Segregation of duties",
+    "requirement": "Conflicting duties and areas of responsibility should be segregated to reduce the risk of fraud, error and bypassing of information security controls. No single person should be able to access, modify or use assets without authorisation or detection. The initiation of an event should be separated from its authorisation. Where segregation is difficult, compensating controls such as monitoring of activities, audit trails and management supervision should be considered."
+  },
+  {
+    "clauseNumber": "5.4",
+    "clauseTitle": "Management responsibilities",
+    "requirement": "Management should require all personnel to apply information security in accordance with established policies and procedures. Management should ensure that personnel are properly briefed on their information security roles before being granted access to information systems, are provided with guidelines stating the information security expectations of their role, achieve the level of awareness and competence relevant to their role, and conform to the conditions of employment or contract."
+  },
+  {
+    "clauseNumber": "5.5",
+    "clauseTitle": "Contact with authorities",
+    "requirement": "The organisation should establish and maintain contact with relevant authorities such as law enforcement, regulatory bodies and supervisory authorities. Contact with authorities should be proactively maintained to anticipate and prepare for upcoming legal or regulatory changes. These contacts should also facilitate timely reporting of information security incidents and support response to incidents through legal or regulatory guidance."
+  },
+  {
+    "clauseNumber": "5.6",
+    "clauseTitle": "Contact with special interest groups",
+    "requirement": "The organisation should establish and maintain contact with special interest groups, security forums and professional associations. Membership in special interest groups or forums should be considered as a means to stay current with best practices and receive early warning of alerts and advisories, gain access to specialist information security advice, share and exchange information about new technologies and threats, and provide suitable liaison points when dealing with information security incidents."
+  },
+  {
+    "clauseNumber": "5.7",
+    "clauseTitle": "Threat intelligence",
+    "requirement": "Information relating to information security threats should be collected and analysed to produce threat intelligence. This should include establishing objectives for threat intelligence production, identifying and selecting relevant and trustworthy information sources both internal and external, collecting information from selected sources, processing collected information to prepare it for analysis, analysing information to understand how threats relate to the organisation, and communicating and sharing threat intelligence with relevant individuals in a useful format."
+  },
+  {
+    "clauseNumber": "5.8",
+    "clauseTitle": "Information security in project management",
+    "requirement": "Information security should be integrated into project management for all types of projects. Information security risks should be addressed early in project management to ensure appropriate controls are identified. Information security requirements should be included in all phases of the project methodology. Information security objectives should be considered in project objectives and a risk assessment should be performed at an early stage to identify necessary controls."
+  },
+  {
+    "clauseNumber": "5.9",
+    "clauseTitle": "Inventory of information and other associated assets",
+    "requirement": "An inventory of information and other associated assets including owners should be developed and maintained. Assets should be identified and documented, ownership should be assigned, and acceptable use rules should be applied. Owners should be responsible for proper management of an asset over the complete asset life cycle, ensuring assets are inventoried, appropriately classified and protected, and properly handled when deleted or destroyed."
+  },
+  {
+    "clauseNumber": "5.10",
+    "clauseTitle": "Acceptable use of information and other associated assets",
+    "requirement": "Rules for the acceptable use and procedures for handling information and other associated assets should be identified, documented and implemented. Personnel and external party users using or having access to the organisation's assets should be made aware of the information security requirements for the use of assets. They should be responsible for their use of any information processing resources and such use should be carried out under their accountability."
+  },
+  {
+    "clauseNumber": "5.11",
+    "clauseTitle": "Return of assets",
+    "requirement": "Personnel and other interested parties should return all organisational assets in their possession upon change or termination of employment, contract or agreement. The process should be formalised to include the return of physical and electronic assets, knowledge transfer of important information, controlled transfer of information from personal devices during a notice period, and prevention of unauthorised copying of information. Where assets are not returned, appropriate measures should be taken."
+  },
+  {
+    "clauseNumber": "5.12",
+    "clauseTitle": "Classification of information",
+    "requirement": "Information should be classified according to the information security needs of the organisation based on confidentiality, integrity and availability requirements. The classification scheme should include conventions for classification and criteria for review of classification over time. Levels of classification should be defined considering the legal requirements, value, criticality and sensitivity of information to unauthorised disclosure or modification. The classification scheme should be consistent across the organisation."
+  },
+  {
+    "clauseNumber": "5.13",
+    "clauseTitle": "Labelling of information",
+    "requirement": "An appropriate set of procedures for information labelling should be developed and implemented in accordance with the classification scheme. Labelling procedures should cover information and associated assets in physical and electronic formats. Labels should be easily recognisable. Procedures should define where and how labels are attached considering the type of media and how the information is accessed. Employees and contractors should be trained in labelling procedures."
+  },
+  {
+    "clauseNumber": "5.14",
+    "clauseTitle": "Information transfer",
+    "requirement": "Information transfer rules, procedures or agreements should be in place for all types of transfer facilities. Rules and procedures should consider protections commensurate with the classification of the information involved, the type of transfer facility used, and the applicable legislation. Formal transfer policies and procedures should address protecting transferred information from interception, copying, modification, mis-routing and destruction, detecting and protecting against malware, and use of encryption."
+  },
+  {
+    "clauseNumber": "5.15",
+    "clauseTitle": "Access control",
+    "requirement": "Rules to control physical and logical access to information and other associated assets should be established and implemented based on business and information security requirements. An access control policy should be established that addresses the needs of business applications, consistency between the access rights and information classification scheme, relevant legislation and contractual obligations, management of access rights in a distributed and networked environment, segregation of access control roles, and formal authorisation of access requests."
+  },
+  {
+    "clauseNumber": "5.16",
+    "clauseTitle": "Identity management",
+    "requirement": "The full life cycle of identities should be managed. This should include verifying the identity of users before providing them with system access, establishing a unique user identity for each user, disabling or removing identities of users who have left the organisation, detecting and preventing the use of duplicate identities, and managing supplementary identities only when a business need exists. Records of all significant events concerning the use and management of identities should be maintained."
+  },
+  {
+    "clauseNumber": "5.17",
+    "clauseTitle": "Authentication information",
+    "requirement": "Allocation and management of authentication information should be controlled by a management process. The allocation should include verifying the user identity prior to providing new or replacement authentication information, ensuring authentication information is generated to be sufficiently strong, establishing procedures for initial provisioning and regular changes, maintaining records of all allocated authentication information, and changing default authentication information. Users should be advised to keep authentication information confidential."
+  },
+  {
+    "clauseNumber": "5.18",
+    "clauseTitle": "Access rights",
+    "requirement": "Access rights to information and other associated assets should be provisioned, reviewed, modified and removed in a controlled manner. Provisioning of access rights should follow a formal process covering authorisation from the asset owner, consideration of business requirements, consistency with the access control policy, review at appropriate intervals, and timely removal when no longer needed. A comprehensive review of access rights should be conducted at regular intervals and after any changes in employment."
+  },
+  {
+    "clauseNumber": "5.19",
+    "clauseTitle": "Information security in supplier relationships",
+    "requirement": "Processes and procedures should be defined and implemented to manage the information security risks associated with suppliers. This should include identifying and documenting the types of suppliers that can affect information security, establishing a standard set of information security requirements for supplier relationships, assessing and selecting suppliers based on their ability to meet security requirements, and defining processes for monitoring and controlling supplier compliance."
+  },
+  {
+    "clauseNumber": "5.20",
+    "clauseTitle": "Addressing information security within supplier agreements",
+    "requirement": "Relevant information security requirements should be established and agreed with each supplier based on the type of supplier relationship. Agreements should include a description of information to be accessed, classification of information, legal and regulatory requirements, obligations of each party, incident management procedures, relevant clauses about subcontracting, right to audit and monitor, termination and transition support, and responsibilities for installation and maintenance of software and hardware."
+  },
+  {
+    "clauseNumber": "5.21",
+    "clauseTitle": "Managing information security in the ICT supply chain",
+    "requirement": "Processes and procedures should be defined and implemented to manage information security risks in the ICT supply chain. This should include requiring that suppliers propagate appropriate security practices throughout the supply chain, defining security requirements for the acquisition of ICT products and services, requiring suppliers to provide evidence that adequate controls are in place, monitoring designated supply chain security attributes of delivered ICT components, and implementing processes for handling components that fail security checks."
+  },
+  {
+    "clauseNumber": "5.22",
+    "clauseTitle": "Monitoring, review and change management of supplier services",
+    "requirement": "The organisation should regularly monitor, review, evaluate and manage change in supplier information security practices and service delivery. Monitoring and review should include service performance levels, security incident reports, audit trails and records of security events, operational issues and failures, identification of information security incidents, and response to identified concerns. Management of changes to supplier services should cover changes to supplier agreements, changes in business relationships, and changes to existing supplier technology and infrastructure."
+  },
+  {
+    "clauseNumber": "5.23",
+    "clauseTitle": "Information security for use of cloud services",
+    "requirement": "Processes for acquisition, use, management and exit from cloud services should be established in accordance with information security requirements. This should include defining cloud service selection criteria, establishing roles and responsibilities for cloud service use, determining which controls are managed by the cloud service customer versus the cloud service provider, defining procedures for managing information security incidents involving cloud services, and developing exit strategies to ensure continuity and secure removal of data."
+  },
+  {
+    "clauseNumber": "5.24",
+    "clauseTitle": "Information security incident management planning and preparation",
+    "requirement": "The organisation should plan and prepare for managing information security incidents by defining processes, roles and responsibilities. Preparation should include establishing an incident management policy and procedures, defining roles for incident response team members, defining communication channels, establishing criteria for escalation and severity levels, developing playbooks for common incident types, and conducting regular incident response training and exercises."
+  },
+  {
+    "clauseNumber": "5.25",
+    "clauseTitle": "Assessment and decision on information security events",
+    "requirement": "The organisation should assess information security events and decide if they are to be categorised as incidents. Assessment should include triaging events against an established classification scheme, determining the potential impact and scope, deciding whether the event should be treated as an information security incident, and recording all assessments and decisions. A common classification scheme should be used to enable consistent assessment and response across the organisation."
+  },
+  {
+    "clauseNumber": "5.26",
+    "clauseTitle": "Response to information security incidents",
+    "requirement": "Information security incidents should be responded to in accordance with documented procedures. Response activities should include containing the incident to prevent further damage, eradicating the cause of the incident, recovering affected systems and data, preserving evidence for analysis and potential legal proceedings, communicating with relevant internal and external parties, escalating as required, and ensuring that all response activities are logged and documented."
+  },
+  {
+    "clauseNumber": "5.27",
+    "clauseTitle": "Learning from information security incidents",
+    "requirement": "Knowledge gained from information security incidents should be used to strengthen and improve the information security controls. Post-incident reviews should be conducted to identify the root cause, determine whether existing controls failed or were inadequate, identify improvements to controls, policies or procedures, share lessons learned with relevant parties, and update the risk assessment and incident management processes as needed."
+  },
+  {
+    "clauseNumber": "5.28",
+    "clauseTitle": "Collection of evidence",
+    "requirement": "The organisation should establish and implement procedures for the identification, collection, acquisition and preservation of evidence related to information security events. Procedures should address processes for the chain of custody of evidence, secure storage and handling of evidence, use of trusted tools and methods for evidence collection, documentation of forensic processes, and timely collection of volatile evidence. Evidence should be handled in a manner that maintains its admissibility and integrity."
+  },
+  {
+    "clauseNumber": "5.29",
+    "clauseTitle": "Information security during disruption",
+    "requirement": "The organisation should plan how to maintain information security at an appropriate level during disruption. Information security requirements should be included in business continuity and disaster recovery planning. In the absence of established business continuity and disaster recovery plans, information security management should assume that normal security requirements remain in place during disruption. Compensating controls should be established for any security controls that cannot operate during a disruption."
+  },
+  {
+    "clauseNumber": "5.30",
+    "clauseTitle": "ICT readiness for business continuity",
+    "requirement": "ICT readiness should be planned, implemented, maintained and tested based on business continuity objectives and ICT continuity requirements. ICT continuity plans should include identification of critical ICT services, recovery time objectives and recovery point objectives, implementation of ICT facilities capable of meeting continuity requirements, regular testing of ICT continuity plans, and review and update of continuity arrangements following testing or activation."
+  },
+  {
+    "clauseNumber": "5.31",
+    "clauseTitle": "Legal, statutory, regulatory and contractual requirements",
+    "requirement": "Legal, statutory, regulatory and contractual requirements relevant to information security should be identified, documented and kept up to date. The specific controls and individual responsibilities to meet these requirements should be defined and documented. Managers should identify all legislation applicable to their organisation in order to meet the requirements for their type of business. The organisation should implement appropriate measures to comply with the identified requirements."
+  },
+  {
+    "clauseNumber": "5.32",
+    "clauseTitle": "Intellectual property rights",
+    "requirement": "The organisation should implement appropriate procedures to protect intellectual property rights. This should include establishing a policy on compliance with intellectual property rights, acquiring software only through known and reputable sources, maintaining awareness of policies to protect intellectual property rights, maintaining proof of ownership of licences and master disks, implementing controls to ensure that the maximum number of licensed users is not exceeded, and conducting checks that only authorised software and licensed products are installed."
+  },
+  {
+    "clauseNumber": "5.33",
+    "clauseTitle": "Protection of records",
+    "requirement": "Records should be protected from loss, destruction, falsification, unauthorised access and unauthorised release. The protection measures should consider classification of records, retention schedules, permitted storage media, access controls on records, technology to prevent deterioration of storage media, chain of custody tracking, approved destruction methods, and compliance with legal and regulatory requirements for records management."
+  },
+  {
+    "clauseNumber": "5.34",
+    "clauseTitle": "Privacy and protection of personal identifiable information (PII)",
+    "requirement": "The organisation should identify and meet the requirements regarding the preservation of privacy and protection of PII. This should include developing and implementing a data privacy policy, identifying applicable privacy legislation and regulations, appointing a privacy officer where necessary, implementing appropriate technical and organisational measures, establishing procedures for responding to data subject requests, conducting data protection impact assessments, and ensuring third-party processors provide adequate privacy protections."
+  },
+  {
+    "clauseNumber": "5.35",
+    "clauseTitle": "Independent review of information security",
+    "requirement": "The organisation's approach to managing information security should be reviewed independently at planned intervals or when significant changes occur. Reviews should cover the information security policy and topic-specific policies, procedures and controls. Reviews should be initiated by management and carried out by individuals independent of the area under review, such as internal audit, an independent manager or an external organisation. Results should be reported to management and records maintained."
+  },
+  {
+    "clauseNumber": "5.36",
+    "clauseTitle": "Compliance with policies, rules and standards for information security",
+    "requirement": "Compliance with the organisation's information security policy, topic-specific policies, rules and standards should be regularly reviewed. Managers should regularly verify that information processing and procedures within their area of responsibility comply with the appropriate policies, standards and technical requirements. If any non-compliance is found, managers should determine causes, evaluate the need for corrective actions, implement appropriate corrective actions, and review the corrective actions taken."
+  },
+  {
+    "clauseNumber": "5.37",
+    "clauseTitle": "Documented operating procedures",
+    "requirement": "Operating procedures for information processing facilities should be documented and made available to personnel who need them. Procedures should be prepared for system start-up and close-down, backup, equipment maintenance, media handling, computer room and mail handling management, safety, and special handling instructions. Operating procedures and documented procedures for system activities should be treated as formal documents and changes should be authorised by management."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Screening",
+    "requirement": "Background verification checks on all candidates should be carried out prior to joining the organisation and on an ongoing basis. Screening should take into account applicable laws, regulations and ethics and be proportional to the business requirements, the classification of information to be accessed and the perceived risks. Verification should include identity confirmation, completeness and accuracy of application details, professional and academic qualifications, independent identity check and further detailed checks such as credit and criminal record checks where appropriate."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Terms and conditions of employment",
+    "requirement": "Employment contractual agreements should state the personnel's and the organisation's responsibilities for information security. Contractual obligations should cover the legal responsibilities for copyright and data protection legislation, responsibilities for the classification and management of information, responsibilities for the handling of information received from other companies or external parties, actions to be taken if the employee disregards security requirements, and responsibilities that extend beyond the organisation's premises and outside normal working hours."
+  },
+  {
+    "clauseNumber": "6.3",
+    "clauseTitle": "Information security awareness, education and training",
+    "requirement": "Personnel of the organisation and relevant interested parties should receive appropriate information security awareness, education and training. An awareness programme should provide regular updates on the organisation's information security policies and procedures relevant to job functions, legal responsibilities, applicable controls, correct use of information processing facilities, reporting processes for security events, and consequences of information security policy violations. Training should be provided upon joining, at regular intervals and when policies or technologies change."
+  },
+  {
+    "clauseNumber": "6.4",
+    "clauseTitle": "Disciplinary process",
+    "requirement": "A formal and communicated disciplinary process should be in place to take actions against personnel who have committed an information security policy violation. The process should provide for a graduated response that takes into account factors such as the nature and severity of the breach, whether it was a first or repeated offence, whether the violator was properly trained, and relevant legislation and business contracts. The disciplinary process should be used as a deterrent to prevent personnel from violating policies."
+  },
+  {
+    "clauseNumber": "6.5",
+    "clauseTitle": "Responsibilities after termination or change of employment",
+    "requirement": "Information security responsibilities and duties that remain valid after termination or change of employment should be defined, enforced and communicated. This should include ongoing obligations regarding confidential information, intellectual property, non-disclosure agreements, knowledge of organisational systems, and retention of documentation. The organisation should manage changes in responsibilities to ensure that current security arrangements are considered and that knowledge transfer occurs appropriately."
+  },
+  {
+    "clauseNumber": "6.6",
+    "clauseTitle": "Confidentiality or non-disclosure agreements",
+    "requirement": "Confidentiality or non-disclosure agreements reflecting the organisation's needs for information protection should be identified, documented, regularly reviewed and signed. Agreements should define the information to be protected, expected duration, required actions on termination, responsibilities and actions of signatories to avoid unauthorised disclosure, ownership of information and intellectual property, permitted use of confidential information, the right to audit and monitor activities involving confidential information, and processes for notification of unauthorised disclosure or breach."
+  },
+  {
+    "clauseNumber": "6.7",
+    "clauseTitle": "Remote working",
+    "requirement": "Security measures should be implemented when personnel are working remotely. The organisation should establish a topic-specific policy and supporting security measures for remote working that address physical security of the remote working site, secure communications, threat of unauthorised access to information or resources, use of home networks and public wireless networks, use of personal devices, provision of suitable equipment and furniture, insurance and maintenance, backup and business continuity procedures, audit and security monitoring, and revocation of authority and access rights upon termination of remote working."
+  },
+  {
+    "clauseNumber": "6.8",
+    "clauseTitle": "Information security event reporting",
+    "requirement": "The organisation should provide a mechanism for personnel to report observed or suspected information security events through appropriate channels in a timely manner. All personnel should be made aware of their responsibility to report information security events as quickly as possible. The reporting mechanism should be easy to use and accessible, and feedback should be provided to reporters. Events to report should include ineffective controls, breaches of confidentiality integrity or availability expectations, human errors, non-compliance with policies, physical security breaches, and uncontrolled system changes."
+  },
+  {
+    "clauseNumber": "7.1",
+    "clauseTitle": "Physical security perimeters",
+    "requirement": "Security perimeters should be defined and used to protect areas that contain information and other associated assets. Consideration should be given to defining security perimeters and their strength depending on the security requirements of the assets within the perimeter and on risk assessment results. Perimeters of a building or site containing information processing facilities should be physically sound with no gaps, external walls should be of solid construction, and entry points should be controlled. Suitable intruder detection systems should be installed and regularly tested."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "Physical entry",
+    "requirement": "Secure areas should be protected by appropriate entry controls and access points to ensure that only authorised personnel are allowed access. Controls should include authentication mechanisms for authorised personnel such as access cards and biometrics, visitor logs and supervision of visitors, requirements for all personnel to wear visible identification, access to areas where sensitive information is processed or stored being restricted to authorised individuals only, and regular review and update of access rights."
+  },
+  {
+    "clauseNumber": "7.3",
+    "clauseTitle": "Securing offices, rooms and facilities",
+    "requirement": "Physical security for offices, rooms and facilities should be designed and implemented. Consideration should be given to locating key facilities to avoid access by the public, ensuring buildings are unobtrusive and give minimum indication of their purpose where applicable, configuring facilities so that sensitive information cannot be seen or heard from outside, using sound insulation or masking where necessary, and implementing appropriate physical access controls for offices rooms and facilities commensurate with the risk assessment."
+  },
+  {
+    "clauseNumber": "7.4",
+    "clauseTitle": "Physical security monitoring",
+    "requirement": "Premises should be continuously monitored for unauthorised physical access. Monitoring should be implemented using surveillance systems such as CCTV, physical intrusion detection systems including door contacts and motion sensors, and guards and patrols. Monitoring systems should cover entrances, exits, restricted areas and information processing facilities. Access to monitoring systems should be protected against unauthorised access and the monitoring system itself should be monitored for tampering."
+  },
+  {
+    "clauseNumber": "7.5",
+    "clauseTitle": "Protecting against physical and environmental threats",
+    "requirement": "Protection against physical and environmental threats should be designed and implemented. Specialist advice should be obtained on how to avoid damage from fire, flood, earthquake, explosion, civil unrest and other forms of natural or man-made disaster. This should include physical protection measures such as fire detection and suppression systems, flood and water damage prevention, lightning protection, and protection against explosion. Business continuity plans should address the restoration of information processing facilities after physical or environmental damage."
+  },
+  {
+    "clauseNumber": "7.6",
+    "clauseTitle": "Working in secure areas",
+    "requirement": "Security measures for working in secure areas should be designed and implemented. These should include making personnel aware of the existence of and activities within a secure area only on a need to know basis, avoiding unsupervised working in secure areas for both safety reasons and to prevent opportunities for malicious activities, physically locking and periodically inspecting vacant secure areas, prohibiting personally owned recording equipment unless specifically authorised, and establishing clear rules about what activities are permitted within the secure area."
+  },
+  {
+    "clauseNumber": "7.7",
+    "clauseTitle": "Clear desk and clear screen",
+    "requirement": "Clear desk rules for papers and removable storage media and clear screen rules for information processing facilities should be defined and enforced. This should include storing business critical or sensitive information in lockable containers when not required, logging off or protecting computers with screen lock mechanisms when unattended, protecting printers and facsimile machines from unauthorised access, using envelopes or locked containers for sensitive mail, removing sensitive or classified information from printers immediately, and securing whiteboards and displays from unauthorised viewing."
+  },
+  {
+    "clauseNumber": "7.8",
+    "clauseTitle": "Equipment siting and protection",
+    "requirement": "Equipment should be sited securely and protected to reduce risks from environmental threats and hazards and opportunities for unauthorised access. Consideration should be given to siting equipment to minimise unnecessary access to work areas, positioning information processing facilities handling sensitive data to reduce the risk of information being viewed by unauthorised persons during use, isolating items requiring special protection, adopting controls to minimise the risk of potential physical threats, and establishing guidelines for eating drinking and smoking near information processing facilities."
+  },
+  {
+    "clauseNumber": "7.9",
+    "clauseTitle": "Security of assets off-premises",
+    "requirement": "Off-site assets should be protected considering the different risks of working outside the organisation's premises. Equipment and media taken off-premises should not be left unattended in public places. Manufacturer's instructions for protecting equipment should be observed at all times. Controls for off-site working should be determined by risk assessment and consider the physical security of the off-site location, the level of public access, and secure transport and storage arrangements."
+  },
+  {
+    "clauseNumber": "7.10",
+    "clauseTitle": "Storage media",
+    "requirement": "Storage media should be managed through their life cycle of acquisition, use, transportation and disposal. Procedures should cover reusable media whose contents are no longer required being made unrecoverable, requiring authorisation for media removal from the organisation and maintaining records thereof, storing all media in a safe and secure environment in accordance with manufacturer specifications, and using appropriate data sanitisation techniques to make data on media to be disposed of irrecoverable."
+  },
+  {
+    "clauseNumber": "7.11",
+    "clauseTitle": "Supporting utilities",
+    "requirement": "Information processing facilities should be protected from power failures and other disruptions caused by failures in supporting utilities. Supporting utilities such as electricity, telecommunications, water supply, gas, sewage and ventilation should comply with manufacturer specifications and local regulatory requirements. They should be regularly inspected and tested to ensure their proper functioning, and where necessary be equipped with alarms for malfunction detection. Redundancy should be provided for critical utilities, and emergency lighting and communication should be available."
+  },
+  {
+    "clauseNumber": "7.12",
+    "clauseTitle": "Cabling security",
+    "requirement": "Cables carrying power, data or supporting information services should be protected from interception, interference or damage. This should include using underground conduits or other means to avoid routing through public areas, segregating power cables from communications cables to prevent interference, using fibre optic cabling where possible for sensitive systems, using cable shielding and electromagnetic protection where required, performing sweeps for unauthorised devices attached to cables, and implementing controlled access to patch panels and cable rooms."
+  },
+  {
+    "clauseNumber": "7.13",
+    "clauseTitle": "Equipment maintenance",
+    "requirement": "Equipment should be maintained correctly to ensure availability, integrity and confidentiality of information. Maintenance should comply with manufacturer-recommended service intervals and specifications. Only authorised maintenance personnel should carry out repairs and equipment servicing. Records of all suspected or actual faults and preventive and corrective maintenance should be kept. All requirements imposed by insurance policies should be complied with. Before equipment is returned to operation after maintenance, it should be inspected to ensure it has not been tampered with."
+  },
+  {
+    "clauseNumber": "7.14",
+    "clauseTitle": "Secure disposal or re-use of equipment",
+    "requirement": "Items of equipment containing storage media should be verified to ensure that sensitive data and licensed software has been removed or securely overwritten prior to disposal or re-use. Equipment should be checked to ascertain whether it contains storage media. Appropriate disposal techniques should be used such as physical destruction, degaussing or secure erasure. An assessment should be made to determine whether damaged storage media should be destroyed rather than repaired or discarded. Disposal of items should be logged to maintain an audit trail."
+  },
+  {
+    "clauseNumber": "8.1",
+    "clauseTitle": "User endpoint devices",
+    "requirement": "Information stored on, processed by or accessible via user endpoint devices should be protected. A topic-specific policy should be established that covers device registration and tracking, physical protection requirements, restriction of software installation, requirements for device operating system versions and software patches, rules for connection to external services and public networks, access controls, storage encryption, malware protection, remote disabling or wiping, backup procedures, and requirements for usage of web services and web applications."
+  },
+  {
+    "clauseNumber": "8.2",
+    "clauseTitle": "Privileged access rights",
+    "requirement": "The allocation and use of privileged access rights should be restricted and managed. Privileged access rights should be allocated to users on a need-to-use basis and on an event-by-event basis aligned with the access control policy. An authorisation process and record of all privileges allocated should be maintained. Competency of users with privileged access rights should be regularly verified. Authentication requirements for privileged access should be stronger than for normal access. Generic administration IDs should not be used where feasible."
+  },
+  {
+    "clauseNumber": "8.3",
+    "clauseTitle": "Information access restriction",
+    "requirement": "Access to information and other associated assets should be restricted in accordance with the established access control policy. This should include providing menus to control access to application system functions, controlling which data a particular user can access, controlling the access rights of users such as read write delete and execute, controlling the access rights of other applications, and limiting the information contained in outputs. Dynamic access management should be considered to provide granular protection of shared resources."
+  },
+  {
+    "clauseNumber": "8.4",
+    "clauseTitle": "Access to source code",
+    "requirement": "Read and write access to source code, development tools and software libraries should be appropriately managed. Access to source code and associated items such as designs, specifications, verification plans and validation plans should be controlled to prevent the introduction of unauthorised functionality and to avoid unintentional changes. Central storage of source code should be maintained with appropriate access controls. Audit logs of all accesses and changes to source code should be maintained."
+  },
+  {
+    "clauseNumber": "8.5",
+    "clauseTitle": "Secure authentication",
+    "requirement": "Secure authentication technologies and procedures should be established and implemented. The authentication procedure should include displaying a notice that access should only be by authorised users, not providing help messages during the log-on procedure that would aid unauthorised users, validating log-on information only on completion of all input data, protecting against brute force log-on attempts, logging all successful and unsuccessful log-on attempts, recording details of previous successful log-on, implementing multi-factor authentication where appropriate, and not transmitting passwords in clear text."
+  },
+  {
+    "clauseNumber": "8.6",
+    "clauseTitle": "Capacity management",
+    "requirement": "The use of resources should be monitored and adjusted in line with current and expected capacity requirements. Key system resources should be identified and their use monitored and tuned to ensure required system performance. Projections of future capacity requirements should take into account new business and system requirements and current and projected trends in the organisation's information processing capabilities. Managers should use this information to identify and avoid potential bottlenecks and dependence on key personnel, and to plan appropriate mitigating action."
+  },
+  {
+    "clauseNumber": "8.7",
+    "clauseTitle": "Protection against malware",
+    "requirement": "Protection against malware should be implemented and supported by appropriate user awareness. This should include establishing a formal policy prohibiting the use of unauthorised software, implementing controls that prevent or detect the use of known or suspected malicious websites, reducing vulnerabilities that can be exploited by malware, conducting regular reviews of software and data content of systems, installing and regularly updating malware detection and repair software, defining procedures for handling malware infections, and establishing business continuity plans for recovering from malware attacks."
+  },
+  {
+    "clauseNumber": "8.8",
+    "clauseTitle": "Management of technical vulnerabilities",
+    "requirement": "Information about technical vulnerabilities of information systems in use should be obtained. The organisation's exposure to such vulnerabilities should be evaluated and appropriate measures taken. This should include identifying information sources for technical vulnerabilities, defining timescales for reaction to notifications, performing vulnerability assessments at regular intervals, tracking and verifying the deployment of patches and updates, prioritising the remediation of high-risk vulnerabilities, and logging all actions taken. Vulnerability management should be aligned with change management and incident management processes."
+  },
+  {
+    "clauseNumber": "8.9",
+    "clauseTitle": "Configuration management",
+    "requirement": "Configurations including security configurations of hardware, software, services and networks should be established, documented, implemented, monitored and reviewed. Standard configuration templates should be established for the secure configuration of hardware, software and network systems. Configuration changes should be controlled through the change management process. Current configurations should be recorded and monitored to detect deviations from the approved baseline. Automation tools should be used where possible to enforce and verify configurations."
+  },
+  {
+    "clauseNumber": "8.10",
+    "clauseTitle": "Information deletion",
+    "requirement": "Information stored in information systems, devices or in any other storage media should be deleted when no longer required. Methods of deletion should be selected in accordance with the classification of the information, taking into account applicable legal and regulatory requirements, contractual requirements and the organisation's retention schedule. Deletion methods should include overwriting, cryptographic erasure or physical destruction as appropriate. Records of information deletion should be maintained. Third-party service providers should demonstrate adequate information deletion procedures."
+  },
+  {
+    "clauseNumber": "8.11",
+    "clauseTitle": "Data masking",
+    "requirement": "Data masking should be used in accordance with the access control policy and business requirements, taking applicable legislation into consideration. Techniques such as data anonymisation, pseudonymisation, randomisation, tokenisation and generalisation should be used where appropriate. When implementing data masking, the level of masking should be appropriate for the purpose, access controls on the masked data should be in place, agreements with third parties regarding the use of masked data should be considered, and the masking process should be auditable."
+  },
+  {
+    "clauseNumber": "8.12",
+    "clauseTitle": "Data leakage prevention",
+    "requirement": "Data leakage prevention measures should be applied to systems, networks and devices that process, store or transmit sensitive information. The organisation should identify and classify information that requires protection against leakage, monitor channels through which data leakage is likely to occur including email, file transfers, mobile devices and portable storage, and implement tools and measures to detect and prevent leakage of sensitive information. Actions on detecting data leakage attempts should include alerting relevant personnel, blocking the transfer and quarantining data for further investigation."
+  },
+  {
+    "clauseNumber": "8.13",
+    "clauseTitle": "Information backup",
+    "requirement": "Backup copies of information, software and systems should be maintained and regularly tested in accordance with an agreed backup policy. The backup policy should define the organisation's requirements for backup of information, software and systems, and should establish the extent and frequency of backups, storage requirements including off-site or cloud backup, encryption of backup data, regular testing of backup media to ensure reliability, procedures for restoring from backup, and protection of backups with appropriate physical and environmental controls."
+  },
+  {
+    "clauseNumber": "8.14",
+    "clauseTitle": "Redundancy of information processing facilities",
+    "requirement": "Information processing facilities should be implemented with redundancy sufficient to meet availability requirements. The level of redundancy should be consistent with the identified availability requirements and the results of the risk assessment. Redundancy arrangements should include diverse routing of network connections, automatic failover between redundant components, load balancing across multiple resources, and geographic separation of redundant facilities where appropriate. Redundancy mechanisms should be regularly tested to confirm they operate correctly."
+  },
+  {
+    "clauseNumber": "8.15",
+    "clauseTitle": "Logging",
+    "requirement": "Logs that record activities, exceptions, faults and other relevant events should be produced, stored, protected and analysed. Log data should include user IDs, system activities, dates and times of key events, device identity and location, records of successful and rejected system access attempts, records of successful and rejected data and resource access attempts, changes to system configuration, use of privileges, use of system utilities and applications, and network addresses, protocols and ports. Logs should be protected against tampering and unauthorised access."
+  },
+  {
+    "clauseNumber": "8.16",
+    "clauseTitle": "Monitoring activities",
+    "requirement": "Networks, systems and applications should be monitored for anomalous behaviour and appropriate actions taken to evaluate potential information security incidents. The scope, level and detail of monitoring should be determined in accordance with security requirements. Monitoring should include outbound and inbound network traffic, access to critical systems and sensitive data, system configuration changes, use of privileges, use of utility programs, file access and type of access, and network addresses, protocols and connection types. Anomaly detection and alerting thresholds should be configured."
+  },
+  {
+    "clauseNumber": "8.17",
+    "clauseTitle": "Clock synchronisation",
+    "requirement": "The clocks of information processing systems used by the organisation should be synchronised to approved time sources. External and internal requirements for time representation, synchronisation and accuracy should be documented. The organisation should define a standard reference time source and an approach for synchronising all system clocks. NTP or PTP protocols should be used to keep all clocks synchronised. Clock synchronisation is critical for ensuring the accuracy of audit logs used in investigations and as evidence."
+  },
+  {
+    "clauseNumber": "8.18",
+    "clauseTitle": "Use of privileged utility programs",
+    "requirement": "The use of utility programs that can override system and application controls should be restricted and tightly controlled. This should include use of identification, authentication and authorisation procedures for utility programs, segregation of utility programs from application software, limitation of the availability of utility programs to the minimum practical number of authorised users, authorisation for ad hoc use of utility programs, limitation of the availability of utility programs, logging of all use of utility programs, and removing or disabling unnecessary utility programs."
+  },
+  {
+    "clauseNumber": "8.19",
+    "clauseTitle": "Installation of software on operational systems",
+    "requirement": "Procedures and measures should be implemented to securely manage software installation on operational systems. This should include permitting installation of software only by authorised administrators, defining what types of software installation are permitted and what are prohibited, establishing a policy for updating software on operational systems, implementing controls to restrict the installation of unauthorised software, and maintaining an inventory of software installed on each system. Vendor-supplied software should be maintained at a level supported by the supplier."
+  },
+  {
+    "clauseNumber": "8.20",
+    "clauseTitle": "Networks security",
+    "requirement": "Networks and network devices should be secured, managed and controlled to protect information in systems and applications. Controls should include establishing responsibilities and procedures for the management of networking equipment, separating operational responsibility for networks from computer operations where appropriate, implementing special controls to safeguard the confidentiality and integrity of data passing over public or wireless networks, applying secure network design principles including network segmentation, ensuring appropriate logging and monitoring of network management actions, and implementing authentication for network systems."
+  },
+  {
+    "clauseNumber": "8.21",
+    "clauseTitle": "Security of network services",
+    "requirement": "Security mechanisms, service levels and service requirements of network services should be identified, implemented and monitored. This should include the technology applied for the security of network services such as authentication, encryption and network connection controls, the technical parameters required for secured connection with the network services, the procedures for restricting access to network services, and agreements on network services covering authorised access, security features, service levels and management requirements."
+  },
+  {
+    "clauseNumber": "8.22",
+    "clauseTitle": "Segregation of networks",
+    "requirement": "Groups of information services, users and information systems should be segregated in the organisation's networks. Network segregation should be based on a classification of information stored or processed, levels of trust, business functions, the potential impact of a breach, and regulatory requirements. The perimeters of each network segment should be well-defined. Access between network segments should be controlled using gateways such as firewalls and filtering routers. Wireless networks should be treated as external network connections until access has been verified."
+  },
+  {
+    "clauseNumber": "8.23",
+    "clauseTitle": "Web filtering",
+    "requirement": "Access to external websites should be managed to reduce exposure to malicious content. The organisation should identify the types of websites that personnel should or should not access. The web filtering approach should include blocking access to websites known to host malicious content, blocking access to websites based on content type or category where appropriate, using real-time reputation services and safe browsing lists, logging web access for investigation and monitoring, and educating users about safe web browsing practices."
+  },
+  {
+    "clauseNumber": "8.24",
+    "clauseTitle": "Use of cryptography",
+    "requirement": "Rules for the effective use of cryptography including cryptographic key management should be defined and implemented. This should include a policy on the use of cryptographic controls, the type strength and quality of the required cryptographic algorithms, the use of encryption for the protection of information transferred over networks or stored on mobile devices, the approach to key management including methods to deal with the generation storage archive retrieval distribution retirement and destruction of cryptographic keys, and compliance with applicable regulations and law."
+  },
+  {
+    "clauseNumber": "8.25",
+    "clauseTitle": "Secure development life cycle",
+    "requirement": "Rules for the secure development of software and systems should be established and applied. A secure development policy should address the security of the development environment, security guidance within the software development methodology, secure coding practices for each programming language used, security requirements in the design phase, security checkpoints within the project milestones, secure repositories, security in version control, required application security knowledge, and developers' capability to avoid, find and fix vulnerabilities."
+  },
+  {
+    "clauseNumber": "8.26",
+    "clauseTitle": "Application security requirements",
+    "requirement": "Information security requirements should be identified, specified and approved when developing or acquiring applications. This should include requirements for authentication and identity management, access control and authorisation, protection of transactions, protection of data in transit and at rest, input validation and output encoding, secure session management, error handling and logging, and integration of security requirements into the software requirements specification and testing processes."
+  },
+  {
+    "clauseNumber": "8.27",
+    "clauseTitle": "Secure system architecture and engineering principles",
+    "requirement": "Principles for engineering secure systems should be established, documented, maintained and applied to any information system development activities. Secure engineering principles should cover the full system development life cycle and include all architectural layers and components. Principles should address defence in depth, least privilege, secure defaults, fail secure design, zero trust architecture principles, input validation, threat modelling, security testing, and regular review and update of the principles as threats evolve."
+  },
+  {
+    "clauseNumber": "8.28",
+    "clauseTitle": "Secure coding",
+    "requirement": "Secure coding principles should be applied to software development. This should include extending secure coding practices to third-party components and open source software, monitoring real-world threats and up-to-date advisories on software vulnerabilities, using techniques to prevent known coding vulnerabilities including input validation and output encoding, mandating peer review of code changes, using static and dynamic analysis tools, performing regular code audits, and establishing minimum baseline requirements for secure coding across the organisation."
+  },
+  {
+    "clauseNumber": "8.29",
+    "clauseTitle": "Security testing in development and acceptance",
+    "requirement": "Security testing processes should be defined and implemented in the development life cycle. Security testing should include testing of security functions, vulnerability scanning, penetration testing, static and dynamic code analysis, and security regression testing. Test plans should include a range of inputs including boundary values, invalid data and typical attack patterns. Test environments should be representative of production environments where possible. Security acceptance criteria should be defined and met before deployment."
+  },
+  {
+    "clauseNumber": "8.30",
+    "clauseTitle": "Outsourced development",
+    "requirement": "The organisation should direct, monitor and review activities related to outsourced system development. This should include establishing formal agreements covering security requirements, intellectual property rights and code ownership, certification of the quality and accuracy of the work carried out, escrow arrangements for source code, the right to audit the quality of development work, contractual requirements for secure coding practices, provision of evidence that sufficient testing has been carried out, and acceptance testing for quality and security prior to deployment."
+  },
+  {
+    "clauseNumber": "8.31",
+    "clauseTitle": "Separation of development, test and production environments",
+    "requirement": "Development, testing and production environments should be separated and secured. The level of separation should be identified and appropriate controls implemented to prevent development and testing activities from causing unplanned changes or outages to production systems. This should include defining and documenting rules for the transfer of software between environments, running development and testing systems on separate platforms or in separate domains, restricting access between environments, and prohibiting the use of production data in test environments unless appropriate controls are in place."
+  },
+  {
+    "clauseNumber": "8.32",
+    "clauseTitle": "Change management",
+    "requirement": "Changes to information processing facilities and information systems should be subject to change management procedures. Formal change control procedures should include documenting and planning all changes, assessing the potential impact of changes including security impact, formal approval of proposed changes, communicating change details to all relevant parties, defining fallback and recovery procedures in case of unsuccessful changes, maintaining an audit trail of all changes, and ensuring that operating documentation and user procedures are amended as necessary."
+  },
+  {
+    "clauseNumber": "8.33",
+    "clauseTitle": "Test information",
+    "requirement": "Test information should be appropriately selected, protected and managed. The use of production data containing personally identifiable information or any other sensitive information for testing purposes should be avoided. Where production data is used for testing, sensitive information should be protected through removal, masking or modification. The same access controls that apply to production application systems should apply to test application systems. Each time production information is copied to a test environment, authorisation should be obtained and the copying should be logged."
+  },
+  {
+    "clauseNumber": "8.34",
+    "clauseTitle": "Protection of information systems during audit testing",
+    "requirement": "Audit tests and other assurance activities involving assessment of operational systems should be planned and agreed between the tester and appropriate management. Audit test requirements should specify the scope and timing of tests, the tools and techniques to be used, the expected impact on systems and data, and the protections needed. Access to system audit tools should be protected to prevent misuse. Audit activities should be monitored and logged. Audit tools and data should be separated from development and operational systems."
+  }
+]

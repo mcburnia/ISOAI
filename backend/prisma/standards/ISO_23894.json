@@ -1,0 +1,107 @@
+[
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "Principles for AI risk management — General",
+    "requirement": "Principles for managing AI risks shall be aligned with ISO 31000 and adapted to address the unique characteristics and challenges of AI systems, including their data-driven nature, complexity, and potential for emergent behaviour."
+  },
+  {
+    "clauseNumber": "5.2",
+    "clauseTitle": "Proportionality and risk-based approach",
+    "requirement": "AI risk management activities shall be proportionate to the level of risk posed by the AI system, considering the potential severity and likelihood of adverse impacts on individuals, groups, and society."
+  },
+  {
+    "clauseNumber": "5.3",
+    "clauseTitle": "Inclusiveness and stakeholder engagement",
+    "requirement": "The organization shall ensure inclusive engagement of relevant stakeholders, including affected individuals, domain experts, and diverse perspectives, throughout the AI risk management process."
+  },
+  {
+    "clauseNumber": "5.4",
+    "clauseTitle": "Adaptiveness and responsiveness",
+    "requirement": "AI risk management shall be adaptive and responsive to changes in AI technology, the operational environment, and emerging knowledge about AI risks and their potential consequences."
+  },
+  {
+    "clauseNumber": "5.5",
+    "clauseTitle": "Trustworthiness",
+    "requirement": "AI risk management shall support the development and operation of trustworthy AI systems by addressing key properties including reliability, safety, security, privacy, fairness, transparency, and accountability."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Framework for AI risk management — General",
+    "requirement": "The organization shall establish, implement, and maintain a framework for AI risk management that is integrated into organizational governance structures and aligned with the principles of ISO 31000."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Leadership and commitment for AI risk management",
+    "requirement": "Top management shall demonstrate leadership and commitment to AI risk management by establishing AI governance structures, defining roles and responsibilities, and ensuring adequate resources are allocated for managing AI-specific risks."
+  },
+  {
+    "clauseNumber": "6.3",
+    "clauseTitle": "Integration of AI risk management",
+    "requirement": "AI risk management shall be integrated into the organization's existing risk management practices, AI system life cycle processes, and organizational decision-making structures."
+  },
+  {
+    "clauseNumber": "6.4",
+    "clauseTitle": "Design of AI risk management framework",
+    "requirement": "The organization shall design the AI risk management framework to address the external and internal context specific to AI, including regulatory requirements, ethical considerations, stakeholder expectations, and the organization's AI strategy and capabilities."
+  },
+  {
+    "clauseNumber": "6.5",
+    "clauseTitle": "Implementation of AI risk management framework",
+    "requirement": "The organization shall implement the AI risk management framework through appropriate plans, processes, and procedures, ensuring that AI-specific risk considerations are addressed at each stage of the AI system life cycle."
+  },
+  {
+    "clauseNumber": "6.6",
+    "clauseTitle": "Evaluation of AI risk management framework",
+    "requirement": "The organization shall periodically evaluate the effectiveness of the AI risk management framework, including its ability to identify and address emerging AI risks, and its alignment with evolving AI governance requirements."
+  },
+  {
+    "clauseNumber": "6.7",
+    "clauseTitle": "Improvement of AI risk management framework",
+    "requirement": "The organization shall continually improve the AI risk management framework based on evaluation results, lessons learned from AI incidents, advances in AI technology, and evolving regulatory and societal expectations."
+  },
+  {
+    "clauseNumber": "7.1",
+    "clauseTitle": "Communication and consultation for AI risk management",
+    "requirement": "The organization shall establish communication and consultation mechanisms that address AI-specific considerations, including communicating the capabilities and limitations of AI systems to relevant stakeholders and consulting with affected parties about potential AI risks."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "Scope, context, and criteria for AI risk management",
+    "requirement": "The organization shall define the scope and context of AI risk management activities, establishing criteria that address AI-specific risk factors including data quality, algorithmic bias, model robustness, explainability, and the intended and foreseeable uses of the AI system."
+  },
+  {
+    "clauseNumber": "7.3.1",
+    "clauseTitle": "AI risk assessment — General",
+    "requirement": "The organization shall conduct risk assessments for AI systems that consider the full range of AI-specific risks across the system life cycle, including risks arising from data, models, deployment environments, and human-AI interaction."
+  },
+  {
+    "clauseNumber": "7.3.2",
+    "clauseTitle": "AI risk identification",
+    "requirement": "The organization shall identify AI-specific risks including but not limited to: bias and discrimination, lack of transparency and explainability, robustness and reliability failures, privacy and data protection violations, security vulnerabilities, safety hazards, accountability gaps, and adverse societal or environmental impacts."
+  },
+  {
+    "clauseNumber": "7.3.3",
+    "clauseTitle": "AI risk analysis",
+    "requirement": "The organization shall analyse identified AI risks by considering the nature and characteristics of the AI system, the likelihood and severity of potential impacts, the populations and stakeholders affected, and the effectiveness of existing controls and mitigations."
+  },
+  {
+    "clauseNumber": "7.3.4",
+    "clauseTitle": "AI risk evaluation",
+    "requirement": "The organization shall evaluate AI risks against established criteria to determine their significance and priority for treatment, considering the cumulative and systemic nature of AI risks and their potential for cascading effects across interconnected systems."
+  },
+  {
+    "clauseNumber": "7.4",
+    "clauseTitle": "AI risk treatment",
+    "requirement": "The organization shall select and implement appropriate treatment options for identified AI risks, including technical measures (such as bias mitigation, robustness testing, and explainability mechanisms), organizational measures (such as human oversight and governance), and operational measures (such as monitoring and incident response)."
+  },
+  {
+    "clauseNumber": "7.5",
+    "clauseTitle": "Monitoring and review of AI risks",
+    "requirement": "The organization shall establish ongoing monitoring and periodic review mechanisms for AI risks, including performance monitoring, drift detection, impact assessment, and review of risk treatment effectiveness throughout the operational life of the AI system."
+  },
+  {
+    "clauseNumber": "8",
+    "clauseTitle": "Recording and reporting for AI systems",
+    "requirement": "The organization shall maintain comprehensive records of AI risk management activities, including risk assessments, treatment decisions, monitoring results, and incidents. Reporting shall support transparency, accountability, and continuous improvement of AI risk management processes."
+  }
+]

@@ -1,0 +1,327 @@
+[
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "General",
+    "requirement": "The organization shall determine its role as a PII controller and/or PII processor and apply all requirements of ISO/IEC 27001 with the extensions specified in this standard to establish, implement, maintain and continually improve a Privacy Information Management System (PIMS)."
+  },
+  {
+    "clauseNumber": "5.2.1",
+    "clauseTitle": "Understanding the organization and its context",
+    "requirement": "The organization shall include among its external and internal issues those relevant to the processing of PII, including applicable privacy legislation, regulations, and contractual obligations, and shall determine its role as a PII controller and/or PII processor."
+  },
+  {
+    "clauseNumber": "5.2.2",
+    "clauseTitle": "Understanding the needs and expectations of interested parties",
+    "requirement": "The organization shall include among interested parties those with interests or responsibilities associated with the processing of PII, including PII principals, regulators, contractual partners, and data protection authorities."
+  },
+  {
+    "clauseNumber": "5.2.3",
+    "clauseTitle": "Determining the scope of the information security management system",
+    "requirement": "The organization shall determine the boundaries and applicability of the PIMS, including the processing of PII within the scope, and document the types of PII processed, the categories of PII principals, and the jurisdictions in which PII is processed."
+  },
+  {
+    "clauseNumber": "5.2.4",
+    "clauseTitle": "Information security management system",
+    "requirement": "The organization shall implement a PIMS as an extension to the ISMS established in accordance with ISO/IEC 27001, incorporating privacy-specific requirements, controls, and processes for the protection of PII."
+  },
+  {
+    "clauseNumber": "5.3.1",
+    "clauseTitle": "Leadership and commitment",
+    "requirement": "Top management shall demonstrate leadership and commitment with respect to the PIMS by ensuring integration of privacy requirements into business processes, providing adequate resources, and promoting continual improvement of PII protection."
+  },
+  {
+    "clauseNumber": "5.3.2",
+    "clauseTitle": "Policy",
+    "requirement": "Top management shall establish a privacy policy that is appropriate to the purpose of the organization, provides a framework for setting privacy objectives, includes a commitment to satisfy applicable privacy requirements, and includes a commitment to continual improvement of the PIMS."
+  },
+  {
+    "clauseNumber": "5.3.3",
+    "clauseTitle": "Organizational roles, responsibilities and authorities",
+    "requirement": "Top management shall assign responsibilities and authorities for ensuring the PIMS conforms to requirements, including the designation of a point of contact for PII principals and the appointment of an individual responsible for developing, implementing, maintaining and monitoring the PIMS."
+  },
+  {
+    "clauseNumber": "5.4.1",
+    "clauseTitle": "Actions to address risks and opportunities",
+    "requirement": "The organization shall plan actions to address risks and opportunities related to PII processing, including performing a privacy impact assessment where appropriate, and integrate these actions into the ISMS risk assessment and treatment processes."
+  },
+  {
+    "clauseNumber": "5.4.2",
+    "clauseTitle": "Information security objectives and planning to achieve them",
+    "requirement": "The organization shall establish privacy objectives at relevant functions and levels, ensuring they are consistent with the privacy policy, measurable, take into account applicable privacy requirements, and are monitored, communicated, and updated as appropriate."
+  },
+  {
+    "clauseNumber": "5.5",
+    "clauseTitle": "Support",
+    "requirement": "The organization shall determine and provide the resources, competence, awareness, communication, and documented information needed for the establishment, implementation, maintenance, and continual improvement of the PIMS, including privacy-specific training and awareness programs."
+  },
+  {
+    "clauseNumber": "5.6",
+    "clauseTitle": "Operation",
+    "requirement": "The organization shall plan, implement, and control the processes needed to meet PIMS requirements, including performing privacy risk assessments at planned intervals or when significant changes are proposed, and implementing the privacy risk treatment plan."
+  },
+  {
+    "clauseNumber": "5.7",
+    "clauseTitle": "Performance evaluation",
+    "requirement": "The organization shall monitor, measure, analyze, and evaluate the PIMS performance, conduct internal audits at planned intervals, and ensure management reviews address privacy-specific matters including the results of PII processing activities and privacy risk assessments."
+  },
+  {
+    "clauseNumber": "5.8",
+    "clauseTitle": "Improvement",
+    "requirement": "The organization shall react to nonconformities related to PII processing, take corrective action, and continually improve the suitability, adequacy, and effectiveness of the PIMS, including addressing privacy breaches and near-misses."
+  },
+  {
+    "clauseNumber": "A.7.1",
+    "clauseTitle": "General — PII Controllers",
+    "requirement": "The organization acting as a PII controller shall determine and document the lawful basis for PII processing, maintain records of processing activities, and ensure that contracts with PII processors include appropriate privacy requirements."
+  },
+  {
+    "clauseNumber": "A.7.2.1",
+    "clauseTitle": "Identify and document purpose",
+    "requirement": "The organization shall identify and document the specific purposes for which the PII will be processed, ensuring that PII principals can understand the purposes and that the purposes are clearly articulated before processing begins."
+  },
+  {
+    "clauseNumber": "A.7.2.2",
+    "clauseTitle": "Identify lawful basis",
+    "requirement": "The organization shall determine, document, and comply with the relevant lawful basis for the processing of PII for each identified purpose, including consent where required by applicable legislation."
+  },
+  {
+    "clauseNumber": "A.7.2.3",
+    "clauseTitle": "Determine when and how consent is to be obtained",
+    "requirement": "The organization shall determine and document a process by which it can demonstrate that valid consent was obtained from PII principals where consent is the lawful basis for processing, including the timing, method, and mechanism for obtaining and recording consent."
+  },
+  {
+    "clauseNumber": "A.7.2.4",
+    "clauseTitle": "Obtain and record consent",
+    "requirement": "The organization shall obtain and record consent from PII principals in accordance with documented processes, ensuring that consent is freely given, specific, informed, and unambiguous, and that records of consent are maintained."
+  },
+  {
+    "clauseNumber": "A.7.2.5",
+    "clauseTitle": "Privacy impact assessment",
+    "requirement": "The organization shall assess the need for, and implement where appropriate, a privacy impact assessment whenever new processing of PII or changes to existing processing are planned, documenting the results and actions taken."
+  },
+  {
+    "clauseNumber": "A.7.2.6",
+    "clauseTitle": "Contracts with PII processors",
+    "requirement": "The organization shall have a written contract with any PII processor that processes PII on its behalf, specifying the nature and purpose of the processing, confidentiality obligations, security measures, and sub-processing arrangements."
+  },
+  {
+    "clauseNumber": "A.7.2.7",
+    "clauseTitle": "Joint PII controller",
+    "requirement": "The organization shall determine respective roles and responsibilities with any joint PII controllers through a transparent arrangement, ensuring that PII principals are informed of the identity and contact details of the joint controllers."
+  },
+  {
+    "clauseNumber": "A.7.2.8",
+    "clauseTitle": "Records related to processing PII",
+    "requirement": "The organization shall determine and maintain the necessary records to support its obligations related to the processing of PII, including categories of processing activities, transfers of PII, and any relevant safeguards applied."
+  },
+  {
+    "clauseNumber": "A.7.3.1",
+    "clauseTitle": "Determining and fulfilling obligations to PII principals",
+    "requirement": "The organization shall determine and document legal, regulatory, and business obligations to PII principals related to the processing of their PII, and implement processes to fulfill these obligations."
+  },
+  {
+    "clauseNumber": "A.7.3.2",
+    "clauseTitle": "Determining information for PII principals",
+    "requirement": "The organization shall determine and document the information to be provided to PII principals regarding the processing of their PII, including the identity of the controller, purposes, third-party disclosures, and retention periods."
+  },
+  {
+    "clauseNumber": "A.7.3.3",
+    "clauseTitle": "Providing information to PII principals",
+    "requirement": "The organization shall provide PII principals with clear and accessible information about the processing of their PII at the time of collection or, where that is not possible, as soon as practicable thereafter."
+  },
+  {
+    "clauseNumber": "A.7.3.4",
+    "clauseTitle": "Providing mechanism to modify or withdraw consent",
+    "requirement": "The organization shall provide a mechanism for PII principals to modify or withdraw their consent to the processing of their PII, ensuring the mechanism is as easy to use as the mechanism for giving consent."
+  },
+  {
+    "clauseNumber": "A.7.3.5",
+    "clauseTitle": "Providing mechanism to object to PII processing",
+    "requirement": "The organization shall provide a mechanism for PII principals to object to the processing of their PII, and shall assess and act upon any objections in accordance with applicable obligations."
+  },
+  {
+    "clauseNumber": "A.7.3.6",
+    "clauseTitle": "Access, correction and/or erasure",
+    "requirement": "The organization shall implement policies, procedures, and mechanisms to meet its obligations to PII principals to access, correct, and/or erase their PII, and shall respond to such requests within applicable timeframes."
+  },
+  {
+    "clauseNumber": "A.7.3.7",
+    "clauseTitle": "PII controllers' obligations to inform third parties",
+    "requirement": "The organization shall inform third parties with whom PII has been shared of any relevant modifications, withdrawals of consent, objections, or erasure requests related to the PII, where applicable."
+  },
+  {
+    "clauseNumber": "A.7.3.8",
+    "clauseTitle": "Providing copy of PII processed",
+    "requirement": "The organization shall be able to provide a copy of the PII being processed to the PII principal upon request, in a commonly used and machine-readable format where applicable."
+  },
+  {
+    "clauseNumber": "A.7.3.9",
+    "clauseTitle": "Handling requests",
+    "requirement": "The organization shall define and document policies and procedures for handling requests from PII principals regarding the processing of their PII, including the verification of identity of the requester and the recording of requests and responses."
+  },
+  {
+    "clauseNumber": "A.7.3.10",
+    "clauseTitle": "Automated decision making",
+    "requirement": "The organization shall identify and address obligations to PII principals related to automated decision-making, including profiling, and shall provide means for PII principals to challenge such decisions and request human intervention."
+  },
+  {
+    "clauseNumber": "A.7.4.1",
+    "clauseTitle": "Limit collection",
+    "requirement": "The organization shall limit the collection of PII to that which is adequate, relevant, and necessary in relation to the identified purposes for processing."
+  },
+  {
+    "clauseNumber": "A.7.4.2",
+    "clauseTitle": "Limit processing",
+    "requirement": "The organization shall limit the processing of PII to that which is adequate, relevant, and necessary for the identified purposes and shall not process PII in a manner that is incompatible with those purposes."
+  },
+  {
+    "clauseNumber": "A.7.4.3",
+    "clauseTitle": "Accuracy and quality",
+    "requirement": "The organization shall ensure the accuracy and quality of PII throughout its lifecycle, implementing processes to verify, correct, and update PII as necessary to fulfill the identified purposes."
+  },
+  {
+    "clauseNumber": "A.7.4.4",
+    "clauseTitle": "PII minimization objectives",
+    "requirement": "The organization shall define and document data minimization objectives and shall implement mechanisms to meet those objectives, including de-identification and deletion of PII when no longer necessary."
+  },
+  {
+    "clauseNumber": "A.7.4.5",
+    "clauseTitle": "PII de-identification and deletion at the end of processing",
+    "requirement": "The organization shall either delete PII or render it in a form that does not permit identification of PII principals once the original PII is no longer necessary for the identified purpose."
+  },
+  {
+    "clauseNumber": "A.7.4.6",
+    "clauseTitle": "Temporary files",
+    "requirement": "The organization shall ensure that temporary files created as a result of PII processing are disposed of within a documented, specified period following established procedures."
+  },
+  {
+    "clauseNumber": "A.7.4.7",
+    "clauseTitle": "Retention",
+    "requirement": "The organization shall not retain PII longer than is necessary for the purposes for which the PII is processed, and shall implement documented retention policies and procedures including defined retention periods."
+  },
+  {
+    "clauseNumber": "A.7.4.8",
+    "clauseTitle": "Disposal",
+    "requirement": "The organization shall implement policies and procedures governing the secure disposal and destruction of PII, ensuring that disposal mechanisms render PII unrecoverable."
+  },
+  {
+    "clauseNumber": "A.7.4.9",
+    "clauseTitle": "PII transmission controls",
+    "requirement": "The organization shall implement controls governing the transmission of PII, including encryption and secure transfer mechanisms, and shall ensure that the means of transmission provide appropriate levels of protection."
+  },
+  {
+    "clauseNumber": "A.7.5.1",
+    "clauseTitle": "Identify basis for PII transfer between jurisdictions",
+    "requirement": "The organization shall identify and document the basis for transfers of PII between jurisdictions, including the applicable legal, regulatory, or contractual basis for each transfer."
+  },
+  {
+    "clauseNumber": "A.7.5.2",
+    "clauseTitle": "Countries and international organizations to which PII can be transferred",
+    "requirement": "The organization shall specify and document the countries and international organizations to which PII may potentially be transferred, and the basis upon which such transfers are permissible."
+  },
+  {
+    "clauseNumber": "A.7.5.3",
+    "clauseTitle": "Records of transfer of PII",
+    "requirement": "The organization shall maintain records of PII transfers to third parties, including the date, recipient, purpose, and type of PII transferred, and the safeguards applied."
+  },
+  {
+    "clauseNumber": "A.7.5.4",
+    "clauseTitle": "Records of PII disclosure to third parties",
+    "requirement": "The organization shall record disclosures of PII to third parties, including what PII has been disclosed, to whom, at what time, and for what purpose, and shall make such records available to PII principals upon request where applicable."
+  },
+  {
+    "clauseNumber": "B.8.1",
+    "clauseTitle": "General — PII Processors",
+    "requirement": "The organization acting as a PII processor shall process PII only on documented instructions from the PII controller, unless required by law, and shall maintain documentation sufficient to demonstrate compliance with obligations."
+  },
+  {
+    "clauseNumber": "B.8.2.1",
+    "clauseTitle": "Customer agreement",
+    "requirement": "The organization shall ensure that the contract with the PII controller addresses the organization's role in assisting the controller to meet its obligations regarding PII processing, including the nature, scope, and purpose of processing."
+  },
+  {
+    "clauseNumber": "B.8.2.2",
+    "clauseTitle": "Organization's purposes",
+    "requirement": "The organization shall not process PII for any purpose other than those specified by the PII controller, unless specifically permitted by applicable legislation, and shall inform the controller before processing for any additional purpose."
+  },
+  {
+    "clauseNumber": "B.8.2.3",
+    "clauseTitle": "Marketing and advertising use",
+    "requirement": "The organization shall not use PII processed under a contract for the purposes of marketing and advertising without establishing that prior consent was obtained from the PII principal, and the controller has authorized such use."
+  },
+  {
+    "clauseNumber": "B.8.2.4",
+    "clauseTitle": "Infringing instruction",
+    "requirement": "The organization shall inform the PII controller if, in its opinion, a processing instruction from the controller infringes applicable legislation or regulation regarding PII protection."
+  },
+  {
+    "clauseNumber": "B.8.2.5",
+    "clauseTitle": "Customer obligations",
+    "requirement": "The organization shall define and document the obligations of the PII controller in the agreement, including the controller's responsibility for ensuring the lawfulness of PII processing instructions."
+  },
+  {
+    "clauseNumber": "B.8.2.6",
+    "clauseTitle": "Records related to processing PII",
+    "requirement": "The organization shall determine and maintain the necessary records to demonstrate compliance with its obligations as a PII processor, including categories of processing performed on behalf of each PII controller."
+  },
+  {
+    "clauseNumber": "B.8.3.1",
+    "clauseTitle": "Obligations to PII principals",
+    "requirement": "The organization shall provide the PII controller with the means to fulfill its obligations related to PII principals, including the ability to access, correct, erase, and obtain copies of their PII, and to handle objections and consent withdrawals."
+  },
+  {
+    "clauseNumber": "B.8.4.1",
+    "clauseTitle": "Temporary files",
+    "requirement": "The organization shall ensure that temporary files and documents created during PII processing are disposed of within a documented and specified period, using secure disposal procedures."
+  },
+  {
+    "clauseNumber": "B.8.4.2",
+    "clauseTitle": "Return, transfer or disposal of PII",
+    "requirement": "The organization shall provide the ability to return, transfer, and/or dispose of PII processed on behalf of the PII controller in a secure manner, and shall make this capability known to the controller."
+  },
+  {
+    "clauseNumber": "B.8.4.3",
+    "clauseTitle": "PII transmission controls",
+    "requirement": "The organization shall implement controls governing the transmission of PII, ensuring PII transmitted over data-transmission networks is subject to appropriate encryption and secure transport mechanisms."
+  },
+  {
+    "clauseNumber": "B.8.5.1",
+    "clauseTitle": "Basis for PII transfer between jurisdictions",
+    "requirement": "The organization shall inform the PII controller in a timely manner of the basis for PII transfers between jurisdictions and of any intended changes in this regard, allowing the controller to object or terminate the contract."
+  },
+  {
+    "clauseNumber": "B.8.5.2",
+    "clauseTitle": "Countries and international organizations to which PII can be transferred",
+    "requirement": "The organization shall specify to the PII controller the countries and international organizations to which PII may be transferred, and shall only transfer PII to those agreed upon by the controller."
+  },
+  {
+    "clauseNumber": "B.8.5.3",
+    "clauseTitle": "Records of PII transfer",
+    "requirement": "The organization shall record and maintain details of PII transfers to third parties or between jurisdictions, including the recipient, date, purpose, and applicable safeguards, and make these records available to the PII controller."
+  },
+  {
+    "clauseNumber": "B.8.5.4",
+    "clauseTitle": "Notification of PII disclosure requests",
+    "requirement": "The organization shall notify the PII controller of any legally binding requests for disclosure of PII by a law enforcement authority or similar body, unless such notification is otherwise prohibited by law."
+  },
+  {
+    "clauseNumber": "B.8.5.5",
+    "clauseTitle": "Legally binding PII disclosures",
+    "requirement": "The organization shall reject any requests for PII disclosure that are not legally binding and shall consult the PII controller before making any legally required disclosures, unless prohibited by law."
+  },
+  {
+    "clauseNumber": "B.8.5.6",
+    "clauseTitle": "Disclosure of subcontractors used to process PII",
+    "requirement": "The organization shall disclose to the PII controller any use of subcontractors to process PII before engaging them, and shall obtain agreement from the controller prior to any changes in subcontractors."
+  },
+  {
+    "clauseNumber": "B.8.5.7",
+    "clauseTitle": "Engagement of a subcontractor to process PII",
+    "requirement": "The organization shall ensure that any engagement of subcontractors for PII processing is governed by a written contract imposing data protection obligations equivalent to those binding the organization under the contract with the PII controller."
+  },
+  {
+    "clauseNumber": "B.8.5.8",
+    "clauseTitle": "Change of subcontractor to process PII",
+    "requirement": "The organization shall inform the PII controller of any intended changes concerning the addition or replacement of subcontractors processing PII in sufficient time to allow the controller to object to such changes."
+  }
+]

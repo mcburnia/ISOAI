@@ -1,0 +1,142 @@
+[
+  {
+    "clauseNumber": "5.1",
+    "clauseTitle": "General principles — Proportionality",
+    "requirement": "AI impact assessments shall be proportionate to the nature, scale, and severity of the potential impacts of the AI system, with more rigorous assessment applied to higher-risk systems."
+  },
+  {
+    "clauseNumber": "5.2",
+    "clauseTitle": "General principles — Inclusiveness",
+    "requirement": "AI impact assessments shall be inclusive, ensuring that the perspectives of affected individuals, communities, and stakeholder groups are actively sought and considered throughout the assessment process."
+  },
+  {
+    "clauseNumber": "5.3",
+    "clauseTitle": "General principles — Transparency",
+    "requirement": "The AI impact assessment process and its findings shall be transparent, with appropriate disclosure of methodologies, assumptions, limitations, and conclusions to relevant stakeholders."
+  },
+  {
+    "clauseNumber": "5.4",
+    "clauseTitle": "General principles — Accountability",
+    "requirement": "Clear accountability shall be established for the conduct of AI impact assessments, including responsibility for implementing mitigation measures and monitoring outcomes."
+  },
+  {
+    "clauseNumber": "5.5",
+    "clauseTitle": "General principles — Iterative assessment",
+    "requirement": "AI impact assessments shall be conducted iteratively throughout the AI system life cycle, recognizing that impacts may change as the system evolves, is deployed to new contexts, or as societal understanding of AI impacts develops."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Scope definition",
+    "requirement": "The organization shall define the scope of the AI impact assessment, including the AI system boundaries, the operational context, the geographic and temporal scope, and the categories of impacts to be assessed."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Stakeholder identification",
+    "requirement": "The organization shall identify all stakeholders who may be affected by the AI system, including direct users, indirect beneficiaries, adversely affected parties, vulnerable populations, and oversight bodies."
+  },
+  {
+    "clauseNumber": "6.3",
+    "clauseTitle": "Impact identification",
+    "requirement": "The organization shall systematically identify potential positive and negative impacts of the AI system across all relevant impact categories, considering both intended and unintended consequences, direct and indirect effects, and cumulative impacts."
+  },
+  {
+    "clauseNumber": "6.4",
+    "clauseTitle": "Impact analysis",
+    "requirement": "The organization shall analyse identified impacts to determine their nature, magnitude, likelihood, duration, reversibility, and the distribution of effects across different stakeholder groups."
+  },
+  {
+    "clauseNumber": "6.5",
+    "clauseTitle": "Impact evaluation",
+    "requirement": "The organization shall evaluate the significance of analysed impacts against established criteria, regulatory thresholds, and stakeholder expectations to determine acceptability and priority for mitigation."
+  },
+  {
+    "clauseNumber": "7.1",
+    "clauseTitle": "Planning the assessment",
+    "requirement": "The organization shall plan the AI impact assessment, defining objectives, scope, methodology, resources, timelines, stakeholder engagement strategy, and the governance arrangements for conducting the assessment."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "Screening",
+    "requirement": "The organization shall conduct a screening process to determine whether a full AI impact assessment is required, based on the nature and potential severity of the AI system's impacts, regulatory requirements, and organizational risk appetite."
+  },
+  {
+    "clauseNumber": "7.3",
+    "clauseTitle": "Scoping",
+    "requirement": "The organization shall determine the depth and breadth of the impact assessment, identifying the key issues and impact areas to be examined in detail, and establishing the boundaries and limitations of the assessment."
+  },
+  {
+    "clauseNumber": "7.4",
+    "clauseTitle": "Baseline assessment",
+    "requirement": "The organization shall establish a baseline of existing conditions against which the impacts of the AI system will be measured, including the current state of affected communities, environments, and systems prior to AI deployment."
+  },
+  {
+    "clauseNumber": "7.5",
+    "clauseTitle": "Impact prediction",
+    "requirement": "The organization shall predict the likely impacts of the AI system using appropriate methods, considering scenarios of normal operation, degraded performance, misuse, and failure, as well as cumulative effects with other systems and processes."
+  },
+  {
+    "clauseNumber": "7.6",
+    "clauseTitle": "Impact significance determination",
+    "requirement": "The organization shall determine the significance of predicted impacts by applying defined criteria that consider magnitude, probability, geographic extent, duration, reversibility, and the sensitivity of affected populations."
+  },
+  {
+    "clauseNumber": "7.7",
+    "clauseTitle": "Mitigation measures",
+    "requirement": "The organization shall identify and evaluate mitigation measures for significant negative impacts, following a mitigation hierarchy of avoidance, minimization, remediation, and compensation, and shall document the rationale for selected measures."
+  },
+  {
+    "clauseNumber": "7.8",
+    "clauseTitle": "Reporting",
+    "requirement": "The organization shall produce an impact assessment report that documents the assessment methodology, findings, significance determinations, proposed mitigation measures, residual impacts, and recommendations, in a manner accessible to relevant stakeholders."
+  },
+  {
+    "clauseNumber": "8.1",
+    "clauseTitle": "Human rights impacts",
+    "requirement": "The organization shall assess the AI system's potential impacts on human rights, including the rights to privacy, non-discrimination, freedom of expression, access to justice, and other fundamental rights as recognized in applicable frameworks and conventions."
+  },
+  {
+    "clauseNumber": "8.2",
+    "clauseTitle": "Social impacts",
+    "requirement": "The organization shall assess the AI system's potential social impacts, including effects on employment, social cohesion, education, cultural heritage, community well-being, digital inclusion, and the potential for creating or exacerbating social inequalities."
+  },
+  {
+    "clauseNumber": "8.3",
+    "clauseTitle": "Economic impacts",
+    "requirement": "The organization shall assess the AI system's potential economic impacts, including effects on labour markets, industry competition, economic equity, consumer welfare, innovation ecosystems, and the distribution of economic benefits and costs."
+  },
+  {
+    "clauseNumber": "8.4",
+    "clauseTitle": "Environmental impacts",
+    "requirement": "The organization shall assess the AI system's potential environmental impacts, including energy consumption, carbon emissions, electronic waste, resource utilization during training and operation, and broader ecological effects of AI-enabled activities."
+  },
+  {
+    "clauseNumber": "8.5",
+    "clauseTitle": "Ethical impacts",
+    "requirement": "The organization shall assess the AI system's potential ethical impacts, including considerations of fairness, autonomy, dignity, informed consent, power dynamics, and alignment with established ethical principles and societal values."
+  },
+  {
+    "clauseNumber": "8.6",
+    "clauseTitle": "Safety impacts",
+    "requirement": "The organization shall assess the AI system's potential safety impacts, including risks to physical safety, psychological well-being, and critical infrastructure, considering both normal operating conditions and foreseeable failure modes."
+  },
+  {
+    "clauseNumber": "9.1",
+    "clauseTitle": "Monitoring plan",
+    "requirement": "The organization shall establish a monitoring plan to track actual impacts against predicted impacts, including defining monitoring indicators, data collection methods, frequencies, responsibilities, and escalation procedures for significant deviations."
+  },
+  {
+    "clauseNumber": "9.2",
+    "clauseTitle": "Periodic review",
+    "requirement": "The organization shall conduct periodic reviews of the impact assessment to evaluate the effectiveness of mitigation measures, identify emerging impacts, and update the assessment based on new information, changed circumstances, or stakeholder feedback."
+  },
+  {
+    "clauseNumber": "9.3",
+    "clauseTitle": "Adaptive management",
+    "requirement": "The organization shall implement adaptive management processes that enable timely adjustments to the AI system or its mitigation measures in response to monitoring results, changing conditions, or newly identified impacts."
+  },
+  {
+    "clauseNumber": "10",
+    "clauseTitle": "Governance of impact assessments",
+    "requirement": "The organization shall establish governance arrangements for AI impact assessments, including defining roles, responsibilities, and authorities, ensuring independence and competence of assessors, establishing quality assurance mechanisms, and integrating impact assessment into organizational decision-making and AI governance frameworks."
+  }
+]

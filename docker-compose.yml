@@ -1,0 +1,71 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: isoai-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: isoai
+      POSTGRES_USER: ${DB_USER:-isoai}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-isoai_secure_2026}
+    ports:
+      - "5436:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U isoai"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: isoai-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://${DB_USER:-isoai}:${DB_PASSWORD:-isoai_secure_2026}@postgres:5432/isoai?schema=tenant_template
+      DEFAULT_TENANT_SLUG: ${DEFAULT_TENANT_SLUG:-default}
+      DEFAULT_TENANT_NAME: ${DEFAULT_TENANT_NAME:-Default Organisation}
+      JWT_SECRET: ${JWT_SECRET:-dev-jwt-secret-change-in-production}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-7d}
+      PORT: 3100
+      NODE_ENV: development
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@isoai.local}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+      DEPLOYMENT_MODE: ${DEPLOYMENT_MODE:-saas}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_SECURE: ${SMTP_SECURE:-false}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      SMTP_FROM: ${SMTP_FROM:-noreply@isoai.local}
+      APP_URL: ${APP_URL:-http://localhost:5174}
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/prisma:/app/prisma
+      - /app/node_modules
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: isoai-frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: http://localhost:3100/api
+    ports:
+      - "5174:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/src:/app/src
+      - /app/node_modules
+
+volumes:
+  postgres-data:

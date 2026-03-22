@@ -1,0 +1,152 @@
+[
+  {
+    "clauseNumber": "6.1.1",
+    "clauseTitle": "Acquisition process",
+    "requirement": "The organization shall implement an acquisition process for AI systems that defines stakeholder requirements, evaluates potential suppliers, establishes contractual agreements, and ensures that procured AI components and services meet specified requirements."
+  },
+  {
+    "clauseNumber": "6.1.2",
+    "clauseTitle": "Supply process",
+    "requirement": "The organization shall implement a supply process that ensures AI system components and services are delivered in accordance with agreed requirements, including provisions for AI-specific considerations such as data rights, model documentation, and ongoing support obligations."
+  },
+  {
+    "clauseNumber": "6.2.1",
+    "clauseTitle": "Life cycle model management process",
+    "requirement": "The organization shall define, maintain, and improve life cycle models and associated policies and procedures for AI systems, ensuring that AI-specific processes are integrated into the overall system life cycle."
+  },
+  {
+    "clauseNumber": "6.2.2",
+    "clauseTitle": "Infrastructure management process",
+    "requirement": "The organization shall establish and maintain the infrastructure necessary for AI system development and operation, including computing resources, data storage, development environments, and deployment platforms."
+  },
+  {
+    "clauseNumber": "6.2.3",
+    "clauseTitle": "Portfolio management process",
+    "requirement": "The organization shall manage its portfolio of AI projects and systems to ensure alignment with organizational objectives, appropriate resource allocation, and effective governance of AI initiatives."
+  },
+  {
+    "clauseNumber": "6.2.4",
+    "clauseTitle": "Human resource management process",
+    "requirement": "The organization shall ensure that personnel involved in AI system development, deployment, and operation possess the necessary competencies, skills, and training, including AI-specific expertise in data science, machine learning, and AI ethics."
+  },
+  {
+    "clauseNumber": "6.2.5",
+    "clauseTitle": "Quality management process",
+    "requirement": "The organization shall establish and maintain quality management processes for AI systems that address AI-specific quality attributes including data quality, model performance, fairness, explainability, and robustness."
+  },
+  {
+    "clauseNumber": "6.3.1",
+    "clauseTitle": "Project planning process",
+    "requirement": "The organization shall establish and maintain plans for AI system projects that address AI-specific planning considerations including data acquisition, model development iterations, computational resource requirements, and ethical review milestones."
+  },
+  {
+    "clauseNumber": "6.3.2",
+    "clauseTitle": "Project assessment and control process",
+    "requirement": "The organization shall assess and control AI system projects against established plans, monitoring AI-specific progress indicators including data readiness, model performance metrics, and compliance with AI governance requirements."
+  },
+  {
+    "clauseNumber": "6.3.3",
+    "clauseTitle": "Decision management process",
+    "requirement": "The organization shall establish a decision management process for AI systems that provides a structured approach to selecting among alternatives at key decision points, considering AI-specific factors such as model selection, trade-offs between performance and explainability, and risk acceptance."
+  },
+  {
+    "clauseNumber": "6.3.4",
+    "clauseTitle": "Risk management process",
+    "requirement": "The organization shall implement risk management processes for AI systems in accordance with ISO 31000, supplemented by AI-specific risk identification and treatment as described in ISO/IEC 23894."
+  },
+  {
+    "clauseNumber": "6.3.5",
+    "clauseTitle": "Configuration management process",
+    "requirement": "The organization shall establish configuration management for AI systems that tracks and controls changes to data, models, code, hyperparameters, training pipelines, and deployment configurations throughout the AI system life cycle."
+  },
+  {
+    "clauseNumber": "6.3.6",
+    "clauseTitle": "Information management process",
+    "requirement": "The organization shall manage information generated during AI system life cycle activities, including training data documentation, model specifications, experiment records, validation results, and operational monitoring data."
+  },
+  {
+    "clauseNumber": "6.3.7",
+    "clauseTitle": "Measurement process",
+    "requirement": "The organization shall establish measurement processes for AI systems that define, collect, and analyse AI-specific metrics including model performance, data quality indicators, fairness metrics, and operational effectiveness measures."
+  },
+  {
+    "clauseNumber": "6.4.1",
+    "clauseTitle": "Business or mission analysis process",
+    "requirement": "The organization shall analyse the business or mission context for AI systems, defining the problem domain, identifying opportunities for AI application, and establishing success criteria and constraints for the AI solution."
+  },
+  {
+    "clauseNumber": "6.4.2",
+    "clauseTitle": "Stakeholder needs and requirements definition process",
+    "requirement": "The organization shall define stakeholder needs and requirements for AI systems, including functional and non-functional requirements, AI-specific requirements for performance, fairness, transparency, and safety, and requirements from affected parties."
+  },
+  {
+    "clauseNumber": "6.4.3",
+    "clauseTitle": "System requirements definition process",
+    "requirement": "The organization shall transform stakeholder requirements into a set of system requirements for the AI system, specifying technical requirements for data, models, interfaces, performance, and quality attributes."
+  },
+  {
+    "clauseNumber": "6.4.4",
+    "clauseTitle": "Architecture definition process",
+    "requirement": "The organization shall define the architecture of the AI system, describing the structural and behavioural elements including data pipelines, model components, integration points, and deployment architecture."
+  },
+  {
+    "clauseNumber": "6.4.5",
+    "clauseTitle": "Design definition process",
+    "requirement": "The organization shall produce a detailed design for the AI system that implements the architecture, specifying data processing workflows, model architectures, feature engineering approaches, and interface designs."
+  },
+  {
+    "clauseNumber": "6.4.6",
+    "clauseTitle": "Implementation process",
+    "requirement": "The organization shall implement the AI system design, producing system elements including data processing components, trained models, integration code, and deployment artifacts in accordance with established coding standards and practices."
+  },
+  {
+    "clauseNumber": "6.4.7",
+    "clauseTitle": "Integration process",
+    "requirement": "The organization shall integrate AI system elements into a complete system, verifying that integrated components function together correctly and that the AI model operates as expected within the broader system context."
+  },
+  {
+    "clauseNumber": "6.4.8",
+    "clauseTitle": "Verification process",
+    "requirement": "The organization shall verify that AI system components and the integrated system meet specified requirements, using appropriate verification methods including testing, analysis, inspection, and demonstration of AI-specific quality attributes."
+  },
+  {
+    "clauseNumber": "6.4.9",
+    "clauseTitle": "Transition process",
+    "requirement": "The organization shall manage the transition of the AI system from development to operational use, including deployment planning, user training, data migration, and establishment of operational monitoring and support capabilities."
+  },
+  {
+    "clauseNumber": "6.4.10",
+    "clauseTitle": "Validation process",
+    "requirement": "The organization shall validate that the AI system satisfies its intended use and stakeholder requirements in the operational environment, confirming that the system delivers expected value and operates within acceptable risk parameters."
+  },
+  {
+    "clauseNumber": "6.4.11",
+    "clauseTitle": "Operation, maintenance, and disposal process",
+    "requirement": "The organization shall operate, maintain, and dispose of AI systems responsibly, including ongoing performance monitoring, model retraining, incident management, and secure decommissioning of models and associated data when the system reaches end of life."
+  },
+  {
+    "clauseNumber": "7.1",
+    "clauseTitle": "Data management process",
+    "requirement": "The organization shall establish a data management process for AI systems that addresses data collection, annotation, preprocessing, quality assurance, storage, versioning, and governance throughout the AI system life cycle, ensuring data is fit for purpose and ethically sourced."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "AI model development process",
+    "requirement": "The organization shall establish an AI model development process that encompasses feature engineering, model selection, training, hyperparameter tuning, and evaluation, maintaining documentation of design decisions, experiments, and rationale for chosen approaches."
+  },
+  {
+    "clauseNumber": "7.3",
+    "clauseTitle": "AI model verification process",
+    "requirement": "The organization shall verify AI models against specified requirements using appropriate techniques including performance benchmarking, robustness testing, bias evaluation, explainability analysis, and security assessment."
+  },
+  {
+    "clauseNumber": "7.4",
+    "clauseTitle": "AI system validation process",
+    "requirement": "The organization shall validate the AI system in its intended operational environment, confirming that the system meets stakeholder needs and performs acceptably across expected operating conditions, edge cases, and diverse user populations."
+  },
+  {
+    "clauseNumber": "7.5",
+    "clauseTitle": "AI-specific operations process",
+    "requirement": "The organization shall establish AI-specific operational processes including continuous monitoring of model performance, detection of data and concept drift, automated alerting, model retraining triggers, and rollback mechanisms to ensure sustained system effectiveness."
+  }
+]

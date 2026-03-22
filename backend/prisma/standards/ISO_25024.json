@@ -1,0 +1,182 @@
+[
+  {
+    "clauseNumber": "5",
+    "clauseTitle": "Data quality model overview",
+    "requirement": "The organization shall apply a data quality model that defines the characteristics and sub-characteristics of data quality, providing a structured framework for the measurement and evaluation of data quality in information systems."
+  },
+  {
+    "clauseNumber": "6.1",
+    "clauseTitle": "Accuracy",
+    "requirement": "Data shall correctly represent the real-world values and entities it is intended to model. Accuracy shall be assessed with respect to both syntactic and semantic correctness."
+  },
+  {
+    "clauseNumber": "6.1.1",
+    "clauseTitle": "Syntactic accuracy",
+    "requirement": "Data values shall conform to the defined format, type, and range rules of the data domain. Syntactic accuracy shall be measured as the degree to which data values comply with the syntactic rules of the defined data format."
+  },
+  {
+    "clauseNumber": "6.1.2",
+    "clauseTitle": "Semantic accuracy",
+    "requirement": "Data values shall correctly represent the true values of the real-world entities they describe. Semantic accuracy shall be measured as the degree to which data values correspond to the actual real-world values."
+  },
+  {
+    "clauseNumber": "6.2",
+    "clauseTitle": "Completeness",
+    "requirement": "Data shall have values for all expected attributes and records as defined by the data requirements. Completeness shall be assessed at both the record and data value levels."
+  },
+  {
+    "clauseNumber": "6.2.1",
+    "clauseTitle": "Record completeness",
+    "requirement": "All required records shall be present in the dataset. Record completeness shall be measured as the ratio of records present in the dataset to the total number of records expected."
+  },
+  {
+    "clauseNumber": "6.2.2",
+    "clauseTitle": "Data value completeness",
+    "requirement": "All required data values within records shall be populated and non-null where values are expected. Data value completeness shall be measured as the ratio of populated data values to the total number of expected data values."
+  },
+  {
+    "clauseNumber": "6.3",
+    "clauseTitle": "Consistency",
+    "requirement": "Data shall be free from contradictions and shall be coherent with other data within the dataset and across related datasets."
+  },
+  {
+    "clauseNumber": "6.3.1",
+    "clauseTitle": "Integrity",
+    "requirement": "Data shall maintain referential integrity and comply with defined business rules, constraints, and relationships. Integrity shall be measured as the degree to which data values satisfy defined integrity constraints."
+  },
+  {
+    "clauseNumber": "6.3.2",
+    "clauseTitle": "Consistency",
+    "requirement": "Data values shall be consistent and non-contradictory across different data stores, systems, and representations. Consistency shall be measured as the degree to which equivalent data values agree across datasets."
+  },
+  {
+    "clauseNumber": "6.4",
+    "clauseTitle": "Credibility",
+    "requirement": "Data shall be regarded as true and believable by its users. Credibility shall encompass the believability of data and the reputation of its sources."
+  },
+  {
+    "clauseNumber": "6.4.1",
+    "clauseTitle": "Believability",
+    "requirement": "Data shall be perceived as credible by its intended users. Believability shall be measured as the degree to which data is accepted as representing true and accurate information by stakeholders."
+  },
+  {
+    "clauseNumber": "6.4.2",
+    "clauseTitle": "Reputation",
+    "requirement": "Data shall originate from sources that are trusted and well-regarded. Reputation shall be measured as the degree to which data sources are considered reliable and authoritative by users and stakeholders."
+  },
+  {
+    "clauseNumber": "6.5",
+    "clauseTitle": "Currentness",
+    "requirement": "Data shall be sufficiently up to date for the intended task. Currentness shall address both the currency and timeliness of data values."
+  },
+  {
+    "clauseNumber": "6.5.1",
+    "clauseTitle": "Currency",
+    "requirement": "Data shall reflect the most recent state of the real-world entities it represents. Currency shall be measured as the degree to which data values are up to date with respect to the entities they describe."
+  },
+  {
+    "clauseNumber": "6.5.2",
+    "clauseTitle": "Timeliness",
+    "requirement": "Data shall be available within the time period required for its intended use. Timeliness shall be measured as the degree to which data is available at the time it is needed for decision-making or processing."
+  },
+  {
+    "clauseNumber": "6.6",
+    "clauseTitle": "Accessibility",
+    "requirement": "Data shall be accessible and obtainable by authorized users in a manner appropriate to their needs."
+  },
+  {
+    "clauseNumber": "6.6.1",
+    "clauseTitle": "Availability",
+    "requirement": "Data shall be retrievable and accessible when required by authorized users. Availability shall be measured as the degree to which data can be accessed on demand within acceptable response times."
+  },
+  {
+    "clauseNumber": "6.6.2",
+    "clauseTitle": "Obtainability",
+    "requirement": "Data shall be obtainable through defined access mechanisms and procedures. Obtainability shall be measured as the degree to which authorized users can successfully acquire the data they need through established channels."
+  },
+  {
+    "clauseNumber": "6.7",
+    "clauseTitle": "Compliance",
+    "requirement": "Data shall adhere to applicable regulations, standards, conventions, and organizational policies governing data management and usage."
+  },
+  {
+    "clauseNumber": "6.7.1",
+    "clauseTitle": "Regulatory compliance",
+    "requirement": "Data shall comply with all applicable laws, regulations, and legal requirements. Regulatory compliance shall be measured as the degree to which data handling and content satisfy statutory and regulatory obligations."
+  },
+  {
+    "clauseNumber": "6.7.2",
+    "clauseTitle": "Standards compliance",
+    "requirement": "Data shall conform to applicable industry standards, technical specifications, and organizational data governance policies. Standards compliance shall be measured as the degree to which data adheres to defined standards and conventions."
+  },
+  {
+    "clauseNumber": "6.8",
+    "clauseTitle": "Confidentiality",
+    "requirement": "Data shall be protected from unauthorized access and disclosure. Confidentiality shall be measured as the degree to which data is accessible only to those authorized to have access, and protected against improper disclosure."
+  },
+  {
+    "clauseNumber": "6.9",
+    "clauseTitle": "Efficiency",
+    "requirement": "Data shall be stored and processed in a manner that optimizes the use of system resources while maintaining quality requirements."
+  },
+  {
+    "clauseNumber": "6.9.1",
+    "clauseTitle": "Storage efficiency",
+    "requirement": "Data shall be stored in a manner that minimizes unnecessary resource consumption. Storage efficiency shall be measured as the degree to which data is organized and stored without excessive redundancy or waste of storage capacity."
+  },
+  {
+    "clauseNumber": "6.9.2",
+    "clauseTitle": "Processing efficiency",
+    "requirement": "Data shall be structured and organized to support efficient processing operations. Processing efficiency shall be measured as the degree to which data can be processed within acceptable time and resource constraints."
+  },
+  {
+    "clauseNumber": "6.10",
+    "clauseTitle": "Precision",
+    "requirement": "Data shall have a level of granularity and exactness appropriate for the intended purpose. Precision shall be measured as the degree to which data values are expressed with sufficient detail and decimal accuracy for the tasks in which they are used."
+  },
+  {
+    "clauseNumber": "6.11",
+    "clauseTitle": "Traceability",
+    "requirement": "Data shall be traceable to its origins, and the history of changes to the data shall be recorded. Traceability shall be measured as the degree to which data lineage, provenance, and transformation history can be verified and audited."
+  },
+  {
+    "clauseNumber": "6.12",
+    "clauseTitle": "Understandability",
+    "requirement": "Data shall be represented in a clear and unambiguous manner that enables users to comprehend and correctly interpret data values. Understandability shall be measured as the degree to which data is described with adequate metadata, definitions, and documentation."
+  },
+  {
+    "clauseNumber": "6.13",
+    "clauseTitle": "Portability",
+    "requirement": "Data shall be transferable between different systems, platforms, and environments while maintaining its quality characteristics."
+  },
+  {
+    "clauseNumber": "6.13.1",
+    "clauseTitle": "Adaptability",
+    "requirement": "Data shall be adaptable to different environments and platforms without requiring extensive modification. Adaptability shall be measured as the degree to which data can be effectively used in different contexts or systems beyond those originally intended."
+  },
+  {
+    "clauseNumber": "6.13.2",
+    "clauseTitle": "Replaceability",
+    "requirement": "Data shall be replaceable with equivalent data from alternative sources without loss of quality or function. Replaceability shall be measured as the degree to which data from one source can substitute data from another while maintaining required quality levels."
+  },
+  {
+    "clauseNumber": "6.14",
+    "clauseTitle": "Recoverability",
+    "requirement": "Data shall be recoverable to a defined state in the event of failure or corruption. Recoverability shall be measured as the degree to which data can be restored to a correct and complete state following a disruption or data loss event."
+  },
+  {
+    "clauseNumber": "7.1",
+    "clauseTitle": "Data quality measurement — General",
+    "requirement": "The organization shall establish a systematic approach to measuring data quality that defines measurement methods, metrics, and procedures for each applicable data quality characteristic and sub-characteristic."
+  },
+  {
+    "clauseNumber": "7.2",
+    "clauseTitle": "Data quality measurement process",
+    "requirement": "The organization shall implement a data quality measurement process that includes defining measurement requirements, selecting appropriate measures, applying measurement methods, and analysing measurement results to evaluate data quality levels."
+  },
+  {
+    "clauseNumber": "7.3",
+    "clauseTitle": "Data quality measurement reporting",
+    "requirement": "The organization shall report data quality measurement results in a structured and consistent manner, providing stakeholders with clear information about data quality levels, trends, and areas requiring improvement."
+  }
+]

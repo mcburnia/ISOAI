@@ -1,0 +1,300 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================
+// ALL MODELS BELOW ARE TENANT MODELS
+// Created in whatever schema the DATABASE_URL search_path points to.
+// For migrations: search_path = tenant_template
+// At runtime: search_path = tenant_<slug> (per-tenant)
+//
+// Platform tables (Tenant, PlatformUser, Standard, TenantStandard)
+// are managed via raw SQL — see services/platformDb.ts
+// ============================================================
+
+model User {
+  id                 String   @id @default(cuid())
+  email              String   @unique
+  name               String
+  password           String
+  role               String   @default("USER") // USER, ADMIN, OWNER
+  mustChangePassword Boolean  @default(false)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  ownedSystems       AISystem[]         @relation("SystemOwner")
+  ownedRisks         Risk[]             @relation("RiskOwner")
+  reportedIncidents  Incident[]         @relation("IncidentReporter")
+  assignedIncidents  Incident[]         @relation("IncidentAssignee")
+  lifecycleApprovals LifecycleEntry[]   @relation("LifecycleApprover")
+  oversightRecords   OversightRecord[]
+  monitoringRecords  MonitoringRecord[]
+  trainingRecords      TrainingRecord[]
+  governanceRoles      GovernanceRole[]
+  harmonizedEvidence   HarmonizedEvidence[]
+}
+
+model AISystem {
+  id                 String    @id @default(cuid())
+  name               String
+  description        String
+  ownerId            String
+  owner              User      @relation("SystemOwner", fields: [ownerId], references: [id])
+  environment        String
+  systemType         String
+  riskClassification String
+  humanOversight     String
+  deploymentStatus   String
+  lastReviewDate     DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  risks              Risk[]
+  lifecycleEntries   LifecycleEntry[]
+  incidents          Incident[]
+  oversightRecords   OversightRecord[]
+  monitoringRecords  MonitoringRecord[]
+  governanceRoles    GovernanceRole[]
+}
+
+model Risk {
+  id                 String    @id @default(cuid())
+  systemId           String
+  system             AISystem  @relation(fields: [systemId], references: [id], onDelete: Cascade)
+  description        String
+  category           String
+  likelihood         String
+  impact             String
+  riskRating         String
+  mitigationMeasures String
+  ownerId            String
+  owner              User      @relation("RiskOwner", fields: [ownerId], references: [id])
+  reviewDate         DateTime?
+  status             String    @default("OPEN")
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+model LifecycleEntry {
+  id           String    @id @default(cuid())
+  systemId     String
+  system       AISystem  @relation(fields: [systemId], references: [id], onDelete: Cascade)
+  stage        Int
+  stageName    String
+  status       String    @default("PENDING")
+  approvedById String?
+  approvedBy   User?     @relation("LifecycleApprover", fields: [approvedById], references: [id])
+  notes        String?
+  completedAt  DateTime?
+  createdAt    DateTime  @default(now())
+}
+
+model Incident {
+  id                String    @id @default(cuid())
+  systemId          String
+  system            AISystem  @relation(fields: [systemId], references: [id], onDelete: Cascade)
+  title             String
+  description       String
+  occurredAt        DateTime
+  severity          String
+  status            String    @default("REPORTED")
+  findings          String?
+  correctiveActions String?
+  reportedById      String
+  reportedBy        User      @relation("IncidentReporter", fields: [reportedById], references: [id])
+  assignedToId      String?
+  assignedTo        User?     @relation("IncidentAssignee", fields: [assignedToId], references: [id])
+  escalated         Boolean   @default(false)
+  resolvedAt        DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model OversightRecord {
+  id             String   @id @default(cuid())
+  systemId       String
+  system         AISystem @relation(fields: [systemId], references: [id], onDelete: Cascade)
+  reviewerId     String
+  reviewer       User     @relation(fields: [reviewerId], references: [id])
+  reviewDate     DateTime
+  reviewType     String
+  findings       String
+  actionsTaken   String?
+  concernsRaised Boolean  @default(false)
+  escalated      Boolean  @default(false)
+  createdAt      DateTime @default(now())
+}
+
+model MonitoringRecord {
+  id                String   @id @default(cuid())
+  systemId          String
+  system            AISystem @relation(fields: [systemId], references: [id], onDelete: Cascade)
+  reviewerId        String
+  reviewer          User     @relation(fields: [reviewerId], references: [id])
+  date              DateTime
+  type              String
+  findings          String
+  performanceStatus String
+  followUpActions   String?
+  createdAt         DateTime @default(now())
+}
+
+model TrainingModule {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  title           String
+  description     String
+  durationMinutes Int      @default(60)
+  sections        String   // JSON array
+  standardCode    String?  // Which standard this training belongs to
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  completions     TrainingRecord[]
+}
+
+model TrainingRecord {
+  id           String          @id @default(cuid())
+  userId       String
+  user         User            @relation(fields: [userId], references: [id])
+  moduleId     String?
+  module       TrainingModule? @relation(fields: [moduleId], references: [id])
+  topic        String
+  completedAt  DateTime
+  evidence     String?
+  acknowledged Boolean         @default(false)
+  createdAt    DateTime        @default(now())
+}
+
+model Audit {
+  id        String         @id @default(cuid())
+  title     String
+  date      DateTime
+  scope     String
+  status    String         @default("PLANNED")
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  findings  AuditFinding[]
+}
+
+model AuditFinding {
+  id               String   @id @default(cuid())
+  auditId          String
+  audit            Audit    @relation(fields: [auditId], references: [id], onDelete: Cascade)
+  finding          String
+  severity         String
+  correctiveAction String?
+  status           String   @default("OPEN")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model ManagementReview {
+  id        String   @id @default(cuid())
+  date      DateTime
+  summary   String
+  decisions String
+  actions   String
+  createdAt DateTime @default(now())
+}
+
+model GovernanceRole {
+  id         String    @id @default(cuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id])
+  role       String
+  systemId   String?
+  system     AISystem? @relation(fields: [systemId], references: [id], onDelete: Cascade)
+  assignedAt DateTime  @default(now())
+
+  @@unique([userId, role, systemId])
+}
+
+model Document {
+  id                String    @id @default(cuid())
+  title             String
+  slug              String    @unique
+  documentType      String
+  content           String
+  owner             String
+  version           String    @default("1.0")
+  status            String    @default("APPROVED")
+  approvalAuthority String?
+  reviewCycle       String?
+  lastReviewedAt    DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model ActivityLog {
+  id         String   @id @default(cuid())
+  userId     String
+  userName   String
+  action     String
+  entity     String
+  entityId   String?
+  entityName String?
+  details    String?
+  createdAt  DateTime @default(now())
+}
+
+model ControlMapping {
+  id                    String               @id @default(cuid())
+  standardCode          String               // Which standard this control belongs to
+  clauseNumber          String
+  clauseTitle           String
+  requirement           String
+  evidenceDescription   String?
+  status                String               @default("NOT_STARTED")
+  linkedDocuments       String?
+  harmonizedGroupId     String?              // Links to HarmonizedRequirement for cross-standard dedup
+  harmonizedGroup       HarmonizedRequirement? @relation(fields: [harmonizedGroupId], references: [id])
+  updatedAt             DateTime             @updatedAt
+
+  @@unique([standardCode, clauseNumber])
+}
+
+// ============================================================
+// CROSS-STANDARD DEDUPLICATION
+// ============================================================
+// ISO management system standards share a "Harmonized Structure"
+// (clauses 4-10). This means clause 9.2 Internal Audit is
+// essentially identical across 27001, 42001, 9001, 22301, 20000-1.
+//
+// HarmonizedRequirement groups these shared clauses so that:
+// - Evidence uploaded once satisfies all linked standards
+// - Compliance status can cascade across standards
+// - Audits map to the harmonized requirement, not individual standards
+// - Standard-specific controls (e.g., Annex A) remain independent
+
+model HarmonizedRequirement {
+  id              String           @id @default(cuid())
+  clauseNumber    String           @unique // e.g. "HLS-9.2" for Harmonized clause 9.2
+  clauseTitle     String           // e.g. "Internal Audit"
+  requirement     String           // Shared requirement text
+  category        String           // CONTEXT, LEADERSHIP, PLANNING, SUPPORT, OPERATION, EVALUATION, IMPROVEMENT
+  controlMappings ControlMapping[] // All standard-specific clauses this satisfies
+  evidence        HarmonizedEvidence[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model HarmonizedEvidence {
+  id                      String                @id @default(cuid())
+  harmonizedRequirementId String
+  harmonizedRequirement   HarmonizedRequirement @relation(fields: [harmonizedRequirementId], references: [id], onDelete: Cascade)
+  title                   String                // e.g. "Management Review Minutes Q1 2026"
+  description             String?
+  evidenceType            String                // DOCUMENT, RECORD, SCREENSHOT, LINK, OTHER
+  fileUrl                 String?               // Path to uploaded file
+  externalUrl             String?               // External link
+  uploadedById            String
+  uploadedBy              User                  @relation(fields: [uploadedById], references: [id])
+  createdAt               DateTime              @default(now())
+
+  @@index([harmonizedRequirementId])
+}
