@@ -18,6 +18,7 @@ import complianceRoutes from './modules/compliance/routes';
 import documentRoutes from './modules/documents/routes';
 import activityLogRoutes from './modules/activity-log/routes';
 import platformRoutes from './modules/platform/routes';
+import settingsRoutes from './modules/settings/routes';
 
 const app = express();
 
@@ -39,6 +40,9 @@ app.use('/api/governance-roles', roleRoutes);
 app.use('/api/compliance', complianceRoutes);
 app.use('/api/documents', documentRoutes);
 app.use('/api/activity-log', activityLogRoutes);
+
+// Tenant settings routes (standard selection, org config)
+app.use('/api/settings', settingsRoutes);
 
 // Platform admin routes (tenant/standard management)
 app.use('/api/platform', platformRoutes);

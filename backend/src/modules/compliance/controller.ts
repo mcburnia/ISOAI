@@ -1,10 +1,17 @@
 import { Request, Response } from 'express';
 import { prisma } from '../../prisma';
 import { logActivity } from '../../services/auditLog';
+import { getActiveStandardCodes } from '../../services/activeStandards';
 
-export async function listStandards(_req: Request, res: Response): Promise<void> {
-  // Get distinct standardCodes from the control mappings in this tenant
+export async function listStandards(req: Request, res: Response): Promise<void> {
+  const activeCodes = await getActiveStandardCodes(req.user!.tenantId!);
+  if (activeCodes.length === 0) {
+    res.json({ standards: [] });
+    return;
+  }
+
   const raw = await prisma.controlMapping.findMany({
+    where: { standardCode: { in: activeCodes } },
     select: { standardCode: true },
     distinct: ['standardCode'],
     orderBy: { standardCode: 'asc' },
@@ -14,9 +21,23 @@ export async function listStandards(_req: Request, res: Response): Promise<void>
 }
 
 export async function listMappings(req: Request, res: Response): Promise<void> {
-  const where = req.query.standardCode
-    ? { standardCode: req.query.standardCode as string }
-    : {};
+  const activeCodes = await getActiveStandardCodes(req.user!.tenantId!);
+  if (activeCodes.length === 0) {
+    res.json({ mappings: [] });
+    return;
+  }
+
+  const where: any = { standardCode: { in: activeCodes } };
+  if (req.query.standardCode) {
+    // If a specific standard is requested, use it but only if it is active
+    const requested = req.query.standardCode as string;
+    if (!activeCodes.includes(requested)) {
+      res.json({ mappings: [] });
+      return;
+    }
+    where.standardCode = requested;
+  }
+
   const mappings = await prisma.controlMapping.findMany({
     where,
     orderBy: { clauseNumber: 'asc' },
@@ -44,7 +65,13 @@ export async function updateMapping(req: Request, res: Response): Promise<void> 
   res.json({ mapping });
 }
 
-export async function getDashboard(_req: Request, res: Response): Promise<void> {
+export async function getDashboard(req: Request, res: Response): Promise<void> {
+  const activeCodes = await getActiveStandardCodes(req.user!.tenantId!);
+  const hasActiveStandards = activeCodes.length > 0;
+
+  // Build where clause for standard-filtered queries
+  const standardWhere = hasActiveStandards ? { standardCode: { in: activeCodes } } : { standardCode: 'NONE' };
+
   const [
     totalSystems,
     activeSystems,
@@ -63,11 +90,13 @@ export async function getDashboard(_req: Request, res: Response): Promise<void> 
     prisma.aISystem.count({ where: { deploymentStatus: 'ACTIVE' } }),
     prisma.risk.count({ where: { status: 'OPEN' } }),
     prisma.incident.count({ where: { status: { in: ['REPORTED', 'INVESTIGATING'] } } }),
-    prisma.controlMapping.findMany(),
+    prisma.controlMapping.findMany({ where: standardWhere }),
     prisma.auditFinding.count({ where: { status: { in: ['OPEN', 'IN_PROGRESS'] } } }),
     prisma.user.count(),
     prisma.trainingRecord.count(),
-    prisma.trainingModule.count(),
+    hasActiveStandards
+      ? prisma.trainingModule.count({ where: standardWhere })
+      : Promise.resolve(0),
     prisma.activityLog.findMany({
       orderBy: { createdAt: 'desc' },
       take: 8,

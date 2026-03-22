@@ -1,5 +1,5 @@
 import { useEffect, useState, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader } from '../../components/ui/Card';
 import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
@@ -175,7 +175,20 @@ export default function TrainingList() {
           <Card>
             <div className="py-8 text-center">
               <BookOpen className="w-8 h-8 text-muted-foreground mx-auto mb-2 opacity-40" />
-              <p className="text-sm text-muted-foreground">No training modules available</p>
+              {modules.length === 0 ? (
+                <>
+                  <p className="text-sm font-medium text-foreground">No standards activated</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {isAdmin ? (
+                      <>Training modules appear once standards are selected. <Link to="/admin/standards" className="text-primary hover:underline">Configure standards</Link>.</>
+                    ) : (
+                      'Training will be available once your administrator activates standards for your organisation.'
+                    )}
+                  </p>
+                </>
+              ) : (
+                <p className="text-sm text-muted-foreground">No training modules match the selected filter</p>
+              )}
             </div>
           </Card>
         )}

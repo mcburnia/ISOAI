@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { z } from 'zod';
 import { prisma } from '../../prisma';
 import { logActivity } from '../../services/auditLog';
+import { getActiveStandardCodes } from '../../services/activeStandards';
 
 const createSchema = z.object({
   userId: z.string(),
@@ -49,9 +50,22 @@ export async function createRecord(req: Request, res: Response): Promise<void> {
 // Training module endpoints
 
 export async function listModules(req: Request, res: Response): Promise<void> {
-  const where = req.query.standardCode
-    ? { standardCode: req.query.standardCode as string }
-    : {};
+  const activeCodes = await getActiveStandardCodes(req.user!.tenantId!);
+  if (activeCodes.length === 0) {
+    res.json({ modules: [] });
+    return;
+  }
+
+  const where: any = { standardCode: { in: activeCodes } };
+  if (req.query.standardCode) {
+    const requested = req.query.standardCode as string;
+    if (!activeCodes.includes(requested)) {
+      res.json({ modules: [] });
+      return;
+    }
+    where.standardCode = requested;
+  }
+
   const modules = await prisma.trainingModule.findMany({
     where,
     select: {

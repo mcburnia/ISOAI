@@ -247,17 +247,11 @@ export default function Dashboard() {
                 ))}
               </div>
             ) : (
-              <div className="space-y-3">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Overall Progress</span>
-                  <span className="font-medium">{data.compliancePercentage}%</span>
-                </div>
-                <div className="w-full bg-muted rounded-full h-2.5">
-                  <div
-                    className="bg-primary rounded-full h-2.5 transition-all"
-                    style={{ width: `${data.compliancePercentage}%` }}
-                  />
-                </div>
+              <div className="py-4 text-center">
+                <p className="text-sm text-muted-foreground">No standards activated yet</p>
+                <Link to="/admin/standards" className="text-xs text-primary hover:underline mt-1 inline-block">
+                  Configure standards
+                </Link>
               </div>
             )}
           </CardContent>

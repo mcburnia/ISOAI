@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '../../components/ui/Card';
 import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
 import Select from '../../components/ui/Select';
 import Textarea from '../../components/ui/Textarea';
 import api from '../../api/client';
+import { useAuth } from '../../context/AuthContext';
 import { CheckCircle, ChevronDown, ChevronRight, Shield, Filter } from 'lucide-react';
 
 interface Mapping {
@@ -68,6 +70,7 @@ const CLAUSE_SECTION_TITLES: Record<string, string> = {
 };
 
 export default function ComplianceView() {
+  const { isAdmin } = useAuth();
   const [standards, setStandards] = useState<string[]>([]);
   const [selectedStandard, setSelectedStandard] = useState<string>('');
   const [mappings, setMappings] = useState<Mapping[]>([]);
@@ -148,6 +151,24 @@ export default function ComplianceView() {
         <div className="h-16 bg-muted rounded animate-pulse" />
         <div className="h-64 bg-muted rounded animate-pulse" />
       </div>
+    );
+  }
+
+  if (!loading && standards.length === 0) {
+    return (
+      <Card>
+        <div className="py-12 text-center">
+          <Shield className="w-8 h-8 text-muted-foreground mx-auto mb-2 opacity-40" />
+          <p className="text-sm font-medium text-foreground">No standards activated</p>
+          <p className="text-xs text-muted-foreground mt-1">
+            {isAdmin ? (
+              <>Your organisation has not selected any ISO standards yet. <Link to="/admin/standards" className="text-primary hover:underline">Configure standards</Link> to get started.</>
+            ) : (
+              'Your organisation has not yet selected any ISO standards. Contact your administrator.'
+            )}
+          </p>
+        </div>
+      </Card>
     );
   }
 

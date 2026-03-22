@@ -22,6 +22,7 @@ import DocumentList from './pages/documents/DocumentList';
 import DocumentView from './pages/documents/DocumentView';
 import Settings from './pages/Settings';
 import UserManagement from './pages/admin/UserManagement';
+import StandardsSettings from './pages/admin/StandardsSettings';
 import ActivityLog from './pages/ActivityLog';
 
 export default function App() {
@@ -52,6 +53,7 @@ export default function App() {
             <Route path="activity-log" element={<ActivityLog />} />
             <Route path="settings" element={<Settings />} />
             <Route path="admin/users" element={<UserManagement />} />
+            <Route path="admin/standards" element={<StandardsSettings />} />
           </Route>
         </Routes>
       </AuthProvider>

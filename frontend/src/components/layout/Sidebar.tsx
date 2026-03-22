@@ -16,6 +16,7 @@ import {
   LogOut,
   FileText,
   ScrollText,
+  Shield,
 } from 'lucide-react';
 
 const navGroups = [
@@ -62,6 +63,7 @@ const adminGroup = {
   title: 'Admin',
   items: [
     { to: '/admin/users', icon: Settings, label: 'User Management' },
+    { to: '/admin/standards', icon: Shield, label: 'Standards' },
   ],
 };
 

@@ -249,6 +249,14 @@ export async function activateStandardForTenant(tenantId: string, standardId: st
   return rows[0];
 }
 
+export async function deactivateStandardForTenant(tenantId: string, standardId: string): Promise<void> {
+  const db = getPlatformDb();
+  await db.$executeRawUnsafe(
+    `DELETE FROM platform."TenantStandard" WHERE tenant_id = $1 AND standard_id = $2`,
+    tenantId, standardId
+  );
+}
+
 export async function getTenantStandards(tenantId: string): Promise<(TenantStandard & { standard: Standard })[]> {
   const db = getPlatformDb();
   return db.$queryRawUnsafe(`

@@ -16,6 +16,7 @@ const pageTitles: Record<string, string> = {
   '/activity-log': 'Activity Log',
   '/settings': 'Account Settings',
   '/admin/users': 'User Management',
+  '/admin/standards': 'Standards',
 };
 
 export default function Header() {
