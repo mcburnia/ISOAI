@@ -87,4 +87,6 @@ Gibbs Consulting. Colours: dark green (#00300F), primary green (#0A5C26), bright
 
 ## Current Status
 
-Platform is feature-complete for core compliance tracking. Deployed on Ubuntu server via Docker Compose. Next priority is the AI Compliance Pilot feature to automate mundane compliance work.
+Platform is feature-complete for core compliance tracking. Deployed on Ubuntu server via Docker Compose.
+
+Next priority: per-tenant standard selection and filtering. The platform schema already supports `TenantStandard` (junction table linking tenants to their chosen ISO standards), but the tenant-side code currently shows all 14 standards to every organisation. This must be enforced before building the compliance scheduling engine and notification system. See BACKLOG.md for full sequencing.
