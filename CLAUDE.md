@@ -61,7 +61,12 @@ cd backend && npx tsc --noEmit
 - Follow the file size guidelines: flag at 500+ lines, propose decomposition at 800+.
 - No over-engineering: no error handling for impossible scenarios, no abstractions for one-time operations, no design for hypothetical futures.
 
+## Editorial Standard
+
+All written content in this project, including UI copy, documentation, help text, compliance content, and generated summaries, must comply with `EDITORIAL.md`. Read it and apply it. No exceptions.
+
 ## Project Context
 
 See `RESTART.md` for architecture and current status.
 See `BACKLOG.md` for active work items.
+See `EDITORIAL.md` for the mandatory writing and editorial standard.
