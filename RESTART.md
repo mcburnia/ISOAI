@@ -12,8 +12,15 @@ Three-service Docker Compose stack: PostgreSQL 16, Node.js/Express backend, Vite
 
 - **Schema-per-tenant isolation** — each tenant gets its own PostgreSQL schema cloned from `tenant_template`
 - **AsyncLocalStorage-based routing** — transparent Prisma proxy routes queries to the correct tenant schema based on request context
-- **Platform schema** — stores tenant metadata, platform-level admin users
+- **Platform schema** — stores tenant metadata (`platform."Tenant"`), standards catalogue (`platform."Standard"`), and tenant-standard activation (`platform."TenantStandard"`)
 - Tenant creation clones `tenant_template` schema (includes all tables, seed data for 640 controls and 41 training modules)
+- **Per-tenant standard selection** — org admins choose which ISO certifications to pursue; compliance, training, and dashboard views filter to show only activated standards
+
+### Access Tiers
+
+- **Platform super-admin** — manages tenants, onboards organisations (currently uses ADMIN role; SUPER_ADMIN role reserved for future)
+- **Organisation admin** (ADMIN role) — manages users, activates/deactivates standards, manages compliance within their tenant
+- **Standard user** (USER role) — day-to-day compliance work within their tenant
 
 ### Database
 
@@ -57,12 +64,18 @@ React + TypeScript + Tailwind CSS. Key pages:
 - Audits & Reviews — audit CRUD, findings, management reviews
 - Control Mapping — 14-standard selector, status filters, collapsible clause sections, inline editing, HLS badges
 - Activity Log — full audit trail
-- Admin — user management with email invitation, forced password reset
-- Settings — user account settings
+- Settings — user profile, organisation info, active standards summary
+- Admin > User Management — user CRUD with email invitation, forced password reset
+- Admin > Standards — per-tenant standard activation with "Learn more" expandable descriptions for all 14 standards
+- Admin > Organisations — platform-level tenant management (create, suspend, reactivate, cancel)
 
 ### Brand
 
 Gibbs Consulting. Colours: dark green (#00300F), primary green (#0A5C26), bright green (#50AD33). Sidebar branding: "Integrated Management System".
+
+### Remote Development
+
+Docker runs on a remote Ubuntu server accessed via SSH (`cranis2-vscode`). Project path on server: `/home/mcburnia/ISOAI`. Locally, files are at `/Users/andimcburnie/ISOAI`. Docker commands must be run via `ssh cranis2-vscode "cd /home/mcburnia/ISOAI && docker compose ..."`. SSH tunnels map container ports to localhost (5174, 3100, 5436).
 
 ## Completed Work
 
@@ -75,18 +88,25 @@ Gibbs Consulting. Colours: dark green (#00300F), primary green (#0A5C26), bright
 - Email invitation system with forced password reset
 - Activity logging across all modules
 - Git repository initialised and pushed to GitHub (mcburnia/ISOAI)
+- Per-tenant standard selection and filtering (backend service with 5-minute cache, org admin UI, filtered compliance/training/dashboard views)
+- "Learn more" expandable descriptions for all 14 ISO standards (layman-friendly summaries)
+- Platform organisation management UI (Admin > Organisations): create tenants with optional admin user, view/expand tenant details, suspend/reactivate/cancel organisations
+- Settings page shows organisation name, identifier, and active standards badges
+- Slug validation fix: auto-strips invalid characters, frontend validation, detailed zod error display
 
 ## Known Issues
 
+- Backend type check has ~10 pre-existing `string | string[]` Express query typing warnings (not regressions, all in systems/training/users controllers)
 - No automated tests (frontend or backend)
 - No production hardening (rate limiting, CORS lockdown, HTTPS)
 - No evidence upload UI for training/compliance
 - No export/reporting functionality
 - No notification system for review due dates
 - No RBAC beyond admin/user (no per-module permissions)
+- Logout button could be more prominent (currently small icon at bottom of sidebar)
 
 ## Current Status
 
-Platform is feature-complete for core compliance tracking. Deployed on Ubuntu server via Docker Compose.
+Platform is feature-complete for core compliance tracking with per-tenant standard selection. Organisation management is operational. Two test tenants exist: "Default Organisation" (Professional) and "Bedrock Inc." (Starter).
 
-Next priority: per-tenant standard selection and filtering. The platform schema already supports `TenantStandard` (junction table linking tenants to their chosen ISO standards), but the tenant-side code currently shows all 14 standards to every organisation. This must be enforced before building the compliance scheduling engine and notification system. See BACKLOG.md for full sequencing.
+Next priority: compliance scheduling engine and notification system. See BACKLOG.md for full sequencing.

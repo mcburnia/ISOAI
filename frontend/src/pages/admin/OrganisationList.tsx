@@ -66,6 +66,7 @@ export default function OrganisationList() {
     adminPassword: '',
   });
   const [formLoading, setFormLoading] = useState(false);
+  const [slugManuallyEdited, setSlugManuallyEdited] = useState(false);
 
   if (!isAdmin) return <Navigate to="/" replace />;
 
@@ -102,8 +103,12 @@ export default function OrganisationList() {
     const value = e.target.value;
     setFormData((prev) => {
       const next = { ...prev, [field]: value };
-      if (field === 'name' && !prev.slug) {
+      if (field === 'name' && !slugManuallyEdited) {
         next.slug = generateSlug(value);
+      }
+      if (field === 'slug') {
+        setSlugManuallyEdited(true);
+        next.slug = value.toLowerCase().replace(/[^a-z0-9-]/g, '');
       }
       return next;
     });
@@ -115,6 +120,7 @@ export default function OrganisationList() {
       plan: 'starter', maxUsers: '5',
       adminEmail: '', adminName: '', adminPassword: '',
     });
+    setSlugManuallyEdited(false);
     setShowForm(false);
   };
 
@@ -122,6 +128,13 @@ export default function OrganisationList() {
     e.preventDefault();
     setFormLoading(true);
     setMessage(null);
+
+    if (!/^[a-z0-9-]+$/.test(formData.slug)) {
+      setMessage({ type: 'error', text: 'Identifier must contain only lowercase letters, numbers and hyphens' });
+      setFormLoading(false);
+      return;
+    }
+
     try {
       await api.post('/platform/tenants', {
         name: formData.name,
@@ -138,7 +151,17 @@ export default function OrganisationList() {
       resetForm();
       load();
     } catch (err: any) {
-      setMessage({ type: 'error', text: err.response?.data?.error || 'Failed to create organisation' });
+      let errorText = err.response?.data?.error || 'Failed to create organisation';
+      // Show specific field errors from zod validation
+      const details = err.response?.data?.details?.fieldErrors;
+      if (details) {
+        const fieldMessages = Object.entries(details)
+          .filter(([, msgs]) => Array.isArray(msgs) && (msgs as string[]).length > 0)
+          .map(([field, msgs]) => `${field}: ${(msgs as string[]).join(', ')}`)
+          .join('; ');
+        if (fieldMessages) errorText = fieldMessages;
+      }
+      setMessage({ type: 'error', text: errorText });
     } finally {
       setFormLoading(false);
     }
@@ -203,14 +226,19 @@ export default function OrganisationList() {
                   placeholder="Acme Ltd"
                   required
                 />
-                <Input
-                  id="slug"
-                  label="Identifier (URL-safe)"
-                  value={formData.slug}
-                  onChange={setField('slug')}
-                  placeholder="acme-ltd"
-                  required
-                />
+                <div>
+                  <Input
+                    id="slug"
+                    label="Identifier (URL-safe)"
+                    value={formData.slug}
+                    onChange={setField('slug')}
+                    placeholder="acme-ltd"
+                    required
+                  />
+                  <p className="text-[11px] text-muted-foreground mt-1">
+                    Lowercase letters, numbers and hyphens only
+                  </p>
+                </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Input

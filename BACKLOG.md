@@ -2,18 +2,25 @@
 
 Updated: 2026-03-22
 
+## Recently Completed
+
+### Per-tenant standard selection and filtering ✓
+- Org admin UI to activate/deactivate standards (Admin > Standards)
+- Backend active standards service with 5-minute in-memory cache (`activeStandards.ts`)
+- Compliance views, training modules, and dashboard metrics filter to activated standards only
+- Settings page shows organisation info and active standards badges
+- "Learn more" expandable descriptions for all 14 standards with layman-friendly summaries
+
+### Platform organisation management ✓
+- Admin > Organisations page for creating, viewing, and managing tenants
+- Create form with auto-generated slug, optional admin user provisioning
+- Expandable detail view showing schema, plan, active standards, status controls
+- Suspend, reactivate, and cancel workflows
+- Slug validation: auto-strips invalid characters, frontend validation before submission, detailed zod error display
+
 ## Next Up
 
-### 1. Per-tenant standard selection and filtering
-The platform schema already supports `TenantStandard` (which standards an org has activated), but the tenant-side code ignores it. All 14 standards and 640 controls are visible to every tenant regardless.
-
-Work required:
-- Org admin UI to activate/deactivate standards for their organisation
-- Backend middleware or service to resolve the tenant's active standards
-- Filter compliance views, training modules, and dashboard metrics to show only activated standards
-- Adjust tenant provisioning so new orgs start with no standards selected (onboarding step)
-
-### 2. Compliance scheduling engine
+### 1. Compliance scheduling engine
 Every ISO management system standard requires recurring obligations at planned intervals. The platform currently records when things happened but has no concept of when they should happen next.
 
 Work required:
@@ -40,7 +47,7 @@ Obligation types mapped from the standards:
 | Corrective action follow-up | 10.2 | Per-finding deadline |
 | Competence re-evaluation | 7.2 | Annual per role |
 
-### 3. Notification system
+### 2. Notification system
 Depends on the scheduling engine. Ensures nothing gets forgotten.
 
 Work required:
@@ -51,7 +58,7 @@ Work required:
 - Notification bell in the header with unread count
 - Notification panel listing upcoming, due, and overdue obligations
 
-### 4. AI Compliance Pilot
+### 3. AI Compliance Pilot
 Context-aware assistant for gap analysis, control explanations, and policy/evidence generation. Deferred until the scheduling and notification foundations are in place.
 
 ## Planned
@@ -63,9 +70,10 @@ Context-aware assistant for gap analysis, control explanations, and policy/evide
 - Risk heat map visualisation
 - Tenant branding (per-organisation logo and colours)
 - Automated tests (backend API, frontend components)
+- Make logout button more prominent
 
 ## Parked
 
-- Platform admin UI (super-admin tenant management)
 - RBAC enhancements (per-module permissions)
 - Asset register
+- Self-service organisation registration (currently admin-only by design)
