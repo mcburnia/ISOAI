@@ -1,13 +1,36 @@
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/client';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { Card, CardHeader, CardContent } from '../components/ui/Card';
-import { User, Lock, CheckCircle, AlertCircle } from 'lucide-react';
+import Badge from '../components/ui/Badge';
+import { User, Lock, CheckCircle, AlertCircle, Building2, Shield } from 'lucide-react';
+
+interface ActiveStandard {
+  code: string;
+  title: string;
+  shortTitle: string;
+  category: string;
+  controlCount: number;
+  activated: boolean;
+  activatedAt: string | null;
+}
 
 export default function Settings() {
-  const { user, login } = useAuth();
+  const { user, tenant, isAdmin } = useAuth();
+
+  // Organisation standards
+  const [activeStandards, setActiveStandards] = useState<ActiveStandard[]>([]);
+
+  useEffect(() => {
+    if (isAdmin) {
+      api.get('/settings/standards')
+        .then((r) => setActiveStandards(r.data.standards.filter((s: ActiveStandard) => s.activated)))
+        .catch(() => {});
+    }
+  }, [isAdmin]);
 
   // Profile form
   const [name, setName] = useState(user?.name || '');
@@ -73,6 +96,56 @@ export default function Settings() {
 
   return (
     <div className="max-w-2xl space-y-6">
+      {/* Organisation */}
+      {tenant && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <Building2 className="w-5 h-5 text-primary" />
+              <h3 className="text-lg font-semibold">Organisation</h3>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <div>
+                <p className="text-sm text-muted-foreground">Name</p>
+                <p className="text-sm font-medium text-foreground">{tenant.name}</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Identifier</p>
+                <p className="text-sm font-medium text-foreground font-mono">{tenant.slug}</p>
+              </div>
+              {activeStandards.length > 0 && (
+                <div>
+                  <p className="text-sm text-muted-foreground mb-2">Active Standards</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {activeStandards.map((s) => (
+                      <Badge key={s.code} variant="default">
+                        <Shield className="w-3 h-3 mr-1" />
+                        {s.shortTitle}
+                      </Badge>
+                    ))}
+                  </div>
+                  {isAdmin && (
+                    <Link to="/admin/standards" className="text-xs text-primary hover:underline mt-2 inline-block">
+                      Manage standards
+                    </Link>
+                  )}
+                </div>
+              )}
+              {activeStandards.length === 0 && isAdmin && (
+                <div>
+                  <p className="text-sm text-muted-foreground">No standards activated yet.</p>
+                  <Link to="/admin/standards" className="text-xs text-primary hover:underline mt-1 inline-block">
+                    Configure standards
+                  </Link>
+                </div>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Profile Settings */}
       <Card>
         <CardHeader>
