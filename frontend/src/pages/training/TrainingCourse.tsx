@@ -95,18 +95,48 @@ export default function TrainingCourse() {
   const [mod, setMod] = useState<TrainingModule | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
-  const [visitedSections, setVisitedSections] = useState<Set<number>>(new Set([0]));
+  const [visitedSections, setVisitedSections] = useState<Set<number>>(() => {
+    try {
+      const stored = localStorage.getItem(`kmi-confirmed-${slug}`);
+      const confirmed = stored ? (JSON.parse(stored) as number[]) : [];
+      return new Set([0, ...confirmed]);
+    } catch { return new Set([0]); }
+  });
   const [completed, setCompleted] = useState(false);
   const [completedAt, setCompletedAt] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [showAcknowledge, setShowAcknowledge] = useState(false);
-  const [confirmedSections, setConfirmedSections] = useState<Set<number>>(new Set());
+  const [confirmedSections, setConfirmedSections] = useState<Set<number>>(() => {
+    try {
+      const stored = localStorage.getItem(`kmi-confirmed-${slug}`);
+      return stored ? new Set(JSON.parse(stored) as number[]) : new Set();
+    } catch { return new Set(); }
+  });
   const [quizMode, setQuizMode] = useState(false);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState<Map<string, number>>(new Map());
+  const [selectedAnswers, setSelectedAnswers] = useState<Map<string, number>>(() => {
+    try {
+      const stored = localStorage.getItem(`kmi-quiz-answers-${slug}`);
+      return stored ? new Map(JSON.parse(stored) as [string, number][]) : new Map();
+    } catch { return new Map(); }
+  });
   const [attemptResult, setAttemptResult] = useState<AttemptResult | null>(null);
   const [quizSubmitting, setQuizSubmitting] = useState(false);
+
+  // Persist confirmed sections to localStorage
+  useEffect(() => {
+    if (slug && confirmedSections.size > 0) {
+      localStorage.setItem(`kmi-confirmed-${slug}`, JSON.stringify([...confirmedSections]));
+    }
+  }, [confirmedSections, slug]);
+
+  // Persist quiz answers to localStorage
+  useEffect(() => {
+    if (slug && selectedAnswers.size > 0) {
+      localStorage.setItem(`kmi-quiz-answers-${slug}`, JSON.stringify([...selectedAnswers]));
+    }
+  }, [selectedAnswers, slug]);
 
   useEffect(() => {
     if (!slug) return;
@@ -180,6 +210,8 @@ export default function TrainingCourse() {
       if (res.data.attempt.passed) {
         setCompleted(true);
         setCompletedAt(new Date().toISOString());
+        localStorage.removeItem(`kmi-confirmed-${slug}`);
+        localStorage.removeItem(`kmi-quiz-answers-${slug}`);
       }
     } catch {
       // error
@@ -196,6 +228,8 @@ export default function TrainingCourse() {
     setConfirmedSections(new Set());
     setVisitedSections(new Set([0]));
     setCurrentSection(0);
+    localStorage.removeItem(`kmi-confirmed-${slug}`);
+    localStorage.removeItem(`kmi-quiz-answers-${slug}`);
   };
 
   const hasQuestions = (mod?.questionCount ?? 0) > 0;
