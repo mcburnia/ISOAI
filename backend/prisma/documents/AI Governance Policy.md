@@ -120,7 +120,7 @@ Users must understand the limitations of automated reasoning and exercise approp
 
 ## 4. AI Management System
 
-the organisation maintains a structured Artificial Intelligence Management System that governs the lifecycle of AI systems across the organisation.
+The organisation maintains a structured Artificial Intelligence Management System that governs the lifecycle of AI systems across the organisation.
 
 The management system defines processes for:
 
@@ -167,7 +167,7 @@ Improvement actions arising from internal review or audit will be tracked and ad
 
 ## 7. Policy Ownership
 
-Policy Owner: the organisation Leadership  
+Policy Owner: The organisation Leadership  
 Review Cycle: Annual  
 Approval Authority: Senior Management
 

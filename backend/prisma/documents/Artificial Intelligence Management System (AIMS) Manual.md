@@ -36,7 +36,7 @@ The system governs activity across all environments including development, testi
 
 ## 3. Organisational Context
 
-the organisation operates in professional and regulated environments where analytical integrity, traceability, and professional accountability are essential.
+The organisation operates in professional and regulated environments where analytical integrity, traceability, and professional accountability are essential.
 
 Artificial intelligence technologies are capable of assisting complex analytical and operational tasks. These technologies also introduce new forms of risk that must be governed appropriately.
 
@@ -229,6 +229,6 @@ These standards provide the technical controls that support the governance frame
 
 ## 14. Ownership and Review
 
-Document Owner: the organisation Leadership  
+Document Owner: The organisation Leadership  
 Review Cycle: Annual  
 Approval Authority: Senior Management
