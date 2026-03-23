@@ -13,7 +13,9 @@ import {
   GraduationCap,
   ScrollText,
   Clock,
+  Brain,
 } from 'lucide-react';
+import CompetenceCheckModal from '../components/CompetenceCheckModal';
 
 interface RecentActivity {
   id: string;
@@ -183,11 +185,17 @@ function formatTime(iso: string) {
 export default function Dashboard() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [hasPendingCheck, setHasPendingCheck] = useState(false);
+  const [showCompetenceModal, setShowCompetenceModal] = useState(false);
 
   useEffect(() => {
     api.get('/compliance/dashboard')
       .then((res) => setData(res.data.dashboard))
       .finally(() => setLoading(false));
+    // Check for pending competence checks
+    api.get('/competence/pending')
+      .then((res) => { if (res.data.question) setHasPendingCheck(true); })
+      .catch(() => {});
   }, []);
 
   if (loading) {
@@ -206,6 +214,33 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
+      {/* Competence Check Banner */}
+      {hasPendingCheck && (
+        <Card className="border-kmi-bright/30 bg-sky-50/50">
+          <CardContent className="py-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-kmi-bright/10">
+                <Brain className="w-5 h-5 text-kmi-bright" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-foreground">Competence check due</p>
+                <p className="text-xs text-muted-foreground">Answer a quick question to verify your training retention</p>
+              </div>
+            </div>
+            <button
+              onClick={() => setShowCompetenceModal(true)}
+              className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:bg-kmi-dark transition-colors"
+            >
+              Take Check
+            </button>
+          </CardContent>
+        </Card>
+      )}
+
+      {showCompetenceModal && (
+        <CompetenceCheckModal onClose={() => { setShowCompetenceModal(false); setHasPendingCheck(false); }} />
+      )}
+
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {kpiCards(data).map((kpi) => (

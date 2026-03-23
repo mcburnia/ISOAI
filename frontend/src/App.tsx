@@ -26,6 +26,7 @@ import StandardsSettings from './pages/admin/StandardsSettings';
 import OrganisationList from './pages/admin/OrganisationList';
 import SchedulingView from './pages/scheduling/SchedulingView';
 import QuestionBank from './pages/training/QuestionBank';
+import CompetenceDashboard from './pages/training/CompetenceDashboard';
 import ActivityLog from './pages/ActivityLog';
 
 export default function App() {
@@ -49,6 +50,7 @@ export default function App() {
             <Route path="training" element={<TrainingList />} />
             <Route path="training/modules/:slug" element={<TrainingCourse />} />
             <Route path="training/modules/:slug/questions" element={<QuestionBank />} />
+            <Route path="training/competence" element={<CompetenceDashboard />} />
             <Route path="scheduling" element={<SchedulingView />} />
             <Route path="audits" element={<AuditList />} />
             <Route path="documents" element={<DocumentList />} />

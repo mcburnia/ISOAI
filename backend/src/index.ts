@@ -20,6 +20,7 @@ import activityLogRoutes from './modules/activity-log/routes';
 import platformRoutes from './modules/platform/routes';
 import settingsRoutes from './modules/settings/routes';
 import schedulingRoutes from './modules/scheduling/routes';
+import competenceRoutes from './modules/competence/routes';
 
 const app = express();
 
@@ -47,6 +48,9 @@ app.use('/api/settings', settingsRoutes);
 
 // Scheduling routes (compliance obligations)
 app.use('/api/scheduling', schedulingRoutes);
+
+// Competence check routes (ongoing retention verification)
+app.use('/api/competence', competenceRoutes);
 
 // Platform admin routes (tenant/standard management)
 app.use('/api/platform', platformRoutes);

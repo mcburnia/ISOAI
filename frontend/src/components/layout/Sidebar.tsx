@@ -19,6 +19,7 @@ import {
   Shield,
   Building2,
   CalendarClock,
+  Brain,
 } from 'lucide-react';
 
 const navGroups = [
@@ -67,6 +68,7 @@ const adminGroup = {
   items: [
     { to: '/admin/users', icon: Settings, label: 'User Management' },
     { to: '/admin/standards', icon: Shield, label: 'Standards' },
+    { to: '/training/competence', icon: Brain, label: 'Competence' },
   ],
 };
 

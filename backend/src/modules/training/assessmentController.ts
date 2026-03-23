@@ -204,6 +204,38 @@ export async function submitAssessment(req: Request, res: Response): Promise<voi
       });
     }
     await logActivity(req, 'PASS_ASSESSMENT', 'TRAINING_MODULE', mod.id, mod.title, `Score: ${score}%`);
+
+    // Auto-create weekly competence evaluation obligation for this user+module
+    const existingObligation = await prisma.scheduledObligation.findFirst({
+      where: {
+        type: 'COMPETENCE_EVALUATION',
+        assigneeId: userId,
+        linkedEntityId: mod.id,
+        status: 'ACTIVE',
+      },
+    });
+    if (!existingObligation) {
+      const now = new Date();
+      const obligation = await prisma.scheduledObligation.create({
+        data: {
+          type: 'COMPETENCE_EVALUATION',
+          title: `Competence check — ${mod.title}`,
+          standardCode: mod.standardCode || 'GENERAL',
+          frequency: 'CUSTOM_DAYS',
+          customDays: 7,
+          anchorDate: now,
+          assigneeId: userId,
+          linkedEntityId: mod.id,
+          linkedEntityType: 'TRAINING_MODULE',
+        },
+      });
+      await prisma.obligationInstance.create({
+        data: {
+          obligationId: obligation.id,
+          dueDate: new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000),
+        },
+      });
+    }
   } else {
     // Remove any existing training record — forces retake
     await prisma.trainingRecord.deleteMany({

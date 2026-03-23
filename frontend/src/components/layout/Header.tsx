@@ -19,6 +19,7 @@ const pageTitles: Record<string, string> = {
   '/admin/users': 'User Management',
   '/admin/standards': 'Standards',
   '/admin/organisations': 'Organisations',
+  '/training/competence': 'Competence Dashboard',
 };
 
 export default function Header() {
