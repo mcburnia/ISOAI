@@ -25,9 +25,10 @@ export async function listQuestions(req: Request, res: Response): Promise<void> 
   });
 
   const isAdmin = req.user && ['ADMIN', 'SUPER_ADMIN'].includes(req.user.role);
+  const isManageView = req.query.manage === 'true';
 
-  if (isAdmin) {
-    // Admins see canonical order with answers
+  if (isAdmin && isManageView) {
+    // Admin question management view — canonical order with answers visible
     const safe = questions.map((q) => ({
       id: q.id,
       question: q.question,

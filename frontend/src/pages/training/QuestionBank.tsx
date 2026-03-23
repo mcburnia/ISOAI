@@ -67,7 +67,7 @@ export default function QuestionBank() {
     if (!slug) return;
     Promise.all([
       api.get(`/training/modules/${slug}`),
-      api.get(`/training/modules/${slug}/questions`),
+      api.get(`/training/modules/${slug}/questions?manage=true`),
     ])
       .then(([modRes, qRes]) => {
         setMod(modRes.data.module);
