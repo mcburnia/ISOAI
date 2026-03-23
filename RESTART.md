@@ -1,12 +1,12 @@
 # RESTART.md — Keep Me ISO
 
-Last updated: 2026-03-22
+Last updated: 2026-03-23
 
 ## Architecture
 
 ### Overview
 
-Three-service Docker Compose stack: PostgreSQL 16, Node.js/Express backend, Vite/React frontend.
+Three-service Docker Compose stack: PostgreSQL 16, Node.js/Express backend, Vite/React frontend. Accessible at https://keepmeiso.com via Cloudflare Tunnel.
 
 ### Multi-Tenancy
 
@@ -18,29 +18,37 @@ Three-service Docker Compose stack: PostgreSQL 16, Node.js/Express backend, Vite
 
 ### Access Tiers
 
-- **Platform super-admin** — manages tenants, onboards organisations (currently uses ADMIN role; SUPER_ADMIN role reserved for future)
-- **Organisation admin** (ADMIN role) — manages users, activates/deactivates standards, manages compliance within their tenant
-- **Standard user** (USER role) — day-to-day compliance work within their tenant
+- **SUPER_ADMIN** (Platform Admin) — manages tenants, onboards organisations. Only assignable via seed/database. Currently `support@keepmeiso.com`.
+- **ADMIN** (Organisation Admin) — manages users, activates standards, configures scheduling, manages questions. Sees Admin section in sidebar.
+- **AUDITOR** — read-only across all modules. Cannot create, edit, or delete. Backend returns 403 on write attempts via `requireComplianceUser` middleware.
+- **COMPLIANCE_USER** — standard working role. Can create/edit compliance records but no admin access. Default role for new users.
+
+Deployment mode (`env.deploymentMode`): SaaS (SUPER_ADMIN only for platform routes) or self-hosted (ADMIN can also access platform routes).
 
 ### Database
 
 PostgreSQL 16 with Prisma ORM. Key models:
 
-- **User** — JWT auth with bcrypt, forced password reset on first login
+- **User** — JWT auth with bcrypt, forced password reset, roles: SUPER_ADMIN/ADMIN/AUDITOR/COMPLIANCE_USER
 - **AISystem** — inventory with risk classification, deployment status, review dates
 - **Risk** — register with category, likelihood, impact, mitigation
 - **LifecycleEntry** — 7-stage pipeline per system
 - **Incident** — severity, status workflow, corrective actions
 - **OversightRecord** — human oversight reviews per system
 - **MonitoringRecord** — performance monitoring per system
-- **TrainingModule** — 41 modules across 14 standards with content, quiz, completion tracking
-- **TrainingRecord** — per-user completion records
+- **TrainingModule** — 41 modules across 14 standards with content sections, passThreshold (default 80%)
+- **TrainingRecord** — per-user completion records with score evidence
+- **AssessmentQuestion** — multiple-choice questions per module with options, correctIndex, explanation, hint
+- **AssessmentAttempt** — scored assessment attempts per user per module
+- **CompetenceCheck** — ongoing retention verification answers with usedHint tracking
+- **ScheduledObligation** — recurring compliance obligations (11 types) with frequency, assignee, linked entity
+- **ObligationInstance** — individual occurrences of obligations with due date, completion, status
 - **Audit / AuditFinding** — internal audit with findings and corrective actions
 - **ManagementReview** — review records
 - **GovernanceRole** — role assignments (5 governance roles, optionally per-system)
 - **ControlMapping** — 640 controls across 14 standards with status tracking
-- **HarmonizedRequirement** — 20 HLS requirements linking 5 certifiable standards (clauses 4–10)
-- **PolicyDocument** — 13 seeded governance documents
+- **HarmonizedRequirement** — 20 HLS requirements linking 5 certifiable standards (clauses 4-10)
+- **Document** — 13 seeded governance documents
 - **ActivityLog** — audit trail for all CRUD operations
 
 ### Standards Covered (14)
@@ -51,7 +59,7 @@ ISO 42001, 27001, 9001, 27701, 27017, 27018, 27002, 22301, 20000-1, 31000, 23894
 
 React + TypeScript + Tailwind CSS. Key pages:
 
-- Dashboard — KPI cards, per-standard compliance breakdown, risk breakdown, training completion, recent activity
+- Dashboard — KPI cards, per-standard compliance, risk breakdown, training completion, competence check banner, recent activity
 - AI Systems — inventory CRUD with detail views
 - Risk Register — CRUD with system filtering
 - Lifecycle — stage pipeline view
@@ -60,53 +68,67 @@ React + TypeScript + Tailwind CSS. Key pages:
 - Monitoring — performance records
 - Policy Documents — 13 governance documents with markdown rendering
 - Roles & Responsibilities — governance role assignments
-- Training — 41 modules grouped by standard, completion tracking, quiz system
+- Training — 41 modules grouped by standard, section-by-section reading with acknowledgement, post-training assessment quiz, completion tracking
+- Training QuestionBank — admin page for managing assessment questions per module, configurable pass threshold
+- Scheduling — obligation management with complete/skip workflows, summary cards
 - Audits & Reviews — audit CRUD, findings, management reviews
 - Control Mapping — 14-standard selector, status filters, collapsible clause sections, inline editing, HLS badges
 - Activity Log — full audit trail
 - Settings — user profile, organisation info, active standards summary
-- Admin > User Management — user CRUD with email invitation, forced password reset
-- Admin > Standards — per-tenant standard activation with "Learn more" expandable descriptions for all 14 standards
-- Admin > Organisations — platform-level tenant management (create, suspend, reactivate, cancel)
+- Admin > User Management — user CRUD with role dropdown (ADMIN/AUDITOR/COMPLIANCE_USER), email invitation
+- Admin > Standards — per-tenant standard activation with "Learn more" descriptions
+- Admin > Competence — competence dashboard with per-user scores, hint usage, frequency, flagged users
+- Platform > Organisations — tenant management (create, suspend, reactivate, cancel) — SUPER_ADMIN only
 
 ### Brand
 
-Product brand: Keep Me ISO (KMI). Placeholder logos in use until proper KMI branding is designed. Colours: dark green (#00300F), primary green (#0A5C26), bright green (#50AD33). Tailwind token prefix: `kmi-`.
+Product brand: Keep Me ISO (KMI). Text logo: KEEP**ME**ISO.COM with coral accent. Enterprise trust palette: navy primary (#0F3D7C), coral accent (#F97316), indigo secondary (#2E4A71), clean grey background (#F5F7FA), slate text (#2D3748). Tailwind token prefix: `kmi-`.
+
+### Infrastructure
+
+- **Domain:** keepmeiso.com (Cloudflare DNS + Tunnel)
+- **Email:** Resend via post.keepmeiso.com (DKIM verified). Sender: support@post.keepmeiso.com
+- **Hosting:** Ubuntu Mac Mini server (same as CRANIS2, separate Docker stack)
+- **Cloudflare Tunnel:** Single tunnel with ingress rules for both CRANIS2 and keepmeiso.com
+- **Super admin:** support@keepmeiso.com / KeepMeIso@2026
 
 ### Remote Development
 
-Docker runs on a remote Ubuntu server accessed via SSH (`cranis2-vscode`). Project path on server: `/home/mcburnia/ISOAI`. Locally, files are at `/Users/andimcburnie/ISOAI`. Docker commands must be run via `ssh cranis2-vscode "cd /home/mcburnia/ISOAI && docker compose ..."`. SSH tunnels map container ports to localhost (5174, 3100, 5436).
+Docker runs on a remote Ubuntu server accessed via SSH (`cranis2-vscode`). Project path on server: `/home/mcburnia/ISOAI`. Locally, files are at `/Users/andimcburnie/ISOAI`. Docker commands must be run via `ssh cranis2-vscode "cd /home/mcburnia/ISOAI && docker compose ..."`. SSH tunnels map container ports to localhost (5174, 3100, 5436). Cloudflare Tunnel serves keepmeiso.com → localhost:5174 (frontend) and api traffic via Vite proxy.
 
 ## Completed Work
 
-- Full platform build: all 17 modules (auth, systems, risks, lifecycle, incidents, oversight, monitoring, training, audits, roles, compliance, documents, activity-log, users, platform, settings, admin)
+- Full platform build: all 17+ modules
 - Multi-tenant architecture with schema-per-tenant PostgreSQL
 - 14 ISO standards with 640 controls seeded
 - 41 training modules across all standards
 - 20 harmonized requirements (HLS) linking 5 certifiable standards
-- Multi-standard compliance UI (standard selector, filters, per-standard dashboard metrics)
-- Email invitation system with forced password reset
+- Multi-standard compliance UI
+- Email invitation system with forced password reset (Resend)
 - Activity logging across all modules
-- Git repository initialised and pushed to GitHub (mcburnia/ISOAI)
-- Per-tenant standard selection and filtering (backend service with 5-minute cache, org admin UI, filtered compliance/training/dashboard views)
-- "Learn more" expandable descriptions for all 14 ISO standards (layman-friendly summaries)
-- Platform organisation management UI (Admin > Organisations): create tenants with optional admin user, view/expand tenant details, suspend/reactivate/cancel organisations
-- Settings page shows organisation name, identifier, and active standards badges
-- Slug validation fix: auto-strips invalid characters, frontend validation, detailed zod error display
+- Per-tenant standard selection and filtering
+- Platform organisation management UI
+- Two-tier role hierarchy (SUPER_ADMIN, ADMIN, AUDITOR, COMPLIANCE_USER)
+- Complete rebrand from Gibbs Consulting to Keep Me ISO with enterprise colour palette
+- Cloudflare Tunnel and Resend email delivery
+- Compliance scheduling engine (11 obligation types, frequency config, complete/skip workflows)
+- Training assessments (question bank, quiz UI, randomised questions/answers, pass/fail, retake)
+- Ongoing competence checking (adaptive daily/weekly frequency, hints, auto-escalation)
+- Competence dashboard for admins
 
 ## Known Issues
 
-- Backend type check has ~10 pre-existing `string | string[]` Express query typing warnings (not regressions, all in systems/training/users controllers)
+- Backend type check has ~10 pre-existing `string | string[]` Express query typing warnings (not regressions)
+- Vite dev server HMR can cause page refreshes when files are synced to server during active use
 - No automated tests (frontend or backend)
 - No production hardening (rate limiting, CORS lockdown, HTTPS)
 - No evidence upload UI for training/compliance
 - No export/reporting functionality
-- No notification system for review due dates
-- No RBAC beyond admin/user (no per-module permissions)
-- Logout button could be more prominent (currently small icon at bottom of sidebar)
+- No notification system for due date alerts
+- Logout button could be more prominent
 
 ## Current Status
 
-Platform is feature-complete for core compliance tracking with per-tenant standard selection. Organisation management is operational. Two test tenants exist: "Default Organisation" (Professional) and "Bedrock Inc." (Starter).
+Platform has core compliance tracking, per-tenant standard selection, organisation management, role-based access, compliance scheduling, and training assessments with ongoing competence verification. Three test tenants exist: "Default Organisation", "Bedrock Inc.", and "Gibbs Consulting".
 
-Next priority: compliance scheduling engine and notification system. See BACKLOG.md for full sequencing.
+Next priority: notification system (in-app + email alerts for due/overdue obligations and competence checks). See BACKLOG.md.
