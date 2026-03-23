@@ -88,6 +88,37 @@ function renderMarkdown(md: string) {
   return elements;
 }
 
+/** Fisher-Yates shuffle returning a new array */
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+interface ShuffledQuestion {
+  id: string;
+  question: string;
+  options: string[];           // shuffled display order
+  originalIndices: number[];   // originalIndices[displayPos] = original index
+}
+
+/** Shuffle question order and option order within each question */
+function shuffleQuiz(questions: Question[]): ShuffledQuestion[] {
+  return shuffle(questions).map((q) => {
+    const indexed = q.options.map((opt, i) => ({ opt, originalIndex: i }));
+    const shuffled = shuffle(indexed);
+    return {
+      id: q.id,
+      question: q.question,
+      options: shuffled.map((s) => s.opt),
+      originalIndices: shuffled.map((s) => s.originalIndex),
+    };
+  });
+}
+
 export default function TrainingCourse() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -113,7 +144,7 @@ export default function TrainingCourse() {
     } catch { return new Set(); }
   });
   const [quizMode, setQuizMode] = useState(false);
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<ShuffledQuestion[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Map<string, number>>(() => {
     try {
@@ -188,9 +219,10 @@ export default function TrainingCourse() {
   const startQuiz = async () => {
     try {
       const res = await api.get(`/training/modules/${slug}/questions`);
-      setQuestions(res.data.questions);
+      setQuestions(shuffleQuiz(res.data.questions));
       setCurrentQuestion(0);
       setSelectedAnswers(new Map());
+      localStorage.removeItem(`kmi-quiz-answers-${slug}`);
       setAttemptResult(null);
       setQuizMode(true);
     } catch {
@@ -201,10 +233,11 @@ export default function TrainingCourse() {
   const submitQuiz = async () => {
     setQuizSubmitting(true);
     try {
-      const answers = questions.map((q) => ({
-        questionId: q.id,
-        selectedIndex: selectedAnswers.get(q.id) ?? -1,
-      }));
+      const answers = questions.map((q) => {
+        const displayIndex = selectedAnswers.get(q.id) ?? -1;
+        const originalIndex = displayIndex >= 0 ? q.originalIndices[displayIndex] : -1;
+        return { questionId: q.id, selectedIndex: originalIndex };
+      });
       const res = await api.post(`/training/modules/${slug}/assess`, { answers });
       setAttemptResult(res.data.attempt);
       if (res.data.attempt.passed) {
