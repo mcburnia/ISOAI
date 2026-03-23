@@ -40,10 +40,19 @@ export async function listQuestions(req: Request, res: Response): Promise<void> 
     return;
   }
 
-  // For non-admins: shuffle options with the constraint that the correct
-  // answer cannot occupy the same display position in consecutive questions.
+  // For non-admins: shuffle question order AND option order.
+  // Constraint: the correct answer cannot occupy the same display
+  // position in consecutive questions.
+
+  // Fisher-Yates shuffle for question order
+  const shuffledOrder = [...questions];
+  for (let i = shuffledOrder.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledOrder[i], shuffledOrder[j]] = [shuffledOrder[j], shuffledOrder[i]];
+  }
+
   let previousCorrectPos = -1;
-  const shuffled = questions.map((q) => {
+  const shuffled = shuffledOrder.map((q) => {
     const options = JSON.parse(q.options) as string[];
     const indexed = options.map((opt: string, i: number) => ({ opt, originalIndex: i }));
 

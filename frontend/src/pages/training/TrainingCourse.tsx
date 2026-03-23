@@ -89,16 +89,6 @@ function renderMarkdown(md: string) {
   return elements;
 }
 
-/** Fisher-Yates shuffle returning a new array */
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 interface ShuffledQuestion {
   id: string;
   question: string;
@@ -112,8 +102,10 @@ interface ShuffledQuestion {
  * answer never occupies the same position in consecutive questions.
  * The frontend just shuffles question order and builds the index map.
  */
-function shuffleQuiz(questions: Question[]): ShuffledQuestion[] {
-  return shuffle(questions).map((q) => ({
+/** Backend handles both question order and option shuffling with constraints.
+ *  Frontend just maps the response into the ShuffledQuestion format. */
+function mapQuestions(questions: Question[]): ShuffledQuestion[] {
+  return questions.map((q) => ({
     id: q.id,
     question: q.question,
     options: q.options,
@@ -221,7 +213,7 @@ export default function TrainingCourse() {
   const startQuiz = async () => {
     try {
       const res = await api.get(`/training/modules/${slug}/questions`);
-      setQuestions(shuffleQuiz(res.data.questions));
+      setQuestions(mapQuestions(res.data.questions));
       setCurrentQuestion(0);
       setSelectedAnswers(new Map());
       localStorage.removeItem(`kmi-quiz-answers-${slug}`);
