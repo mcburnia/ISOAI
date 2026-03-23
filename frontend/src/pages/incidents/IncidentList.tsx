@@ -4,6 +4,7 @@ import { Card } from '../../components/ui/Card';
 import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
 import api from '../../api/client';
+import { useAuth } from '../../context/AuthContext';
 import { Plus, ShieldAlert } from 'lucide-react';
 
 interface Incident {
@@ -22,6 +23,7 @@ const statVariant = (s: string) => ({ REPORTED: 'error', INVESTIGATING: 'warning
 
 export default function IncidentList() {
   const [incidents, setIncidents] = useState<Incident[]>([]);
+  const { canWrite } = useAuth();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function IncidentList() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{incidents.length} incidents</p>
-        <Link to="/incidents/new"><Button size="sm"><Plus className="w-4 h-4" /> Report Incident</Button></Link>
+        {canWrite && <Link to="/incidents/new"><Button size="sm"><Plus className="w-4 h-4" /> Report Incident</Button></Link>}
       </div>
 
       {loading ? <Card><div className="h-40 animate-pulse bg-muted rounded" /></Card>

@@ -68,7 +68,8 @@ export default function OrganisationList() {
   const [formLoading, setFormLoading] = useState(false);
   const [slugManuallyEdited, setSlugManuallyEdited] = useState(false);
 
-  if (!isAdmin) return <Navigate to="/" replace />;
+  const { isSuperAdmin } = useAuth();
+  if (!isSuperAdmin) return <Navigate to="/" replace />;
 
   const load = () =>
     api.get('/platform/tenants').then((r) => setTenants(r.data.tenants));

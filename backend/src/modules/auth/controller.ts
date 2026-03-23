@@ -62,7 +62,7 @@ export async function register(req: Request, res: Response): Promise<void> {
   });
 
   const token = jwt.sign(
-    { userId: user.id, role: user.role, tenantId: tenant.id, schemaName: tenant.schema_name },
+    { userId: user.id, role: user.role, tenantId: tenant.id, schemaName: tenant.schema_name, isSuperAdmin: user.role === 'SUPER_ADMIN' },
     env.jwtSecret,
     { expiresIn: env.jwtExpiresIn }
   );
@@ -111,7 +111,7 @@ export async function login(req: Request, res: Response): Promise<void> {
   }
 
   const token = jwt.sign(
-    { userId: user.id, role: user.role, tenantId: tenant.id, schemaName: tenant.schema_name },
+    { userId: user.id, role: user.role, tenantId: tenant.id, schemaName: tenant.schema_name, isSuperAdmin: user.role === 'SUPER_ADMIN' },
     env.jwtSecret,
     { expiresIn: env.jwtExpiresIn }
   );
@@ -272,7 +272,7 @@ export async function forceChangePassword(req: Request, res: Response): Promise<
 
   // Issue a fresh token with tenant context
   const token = jwt.sign(
-    { userId: user.id, role: user.role, tenantId: req.user?.tenantId, schemaName: req.user?.schemaName },
+    { userId: user.id, role: user.role, tenantId: req.user?.tenantId, schemaName: req.user?.schemaName, isSuperAdmin: user.role === 'SUPER_ADMIN' },
     env.jwtSecret,
     { expiresIn: env.jwtExpiresIn }
   );

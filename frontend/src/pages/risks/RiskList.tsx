@@ -4,6 +4,7 @@ import { Card } from '../../components/ui/Card';
 import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
 import api from '../../api/client';
+import { useAuth } from '../../context/AuthContext';
 import { Plus, AlertTriangle } from 'lucide-react';
 
 interface Risk {
@@ -38,6 +39,7 @@ const statusVariant = (s: string) => {
 };
 
 export default function RiskList() {
+  const { canWrite } = useAuth();
   const [risks, setRisks] = useState<Risk[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,9 +51,11 @@ export default function RiskList() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{risks.length} risks recorded</p>
-        <Link to="/risks/new">
-          <Button size="sm"><Plus className="w-4 h-4" /> Add Risk</Button>
-        </Link>
+        {canWrite && (
+          <Link to="/risks/new">
+            <Button size="sm"><Plus className="w-4 h-4" /> Add Risk</Button>
+          </Link>
+        )}
       </div>
 
       {loading ? (

@@ -6,11 +6,13 @@ import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
 import Textarea from '../../components/ui/Textarea';
 import api from '../../api/client';
+import { useAuth } from '../../context/AuthContext';
 import { Eye, Plus } from 'lucide-react';
 
 interface Record { id: string; reviewDate: string; reviewType: string; findings: string; concernsRaised: boolean; escalated: boolean; system: { name: string }; reviewer: { name: string }; }
 
 export default function OversightList() {
+  const { canWrite } = useAuth();
   const [records, setRecords] = useState<Record[]>([]);
   const [systems, setSystems] = useState<{ id: string; name: string }[]>([]);
   const [showForm, setShowForm] = useState(false);
@@ -34,7 +36,7 @@ export default function OversightList() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{records.length} oversight records</p>
-        <Button size="sm" onClick={() => setShowForm(!showForm)}><Plus className="w-4 h-4" /> Add Record</Button>
+        {canWrite && <Button size="sm" onClick={() => setShowForm(!showForm)}><Plus className="w-4 h-4" /> Add Record</Button>}
       </div>
 
       {showForm && (

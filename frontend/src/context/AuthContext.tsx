@@ -22,6 +22,9 @@ interface AuthContextType {
   register: (email: string, name: string, password: string) => Promise<void>;
   logout: () => void;
   isAdmin: boolean;
+  isSuperAdmin: boolean;
+  isAuditor: boolean;
+  canWrite: boolean;
   loading: boolean;
   mustChangePassword: boolean;
   setMustChangePassword: (value: boolean) => void;
@@ -84,7 +87,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, tenant, token, login, register, logout, isAdmin: user?.role === 'ADMIN', loading, mustChangePassword, setMustChangePassword }}
+      value={{
+        user, tenant, token, login, register, logout,
+        isAdmin: user?.role === 'ADMIN' || user?.role === 'SUPER_ADMIN',
+        isSuperAdmin: user?.role === 'SUPER_ADMIN',
+        isAuditor: user?.role === 'AUDITOR',
+        canWrite: user?.role === 'ADMIN' || user?.role === 'SUPER_ADMIN' || user?.role === 'COMPLIANCE_USER',
+        loading, mustChangePassword, setMustChangePassword,
+      }}
     >
       {children}
     </AuthContext.Provider>

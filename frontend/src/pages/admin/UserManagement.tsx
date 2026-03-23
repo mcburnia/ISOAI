@@ -7,9 +7,36 @@ import Select from '../../components/ui/Select';
 import api from '../../api/client';
 import { useAuth } from '../../context/AuthContext';
 import { Navigate } from 'react-router-dom';
-import { Shield, User, UserPlus, X, CheckCircle, AlertCircle } from 'lucide-react';
+import { Shield, User, UserPlus, X, CheckCircle, AlertCircle, Eye, ClipboardCheck } from 'lucide-react';
 
 interface UserData { id: string; email: string; name: string; role: string; createdAt: string; }
+
+const ROLE_OPTIONS = [
+  { value: 'COMPLIANCE_USER', label: 'Compliance User' },
+  { value: 'AUDITOR', label: 'Auditor' },
+  { value: 'ADMIN', label: 'Administrator' },
+];
+
+const ROLE_LABELS: Record<string, string> = {
+  SUPER_ADMIN: 'Platform Admin',
+  ADMIN: 'Administrator',
+  AUDITOR: 'Auditor',
+  COMPLIANCE_USER: 'Compliance User',
+};
+
+const ROLE_BADGE_VARIANT: Record<string, 'purple' | 'info' | 'warning' | 'default'> = {
+  SUPER_ADMIN: 'purple',
+  ADMIN: 'purple',
+  AUDITOR: 'info',
+  COMPLIANCE_USER: 'default',
+};
+
+const ROLE_ICON: Record<string, typeof Shield> = {
+  SUPER_ADMIN: Shield,
+  ADMIN: Shield,
+  AUDITOR: Eye,
+  COMPLIANCE_USER: ClipboardCheck,
+};
 
 export default function UserManagement() {
   const { isAdmin, user: currentUser } = useAuth();
@@ -22,7 +49,7 @@ export default function UserManagement() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('USER');
+  const [role, setRole] = useState('COMPLIANCE_USER');
   const [formLoading, setFormLoading] = useState(false);
 
   if (!isAdmin) return <Navigate to="/" replace />;
@@ -30,18 +57,23 @@ export default function UserManagement() {
   const load = () => api.get('/users').then((r) => setUsers(r.data.users));
   useEffect(() => { load().finally(() => setLoading(false)); }, []);
 
-  const toggleRole = async (u: UserData) => {
+  const changeRole = async (u: UserData, newRole: string) => {
     if (u.id === currentUser?.id) return;
-    const newRole = u.role === 'ADMIN' ? 'USER' : 'ADMIN';
-    await api.patch(`/users/${u.id}/role`, { role: newRole });
-    load();
+    if (u.role === 'SUPER_ADMIN') return;
+    try {
+      await api.patch(`/users/${u.id}/role`, { role: newRole });
+      setMessage({ type: 'success', text: `${u.name} updated to ${ROLE_LABELS[newRole]}` });
+      load();
+    } catch (err: any) {
+      setMessage({ type: 'error', text: err.response?.data?.error || 'Failed to update role' });
+    }
   };
 
   const resetForm = () => {
     setName('');
     setEmail('');
     setPassword('');
-    setRole('USER');
+    setRole('COMPLIANCE_USER');
     setShowForm(false);
   };
 
@@ -53,7 +85,7 @@ export default function UserManagement() {
       const res = await api.post('/users', { name, email, password, role });
       const emailNote = res.data.emailSent
         ? ' An invitation email has been sent.'
-        : ' (Invitation email was not sent — SMTP not configured)';
+        : ' (Invitation email was not sent — email not configured)';
       setMessage({ type: 'success', text: `User "${name}" created successfully.${emailNote}` });
       resetForm();
       load();
@@ -124,10 +156,7 @@ export default function UserManagement() {
                 label="Role"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
-                options={[
-                  { value: 'USER', label: 'User' },
-                  { value: 'ADMIN', label: 'Administrator' },
-                ]}
+                options={ROLE_OPTIONS}
               />
               <div className="sm:col-span-2">
                 <Button type="submit" disabled={formLoading}>
@@ -147,32 +176,46 @@ export default function UserManagement() {
             <th className="text-left py-3 px-4 font-medium text-muted-foreground">Email</th>
             <th className="text-left py-3 px-4 font-medium text-muted-foreground">Role</th>
             <th className="text-left py-3 px-4 font-medium text-muted-foreground">Joined</th>
-            <th className="text-left py-3 px-4 font-medium text-muted-foreground w-32">Actions</th>
+            <th className="text-left py-3 px-4 font-medium text-muted-foreground w-40">Actions</th>
           </tr></thead>
-          <tbody>{users.map((u) => (
-            <tr key={u.id} className="border-b border-border last:border-0 hover:bg-muted/30">
-              <td className="py-3 px-4">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center">
-                    {u.role === 'ADMIN' ? <Shield className="w-3.5 h-3.5 text-gibbs-primary" /> : <User className="w-3.5 h-3.5 text-slate-500" />}
+          <tbody>{users.map((u) => {
+            const RoleIcon = ROLE_ICON[u.role] || User;
+            const isSelf = u.id === currentUser?.id;
+            const isSuperAdmin = u.role === 'SUPER_ADMIN';
+            return (
+              <tr key={u.id} className="border-b border-border last:border-0 hover:bg-muted/30">
+                <td className="py-3 px-4">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center">
+                      <RoleIcon className="w-3.5 h-3.5 text-gibbs-primary" />
+                    </div>
+                    <span className="font-medium">{u.name}</span>
                   </div>
-                  <span className="font-medium">{u.name}</span>
-                </div>
-              </td>
-              <td className="py-3 px-4 text-muted-foreground">{u.email}</td>
-              <td className="py-3 px-4">
-                <Badge variant={u.role === 'ADMIN' ? 'purple' : 'default'}>{u.role}</Badge>
-              </td>
-              <td className="py-3 px-4 text-muted-foreground">{new Date(u.createdAt).toLocaleDateString()}</td>
-              <td className="py-3 px-4">
-                {u.id !== currentUser?.id && (
-                  <Button size="sm" variant="outline" onClick={() => toggleRole(u)}>
-                    {u.role === 'ADMIN' ? 'Revoke Admin' : 'Make Admin'}
-                  </Button>
-                )}
-              </td>
-            </tr>
-          ))}</tbody>
+                </td>
+                <td className="py-3 px-4 text-muted-foreground">{u.email}</td>
+                <td className="py-3 px-4">
+                  <Badge variant={ROLE_BADGE_VARIANT[u.role] || 'default'}>{ROLE_LABELS[u.role] || u.role}</Badge>
+                </td>
+                <td className="py-3 px-4 text-muted-foreground">{new Date(u.createdAt).toLocaleDateString()}</td>
+                <td className="py-3 px-4">
+                  {!isSelf && !isSuperAdmin && (
+                    <select
+                      value={u.role}
+                      onChange={(e) => changeRole(u, e.target.value)}
+                      className="h-8 rounded-md border border-input bg-card px-2 text-xs"
+                    >
+                      {ROLE_OPTIONS.map((opt) => (
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                      ))}
+                    </select>
+                  )}
+                  {isSuperAdmin && (
+                    <span className="text-xs text-muted-foreground">Platform admin</span>
+                  )}
+                </td>
+              </tr>
+            );
+          })}</tbody>
         </table>
       </div>
     </div>

@@ -79,7 +79,7 @@ interface UserOption {
 }
 
 export default function SchedulingView() {
-  const { isAdmin } = useAuth();
+  const { isAdmin, canWrite } = useAuth();
   const [obligations, setObligations] = useState<Obligation[]>([]);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [standards, setStandards] = useState<{ code: string }[]>([]);
@@ -358,7 +358,7 @@ export default function SchedulingView() {
                 </div>
                 <div className="flex items-center gap-2">
                   {dueBadge(ob.daysUntilDue, ob.status)}
-                  {ob.status === 'ACTIVE' && ob.latestInstance && ob.latestInstance.status === 'PENDING' && (
+                  {canWrite && ob.status === 'ACTIVE' && ob.latestInstance && ob.latestInstance.status === 'PENDING' && (
                     <>
                       <button
                         onClick={() => setActionModal({ instanceId: ob.latestInstance!.id, obligationTitle: ob.title, action: 'complete' })}

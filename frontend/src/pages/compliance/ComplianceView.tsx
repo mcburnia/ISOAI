@@ -70,7 +70,7 @@ const CLAUSE_SECTION_TITLES: Record<string, string> = {
 };
 
 export default function ComplianceView() {
-  const { isAdmin } = useAuth();
+  const { isAdmin, canWrite } = useAuth();
   const [standards, setStandards] = useState<string[]>([]);
   const [selectedStandard, setSelectedStandard] = useState<string>('');
   const [mappings, setMappings] = useState<Mapping[]>([]);
@@ -374,8 +374,8 @@ export default function ComplianceView() {
                           </div>
                         ) : (
                           <div
-                            className="flex items-start justify-between cursor-pointer group"
-                            onClick={() => startEdit(m)}
+                            className={`flex items-start justify-between ${canWrite ? 'cursor-pointer' : ''} group`}
+                            onClick={canWrite ? () => startEdit(m) : undefined}
                           >
                             <div className="flex-1">
                               <div className="flex items-center gap-2">

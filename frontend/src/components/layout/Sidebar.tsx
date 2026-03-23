@@ -67,15 +67,32 @@ const adminGroup = {
   items: [
     { to: '/admin/users', icon: Settings, label: 'User Management' },
     { to: '/admin/standards', icon: Shield, label: 'Standards' },
+  ],
+};
+
+const platformGroup = {
+  title: 'Platform',
+  items: [
     { to: '/admin/organisations', icon: Building2, label: 'Organisations' },
   ],
 };
 
+const ROLE_LABELS: Record<string, string> = {
+  SUPER_ADMIN: 'Platform Admin',
+  ADMIN: 'Administrator',
+  AUDITOR: 'Auditor',
+  COMPLIANCE_USER: 'Compliance User',
+};
+
 export default function Sidebar() {
-  const { user, logout, isAdmin } = useAuth();
+  const { user, logout, isAdmin, isSuperAdmin } = useAuth();
   const navigate = useNavigate();
 
-  const allGroups = isAdmin ? [...navGroups, adminGroup] : navGroups;
+  const allGroups = [
+    ...navGroups,
+    ...(isAdmin ? [adminGroup] : []),
+    ...(isSuperAdmin ? [platformGroup] : []),
+  ];
 
   return (
     <aside className="fixed left-0 top-0 h-screen w-60 bg-sidebar text-sidebar-foreground flex flex-col z-50">
@@ -129,7 +146,7 @@ export default function Sidebar() {
             <div className="flex-1 min-w-0 text-left">
               <p className="text-sm font-medium text-white truncate">{user?.name}</p>
               <p className="text-xs text-slate-400 truncate">
-                {user?.role === 'ADMIN' ? 'Administrator' : 'User'}
+                {ROLE_LABELS[user?.role ?? ''] ?? 'User'}
               </p>
             </div>
           </button>

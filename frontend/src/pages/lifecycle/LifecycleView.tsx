@@ -4,6 +4,7 @@ import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
 import Select from '../../components/ui/Select';
 import api from '../../api/client';
+import { useAuth } from '../../context/AuthContext';
 import { GitBranch, CheckCircle, Clock, ArrowRight } from 'lucide-react';
 
 interface LifecycleEntry {
@@ -24,6 +25,7 @@ const stageIcon = (status: string) => {
 };
 
 export default function LifecycleView() {
+  const { canWrite } = useAuth();
   const [systems, setSystems] = useState<System[]>([]);
   const [selectedSystem, setSelectedSystem] = useState('');
   const [entries, setEntries] = useState<LifecycleEntry[]>([]);
@@ -65,7 +67,7 @@ export default function LifecycleView() {
           <div className="py-12 text-center">
             <GitBranch className="w-10 h-10 text-muted-foreground mx-auto mb-3" />
             <p className="text-sm text-muted-foreground mb-3">No lifecycle stages initialised</p>
-            <Button onClick={initLifecycle} size="sm">Initialise Lifecycle Stages</Button>
+            {canWrite && <Button onClick={initLifecycle} size="sm">Initialise Lifecycle Stages</Button>}
           </div>
         </Card>
       )}
@@ -102,7 +104,7 @@ export default function LifecycleView() {
                           )}
                         </div>
                       </div>
-                      {entry.status !== 'COMPLETED' && (
+                      {canWrite && entry.status !== 'COMPLETED' && (
                         <Button size="sm" variant="outline" onClick={() => advanceStage(entry)}>
                           <ArrowRight className="w-3 h-3" />
                           {entry.status === 'PENDING' ? 'Start' : 'Complete'}

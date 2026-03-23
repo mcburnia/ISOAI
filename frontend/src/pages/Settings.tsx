@@ -180,7 +180,7 @@ export default function Settings() {
               required
             />
             <div className="text-sm text-muted-foreground">
-              Role: <span className="font-medium text-foreground">{user?.role === 'ADMIN' ? 'Administrator' : 'User'}</span>
+              Role: <span className="font-medium text-foreground">{{ SUPER_ADMIN: 'Platform Admin', ADMIN: 'Administrator', AUDITOR: 'Auditor', COMPLIANCE_USER: 'Compliance User' }[user?.role ?? ''] ?? 'User'}</span>
             </div>
             <Button type="submit" disabled={profileLoading}>
               {profileLoading ? 'Saving...' : 'Update Profile'}

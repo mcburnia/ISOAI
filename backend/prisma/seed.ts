@@ -208,9 +208,9 @@ async function main() {
       await tenantDb.user.create({
         data: {
           email: adminEmail,
-          name: 'System Administrator',
+          name: 'Platform Administrator',
           password: hashedPassword,
-          role: 'ADMIN',
+          role: 'SUPER_ADMIN',
         },
       });
       console.log(`Admin user created in ${tenantSchemaName}: ${adminEmail}`);
@@ -227,7 +227,7 @@ async function main() {
       await platformDb.$executeRawUnsafe(`
         INSERT INTO platform."PlatformUser" (email, name, password, role, tenant_id)
         VALUES ($1, $2, $3, 'TENANT_ADMIN', $4)
-      `, adminEmail, 'System Administrator', hashedPassword, tenantId);
+      `, adminEmail, 'Platform Administrator', hashedPassword, tenantId);
       console.log(`Platform user created: ${adminEmail}`);
     }
 

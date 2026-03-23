@@ -6,6 +6,7 @@ import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
 import Textarea from '../../components/ui/Textarea';
 import api from '../../api/client';
+import { useAuth } from '../../context/AuthContext';
 import { Activity, Plus } from 'lucide-react';
 
 interface Record { id: string; date: string; type: string; findings: string; performanceStatus: string; system: { name: string }; reviewer: { name: string }; }
@@ -13,6 +14,7 @@ interface Record { id: string; date: string; type: string; findings: string; per
 const perfVariant = (s: string) => ({ SATISFACTORY: 'success', CONCERNS_IDENTIFIED: 'warning', ACTION_REQUIRED: 'error' }[s] || 'default') as any;
 
 export default function MonitoringList() {
+  const { canWrite } = useAuth();
   const [records, setRecords] = useState<Record[]>([]);
   const [systems, setSystems] = useState<{ id: string; name: string }[]>([]);
   const [showForm, setShowForm] = useState(false);
@@ -35,7 +37,7 @@ export default function MonitoringList() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{records.length} monitoring records</p>
-        <Button size="sm" onClick={() => setShowForm(!showForm)}><Plus className="w-4 h-4" /> Add Record</Button>
+        {canWrite && <Button size="sm" onClick={() => setShowForm(!showForm)}><Plus className="w-4 h-4" /> Add Record</Button>}
       </div>
 
       {showForm && (

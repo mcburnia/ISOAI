@@ -4,6 +4,7 @@ import { Card } from '../../components/ui/Card';
 import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
 import api from '../../api/client';
+import { useAuth } from '../../context/AuthContext';
 import { Plus, Server } from 'lucide-react';
 
 interface AISystem {
@@ -38,6 +39,7 @@ const riskVariant = (r: string) => {
 };
 
 export default function SystemList() {
+  const { canWrite } = useAuth();
   const [systems, setSystems] = useState<AISystem[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,9 +51,11 @@ export default function SystemList() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{systems.length} systems registered</p>
-        <Link to="/systems/new">
-          <Button size="sm"><Plus className="w-4 h-4" /> Add System</Button>
-        </Link>
+        {canWrite && (
+          <Link to="/systems/new">
+            <Button size="sm"><Plus className="w-4 h-4" /> Add System</Button>
+          </Link>
+        )}
       </div>
 
       {loading ? (

@@ -5,6 +5,7 @@ import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import Textarea from '../../components/ui/Textarea';
 import api from '../../api/client';
+import { useAuth } from '../../context/AuthContext';
 import { ClipboardCheck, Plus } from 'lucide-react';
 
 interface Audit { id: string; title: string; date: string; scope: string; status: string; findings: { id: string; finding: string; severity: string; status: string }[]; }
@@ -12,6 +13,7 @@ interface Audit { id: string; title: string; date: string; scope: string; status
 const statVariant = (s: string) => ({ PLANNED: 'info', IN_PROGRESS: 'warning', COMPLETED: 'success' }[s] || 'default') as any;
 
 export default function AuditList() {
+  const { canWrite } = useAuth();
   const [audits, setAudits] = useState<Audit[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ title: '', date: new Date().toISOString().split('T')[0], scope: '' });
@@ -34,7 +36,7 @@ export default function AuditList() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{audits.length} audits</p>
-        <Button size="sm" onClick={() => setShowForm(!showForm)}><Plus className="w-4 h-4" /> New Audit</Button>
+        {canWrite && <Button size="sm" onClick={() => setShowForm(!showForm)}><Plus className="w-4 h-4" /> New Audit</Button>}
       </div>
 
       {showForm && (

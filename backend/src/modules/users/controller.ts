@@ -6,14 +6,14 @@ import { sendInvitationEmail } from '../../services/email';
 import { logActivity } from '../../services/auditLog';
 
 const updateRoleSchema = z.object({
-  role: z.enum(['USER', 'ADMIN']),
+  role: z.enum(['COMPLIANCE_USER', 'AUDITOR', 'ADMIN']),
 });
 
 const createUserSchema = z.object({
   email: z.string().email(),
   name: z.string().min(1),
   password: z.string().min(6),
-  role: z.enum(['USER', 'ADMIN']).optional().default('USER'),
+  role: z.enum(['COMPLIANCE_USER', 'AUDITOR', 'ADMIN']).optional().default('COMPLIANCE_USER'),
 });
 
 export async function createUser(req: Request, res: Response): Promise<void> {
@@ -74,13 +74,18 @@ export async function getUser(req: Request, res: Response): Promise<void> {
 export async function updateUserRole(req: Request, res: Response): Promise<void> {
   const parsed = updateRoleSchema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ error: 'Invalid role. Must be USER or ADMIN.' });
+    res.status(400).json({ error: 'Invalid role. Must be COMPLIANCE_USER, AUDITOR, or ADMIN.' });
     return;
   }
 
   const user = await prisma.user.findUnique({ where: { id: req.params.id } });
   if (!user) {
     res.status(404).json({ error: 'User not found' });
+    return;
+  }
+
+  if (user.role === 'SUPER_ADMIN') {
+    res.status(403).json({ error: 'Cannot modify a platform administrator' });
     return;
   }
 
