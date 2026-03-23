@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document provides a structured mapping between the requirements of ISO/IEC 42001 and the governance documentation that forms the Artificial Intelligence Management System operated by Gibbs Consulting.
+This document provides a structured mapping between the requirements of ISO/IEC 42001 and the governance documentation that forms the Artificial Intelligence Management System operated by the organisation.
 
 The mapping demonstrates how the organisation satisfies the governance requirements of the standard through documented policies, procedures, and operational controls.
 
@@ -12,7 +12,7 @@ This document is intended to support internal governance review and external cer
 
 ## 2. Scope
 
-The mapping applies to the Artificial Intelligence Management System governing the design, deployment, and use of artificial intelligence systems within Gibbs Consulting.
+The mapping applies to the Artificial Intelligence Management System governing the design, deployment, and use of artificial intelligence systems within the organisation.
 
 The document covers the core clauses of ISO/IEC 42001 and identifies the internal documents that address each requirement.
 

@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the governance procedure used by Gibbs Consulting to manage the lifecycle of artificial intelligence systems.
+This document defines the governance procedure used by the organisation to manage the lifecycle of artificial intelligence systems.
 
 Artificial intelligence systems must be introduced, operated, and retired in a controlled manner. This ensures that risks are considered before deployment and that systems remain appropriate for their intended purpose.
 

@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the procedure used by Gibbs Consulting to identify, investigate, and respond to incidents involving artificial intelligence systems.
+This document defines the procedure used by the organisation to identify, investigate, and respond to incidents involving artificial intelligence systems.
 
 AI systems may occasionally produce unexpected or unreliable outputs. When this occurs, the organisation must be able to investigate the issue and take appropriate corrective action.
 

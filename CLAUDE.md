@@ -1,8 +1,8 @@
-# CLAUDE.md — Gibbs IMS
+# CLAUDE.md — Keep Me ISO
 
 Read this file at the start of every session.
 
-## What is Gibbs IMS?
+## What is Keep Me ISO?
 
 A multi-tenant SaaS platform for integrated management system compliance. Organisations use it to track compliance across 14 ISO standards (42001, 27001, 9001, 27701, and 10 more), manage AI system inventories, risk registers, incidents, training, audits, and governance roles. Schema-per-tenant PostgreSQL isolation. Dockerised for deployment.
 
@@ -54,7 +54,7 @@ cd backend && npx tsc --noEmit
 
 ## Project Rules
 
-- This is a **Gibbs Consulting** project. No references to other clients, projects, or organisations in the codebase.
+- This is a **Keep Me ISO** product. No references to other clients, projects, or organisations in the codebase.
 - Never modify migration files directly — create new migrations.
 - Never commit `.env` files or credentials.
 - The `.claude/.env` file contains local paths and must not be committed.

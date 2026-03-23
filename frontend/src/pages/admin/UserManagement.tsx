@@ -187,7 +187,7 @@ export default function UserManagement() {
                 <td className="py-3 px-4">
                   <div className="flex items-center gap-2.5">
                     <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center">
-                      <RoleIcon className="w-3.5 h-3.5 text-gibbs-primary" />
+                      <RoleIcon className="w-3.5 h-3.5 text-kmi-primary" />
                     </div>
                     <span className="font-medium">{u.name}</span>
                   </div>

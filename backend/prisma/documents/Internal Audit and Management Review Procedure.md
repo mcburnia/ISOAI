@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the procedure used by Gibbs Consulting to review the effectiveness of the Artificial Intelligence Management System.
+This document defines the procedure used by the organisation to review the effectiveness of the Artificial Intelligence Management System.
 
 Periodic review ensures that governance procedures remain appropriate, that risks are being managed effectively, and that the organisation continues to meet professional and regulatory expectations relating to artificial intelligence systems.
 

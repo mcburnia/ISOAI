@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the framework used by Gibbs Consulting to ensure that human oversight remains central to the operation of artificial intelligence systems.
+This document defines the framework used by the organisation to ensure that human oversight remains central to the operation of artificial intelligence systems.
 
 Artificial intelligence systems can assist analytical and operational tasks. They cannot assume responsibility for professional judgement or organisational accountability.
 
@@ -14,7 +14,7 @@ This framework forms part of the Artificial Intelligence Management System estab
 
 ## 2. Scope
 
-This framework applies to artificial intelligence systems that influence analytical work, automated processes, or advisory outputs produced by Gibbs Consulting.
+This framework applies to artificial intelligence systems that influence analytical work, automated processes, or advisory outputs produced by the organisation.
 
 Human oversight requirements apply to systems that:
 

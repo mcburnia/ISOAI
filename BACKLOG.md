@@ -1,4 +1,4 @@
-# Gibbs IMS — Active Backlog
+# Keep Me ISO — Active Backlog
 
 Updated: 2026-03-22
 
@@ -47,7 +47,20 @@ Obligation types mapped from the standards:
 | Corrective action follow-up | 10.2 | Per-finding deadline |
 | Competence re-evaluation | 7.2 | Annual per role |
 
-### 2. Notification system
+### 2. Training assessments and ongoing competence testing
+Proves understanding, not just attendance. ISO 7.2 (Competence) requires evidence that personnel are actually competent, not merely that they received training material.
+
+Work required:
+- **Question bank per training module** — multiple-choice questions authored by admins, tagged to the module
+- **Post-training assessment** — on completing a module, user must pass a test (configurable pass mark, default 80%)
+- **Pass/fail outcome** — pass records the completion with score; fail requires the user to retake the training and retest
+- **Configurable pass threshold** — org admin can set the minimum pass percentage per module or globally
+- **Random ongoing competence checks** — the scheduler sends a random question from completed training modules to each user periodically (default: one question per week)
+- **Competence check tracking** — correct/incorrect answers are logged as ongoing evidence of understanding
+- **Competence dashboard** — admin view showing pass rates, retest frequency, ongoing check scores per user
+- **Integration with scheduling engine** — "competence re-evaluation" obligation type triggers from failed ongoing checks or time-based renewal
+
+### 3. Notification system
 Depends on the scheduling engine. Ensures nothing gets forgotten.
 
 Work required:
@@ -58,7 +71,7 @@ Work required:
 - Notification bell in the header with unread count
 - Notification panel listing upcoming, due, and overdue obligations
 
-### 3. AI Compliance Pilot
+### 4. AI Compliance Pilot
 Context-aware assistant for gap analysis, control explanations, and policy/evidence generation. Deferred until the scheduling and notification foundations are in place.
 
 ## Planned
@@ -68,7 +81,7 @@ Context-aware assistant for gap analysis, control explanations, and policy/evide
 - Production hardening (rate limiting, CORS lockdown, HTTPS, secure headers)
 - Statement of Applicability generator
 - Risk heat map visualisation
-- White-label branding (per-tenant logo, colours, product name, email sender name; replace placeholder Gibbs Consulting logo; update seed documents to use tenant name instead of hardcoded company name)
+- White-label branding (per-tenant logo, colours, product name, email sender name; design proper KMI logos; update seed documents to use tenant name dynamically)
 - Automated tests (backend API, frontend components)
 - Make logout button more prominent
 

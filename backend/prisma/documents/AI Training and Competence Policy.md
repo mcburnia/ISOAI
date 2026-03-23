@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This policy defines the approach used by Gibbs Consulting to ensure that individuals involved in the design, operation, and use of artificial intelligence systems possess appropriate knowledge and competence.
+This policy defines the approach used by the organisation to ensure that individuals involved in the design, operation, and use of artificial intelligence systems possess appropriate knowledge and competence.
 
 Artificial intelligence systems introduce technical, operational, and regulatory considerations that require informed oversight. Personnel must understand both the capabilities and the limitations of automated systems.
 

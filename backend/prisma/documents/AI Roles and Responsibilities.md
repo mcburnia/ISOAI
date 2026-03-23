@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the organisational roles and responsibilities associated with the governance and oversight of artificial intelligence systems within Gibbs Consulting.
+This document defines the organisational roles and responsibilities associated with the governance and oversight of artificial intelligence systems within the organisation.
 
 Clear accountability is required to ensure that AI systems are designed, deployed, and operated in a controlled and professionally responsible manner.
 
@@ -12,7 +12,7 @@ This document supports the Artificial Intelligence Management System and establi
 
 ## 2. Governance Principles
 
-AI governance within Gibbs Consulting follows several core principles.
+AI governance within the organisation follows several core principles.
 
 Accountability must be explicit. Each AI system must have an identified owner responsible for its operation and oversight.
 

@@ -253,7 +253,7 @@ export default function SchedulingView() {
               onClick={() => setFilter(f)}
               className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                 filter === f
-                  ? 'bg-gibbs-primary text-white'
+                  ? 'bg-kmi-primary text-white'
                   : 'bg-muted text-muted-foreground hover:bg-muted/80'
               }`}
             >

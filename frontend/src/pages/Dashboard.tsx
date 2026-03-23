@@ -86,7 +86,7 @@ const kpiCards = (data: DashboardData) => [
     value: data.totalSystems,
     sub: `${data.activeSystems} active`,
     icon: Server,
-    color: 'text-gibbs-primary',
+    color: 'text-kmi-primary',
     bg: 'bg-green-50',
   },
   {
@@ -231,7 +231,7 @@ export default function Dashboard() {
             <h3 className="text-sm font-semibold flex items-center gap-2">
               <ClipboardCheck className="w-4 h-4" /> Compliance by Standard
             </h3>
-            <Link to="/compliance" className="text-xs text-gibbs-bright hover:underline">
+            <Link to="/compliance" className="text-xs text-kmi-bright hover:underline">
               View details
             </Link>
           </div>
@@ -354,7 +354,7 @@ export default function Dashboard() {
               <div className="flex items-center justify-between text-xs text-muted-foreground pt-1">
                 <span>{data.totalUsers - data.usersWithIncompleteTraining} of {data.totalUsers} users fully trained</span>
                 {data.usersWithIncompleteTraining > 0 && (
-                  <Link to="/training" className="text-gibbs-bright hover:underline">
+                  <Link to="/training" className="text-kmi-bright hover:underline">
                     {data.usersWithIncompleteTraining} incomplete
                   </Link>
                 )}
@@ -377,7 +377,7 @@ export default function Dashboard() {
               <div className="space-y-2.5">
                 {data.systemsNeedingReview.map((s) => (
                   <div key={s.id} className="flex items-center justify-between">
-                    <Link to="/systems" className="text-sm text-foreground hover:text-gibbs-bright truncate">
+                    <Link to="/systems" className="text-sm text-foreground hover:text-kmi-bright truncate">
                       {s.name}
                     </Link>
                     <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">
@@ -414,7 +414,7 @@ export default function Dashboard() {
           <h3 className="text-sm font-semibold flex items-center gap-2">
             <ScrollText className="w-4 h-4" /> Recent Activity
           </h3>
-          <Link to="/activity-log" className="text-xs text-gibbs-bright hover:underline">
+          <Link to="/activity-log" className="text-xs text-kmi-bright hover:underline">
             View all
           </Link>
         </div>

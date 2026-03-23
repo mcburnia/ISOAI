@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-The AI Risk Register records risks associated with artificial intelligence systems operated or governed by Gibbs Consulting.
+The AI Risk Register records risks associated with artificial intelligence systems operated or governed by the organisation.
 
 The register provides visibility over identified risks, mitigation actions, and responsible owners. It allows the organisation to monitor AI risk exposure across all systems within the scope of the Artificial Intelligence Management System.
 

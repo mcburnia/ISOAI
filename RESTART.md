@@ -1,4 +1,4 @@
-# RESTART.md — Gibbs IMS
+# RESTART.md — Keep Me ISO
 
 Last updated: 2026-03-22
 
@@ -71,7 +71,7 @@ React + TypeScript + Tailwind CSS. Key pages:
 
 ### Brand
 
-Product brand: Keep Me ISO (KMI). Gibbs Consulting logo used as placeholder until white-label branding is implemented. Colours: dark green (#00300F), primary green (#0A5C26), bright green (#50AD33).
+Product brand: Keep Me ISO (KMI). Placeholder logos in use until proper KMI branding is designed. Colours: dark green (#00300F), primary green (#0A5C26), bright green (#50AD33). Tailwind token prefix: `kmi-`.
 
 ### Remote Development
 

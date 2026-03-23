@@ -5,8 +5,8 @@ import { env } from '../config/env';
  * Middleware that requires platform-level administrator access.
  * Used for tenant management, standard catalogue management, and platform operations.
  *
- * - SaaS mode: only SUPER_ADMIN users (Gibbs Consulting staff)
- * - Self-hosted (onpremise/dedicated): SUPER_ADMIN or ADMIN (safety net; Gibbs staff will always be SUPER_ADMIN)
+ * - SaaS mode: only SUPER_ADMIN users (Keep Me ISO platform staff)
+ * - Self-hosted (onpremise/dedicated): SUPER_ADMIN or ADMIN (safety net; KMI staff will always be SUPER_ADMIN)
  */
 export function requireSuperAdmin(req: Request, res: Response, next: NextFunction): void {
   if (!req.user) {

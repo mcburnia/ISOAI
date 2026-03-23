@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the procedure used by Gibbs Consulting to monitor the behaviour and performance of artificial intelligence systems during operation.
+This document defines the procedure used by the organisation to monitor the behaviour and performance of artificial intelligence systems during operation.
 
 Artificial intelligence systems may change behaviour over time due to changes in data, operational context, or system configuration. Monitoring ensures that such changes are detected and that systems continue to operate as intended.
 

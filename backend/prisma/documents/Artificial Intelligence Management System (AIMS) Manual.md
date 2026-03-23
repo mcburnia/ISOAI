@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document describes the structure and operation of the Artificial Intelligence Management System operated by Gibbs Consulting.
+This document describes the structure and operation of the Artificial Intelligence Management System operated by the organisation.
 
 The management system establishes governance, oversight, and operational controls for the responsible design, deployment, and use of artificial intelligence systems.
 
@@ -16,7 +16,7 @@ The Artificial Intelligence Management System aligns with the requirements of IS
 
 The Artificial Intelligence Management System applies to artificial intelligence systems that are:
 
-- designed or developed by Gibbs Consulting
+- designed or developed by the organisation
 - operated within internal analytical or automation platforms
 - deployed as part of consulting engagements
 - used to support research, modelling, analysis, or automated workflows
@@ -36,7 +36,7 @@ The system governs activity across all environments including development, testi
 
 ## 3. Organisational Context
 
-Gibbs Consulting operates in professional and regulated environments where analytical integrity, traceability, and professional accountability are essential.
+the organisation operates in professional and regulated environments where analytical integrity, traceability, and professional accountability are essential.
 
 Artificial intelligence technologies are capable of assisting complex analytical and operational tasks. These technologies also introduce new forms of risk that must be governed appropriately.
 
@@ -229,6 +229,6 @@ These standards provide the technical controls that support the governance frame
 
 ## 14. Ownership and Review
 
-Document Owner: Gibbs Consulting Leadership  
+Document Owner: the organisation Leadership  
 Review Cycle: Annual  
 Approval Authority: Senior Management

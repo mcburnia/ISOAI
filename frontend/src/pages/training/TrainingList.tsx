@@ -154,7 +154,7 @@ export default function TrainingList() {
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
-                      <GraduationCap className="w-5 h-5 text-gibbs-primary" />
+                      <GraduationCap className="w-5 h-5 text-kmi-primary" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="text-sm font-semibold text-foreground">{mod.title}</h4>

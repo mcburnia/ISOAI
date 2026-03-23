@@ -37,8 +37,10 @@ export default function Login() {
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <img src="/gibbs-logo-dark.png" alt="Keep Me ISO" className="h-8 mx-auto mb-3" />
-          <p className="text-sm text-muted-foreground">Keep Me ISO</p>
+          <h1 className="text-2xl font-bold tracking-tight text-foreground mb-1">
+            Keep<span className="text-kmi-bright">Me</span>ISO
+          </h1>
+          <p className="text-sm text-muted-foreground">Integrated Management System</p>
         </div>
 
         <div className="bg-card rounded-lg border border-border shadow-sm p-6">

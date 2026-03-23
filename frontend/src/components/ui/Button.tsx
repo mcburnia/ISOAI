@@ -2,7 +2,7 @@ import { cn } from '../../lib/utils';
 import { ButtonHTMLAttributes, forwardRef } from 'react';
 
 const variants: Record<string, string> = {
-  primary: 'bg-primary text-primary-foreground hover:bg-gibbs-dark shadow-sm',
+  primary: 'bg-primary text-primary-foreground hover:bg-kmi-dark shadow-sm',
   secondary: 'bg-secondary text-secondary-foreground hover:bg-slate-200',
   destructive: 'bg-destructive text-destructive-foreground hover:bg-red-600',
   ghost: 'hover:bg-accent hover:text-accent-foreground',

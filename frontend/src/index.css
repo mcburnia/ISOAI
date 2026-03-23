@@ -12,8 +12,8 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #E4EDF7;
-  color: #0A0B19;
+  background-color: #F5F7FA;
+  color: #2D3748;
 }
 
 #root {

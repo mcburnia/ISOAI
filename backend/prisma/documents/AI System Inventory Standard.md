@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the requirements for maintaining an inventory of artificial intelligence systems operated or governed by Gibbs Consulting.
+This document defines the requirements for maintaining an inventory of artificial intelligence systems operated or governed by the organisation.
 
 The AI System Inventory provides visibility over the AI systems within the scope of the Artificial Intelligence Management System.
 

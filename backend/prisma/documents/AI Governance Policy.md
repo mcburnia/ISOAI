@@ -2,11 +2,11 @@
 
 ## 1. Purpose
 
-This policy establishes the governance principles that guide the design, development, deployment, and oversight of artificial intelligence systems within Gibbs Consulting.
+This policy establishes the governance principles that guide the design, development, deployment, and oversight of artificial intelligence systems within the organisation.
 
 Artificial intelligence introduces new forms of operational capability and decision automation. It also introduces new categories of risk. These include regulatory exposure, unsafe automated decisions, opaque reasoning, and inappropriate reliance on automated outputs.
 
-The purpose of this policy is to ensure that AI systems operated or advised upon by Gibbs Consulting are governed in a controlled, auditable, and professionally responsible manner.
+The purpose of this policy is to ensure that AI systems operated or advised upon by the organisation are governed in a controlled, auditable, and professionally responsible manner.
 
 This policy forms the foundation of the organisation’s Artificial Intelligence Management System (AIMS) established in alignment with ISO/IEC 42001.
 
@@ -16,7 +16,7 @@ This policy forms the foundation of the organisation’s Artificial Intelligence
 
 This policy applies to all artificial intelligence systems that are:
 
-- designed or developed by Gibbs Consulting
+- designed or developed by the organisation
 - deployed within internal systems or advisory platforms
 - evaluated or governed as part of consulting engagements
 - used in research, analysis, or automated workflows
@@ -36,7 +36,7 @@ The policy applies to all environments including research, development, testing,
 
 ## 3. Governance Principles
 
-AI systems operated or advised upon by Gibbs Consulting must follow the principles below.
+AI systems operated or advised upon by the organisation must follow the principles below.
 
 ### Accountability
 
@@ -120,7 +120,7 @@ Users must understand the limitations of automated reasoning and exercise approp
 
 ## 4. AI Management System
 
-Gibbs Consulting maintains a structured Artificial Intelligence Management System that governs the lifecycle of AI systems across the organisation.
+the organisation maintains a structured Artificial Intelligence Management System that governs the lifecycle of AI systems across the organisation.
 
 The management system defines processes for:
 
@@ -167,7 +167,7 @@ Improvement actions arising from internal review or audit will be tracked and ad
 
 ## 7. Policy Ownership
 
-Policy Owner: Gibbs Consulting Leadership  
+Policy Owner: the organisation Leadership  
 Review Cycle: Annual  
 Approval Authority: Senior Management
 
@@ -175,4 +175,4 @@ Approval Authority: Senior Management
 
 ## 8. Effective Date
 
-This policy takes effect immediately upon approval and applies to all AI-related activities undertaken by Gibbs Consulting.
+This policy takes effect immediately upon approval and applies to all AI-related activities undertaken by the organisation.

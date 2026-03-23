@@ -176,7 +176,7 @@ export default function TrainingCourse() {
                 i === currentSection
                   ? 'bg-primary'
                   : visitedSections.has(i)
-                  ? 'bg-gibbs-bright/50'
+                  ? 'bg-kmi-bright/50'
                   : 'bg-muted'
               }`}
               title={mod.sections[i].title}
@@ -195,7 +195,7 @@ export default function TrainingCourse() {
               i === currentSection
                 ? 'bg-primary text-primary-foreground'
                 : visitedSections.has(i)
-                ? 'bg-green-50 text-gibbs-primary'
+                ? 'bg-green-50 text-kmi-primary'
                 : 'bg-secondary text-secondary-foreground hover:bg-accent'
             }`}
           >
@@ -232,7 +232,7 @@ export default function TrainingCourse() {
                       return next;
                     });
                   }}
-                  className="mt-0.5 h-4 w-4 rounded border-gray-300 text-gibbs-primary focus:ring-gibbs-primary accent-gibbs-primary"
+                  className="mt-0.5 h-4 w-4 rounded border-gray-300 text-kmi-primary focus:ring-kmi-primary accent-kmi-primary"
                 />
                 <span className="text-sm text-foreground/80 group-hover:text-foreground transition-colors">
                   I confirm I have read and understood the content in this section.
@@ -282,7 +282,7 @@ export default function TrainingCourse() {
             <CardContent className="py-6">
               <div className="text-center mb-4">
                 <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle className="w-6 h-6 text-gibbs-primary" />
+                  <CheckCircle className="w-6 h-6 text-kmi-primary" />
                 </div>
                 <h3 className="text-lg font-semibold">Complete Training</h3>
               </div>
@@ -291,7 +291,7 @@ export default function TrainingCourse() {
               </p>
               <ul className="text-sm text-foreground space-y-1.5 mb-6 pl-4">
                 {mod.sections.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2"><CheckCircle className="w-3.5 h-3.5 text-gibbs-bright mt-0.5 flex-shrink-0" /> {s.title}</li>
+                  <li key={i} className="flex items-start gap-2"><CheckCircle className="w-3.5 h-3.5 text-kmi-bright mt-0.5 flex-shrink-0" /> {s.title}</li>
                 ))}
               </ul>
               <div className="flex gap-3">
@@ -307,11 +307,11 @@ export default function TrainingCourse() {
 
       {/* Completion confirmation */}
       {completed && isLastSection && (
-        <Card className="mt-4 border-gibbs-bright/30">
+        <Card className="mt-4 border-kmi-bright/30">
           <CardContent className="py-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
-                <CheckCircle className="w-5 h-5 text-gibbs-primary" />
+                <CheckCircle className="w-5 h-5 text-kmi-primary" />
               </div>
               <div>
                 <p className="text-sm font-medium text-foreground">Training Complete</p>

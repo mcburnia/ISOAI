@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the framework used by Gibbs Consulting to identify, assess, manage, and monitor risks associated with artificial intelligence systems.
+This document defines the framework used by the organisation to identify, assess, manage, and monitor risks associated with artificial intelligence systems.
 
 Artificial intelligence systems introduce new operational and regulatory risks that must be assessed before systems are deployed and monitored throughout their lifecycle.
 
@@ -29,7 +29,7 @@ Risk assessment must be performed before deployment of an AI system and reviewed
 
 ## 3. Principles of AI Risk Management
 
-AI risk management within Gibbs Consulting follows several core principles.
+AI risk management within the organisation follows several core principles.
 
 ### Proportionality
 
