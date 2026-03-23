@@ -26,15 +26,54 @@ export async function listQuestions(req: Request, res: Response): Promise<void> 
 
   const isAdmin = req.user && ['ADMIN', 'SUPER_ADMIN'].includes(req.user.role);
 
-  // Strip answers for non-admin users
-  const safe = questions.map((q) => ({
-    id: q.id,
-    question: q.question,
-    options: JSON.parse(q.options),
-    ...(isAdmin ? { correctIndex: q.correctIndex, explanation: q.explanation, hint: q.hint } : {}),
-  }));
+  if (isAdmin) {
+    // Admins see canonical order with answers
+    const safe = questions.map((q) => ({
+      id: q.id,
+      question: q.question,
+      options: JSON.parse(q.options),
+      correctIndex: q.correctIndex,
+      explanation: q.explanation,
+      hint: q.hint,
+    }));
+    res.json({ questions: safe, passThreshold: mod.passThreshold });
+    return;
+  }
 
-  res.json({ questions: safe, passThreshold: mod.passThreshold });
+  // For non-admins: shuffle options with the constraint that the correct
+  // answer cannot occupy the same display position in consecutive questions.
+  let previousCorrectPos = -1;
+  const shuffled = questions.map((q) => {
+    const options = JSON.parse(q.options) as string[];
+    const indexed = options.map((opt: string, i: number) => ({ opt, originalIndex: i }));
+
+    let result: typeof indexed;
+    let correctPos: number;
+    let attempts = 0;
+
+    do {
+      // Fisher-Yates shuffle
+      result = [...indexed];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      correctPos = result.findIndex((r) => r.originalIndex === q.correctIndex);
+      attempts++;
+    } while (correctPos === previousCorrectPos && attempts < 20);
+
+    previousCorrectPos = correctPos;
+
+    return {
+      id: q.id,
+      question: q.question,
+      options: result.map((r) => r.opt),
+      // Send the mapping so the frontend can send back original indices
+      _map: result.map((r) => r.originalIndex),
+    };
+  });
+
+  res.json({ questions: shuffled, passThreshold: mod.passThreshold });
 }
 
 export async function createQuestion(req: Request, res: Response): Promise<void> {

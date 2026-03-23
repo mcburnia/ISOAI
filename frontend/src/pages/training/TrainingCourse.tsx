@@ -27,6 +27,7 @@ interface Question {
   id: string;
   question: string;
   options: string[];
+  _map?: number[];  // originalIndices mapping from backend shuffle
 }
 
 interface AttemptResult {
@@ -105,18 +106,19 @@ interface ShuffledQuestion {
   originalIndices: number[];   // originalIndices[displayPos] = original index
 }
 
-/** Shuffle question order and option order within each question */
+/**
+ * Shuffle question order and remap options from backend-shuffled data.
+ * The backend handles option shuffling with the constraint that the correct
+ * answer never occupies the same position in consecutive questions.
+ * The frontend just shuffles question order and builds the index map.
+ */
 function shuffleQuiz(questions: Question[]): ShuffledQuestion[] {
-  return shuffle(questions).map((q) => {
-    const indexed = q.options.map((opt, i) => ({ opt, originalIndex: i }));
-    const shuffled = shuffle(indexed);
-    return {
-      id: q.id,
-      question: q.question,
-      options: shuffled.map((s) => s.opt),
-      originalIndices: shuffled.map((s) => s.originalIndex),
-    };
-  });
+  return shuffle(questions).map((q) => ({
+    id: q.id,
+    question: q.question,
+    options: q.options,
+    originalIndices: q._map || q.options.map((_, i) => i),
+  }));
 }
 
 export default function TrainingCourse() {
