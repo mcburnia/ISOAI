@@ -199,7 +199,7 @@ export default function ComplianceView() {
       <Card>
         <CardContent className="py-4">
           <div className="flex items-center gap-4">
-            <div className="p-2.5 rounded-lg bg-green-50">
+            <div className="p-2.5 rounded-lg bg-sky-50">
               <Shield className="w-5 h-5 text-kmi-primary" />
             </div>
             <div className="flex-1">

@@ -6,7 +6,7 @@ const variants: Record<string, string> = {
   warning: 'bg-amber-50 text-amber-700',
   error: 'bg-red-50 text-red-700',
   info: 'bg-indigo-50 text-indigo-700',
-  purple: 'bg-green-50 text-green-800',
+  purple: 'bg-indigo-50 text-indigo-700',
 };
 
 interface BadgeProps {

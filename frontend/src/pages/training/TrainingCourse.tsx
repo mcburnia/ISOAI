@@ -195,7 +195,7 @@ export default function TrainingCourse() {
               i === currentSection
                 ? 'bg-primary text-primary-foreground'
                 : visitedSections.has(i)
-                ? 'bg-green-50 text-kmi-primary'
+                ? 'bg-sky-50 text-kmi-primary'
                 : 'bg-secondary text-secondary-foreground hover:bg-accent'
             }`}
           >
@@ -281,7 +281,7 @@ export default function TrainingCourse() {
           <Card className="max-w-md w-full">
             <CardContent className="py-6">
               <div className="text-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 rounded-full bg-sky-50 flex items-center justify-center mx-auto mb-3">
                   <CheckCircle className="w-6 h-6 text-kmi-primary" />
                 </div>
                 <h3 className="text-lg font-semibold">Complete Training</h3>
@@ -310,7 +310,7 @@ export default function TrainingCourse() {
         <Card className="mt-4 border-kmi-bright/30">
           <CardContent className="py-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 rounded-full bg-sky-50 flex items-center justify-center flex-shrink-0">
                 <CheckCircle className="w-5 h-5 text-kmi-primary" />
               </div>
               <div>

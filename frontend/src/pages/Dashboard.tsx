@@ -87,7 +87,7 @@ const kpiCards = (data: DashboardData) => [
     sub: `${data.activeSystems} active`,
     icon: Server,
     color: 'text-kmi-primary',
-    bg: 'bg-green-50',
+    bg: 'bg-sky-50',
   },
   {
     label: 'Open Risks',
