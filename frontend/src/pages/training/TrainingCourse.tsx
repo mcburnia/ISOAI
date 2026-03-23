@@ -287,7 +287,25 @@ export default function TrainingCourse() {
           <Badge variant="info"><Clock className="w-3 h-3 mr-1" />{mod.durationMinutes} min</Badge>
           <Badge variant="default"><BookOpen className="w-3 h-3 mr-1" />{totalSections} sections</Badge>
           {completed && (
-            <Badge variant="success"><CheckCircle className="w-3 h-3 mr-1" />Completed {completedAt ? new Date(completedAt).toLocaleDateString() : ''}</Badge>
+            <>
+              <Badge variant="success"><CheckCircle className="w-3 h-3 mr-1" />Completed {completedAt ? new Date(completedAt).toLocaleDateString() : ''}</Badge>
+              {hasQuestions && (
+                <button
+                  onClick={() => {
+                    setCompleted(false);
+                    setCompletedAt(null);
+                    setConfirmedSections(new Set());
+                    setVisitedSections(new Set([0]));
+                    setCurrentSection(0);
+                    localStorage.removeItem(`kmi-confirmed-${slug}`);
+                    localStorage.removeItem(`kmi-quiz-answers-${slug}`);
+                  }}
+                  className="text-xs text-kmi-bright hover:underline"
+                >
+                  Retake Assessment
+                </button>
+              )}
+            </>
           )}
           {isAdmin && (
             <Link to={`/training/modules/${slug}/questions`} className="text-xs text-kmi-bright hover:underline ml-2">
