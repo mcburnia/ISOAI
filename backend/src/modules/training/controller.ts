@@ -86,15 +86,19 @@ export async function listModules(req: Request, res: Response): Promise<void> {
 export async function getModule(req: Request, res: Response): Promise<void> {
   const mod = await prisma.trainingModule.findUnique({
     where: { slug: req.params.slug },
+    include: { _count: { select: { questions: true } } },
   });
   if (!mod) {
     res.status(404).json({ error: 'Training module not found' });
     return;
   }
+  const { _count, ...moduleData } = mod;
   res.json({
     module: {
-      ...mod,
+      ...moduleData,
       sections: JSON.parse(mod.sections),
+      questionCount: _count.questions,
+      passThreshold: mod.passThreshold,
     },
   });
 }
@@ -105,6 +109,13 @@ export async function completeModule(req: Request, res: Response): Promise<void>
   });
   if (!mod) {
     res.status(404).json({ error: 'Training module not found' });
+    return;
+  }
+
+  // If module has assessment questions, require the assessment path
+  const questionCount = await prisma.assessmentQuestion.count({ where: { moduleId: mod.id } });
+  if (questionCount > 0) {
+    res.status(400).json({ error: 'This module requires an assessment. Use the assessment endpoint.' });
     return;
   }
 

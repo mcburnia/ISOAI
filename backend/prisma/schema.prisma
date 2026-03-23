@@ -39,6 +39,8 @@ model User {
   harmonizedEvidence   HarmonizedEvidence[]
   assignedObligations  ScheduledObligation[] @relation("ObligationAssignee")
   completedInstances   ObligationInstance[]   @relation("InstanceCompletedBy")
+  assessmentAttempts   AssessmentAttempt[]
+  competenceChecks     CompetenceCheck[]
 }
 
 model AISystem {
@@ -154,9 +156,13 @@ model TrainingModule {
   durationMinutes Int      @default(60)
   sections        String   // JSON array
   standardCode    String?  // Which standard this training belongs to
+  passThreshold   Int      @default(80) // Percentage needed to pass assessment (0-100)
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
   completions     TrainingRecord[]
+  questions       AssessmentQuestion[]
+  assessmentAttempts AssessmentAttempt[]
+  competenceChecks   CompetenceCheck[]
 }
 
 model TrainingRecord {
@@ -350,4 +356,62 @@ model ObligationInstance {
   @@index([obligationId])
   @@index([dueDate])
   @@index([status])
+}
+
+// ============================================================
+// TRAINING ASSESSMENTS AND COMPETENCE CHECKING
+// ============================================================
+// Post-training assessments prove understanding at point of training.
+// Ongoing competence checks prove retention over time.
+// Adaptive frequency: strong performers get weekly checks,
+// weaker performers get daily checks until they improve.
+
+model AssessmentQuestion {
+  id           String         @id @default(cuid())
+  moduleId     String
+  module       TrainingModule @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  question     String
+  options      String         // JSON array of 4 option strings
+  correctIndex Int            // 0-3, index of correct answer
+  explanation  String?        // Shown after answering (why the correct answer is correct)
+  hint         String?        // Refresher excerpt to help recall training material
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  competenceChecks CompetenceCheck[]
+
+  @@index([moduleId])
+}
+
+model AssessmentAttempt {
+  id             String         @id @default(cuid())
+  userId         String
+  user           User           @relation(fields: [userId], references: [id])
+  moduleId       String
+  module         TrainingModule @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  score          Int            // Percentage 0-100
+  totalQuestions Int
+  correctCount   Int
+  passed         Boolean
+  answers        String         // JSON array of {questionId, selectedIndex, correct}
+  createdAt      DateTime       @default(now())
+
+  @@index([userId, moduleId])
+}
+
+model CompetenceCheck {
+  id            String             @id @default(cuid())
+  userId        String
+  user          User               @relation(fields: [userId], references: [id])
+  questionId    String
+  question      AssessmentQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  moduleId      String
+  module        TrainingModule     @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  selectedIndex Int
+  correct       Boolean
+  usedHint      Boolean            @default(false)
+  answeredAt    DateTime           @default(now())
+
+  @@index([userId])
+  @@index([userId, moduleId])
 }

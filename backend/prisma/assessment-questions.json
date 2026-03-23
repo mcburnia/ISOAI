@@ -1,0 +1,103 @@
+[
+  {
+    "moduleSlug": "ai-governance-awareness",
+    "questions": [
+      {
+        "question": "What is the primary purpose of the Qualified Human in the Loop principle?",
+        "options": [
+          "To ensure AI systems operate without human intervention",
+          "To ensure a suitably qualified person reviews and takes responsibility for AI-assisted decisions",
+          "To reduce the workload of AI system operators",
+          "To automate the decision-making process entirely"
+        ],
+        "correctIndex": 1,
+        "explanation": "The Qualified Human in the Loop principle ensures that a suitably qualified person must review and take responsibility for decisions that rely on AI outputs. Humans remain accountable for decisions.",
+        "hint": "Think about who bears responsibility when an AI system helps make a decision."
+      },
+      {
+        "question": "When should an AI incident be reported?",
+        "options": [
+          "Only when the AI system completely stops working",
+          "Only after a full investigation has been completed",
+          "As soon as possible after discovering unexpected behaviour, errors, or adverse outcomes",
+          "Only if a customer complains"
+        ],
+        "correctIndex": 2,
+        "explanation": "AI incidents should be reported promptly when unexpected behaviour, errors, or adverse outcomes are discovered. Early reporting enables timely investigation and corrective action.",
+        "hint": "Incident reporting is about timeliness, not waiting for perfection."
+      },
+      {
+        "question": "Which of the following best describes the purpose of the AI system inventory?",
+        "options": [
+          "A list of all software licences purchased by the organisation",
+          "A comprehensive register of all AI systems, their purpose, risk classification, and oversight arrangements",
+          "A database of all employees who use AI systems",
+          "A record of all AI-related purchase orders"
+        ],
+        "correctIndex": 1,
+        "explanation": "The AI system inventory maintains a comprehensive register of all AI systems including their purpose, risk classification, data sources, and human oversight arrangements.",
+        "hint": "The inventory is about understanding what AI systems exist and how they are governed."
+      },
+      {
+        "question": "What does risk classification determine for an AI system?",
+        "options": [
+          "The purchase price of the system",
+          "The level of oversight, monitoring, and governance controls required",
+          "Which department should use the system",
+          "How many users can access the system simultaneously"
+        ],
+        "correctIndex": 1,
+        "explanation": "Risk classification determines the level of oversight, monitoring, and governance controls that must be applied to an AI system. Higher-risk systems require more stringent controls.",
+        "hint": "Risk classification drives the governance response, not commercial decisions."
+      },
+      {
+        "question": "What is the correct action if you suspect an AI system is producing biased or discriminatory outputs?",
+        "options": [
+          "Continue using the system but make a note for the next review",
+          "Report it as an AI incident and escalate to the AI Governance Lead immediately",
+          "Adjust the outputs manually before passing them on",
+          "Wait for the scheduled annual review to raise the concern"
+        ],
+        "correctIndex": 1,
+        "explanation": "Suspected bias or discrimination is an AI incident that should be reported and escalated immediately. Continuing to use a potentially biased system without action risks harm to individuals and non-compliance.",
+        "hint": "Bias and discrimination are serious concerns that require immediate action, not deferred review."
+      },
+      {
+        "question": "Which ISO standard specifically addresses AI management systems?",
+        "options": [
+          "ISO 27001",
+          "ISO 9001",
+          "ISO/IEC 42001",
+          "ISO 22301"
+        ],
+        "correctIndex": 2,
+        "explanation": "ISO/IEC 42001 is the international standard for Artificial Intelligence Management Systems (AIMS). It provides requirements for establishing, implementing, and improving AI governance.",
+        "hint": "Look for the standard number that starts with 42."
+      },
+      {
+        "question": "What is the purpose of conducting regular management reviews of the AI management system?",
+        "options": [
+          "To satisfy audit requirements only",
+          "To evaluate the continuing suitability, adequacy, and effectiveness of the AI management system and make improvement decisions",
+          "To approve new AI system purchases",
+          "To review individual employee performance"
+        ],
+        "correctIndex": 1,
+        "explanation": "Management reviews evaluate whether the AI management system remains suitable, adequate, and effective. They are a key governance mechanism for driving continual improvement.",
+        "hint": "Management reviews are about the system as a whole, not individual components."
+      },
+      {
+        "question": "What must happen before an AI system is deployed into a production environment?",
+        "options": [
+          "The system must pass all automated tests",
+          "The system must complete the full lifecycle governance process including risk assessment and approval",
+          "The system must be cheaper than the manual alternative",
+          "The system must be recommended by the IT department"
+        ],
+        "correctIndex": 1,
+        "explanation": "Before deployment, an AI system must complete the full lifecycle governance process. This includes risk assessment, impact assessment, human oversight arrangements, and formal approval.",
+        "hint": "Deployment is a governance decision, not just a technical one."
+      }
+    ]
+  }
+]

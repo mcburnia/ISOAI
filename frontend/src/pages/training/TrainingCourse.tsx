@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Card, CardContent } from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import Badge from '../../components/ui/Badge';
 import api from '../../api/client';
-import { ChevronLeft, ChevronRight, CheckCircle, Clock, BookOpen } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
+import { ChevronLeft, ChevronRight, CheckCircle, Clock, BookOpen, AlertTriangle } from 'lucide-react';
 
 interface Section {
   title: string;
@@ -18,6 +19,22 @@ interface TrainingModule {
   description: string;
   durationMinutes: number;
   sections: Section[];
+  questionCount: number;
+  passThreshold: number;
+}
+
+interface Question {
+  id: string;
+  question: string;
+  options: string[];
+}
+
+interface AttemptResult {
+  score: number;
+  totalQuestions: number;
+  correctCount: number;
+  passed: boolean;
+  passThreshold: number;
 }
 
 function renderMarkdown(md: string) {
@@ -74,6 +91,7 @@ function renderMarkdown(md: string) {
 export default function TrainingCourse() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { isAdmin } = useAuth();
   const [mod, setMod] = useState<TrainingModule | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
@@ -83,6 +101,12 @@ export default function TrainingCourse() {
   const [submitting, setSubmitting] = useState(false);
   const [showAcknowledge, setShowAcknowledge] = useState(false);
   const [confirmedSections, setConfirmedSections] = useState<Set<number>>(new Set());
+  const [quizMode, setQuizMode] = useState(false);
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedAnswers, setSelectedAnswers] = useState<Map<string, number>>(new Map());
+  const [attemptResult, setAttemptResult] = useState<AttemptResult | null>(null);
+  const [quizSubmitting, setQuizSubmitting] = useState(false);
 
   useEffect(() => {
     if (!slug) return;
@@ -131,6 +155,52 @@ export default function TrainingCourse() {
     setVisitedSections((prev) => new Set([...prev, index]));
   };
 
+  const startQuiz = async () => {
+    try {
+      const res = await api.get(`/training/modules/${slug}/questions`);
+      setQuestions(res.data.questions);
+      setCurrentQuestion(0);
+      setSelectedAnswers(new Map());
+      setAttemptResult(null);
+      setQuizMode(true);
+    } catch {
+      // error loading questions
+    }
+  };
+
+  const submitQuiz = async () => {
+    setQuizSubmitting(true);
+    try {
+      const answers = questions.map((q) => ({
+        questionId: q.id,
+        selectedIndex: selectedAnswers.get(q.id) ?? -1,
+      }));
+      const res = await api.post(`/training/modules/${slug}/assess`, { answers });
+      setAttemptResult(res.data.attempt);
+      if (res.data.attempt.passed) {
+        setCompleted(true);
+        setCompletedAt(new Date().toISOString());
+      }
+    } catch {
+      // error
+    } finally {
+      setQuizSubmitting(false);
+    }
+  };
+
+  const resetQuiz = () => {
+    setQuizMode(false);
+    setAttemptResult(null);
+    setSelectedAnswers(new Map());
+    setCurrentQuestion(0);
+    setConfirmedSections(new Set());
+    setVisitedSections(new Set([0]));
+    setCurrentSection(0);
+  };
+
+  const hasQuestions = (mod?.questionCount ?? 0) > 0;
+  const allQuestionsAnswered = questions.length > 0 && selectedAnswers.size === questions.length;
+
   const handleComplete = async () => {
     setSubmitting(true);
     try {
@@ -157,6 +227,11 @@ export default function TrainingCourse() {
           <Badge variant="default"><BookOpen className="w-3 h-3 mr-1" />{totalSections} sections</Badge>
           {completed && (
             <Badge variant="success"><CheckCircle className="w-3 h-3 mr-1" />Completed {completedAt ? new Date(completedAt).toLocaleDateString() : ''}</Badge>
+          )}
+          {isAdmin && (
+            <Link to={`/training/modules/${slug}/questions`} className="text-xs text-kmi-bright hover:underline ml-2">
+              Manage Questions
+            </Link>
           )}
         </div>
       </div>
@@ -255,14 +330,25 @@ export default function TrainingCourse() {
         </Button>
 
         {isLastSection && !completed ? (
-          <Button
-            size="sm"
-            disabled={!allConfirmed}
-            onClick={() => setShowAcknowledge(true)}
-            title={allConfirmed ? 'Complete training' : 'Confirm all sections first'}
-          >
-            <CheckCircle className="w-4 h-4 mr-1" /> Complete Training
-          </Button>
+          hasQuestions ? (
+            <Button
+              size="sm"
+              disabled={!allConfirmed}
+              onClick={startQuiz}
+              title={allConfirmed ? 'Take assessment' : 'Confirm all sections first'}
+            >
+              <CheckCircle className="w-4 h-4 mr-1" /> Take Assessment
+            </Button>
+          ) : (
+            <Button
+              size="sm"
+              disabled={!allConfirmed}
+              onClick={() => setShowAcknowledge(true)}
+              title={allConfirmed ? 'Complete training' : 'Confirm all sections first'}
+            >
+              <CheckCircle className="w-4 h-4 mr-1" /> Complete Training
+            </Button>
+          )
         ) : !isLastSection ? (
           <Button
             size="sm"
@@ -322,6 +408,145 @@ export default function TrainingCourse() {
             </div>
           </CardContent>
         </Card>
+      )}
+
+      {/* Assessment Quiz */}
+      {quizMode && !attemptResult && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <Card className="max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <CardContent className="py-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-lg font-semibold">Assessment</h3>
+                <span className="text-sm text-muted-foreground">
+                  Question {currentQuestion + 1} of {questions.length}
+                </span>
+              </div>
+
+              {/* Progress dots */}
+              <div className="flex gap-1 mb-6">
+                {questions.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`h-1.5 flex-1 rounded-full ${
+                      i === currentQuestion
+                        ? 'bg-primary'
+                        : selectedAnswers.has(questions[i].id)
+                        ? 'bg-kmi-bright'
+                        : 'bg-muted'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <p className="text-sm font-medium text-foreground mb-4">
+                {questions[currentQuestion]?.question}
+              </p>
+
+              <div className="space-y-2 mb-6">
+                {questions[currentQuestion]?.options.map((option, i) => (
+                  <label
+                    key={i}
+                    className={`flex items-center gap-3 p-3 rounded-md border cursor-pointer transition-colors ${
+                      selectedAnswers.get(questions[currentQuestion].id) === i
+                        ? 'border-primary bg-primary/5'
+                        : 'border-border hover:border-primary/30'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name={`question-${currentQuestion}`}
+                      checked={selectedAnswers.get(questions[currentQuestion].id) === i}
+                      onChange={() => {
+                        setSelectedAnswers((prev) => {
+                          const next = new Map(prev);
+                          next.set(questions[currentQuestion].id, i);
+                          return next;
+                        });
+                      }}
+                      className="accent-primary"
+                    />
+                    <span className="text-sm">{String.fromCharCode(65 + i)}. {option}</span>
+                  </label>
+                ))}
+              </div>
+
+              <div className="flex items-center justify-between">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  disabled={currentQuestion === 0}
+                  onClick={() => setCurrentQuestion((p) => p - 1)}
+                >
+                  <ChevronLeft className="w-4 h-4 mr-1" /> Previous
+                </Button>
+
+                {currentQuestion < questions.length - 1 ? (
+                  <Button
+                    size="sm"
+                    onClick={() => setCurrentQuestion((p) => p + 1)}
+                  >
+                    Next <ChevronRight className="w-4 h-4 ml-1" />
+                  </Button>
+                ) : (
+                  <Button
+                    size="sm"
+                    disabled={!allQuestionsAnswered || quizSubmitting}
+                    onClick={submitQuiz}
+                  >
+                    {quizSubmitting ? 'Submitting...' : 'Submit Assessment'}
+                  </Button>
+                )}
+              </div>
+
+              <button
+                onClick={() => setQuizMode(false)}
+                className="w-full text-center text-xs text-muted-foreground hover:text-foreground mt-4"
+              >
+                Cancel and return to training
+              </button>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
+      {/* Assessment Result */}
+      {attemptResult && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <Card className="max-w-md w-full">
+            <CardContent className="py-6 text-center">
+              {attemptResult.passed ? (
+                <>
+                  <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="w-8 h-8 text-emerald-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Assessment Passed</h3>
+                  <p className="text-3xl font-bold text-emerald-600 mb-1">{attemptResult.score}%</p>
+                  <p className="text-sm text-muted-foreground mb-6">
+                    You scored {attemptResult.correctCount} out of {attemptResult.totalQuestions} (pass mark: {attemptResult.passThreshold}%)
+                  </p>
+                  <Button onClick={() => { setAttemptResult(null); setQuizMode(false); }}>
+                    Done
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+                    <AlertTriangle className="w-8 h-8 text-red-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Assessment Not Passed</h3>
+                  <p className="text-3xl font-bold text-red-500 mb-1">{attemptResult.score}%</p>
+                  <p className="text-sm text-muted-foreground mb-6">
+                    You scored {attemptResult.correctCount} out of {attemptResult.totalQuestions}. The pass mark is {attemptResult.passThreshold}%.
+                    Please review the training material and retake the assessment.
+                  </p>
+                  <Button onClick={resetQuiz}>
+                    Review Training Material
+                  </Button>
+                </>
+              )}
+            </CardContent>
+          </Card>
+        </div>
       )}
     </div>
   );

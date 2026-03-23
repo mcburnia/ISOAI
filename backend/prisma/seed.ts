@@ -481,6 +481,41 @@ async function main() {
     }
     console.log(`Seeded ${totalModulesSeeded} total training modules.`);
 
+    // ============================================================
+    // Seed assessment questions from JSON
+    // ============================================================
+    const questionsFilePath = path.join(__dirname, 'assessment-questions.json');
+    if (fs.existsSync(questionsFilePath)) {
+      const questionSets = JSON.parse(fs.readFileSync(questionsFilePath, 'utf-8'));
+      let totalQuestions = 0;
+      for (const set of questionSets) {
+        const mod = await tenantDb.trainingModule.findUnique({ where: { slug: set.moduleSlug } });
+        if (!mod) {
+          console.log(`  Skipping questions for ${set.moduleSlug} — module not found`);
+          continue;
+        }
+        for (const q of set.questions) {
+          const existing = await tenantDb.assessmentQuestion.findFirst({
+            where: { moduleId: mod.id, question: q.question },
+          });
+          if (!existing) {
+            await tenantDb.assessmentQuestion.create({
+              data: {
+                moduleId: mod.id,
+                question: q.question,
+                options: JSON.stringify(q.options),
+                correctIndex: q.correctIndex,
+                explanation: q.explanation || null,
+                hint: q.hint || null,
+              },
+            });
+            totalQuestions++;
+          }
+        }
+      }
+      console.log(`Seeded ${totalQuestions} new assessment questions.`);
+    }
+
   } finally {
     await tenantDb.$disconnect();
   }
