@@ -14,29 +14,30 @@ interface DashboardSummary {
 }
 
 interface UserRow {
-  id: string;
+  userId: string;
   name: string;
   email: string;
   totalChecks: number;
   score: number;
-  hintUsage: number;
+  hintUsageRate: number;
   frequency: 'daily' | 'weekly';
-  lastCheckDate: string | null;
+  lastCheck: string | null;
 }
 
 interface ModuleRow {
-  id: string;
-  moduleTitle: string;
+  moduleId: string;
+  title: string;
   questionCount: number;
   totalChecks: number;
   avgScore: number;
-  hintUsage: number;
+  hintUsageRate: number;
 }
 
 interface DashboardData {
   summary: DashboardSummary;
-  users: UserRow[];
-  modules: ModuleRow[];
+  perUser: UserRow[];
+  perModule: ModuleRow[];
+  flagged: UserRow[];
 }
 
 export default function CompetenceDashboard() {
@@ -73,8 +74,7 @@ export default function CompetenceDashboard() {
     );
   }
 
-  const { summary, users, modules } = data;
-  const flaggedUsers = users.filter((u) => u.frequency === 'daily' || u.score < 50);
+  const { summary, perUser: users, perModule: modules, flagged: flaggedUsers } = data;
 
   return (
     <div className="space-y-6">
@@ -161,7 +161,7 @@ export default function CompetenceDashboard() {
             <tbody>
               {users.map((u) => (
                 <tr
-                  key={u.id}
+                  key={u.userId}
                   className={`border-b border-border last:border-0 ${
                     u.frequency === 'daily' ? 'bg-red-50/50' : 'hover:bg-muted/30'
                   }`}
@@ -174,14 +174,14 @@ export default function CompetenceDashboard() {
                       {u.score}%
                     </span>
                   </td>
-                  <td className="py-3 px-4 text-muted-foreground">{u.hintUsage}%</td>
+                  <td className="py-3 px-4 text-muted-foreground">{u.hintUsageRate}%</td>
                   <td className="py-3 px-4">
                     <Badge variant={u.frequency === 'daily' ? 'warning' : 'success'}>
                       {u.frequency}
                     </Badge>
                   </td>
                   <td className="py-3 px-4 text-muted-foreground">
-                    {u.lastCheckDate ? new Date(u.lastCheckDate).toLocaleDateString() : '—'}
+                    {u.lastCheck ? new Date(u.lastCheck).toLocaleDateString() : '—'}
                   </td>
                 </tr>
               ))}
@@ -218,12 +218,12 @@ export default function CompetenceDashboard() {
             </thead>
             <tbody>
               {modules.map((m) => (
-                <tr key={m.id} className="border-b border-border last:border-0 hover:bg-muted/30">
-                  <td className="py-3 px-4 font-medium">{m.moduleTitle}</td>
+                <tr key={m.moduleId} className="border-b border-border last:border-0 hover:bg-muted/30">
+                  <td className="py-3 px-4 font-medium">{m.title}</td>
                   <td className="py-3 px-4">{m.questionCount}</td>
                   <td className="py-3 px-4">{m.totalChecks}</td>
                   <td className="py-3 px-4">{m.avgScore}%</td>
-                  <td className="py-3 px-4 text-muted-foreground">{m.hintUsage}%</td>
+                  <td className="py-3 px-4 text-muted-foreground">{m.hintUsageRate}%</td>
                 </tr>
               ))}
               {modules.length === 0 && (
@@ -247,7 +247,7 @@ export default function CompetenceDashboard() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {flaggedUsers.map((u) => (
-              <Card key={u.id} className="border-amber-200">
+              <Card key={u.userId} className="border-amber-200">
                 <CardContent className="py-3">
                   <div className="flex items-start justify-between mb-2">
                     <div>
@@ -260,7 +260,7 @@ export default function CompetenceDashboard() {
                   </div>
                   <div className="flex items-center gap-3 text-xs text-muted-foreground">
                     <span>Score: <span className={u.score < 50 ? 'text-red-600 font-medium' : ''}>{u.score}%</span></span>
-                    <span>Hints: {u.hintUsage}%</span>
+                    <span>Hints: {u.hintUsageRate}%</span>
                     <span>Checks: {u.totalChecks}</span>
                   </div>
                 </CardContent>
