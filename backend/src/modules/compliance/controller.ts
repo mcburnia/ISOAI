@@ -85,6 +85,8 @@ export async function getDashboard(req: Request, res: Response): Promise<void> {
     recentActivity,
     systemsNeedingReview,
     overdueTraining,
+    upcomingObligations,
+    overdueObligations,
   ] = await Promise.all([
     prisma.aISystem.count(),
     prisma.aISystem.count({ where: { deploymentStatus: 'ACTIVE' } }),
@@ -119,6 +121,26 @@ export async function getDashboard(req: Request, res: Response): Promise<void> {
         _count: { select: { trainingRecords: true } },
       },
     }),
+    // Scheduling: obligations due within 30 days
+    hasActiveStandards
+      ? prisma.obligationInstance.count({
+          where: {
+            status: 'PENDING',
+            dueDate: { lte: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) },
+            obligation: { status: 'ACTIVE', standardCode: { in: activeCodes } },
+          },
+        })
+      : Promise.resolve(0),
+    // Scheduling: overdue obligations
+    hasActiveStandards
+      ? prisma.obligationInstance.count({
+          where: {
+            status: 'PENDING',
+            dueDate: { lt: new Date() },
+            obligation: { status: 'ACTIVE', standardCode: { in: activeCodes } },
+          },
+        })
+      : Promise.resolve(0),
   ]);
 
   const totalMappings = mappings.length;
@@ -197,6 +219,8 @@ export async function getDashboard(req: Request, res: Response): Promise<void> {
         createdAt: a.createdAt,
       })),
       standardsCompliance,
+      upcomingObligations,
+      overdueObligations,
     },
   });
 }

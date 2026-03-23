@@ -37,6 +37,8 @@ model User {
   trainingRecords      TrainingRecord[]
   governanceRoles      GovernanceRole[]
   harmonizedEvidence   HarmonizedEvidence[]
+  assignedObligations  ScheduledObligation[] @relation("ObligationAssignee")
+  completedInstances   ObligationInstance[]   @relation("InstanceCompletedBy")
 }
 
 model AISystem {
@@ -297,4 +299,55 @@ model HarmonizedEvidence {
   createdAt               DateTime              @default(now())
 
   @@index([harmonizedRequirementId])
+}
+
+// ============================================================
+// COMPLIANCE SCHEDULING
+// ============================================================
+// Tracks recurring obligations required by ISO standards
+// (audits, reviews, training renewals, etc.) and their
+// individual occurrences.
+
+model ScheduledObligation {
+  id               String    @id @default(cuid())
+  type             String    // INTERNAL_AUDIT, MANAGEMENT_REVIEW, RISK_ASSESSMENT, etc.
+  title            String
+  description      String?
+  standardCode     String    // Which standard this relates to
+  clauseRef        String?   // e.g. "9.2", "8.4"
+  frequency        String    // MONTHLY, QUARTERLY, SEMI_ANNUAL, ANNUAL, CUSTOM_DAYS
+  customDays       Int?      // Only when frequency = CUSTOM_DAYS
+  anchorDate       DateTime  // When the cycle starts (first due date)
+  assigneeId       String?
+  assignee         User?     @relation("ObligationAssignee", fields: [assigneeId], references: [id])
+  linkedEntityId   String?   // Polymorphic FK to AISystem, Document, TrainingModule, etc.
+  linkedEntityType String?   // SYSTEM, DOCUMENT, TRAINING_MODULE, GOVERNANCE_ROLE, AUDIT_FINDING
+  status           String    @default("ACTIVE") // ACTIVE, PAUSED
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  instances        ObligationInstance[]
+
+  @@index([standardCode])
+  @@index([status])
+}
+
+model ObligationInstance {
+  id               String               @id @default(cuid())
+  obligationId     String
+  obligation       ScheduledObligation  @relation(fields: [obligationId], references: [id], onDelete: Cascade)
+  dueDate          DateTime
+  completedAt      DateTime?
+  completedById    String?
+  completedBy      User?                @relation("InstanceCompletedBy", fields: [completedById], references: [id])
+  linkedRecordId   String?              // ID of the audit, review, etc. that satisfies this
+  linkedRecordType String?              // AUDIT, MANAGEMENT_REVIEW, TRAINING_RECORD, etc.
+  notes            String?
+  status           String               @default("PENDING") // PENDING, COMPLETED, SKIPPED
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+
+  @@index([obligationId])
+  @@index([dueDate])
+  @@index([status])
 }

@@ -10,6 +10,7 @@ const pageTitles: Record<string, string> = {
   '/oversight': 'Human Oversight',
   '/roles': 'Roles & Responsibilities',
   '/training': 'Training & Competence',
+  '/scheduling': 'Compliance Scheduling',
   '/audits': 'Audits & Reviews',
   '/documents': 'Policy Documents',
   '/compliance': 'Control Mapping',

@@ -18,6 +18,7 @@ import {
   ScrollText,
   Shield,
   Building2,
+  CalendarClock,
 } from 'lucide-react';
 
 const navGroups = [
@@ -53,6 +54,7 @@ const navGroups = [
       { to: '/documents', icon: FileText, label: 'Policy Documents' },
       { to: '/roles', icon: Users, label: 'Roles & Responsibilities' },
       { to: '/training', icon: GraduationCap, label: 'Training & Competence' },
+      { to: '/scheduling', icon: CalendarClock, label: 'Scheduling' },
       { to: '/audits', icon: ClipboardCheck, label: 'Audits & Reviews' },
       { to: '/compliance', icon: CheckCircle, label: 'Control Mapping' },
       { to: '/activity-log', icon: ScrollText, label: 'Activity Log' },
@@ -79,8 +81,8 @@ export default function Sidebar() {
     <aside className="fixed left-0 top-0 h-screen w-60 bg-sidebar text-sidebar-foreground flex flex-col z-50">
       {/* Brand */}
       <div className="px-5 py-5 border-b border-sidebar-accent">
-        <img src="/gibbs-logo-light.png" alt="Gibbs Consulting" className="h-7 w-auto" />
-        <p className="text-[10px] text-slate-400 mt-1.5 tracking-wide">Integrated Management System</p>
+        <img src="/gibbs-logo-light.png" alt="Keep Me ISO" className="h-7 w-auto" />
+        <p className="text-[10px] text-slate-400 mt-1.5 tracking-wide">Keep Me ISO</p>
       </div>
 
       {/* Navigation */}

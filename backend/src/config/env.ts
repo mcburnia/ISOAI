@@ -9,12 +9,8 @@ export const env = {
   deploymentMode: (process.env.DEPLOYMENT_MODE || 'saas') as 'saas' | 'dedicated' | 'onpremise',
   // Default tenant slug for single-tenant / on-premise deployments
   defaultTenantSlug: process.env.DEFAULT_TENANT_SLUG || 'default',
-  // SMTP configuration
-  smtpHost: process.env.SMTP_HOST || '',
-  smtpPort: parseInt(process.env.SMTP_PORT || '587', 10),
-  smtpSecure: process.env.SMTP_SECURE === 'true',
-  smtpUser: process.env.SMTP_USER || '',
-  smtpPass: process.env.SMTP_PASS || '',
-  smtpFrom: process.env.SMTP_FROM || 'noreply@isoai.local',
-  appUrl: process.env.APP_URL || 'http://localhost:5174',
+  // Email (Resend)
+  resendApiKey: process.env.RESEND_API_KEY || '',
+  emailFrom: process.env.EMAIL_FROM || 'support@post.keepmeiso.com',
+  appUrl: process.env.APP_URL || 'https://keepmeiso.com',
 };

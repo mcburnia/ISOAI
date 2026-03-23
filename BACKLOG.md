@@ -68,7 +68,7 @@ Context-aware assistant for gap analysis, control explanations, and policy/evide
 - Production hardening (rate limiting, CORS lockdown, HTTPS, secure headers)
 - Statement of Applicability generator
 - Risk heat map visualisation
-- Tenant branding (per-organisation logo and colours)
+- White-label branding (per-tenant logo, colours, product name, email sender name; replace placeholder Gibbs Consulting logo; update seed documents to use tenant name instead of hardcoded company name)
 - Automated tests (backend API, frontend components)
 - Make logout button more prominent
 

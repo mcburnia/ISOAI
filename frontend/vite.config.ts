@@ -12,6 +12,7 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 5173,
+    allowedHosts: ['keepmeiso.com', 'www.keepmeiso.com'],
     proxy: {
       '/api': {
         target: process.env.VITE_API_TARGET || 'http://backend:3100',

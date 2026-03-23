@@ -59,6 +59,8 @@ interface DashboardData {
   systemsNeedingReview: SystemNeedingReview[];
   recentActivity: RecentActivity[];
   standardsCompliance?: StandardCompliance[];
+  upcomingObligations: number;
+  overdueObligations: number;
 }
 
 const STANDARD_SHORT: Record<string, string> = {
@@ -111,6 +113,22 @@ const kpiCards = (data: DashboardData) => [
     color: data.compliancePercentage >= 80 ? 'text-emerald-600' : 'text-amber-600',
     bg: data.compliancePercentage >= 80 ? 'bg-emerald-50' : 'bg-amber-50',
   },
+  {
+    label: 'Upcoming Obligations',
+    value: data.upcomingObligations,
+    sub: 'due within 30 days',
+    icon: Clock,
+    color: data.upcomingObligations > 0 ? 'text-amber-600' : 'text-emerald-600',
+    bg: data.upcomingObligations > 0 ? 'bg-amber-50' : 'bg-emerald-50',
+  },
+  ...(data.overdueObligations > 0 ? [{
+    label: 'Overdue',
+    value: data.overdueObligations,
+    sub: 'obligations past due',
+    icon: AlertTriangle,
+    color: 'text-red-600',
+    bg: 'bg-red-50',
+  }] : []),
 ];
 
 const actionVariant: Record<string, 'success' | 'warning' | 'error' | 'default' | 'info'> = {
@@ -122,6 +140,9 @@ const actionVariant: Record<string, 'success' | 'warning' | 'error' | 'default' 
   UPDATE: 'warning',
   DELETE: 'error',
   REMOVE: 'error',
+  SKIP: 'warning',
+  ACTIVATE: 'success',
+  DEACTIVATE: 'warning',
 };
 
 const entityLabels: Record<string, string> = {
@@ -139,6 +160,9 @@ const entityLabels: Record<string, string> = {
   GOVERNANCE_ROLE: 'Role',
   CONTROL_MAPPING: 'Control',
   MANAGEMENT_REVIEW: 'Review',
+  SCHEDULED_OBLIGATION: 'Obligation',
+  OBLIGATION_INSTANCE: 'Obligation',
+  STANDARD: 'Standard',
 };
 
 function formatTime(iso: string) {
@@ -183,7 +207,7 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {kpiCards(data).map((kpi) => (
           <Card key={kpi.label}>
             <CardContent className="flex items-start gap-4 py-5">

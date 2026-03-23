@@ -1,20 +1,12 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import { env } from '../config/env';
 
-function isSmtpConfigured(): boolean {
-  return Boolean(env.smtpHost && env.smtpUser && env.smtpPass);
-}
+let resend: Resend | null = null;
 
-function createTransport() {
-  return nodemailer.createTransport({
-    host: env.smtpHost,
-    port: env.smtpPort,
-    secure: env.smtpSecure,
-    auth: {
-      user: env.smtpUser,
-      pass: env.smtpPass,
-    },
-  });
+function getResend(): Resend | null {
+  if (!env.resendApiKey) return null;
+  if (!resend) resend = new Resend(env.resendApiKey);
+  return resend;
 }
 
 export async function sendInvitationEmail(
@@ -22,27 +14,28 @@ export async function sendInvitationEmail(
   name: string,
   temporaryPassword: string
 ): Promise<{ sent: boolean; error?: string }> {
-  if (!isSmtpConfigured()) {
-    console.warn('SMTP not configured - skipping invitation email for', to);
-    return { sent: false, error: 'SMTP not configured' };
+  const client = getResend();
+  if (!client) {
+    console.warn('Resend not configured - skipping invitation email for', to);
+    return { sent: false, error: 'Email not configured' };
   }
 
   const loginUrl = `${env.appUrl}/login`;
 
   const html = `
     <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #0A5C26;">Welcome to ISOAI</h2>
+      <h2 style="color: #0A5C26;">Welcome to Keep Me ISO</h2>
       <p>Hello ${name},</p>
-      <p>An account has been created for you on the ISO 42001 AIMS Compliance Platform.</p>
+      <p>An account has been created for you on the Keep Me ISO compliance platform.</p>
       <p>Here are your login credentials:</p>
       <div style="background: #f4f4f5; padding: 16px; border-radius: 8px; margin: 16px 0;">
         <p style="margin: 4px 0;"><strong>Email:</strong> ${to}</p>
-        <p style="margin: 4px 0;"><strong>Temporary Password:</strong> ${temporaryPassword}</p>
+        <p style="margin: 4px 0;"><strong>Temporary password:</strong> ${temporaryPassword}</p>
       </div>
-      <p>You will be required to change your password when you first log in.</p>
+      <p>You will be required to change your password when you first sign in.</p>
       <p>
         <a href="${loginUrl}" style="display: inline-block; background: #0A5C26; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;">
-          Sign In to ISOAI
+          Sign in to Keep Me ISO
         </a>
       </p>
       <p style="color: #71717a; font-size: 12px; margin-top: 24px;">
@@ -52,26 +45,25 @@ export async function sendInvitationEmail(
   `;
 
   const text = [
-    'Welcome to ISOAI',
+    'Welcome to Keep Me ISO',
     '',
     `Hello ${name},`,
     '',
-    'An account has been created for you on the ISO 42001 AIMS Compliance Platform.',
+    'An account has been created for you on the Keep Me ISO compliance platform.',
     '',
     `Email: ${to}`,
-    `Temporary Password: ${temporaryPassword}`,
+    `Temporary password: ${temporaryPassword}`,
     '',
     `Sign in at: ${loginUrl}`,
     '',
-    'You will be required to change your password on first login.',
+    'You will be required to change your password on first sign-in.',
   ].join('\n');
 
   try {
-    const transport = createTransport();
-    await transport.sendMail({
-      from: env.smtpFrom,
+    await client.emails.send({
+      from: env.emailFrom,
       to,
-      subject: 'Welcome to ISOAI - Your Account Details',
+      subject: 'Welcome to Keep Me ISO – Your Account Details',
       html,
       text,
     });

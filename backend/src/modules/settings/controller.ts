@@ -8,6 +8,8 @@ import {
 } from '../../services/platformDb';
 import { invalidateActiveStandardsCache } from '../../services/activeStandards';
 import { logActivity } from '../../services/auditLog';
+import { getDefaultsForStandard, defaultAnchorDate } from '../../services/obligationDefaults';
+import { prisma } from '../../prisma';
 
 /**
  * List all available standards with activation status for the current tenant.
@@ -56,6 +58,37 @@ export async function activateStandard(req: Request, res: Response): Promise<voi
   await activateStandardForTenant(tenantId, standard.id);
   invalidateActiveStandardsCache(tenantId);
 
+  // Reactivate any previously paused obligations for this standard
+  await prisma.scheduledObligation.updateMany({
+    where: { standardCode: code, status: 'PAUSED' },
+    data: { status: 'ACTIVE' },
+  });
+
+  // Seed default obligations if none exist for this standard
+  const existingCount = await prisma.scheduledObligation.count({
+    where: { standardCode: code },
+  });
+
+  if (existingCount === 0) {
+    const defaults = getDefaultsForStandard(code);
+    for (const def of defaults) {
+      const anchorDate = defaultAnchorDate(def.frequency);
+      const obligation = await prisma.scheduledObligation.create({
+        data: {
+          type: def.type,
+          title: `${def.titleTemplate} (${code.replace('ISO_', 'ISO ')})`,
+          standardCode: code,
+          clauseRef: def.clauseRef,
+          frequency: def.frequency,
+          anchorDate,
+        },
+      });
+      await prisma.obligationInstance.create({
+        data: { obligationId: obligation.id, dueDate: anchorDate },
+      });
+    }
+  }
+
   await logActivity(req, 'ACTIVATE', 'STANDARD', standard.id, standard.short_title);
   res.json({ activated: true, code });
 }
@@ -75,6 +108,12 @@ export async function deactivateStandard(req: Request, res: Response): Promise<v
 
   await deactivateStandardForTenant(tenantId, standard.id);
   invalidateActiveStandardsCache(tenantId);
+
+  // Pause all active obligations for this standard
+  await prisma.scheduledObligation.updateMany({
+    where: { standardCode: code, status: 'ACTIVE' },
+    data: { status: 'PAUSED' },
+  });
 
   await logActivity(req, 'DEACTIVATE', 'STANDARD', standard.id, standard.short_title);
   res.json({ activated: false, code });

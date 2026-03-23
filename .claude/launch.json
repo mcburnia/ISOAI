@@ -4,7 +4,7 @@
     {
       "name": "frontend",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["-e", "require('http').createServer((q,s)=>{const p=require('http').request({hostname:'127.0.0.1',port:5174,path:q.url,method:q.method,headers:q.headers},r=>{s.writeHead(r.statusCode,r.headers);r.pipe(s)});q.pipe(p)}).listen(5176,()=>console.log('Proxy on 5176'))"],
+      "runtimeArgs": ["-e", "require('http').createServer((q,s)=>{const opts={hostname:'keepmeiso.com',port:443,path:q.url,method:q.method,headers:{...q.headers,host:'keepmeiso.com'}};const p=require('https').request(opts,r=>{s.writeHead(r.statusCode,r.headers);r.pipe(s)});q.pipe(p);p.on('error',e=>{s.writeHead(502);s.end(e.message)})}).listen(5176,()=>console.log('Proxy to keepmeiso.com on 5176'))"],
       "port": 5176
     }
   ]

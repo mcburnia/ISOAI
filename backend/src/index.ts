@@ -19,6 +19,7 @@ import documentRoutes from './modules/documents/routes';
 import activityLogRoutes from './modules/activity-log/routes';
 import platformRoutes from './modules/platform/routes';
 import settingsRoutes from './modules/settings/routes';
+import schedulingRoutes from './modules/scheduling/routes';
 
 const app = express();
 
@@ -43,6 +44,9 @@ app.use('/api/activity-log', activityLogRoutes);
 
 // Tenant settings routes (standard selection, org config)
 app.use('/api/settings', settingsRoutes);
+
+// Scheduling routes (compliance obligations)
+app.use('/api/scheduling', schedulingRoutes);
 
 // Platform admin routes (tenant/standard management)
 app.use('/api/platform', platformRoutes);

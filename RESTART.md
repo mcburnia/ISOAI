@@ -71,7 +71,7 @@ React + TypeScript + Tailwind CSS. Key pages:
 
 ### Brand
 
-Gibbs Consulting. Colours: dark green (#00300F), primary green (#0A5C26), bright green (#50AD33). Sidebar branding: "Integrated Management System".
+Product brand: Keep Me ISO (KMI). Gibbs Consulting logo used as placeholder until white-label branding is implemented. Colours: dark green (#00300F), primary green (#0A5C26), bright green (#50AD33).
 
 ### Remote Development
 

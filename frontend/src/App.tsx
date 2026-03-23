@@ -24,6 +24,7 @@ import Settings from './pages/Settings';
 import UserManagement from './pages/admin/UserManagement';
 import StandardsSettings from './pages/admin/StandardsSettings';
 import OrganisationList from './pages/admin/OrganisationList';
+import SchedulingView from './pages/scheduling/SchedulingView';
 import ActivityLog from './pages/ActivityLog';
 
 export default function App() {
@@ -46,6 +47,7 @@ export default function App() {
             <Route path="monitoring" element={<MonitoringList />} />
             <Route path="training" element={<TrainingList />} />
             <Route path="training/modules/:slug" element={<TrainingCourse />} />
+            <Route path="scheduling" element={<SchedulingView />} />
             <Route path="audits" element={<AuditList />} />
             <Route path="documents" element={<DocumentList />} />
             <Route path="documents/:slug" element={<DocumentView />} />

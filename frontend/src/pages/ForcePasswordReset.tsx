@@ -62,8 +62,8 @@ export default function ForcePasswordReset() {
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <img src="/gibbs-logo-dark.png" alt="Gibbs Consulting" className="h-8 mx-auto mb-3" />
-          <p className="text-sm text-muted-foreground">ISO 42001 AIMS Compliance Platform</p>
+          <img src="/gibbs-logo-dark.png" alt="Keep Me ISO" className="h-8 mx-auto mb-3" />
+          <p className="text-sm text-muted-foreground">Keep Me ISO</p>
         </div>
 
         <div className="bg-card rounded-lg border border-border shadow-sm p-6">
