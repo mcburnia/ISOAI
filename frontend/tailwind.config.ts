@@ -8,7 +8,7 @@ export default {
         primary: { DEFAULT: '#0F3D7C', foreground: '#ffffff' },
         secondary: { DEFAULT: '#F5F7FA', foreground: '#2D3748' },
         muted: { DEFAULT: '#F5F7FA', foreground: '#718096' },
-        accent: { DEFAULT: '#0EA5E9', foreground: '#ffffff' },
+        accent: { DEFAULT: '#F97316', foreground: '#ffffff' },
         destructive: { DEFAULT: '#E53E3E', foreground: '#ffffff' },
         border: '#E6EAEE',
         input: '#E6EAEE',
@@ -24,7 +24,7 @@ export default {
         kmi: {
           dark: '#0F3D7C',
           primary: '#2E4A71',
-          bright: '#0EA5E9',
+          bright: '#F97316',
           indigo: '#2E4A71',
           orange: '#DD6B20',
           light: '#F5F7FA',
