@@ -329,8 +329,7 @@ export async function getDashboard(req: Request, res: Response): Promise<void> {
   });
 
   const modules = await prisma.trainingModule.findMany({
-    select: { id: true, title: true, slug: true },
-    include: { _count: { select: { questions: true } } },
+    select: { id: true, title: true, slug: true, _count: { select: { questions: true } } },
   });
   const moduleMap = new Map(modules.map((m) => [m.id, m]));
 
