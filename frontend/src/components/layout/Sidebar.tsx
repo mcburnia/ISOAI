@@ -99,7 +99,7 @@ export default function Sidebar() {
       {/* Brand */}
       <div className="px-5 py-5 border-b border-sidebar-accent">
         <h1 className="text-lg font-bold tracking-tight text-white">
-          Keep<span className="text-kmi-bright">Me</span>ISO
+          KEEP<span className="text-kmi-bright">ME</span>ISO
         </h1>
         <p className="text-[10px] text-slate-400 mt-0.5 tracking-wide">Integrated Management System</p>
       </div>

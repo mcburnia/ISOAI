@@ -38,7 +38,7 @@ export default function Login() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold tracking-tight text-foreground mb-1">
-            Keep<span className="text-kmi-bright">Me</span>ISO
+            KEEP<span className="text-kmi-bright">ME</span>ISO
           </h1>
           <p className="text-sm text-muted-foreground">Integrated Management System</p>
         </div>
