@@ -41,6 +41,30 @@ model User {
   completedInstances   ObligationInstance[]   @relation("InstanceCompletedBy")
   assessmentAttempts   AssessmentAttempt[]
   competenceChecks     CompetenceCheck[]
+  notifications        Notification[]
+}
+
+// ============================================================
+// NOTIFICATIONS
+// ============================================================
+// In-app notifications per user. Created by the daily cron job
+// when obligations or competence checks are due or overdue.
+// Emails are sent via Resend alongside in-app creation.
+
+model Notification {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type       String   // OBLIGATION_DUE, OBLIGATION_OVERDUE, COMPETENCE_DUE, TRAINING_RENEWAL
+  title      String
+  message    String
+  read       Boolean  @default(false)
+  entityType String?  // OBLIGATION, COMPETENCE
+  entityId   String?  // ID of the related ObligationInstance or CompetenceCheck obligation
+  createdAt  DateTime @default(now())
+
+  @@index([userId, read])
+  @@index([userId, createdAt])
 }
 
 model AISystem {

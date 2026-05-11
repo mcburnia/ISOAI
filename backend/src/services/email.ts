@@ -9,6 +9,13 @@ function getResend(): Resend | null {
   return resend;
 }
 
+const TYPE_LABELS: Record<string, string> = {
+  OBLIGATION_DUE: 'Due soon',
+  OBLIGATION_OVERDUE: 'Overdue',
+  COMPETENCE_DUE: 'Competence check',
+  TRAINING_RENEWAL: 'Training renewal',
+};
+
 export async function sendInvitationEmail(
   to: string,
   name: string,
@@ -71,5 +78,78 @@ export async function sendInvitationEmail(
   } catch (err: any) {
     console.error('Failed to send invitation email:', err.message);
     return { sent: false, error: err.message };
+  }
+}
+
+export async function sendNotificationDigestEmail(
+  to: string,
+  name: string,
+  items: Array<{ title: string; message: string; type: string }>
+): Promise<void> {
+  const client = getResend();
+  if (!client) {
+    console.warn('Resend not configured - skipping notification digest for', to);
+    return;
+  }
+
+  const loginUrl = `${env.appUrl}`;
+
+  const itemsHtml = items
+    .map((item) => {
+      const label = TYPE_LABELS[item.type] ?? item.type;
+      const badgeColour = item.type === 'OBLIGATION_OVERDUE' ? '#dc2626' : '#F97316';
+      return `
+        <div style="border-left: 3px solid ${badgeColour}; padding: 10px 14px; margin: 10px 0; background: #f9fafb; border-radius: 0 6px 6px 0;">
+          <span style="font-size: 11px; font-weight: 600; color: ${badgeColour}; text-transform: uppercase; letter-spacing: 0.05em;">${label}</span>
+          <p style="margin: 4px 0 2px; font-weight: 600; color: #1e293b;">${item.title}</p>
+          <p style="margin: 0; color: #475569; font-size: 14px;">${item.message}</p>
+        </div>
+      `;
+    })
+    .join('');
+
+  const html = `
+    <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+      <div style="background: #0F3D7C; padding: 20px 24px; border-radius: 8px 8px 0 0;">
+        <span style="color: white; font-size: 18px; font-weight: 700;">KEEP<span style="color: #F97316;">ME</span>ISO.COM</span>
+      </div>
+      <div style="background: white; padding: 24px; border: 1px solid #e2e8f0; border-top: none; border-radius: 0 0 8px 8px;">
+        <p>Hello ${name},</p>
+        <p>You have ${items.length} item${items.length === 1 ? '' : 's'} requiring your attention on the compliance platform:</p>
+        ${itemsHtml}
+        <p style="margin-top: 24px;">
+          <a href="${loginUrl}" style="display: inline-block; background: #0F3D7C; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+            View in Keep Me ISO
+          </a>
+        </p>
+        <p style="color: #94a3b8; font-size: 12px; margin-top: 24px;">
+          You are receiving this because you have active compliance obligations assigned to you.
+        </p>
+      </div>
+    </div>
+  `;
+
+  const text = [
+    'Keep Me ISO — Action Required',
+    '',
+    `Hello ${name},`,
+    '',
+    `You have ${items.length} item(s) requiring your attention:`,
+    '',
+    ...items.map((i) => `• ${i.title}: ${i.message}`),
+    '',
+    `Sign in at: ${loginUrl}`,
+  ].join('\n');
+
+  try {
+    await client.emails.send({
+      from: env.emailFrom,
+      to,
+      subject: `Keep Me ISO – ${items.length} item${items.length === 1 ? '' : 's'} require your attention`,
+      html,
+      text,
+    });
+  } catch (err: any) {
+    console.error('Failed to send notification digest email:', err.message);
   }
 }

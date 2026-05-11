@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import NotificationBell from '../notifications/NotificationBell';
 
 const pageTitles: Record<string, string> = {
   '/': 'Dashboard',
@@ -27,11 +28,14 @@ export default function Header() {
   const segments = location.pathname.split('/').filter(Boolean);
   const basePath = '/' + segments.slice(0, 2).join('/');
   const isTrainingModule = segments[0] === 'training' && segments[1] === 'modules';
-  const title = isTrainingModule ? 'Training & Competence' : pageTitles[location.pathname] || pageTitles[basePath] || 'ISOAI';
+  const title = isTrainingModule ? 'Training & Competence' : pageTitles[location.pathname] || pageTitles[basePath] || 'Keep Me ISO';
 
   return (
-    <header className="h-14 border-b border-border bg-card flex items-center px-6">
+    <header className="h-14 border-b border-border bg-card flex items-center justify-between px-6">
       <h2 className="text-lg font-semibold text-foreground">{title}</h2>
+      <div className="flex items-center gap-2">
+        <NotificationBell />
+      </div>
     </header>
   );
 }

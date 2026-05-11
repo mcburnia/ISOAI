@@ -21,6 +21,8 @@ import platformRoutes from './modules/platform/routes';
 import settingsRoutes from './modules/settings/routes';
 import schedulingRoutes from './modules/scheduling/routes';
 import competenceRoutes from './modules/competence/routes';
+import notificationRoutes from './modules/notifications/routes';
+import { startNotificationCron } from './services/notificationCron';
 
 const app = express();
 
@@ -52,6 +54,9 @@ app.use('/api/scheduling', schedulingRoutes);
 // Competence check routes (ongoing retention verification)
 app.use('/api/competence', competenceRoutes);
 
+// Notification routes (in-app bell + digest)
+app.use('/api/notifications', notificationRoutes);
+
 // Platform admin routes (tenant/standard management)
 app.use('/api/platform', platformRoutes);
 
@@ -64,6 +69,7 @@ app.use(errorHandler);
 
 const server = app.listen(env.port, () => {
   console.log(`ISOAI backend running on port ${env.port} (${env.deploymentMode} mode)`);
+  startNotificationCron();
 });
 
 // Graceful shutdown — disconnect all Prisma clients
