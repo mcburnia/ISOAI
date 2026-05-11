@@ -52,6 +52,25 @@ cd backend && npx tsc --noEmit
 | Backend    | 3100          | 3100      |
 | Frontend   | 5173          | 5174      |
 
+## Data Safety
+
+**Never destroy data without an explicit instruction and a backup.**
+
+Before running any destructive database operation — including but not limited to `prisma migrate reset`, `prisma migrate dev` (which resets on drift), `docker compose down -v`, `DROP TABLE`, `TRUNCATE`, or any command that deletes or recreates database volumes — you must:
+
+1. **Ask for explicit approval** before proceeding. Describe exactly what data will be lost.
+2. **Take a PostgreSQL backup first** so the data can be restored if needed:
+   ```bash
+   docker exec isoai-postgres pg_dumpall -U isoai > backup_$(date +%Y%m%d_%H%M%S).sql
+   ```
+3. **Confirm the backup file exists and is non-empty** before proceeding with the destructive operation.
+4. **Document the restore command** in your response so the developer can recover:
+   ```bash
+   cat backup_YYYYMMDD_HHMMSS.sql | docker exec -i isoai-postgres psql -U isoai
+   ```
+
+This applies to all environments — local development, staging, and production. Test data is still valuable and must not be discarded without consent.
+
 ## Project Rules
 
 - This is a **Keep Me ISO** product. No references to other clients, projects, or organisations in the codebase.
