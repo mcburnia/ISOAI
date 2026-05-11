@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import cors from 'cors';
 import { env } from './config/env';
@@ -23,6 +24,7 @@ import schedulingRoutes from './modules/scheduling/routes';
 import competenceRoutes from './modules/competence/routes';
 import notificationRoutes from './modules/notifications/routes';
 import aiRoutes from './modules/ai/routes';
+import uploadRoutes from './modules/uploads/routes';
 import { startNotificationCron } from './services/notificationCron';
 
 const app = express();
@@ -60,6 +62,13 @@ app.use('/api/notifications', notificationRoutes);
 
 // AI Compliance Pilot
 app.use('/api/ai', aiRoutes);
+
+// File uploads
+app.use('/api/uploads', uploadRoutes);
+
+// Serve uploaded files statically
+const uploadsDir = process.env.UPLOADS_DIR || path.join(process.cwd(), 'uploads');
+app.use('/uploads', express.static(uploadsDir));
 
 // Platform admin routes (tenant/standard management)
 app.use('/api/platform', platformRoutes);

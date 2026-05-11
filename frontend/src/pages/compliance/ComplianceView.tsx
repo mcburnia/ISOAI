@@ -7,7 +7,8 @@ import Select from '../../components/ui/Select';
 import Textarea from '../../components/ui/Textarea';
 import api from '../../api/client';
 import { useAuth } from '../../context/AuthContext';
-import { CheckCircle, ChevronDown, ChevronRight, Shield, Filter } from 'lucide-react';
+import { CheckCircle, ChevronDown, ChevronRight, Shield, Filter, Paperclip } from 'lucide-react';
+import EvidenceUploader, { AttachedFile } from '../../components/EvidenceUploader';
 
 interface Mapping {
   id: string;
@@ -76,6 +77,7 @@ export default function ComplianceView() {
   const [mappings, setMappings] = useState<Mapping[]>([]);
   const [editing, setEditing] = useState<string | null>(null);
   const [editForm, setEditForm] = useState({ status: '', evidenceDescription: '', linkedDocuments: '' });
+  const [editFiles, setEditFiles] = useState<AttachedFile[]>([]);
   const [loading, setLoading] = useState(true);
   const [collapsedClauses, setCollapsedClauses] = useState<Set<string>>(new Set());
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
@@ -101,6 +103,16 @@ export default function ComplianceView() {
       .finally(() => setLoading(false));
   }, [selectedStandard]);
 
+  const parseFiles = (raw: string | null): AttachedFile[] => {
+    if (!raw) return [];
+    try {
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  };
+
   const startEdit = (m: Mapping) => {
     setEditing(m.id);
     setEditForm({
@@ -108,11 +120,15 @@ export default function ComplianceView() {
       evidenceDescription: m.evidenceDescription || '',
       linkedDocuments: m.linkedDocuments || '',
     });
+    setEditFiles(parseFiles(m.linkedDocuments));
   };
 
   const save = async () => {
     if (!editing) return;
-    await api.patch(`/compliance/${editing}`, editForm);
+    await api.patch(`/compliance/${editing}`, {
+      ...editForm,
+      linkedDocuments: editFiles.length > 0 ? JSON.stringify(editFiles) : '',
+    });
     setEditing(null);
     const r = await api.get('/compliance', { params: { standardCode: selectedStandard } });
     setMappings(r.data.mappings);
@@ -355,14 +371,13 @@ export default function ComplianceView() {
                                 setEditForm({ ...editForm, evidenceDescription: e.target.value })
                               }
                             />
-                            <Textarea
-                              id={`docs-${m.id}`}
-                              label="Linked Documents"
-                              value={editForm.linkedDocuments}
-                              onChange={(e) =>
-                                setEditForm({ ...editForm, linkedDocuments: e.target.value })
-                              }
-                            />
+                            <div>
+                              <p className="text-xs font-medium text-foreground mb-1.5">Evidence Files</p>
+                              <EvidenceUploader
+                                files={editFiles}
+                                onChange={setEditFiles}
+                              />
+                            </div>
                             <div className="flex gap-2">
                               <Button size="sm" onClick={save}>
                                 Save
@@ -398,6 +413,14 @@ export default function ComplianceView() {
                                 <p className="text-xs text-foreground mt-1 bg-muted/50 rounded px-2 py-1">
                                   {m.evidenceDescription}
                                 </p>
+                              )}
+                              {parseFiles(m.linkedDocuments).length > 0 && (
+                                <div className="flex items-center gap-1 mt-1">
+                                  <Paperclip className="w-3 h-3 text-muted-foreground" />
+                                  <span className="text-xs text-muted-foreground">
+                                    {parseFiles(m.linkedDocuments).length} file{parseFiles(m.linkedDocuments).length !== 1 ? 's' : ''}
+                                  </span>
+                                </div>
                               )}
                             </div>
                             <Badge variant={statusVariant(m.status)}>

@@ -8,7 +8,8 @@ import Select from '../../components/ui/Select';
 import Textarea from '../../components/ui/Textarea';
 import api from '../../api/client';
 import { useAuth } from '../../context/AuthContext';
-import { GraduationCap, Plus, Clock, BookOpen, ChevronRight, CheckCircle } from 'lucide-react';
+import { GraduationCap, Plus, Clock, BookOpen, ChevronRight, CheckCircle, Paperclip, FileText } from 'lucide-react';
+import EvidenceUploader, { AttachedFile } from '../../components/EvidenceUploader';
 
 interface Record {
   id: string;
@@ -54,6 +55,7 @@ export default function TrainingList() {
   const [users, setUsers] = useState<{ id: string; name: string }[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ userId: '', topic: '', completedAt: new Date().toISOString().split('T')[0], evidence: '', acknowledged: true });
+  const [formFiles, setFormFiles] = useState<AttachedFile[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedStandard, setSelectedStandard] = useState<string>('ALL');
 
@@ -68,9 +70,21 @@ export default function TrainingList() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    await api.post('/training', form);
+    const evidence = formFiles.length > 0 ? JSON.stringify(formFiles) : form.evidence;
+    await api.post('/training', { ...form, evidence });
     setShowForm(false);
+    setFormFiles([]);
     load();
+  };
+
+  const parseFiles = (raw: string | null): AttachedFile[] => {
+    if (!raw) return [];
+    try {
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
   };
 
   const set = (f: string) => (e: any) => setForm({ ...form, [f]: e.target.value });
@@ -218,7 +232,11 @@ export default function TrainingList() {
                   <Input id="completedAt" label="Completed Date" type="date" value={form.completedAt} onChange={set('completedAt')} required />
                 </div>
                 <Input id="topic" label="Training Topic" value={form.topic} onChange={set('topic')} required />
-                <Textarea id="evidence" label="Evidence / Notes" value={form.evidence} onChange={set('evidence')} />
+                <Textarea id="evidence" label="Evidence Notes" value={form.evidence} onChange={set('evidence')} />
+                <div>
+                  <p className="text-xs font-medium text-foreground mb-1.5">Evidence Files</p>
+                  <EvidenceUploader files={formFiles} onChange={setFormFiles} />
+                </div>
                 <div className="flex gap-3">
                   <Button type="submit" size="sm">Save</Button>
                   <Button type="button" size="sm" variant="secondary" onClick={() => setShowForm(false)}>Cancel</Button>
@@ -265,7 +283,29 @@ export default function TrainingList() {
                         {r.acknowledged ? 'Acknowledged' : 'Pending'}
                       </Badge>
                     </td>
-                    <td className="py-3 px-4 text-xs text-muted-foreground max-w-48 truncate">{r.evidence || '—'}</td>
+                    <td className="py-3 px-4 text-xs text-muted-foreground max-w-48">
+                      {(() => {
+                        const files = parseFiles(r.evidence);
+                        if (files.length > 0) {
+                          return (
+                            <div className="flex items-center gap-1.5">
+                              <Paperclip className="w-3 h-3 flex-shrink-0" />
+                              <span>{files.length} file{files.length !== 1 ? 's' : ''}</span>
+                              <a
+                                href={files[0].url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-kmi-coral hover:underline truncate"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {files[0].name}
+                              </a>
+                            </div>
+                          );
+                        }
+                        return <span className="truncate">{r.evidence || '—'}</span>;
+                      })()}
+                    </td>
                   </tr>
                 ))}
               </tbody>
