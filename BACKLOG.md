@@ -1,6 +1,6 @@
 # Keep Me ISO — Active Backlog
 
-Updated: 2026-03-23
+Updated: 2026-05-11
 
 ## Recently Completed
 
@@ -73,12 +73,52 @@ Context-aware assistant for gap analysis, control explanations, and policy/evide
 
 ## Planned
 
-- Evidence upload UI (training records, compliance evidence, file attachments)
-- Export and reporting (PDF compliance reports, CSV data export)
-- Production hardening (rate limiting, CORS lockdown, HTTPS, secure headers)
+- Evidence upload UI (training records, compliance evidence, file attachments) ✓
+- Export and reporting (PDF compliance reports, CSV data export) ✓
 - Statement of Applicability generator
 - Risk heat map visualisation
+
+### Documentation & User Help (imperative)
+Without this, users cannot self-serve and adoption will stall. Four components:
+
+**A. In-app contextual help panels**
+Every page has a collapsible `?` help panel (or persistent sidebar strip) explaining:
+- What this section is for in plain English
+- Which ISO clause(s) it satisfies
+- What to do first if you're starting from scratch
+- Links to deeper guidance (clause-level detail)
+Implementation: a `HelpPanel` component driven by a static JSON/TS map of page → content.
+No backend required; all static content shipped with the frontend.
+
+**B. Clause-level guidance on Control Mapping**
+Each control row in the Control Mapping table/form gets an expandable guidance block:
+- Plain-English explanation of what the clause actually requires
+- Concrete examples of acceptable evidence
+- Common pitfalls / auditor gotchas
+Content stored as a static TS record keyed by `standardCode + clauseNumber`.
+Covers all controls across all 14 standards (seed content via AI generation).
+
+**C. Onboarding wizard**
+First-run experience for new admin users (shown once, dismissible, resumable):
+1. Activate your standards (links to Admin > Standards)
+2. Invite your team (links to Admin > Users)
+3. Complete your first training module
+4. Map your first control
+5. Schedule your first compliance obligation
+Progress tracked in localStorage (or a lightweight DB flag on the user record).
+Shown as a checklist card on the Dashboard until all steps are complete.
+
+**D. In-app help centre**
+A `/help` route (accessible from the sidebar footer or `?` icon in the header) containing:
+- Getting started guide
+- Per-module how-to articles
+- ISO standard summaries (what each standard covers, who needs it, audit tips)
+- Glossary (clause, control, evidence, obligation, SoA, etc.)
+- FAQ ("How do I export for an auditor?", "What is the difference between a risk and an incident?")
+All static content; can be authored in MDX/markdown and rendered in-app.
+
 - White-label branding (per-tenant logo, colours, product name, email sender name; design proper KMI logos; update seed documents to use tenant name dynamically)
+- Production hardening (rate limiting, CORS lockdown, HTTPS, secure headers)
 - Automated tests (backend API, frontend components)
 - Make logout button more prominent
 
