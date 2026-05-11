@@ -22,6 +22,7 @@ const pageTitles: Record<string, string> = {
   '/admin/organisations': 'Organisations',
   '/training/competence': 'Competence Dashboard',
   '/ai-pilot': 'AI Compliance Pilot',
+  '/reports': 'Export & Reports',
 };
 
 export default function Header() {

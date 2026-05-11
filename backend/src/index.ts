@@ -25,6 +25,7 @@ import competenceRoutes from './modules/competence/routes';
 import notificationRoutes from './modules/notifications/routes';
 import aiRoutes from './modules/ai/routes';
 import uploadRoutes from './modules/uploads/routes';
+import reportRoutes from './modules/reports/routes';
 import { startNotificationCron } from './services/notificationCron';
 
 const app = express();
@@ -65,6 +66,9 @@ app.use('/api/ai', aiRoutes);
 
 // File uploads
 app.use('/api/uploads', uploadRoutes);
+
+// Reports (PDF + CSV exports)
+app.use('/api/reports', reportRoutes);
 
 // Serve uploaded files statically
 const uploadsDir = process.env.UPLOADS_DIR || path.join(process.cwd(), 'uploads');

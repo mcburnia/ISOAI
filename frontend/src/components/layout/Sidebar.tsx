@@ -21,6 +21,7 @@ import {
   CalendarClock,
   Brain,
   Sparkles,
+  BarChart2,
 } from 'lucide-react';
 
 const navGroups = [
@@ -59,6 +60,7 @@ const navGroups = [
       { to: '/scheduling', icon: CalendarClock, label: 'Scheduling' },
       { to: '/audits', icon: ClipboardCheck, label: 'Audits & Reviews' },
       { to: '/compliance', icon: CheckCircle, label: 'Control Mapping' },
+      { to: '/reports', icon: BarChart2, label: 'Export & Reports' },
       { to: '/activity-log', icon: ScrollText, label: 'Activity Log' },
     ],
   },

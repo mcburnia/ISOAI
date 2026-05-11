@@ -29,6 +29,7 @@ import QuestionBank from './pages/training/QuestionBank';
 import CompetenceDashboard from './pages/training/CompetenceDashboard';
 import ActivityLog from './pages/ActivityLog';
 import AIPilot from './pages/ai/AIPilot';
+import Reports from './pages/reports/Reports';
 
 export default function App() {
   return (
@@ -60,6 +61,7 @@ export default function App() {
             <Route path="compliance" element={<ComplianceView />} />
             <Route path="activity-log" element={<ActivityLog />} />
             <Route path="ai-pilot" element={<AIPilot />} />
+            <Route path="reports" element={<Reports />} />
             <Route path="settings" element={<Settings />} />
             <Route path="admin/users" element={<UserManagement />} />
             <Route path="admin/standards" element={<StandardsSettings />} />
