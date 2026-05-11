@@ -20,6 +20,7 @@ import {
   Building2,
   CalendarClock,
   Brain,
+  Sparkles,
 } from 'lucide-react';
 
 const navGroups = [
@@ -59,6 +60,12 @@ const navGroups = [
       { to: '/audits', icon: ClipboardCheck, label: 'Audits & Reviews' },
       { to: '/compliance', icon: CheckCircle, label: 'Control Mapping' },
       { to: '/activity-log', icon: ScrollText, label: 'Activity Log' },
+    ],
+  },
+  {
+    title: 'AI',
+    items: [
+      { to: '/ai-pilot', icon: Sparkles, label: 'AI Pilot' },
     ],
   },
 ];

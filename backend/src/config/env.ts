@@ -13,4 +13,6 @@ export const env = {
   resendApiKey: process.env.RESEND_API_KEY || '',
   emailFrom: process.env.EMAIL_FROM || 'support@post.keepmeiso.com',
   appUrl: process.env.APP_URL || 'https://keepmeiso.com',
+  // AI Pilot
+  anthropicApiKey: process.env.ANTHROPIC_API_KEY || '',
 };

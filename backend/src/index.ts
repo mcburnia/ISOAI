@@ -22,6 +22,7 @@ import settingsRoutes from './modules/settings/routes';
 import schedulingRoutes from './modules/scheduling/routes';
 import competenceRoutes from './modules/competence/routes';
 import notificationRoutes from './modules/notifications/routes';
+import aiRoutes from './modules/ai/routes';
 import { startNotificationCron } from './services/notificationCron';
 
 const app = express();
@@ -56,6 +57,9 @@ app.use('/api/competence', competenceRoutes);
 
 // Notification routes (in-app bell + digest)
 app.use('/api/notifications', notificationRoutes);
+
+// AI Compliance Pilot
+app.use('/api/ai', aiRoutes);
 
 // Platform admin routes (tenant/standard management)
 app.use('/api/platform', platformRoutes);

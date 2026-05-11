@@ -28,6 +28,7 @@ import SchedulingView from './pages/scheduling/SchedulingView';
 import QuestionBank from './pages/training/QuestionBank';
 import CompetenceDashboard from './pages/training/CompetenceDashboard';
 import ActivityLog from './pages/ActivityLog';
+import AIPilot from './pages/ai/AIPilot';
 
 export default function App() {
   return (
@@ -58,6 +59,7 @@ export default function App() {
             <Route path="roles" element={<RolesList />} />
             <Route path="compliance" element={<ComplianceView />} />
             <Route path="activity-log" element={<ActivityLog />} />
+            <Route path="ai-pilot" element={<AIPilot />} />
             <Route path="settings" element={<Settings />} />
             <Route path="admin/users" element={<UserManagement />} />
             <Route path="admin/standards" element={<StandardsSettings />} />
