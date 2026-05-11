@@ -60,6 +60,7 @@ const navGroups = [
       { to: '/scheduling', icon: CalendarClock, label: 'Scheduling' },
       { to: '/audits', icon: ClipboardCheck, label: 'Audits & Reviews' },
       { to: '/compliance', icon: CheckCircle, label: 'Control Mapping' },
+      { to: '/soa', icon: FileText, label: 'Statement of Applicability' },
       { to: '/reports', icon: BarChart2, label: 'Export & Reports' },
       { to: '/activity-log', icon: ScrollText, label: 'Activity Log' },
     ],

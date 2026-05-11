@@ -332,3 +332,209 @@ export async function trainingRecordsCsv(req: Request, res: Response): Promise<v
   res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
   res.send('﻿' + rows.join('\r\n'));
 }
+
+// ── Statement of Applicability PDF ────────────────────────────────────────
+
+const STANDARD_FULL_NAMES: Record<string, string> = {
+  ISO_42001: 'ISO/IEC 42001:2023 — Artificial Intelligence Management System',
+  ISO_27001: 'ISO/IEC 27001:2022 — Information Security Management System',
+  ISO_9001:  'ISO 9001:2015 — Quality Management System',
+  ISO_27701: 'ISO/IEC 27701:2019 — Privacy Information Management System',
+  ISO_27017: 'ISO/IEC 27017:2015 — Cloud Security Controls',
+  ISO_27018: 'ISO/IEC 27018:2019 — Cloud Privacy Controls',
+  ISO_27002: 'ISO/IEC 27002:2022 — Information Security Controls',
+  ISO_22301: 'ISO 22301:2019 — Business Continuity Management System',
+  ISO_20000: 'ISO/IEC 20000-1:2018 — IT Service Management System',
+  ISO_31000: 'ISO 31000:2018 — Risk Management',
+  ISO_23894: 'ISO/IEC 23894:2023 — AI Risk Management',
+  ISO_25024: 'ISO/IEC 25024:2015 — Data Quality',
+  ISO_5338:  'ISO/IEC 5338:2023 — AI Lifecycle',
+  ISO_42005: 'ISO/IEC 42005:2025 — AI Impact Assessment',
+};
+
+export async function soaPdf(req: Request, res: Response): Promise<void> {
+  const tenantId = req.user!.tenantId as string;
+  const activeCodes = await getActiveStandardCodes(tenantId);
+
+  const requestedCode = req.query.standardCode as string | undefined;
+  const codes = requestedCode && activeCodes.includes(requestedCode)
+    ? [requestedCode]
+    : activeCodes;
+
+  if (codes.length === 0) {
+    res.status(400).json({ error: 'No active standards to report on' });
+    return;
+  }
+
+  const orgName = await getOrgName(tenantId);
+  const today = new Date();
+
+  const mappings = await prisma.controlMapping.findMany({
+    where: { standardCode: { in: codes } },
+    orderBy: [{ standardCode: 'asc' }, { clauseNumber: 'asc' }],
+  });
+
+  const doc = new PDFDocument({ margin: 50, size: 'A4', info: { Title: `Statement of Applicability — ${orgName}` } });
+
+  res.setHeader('Content-Type', 'application/pdf');
+  res.setHeader('Content-Disposition', `attachment; filename="statement-of-applicability-${today.toISOString().split('T')[0]}.pdf"`);
+  doc.pipe(res);
+
+  // ── Cover header ──────────────────────────────────────────────────────────
+  doc.rect(0, 0, doc.page.width, 100).fill(NAVY);
+  doc.fillColor('white').fontSize(22).font('Helvetica-Bold')
+    .text('KEEP', 50, 30, { continued: true })
+    .fillColor(CORAL).text('ME', { continued: true })
+    .fillColor('white').text('ISO.COM', { continued: false });
+  doc.fontSize(10).font('Helvetica').fillColor('#CBD5E0')
+    .text('Integrated Management System', 50, 58);
+  doc.fillColor('white').fontSize(14).font('Helvetica-Bold')
+    .text('Statement of Applicability', doc.page.width - 220, 35, { width: 170, align: 'right' });
+  doc.fontSize(9).font('Helvetica').fillColor('#CBD5E0')
+    .text(formatDate(today), doc.page.width - 220, 57, { width: 170, align: 'right' });
+
+  doc.moveDown(3.5);
+
+  // ── Organisation block ────────────────────────────────────────────────────
+  doc.fillColor(SLATE).fontSize(18).font('Helvetica-Bold').text(orgName);
+  doc.fontSize(10).font('Helvetica').fillColor(MUTED).text(`Generated ${formatDate(today)}`);
+  doc.moveDown(0.5);
+
+  // ── Legal boilerplate ─────────────────────────────────────────────────────
+  doc.fillColor(SLATE).fontSize(9).font('Helvetica')
+    .text(
+      'This Statement of Applicability (SoA) documents all controls considered during the design of the management system, ' +
+      'and records whether each control has been included or excluded. Where controls are excluded, a justification is provided. ' +
+      'This document should be reviewed at least annually and updated whenever controls are added, removed, or their applicability changes.',
+      { lineGap: 2 }
+    );
+  doc.moveDown(1);
+
+  // ── Per-standard tables ───────────────────────────────────────────────────
+  for (const code of codes) {
+    const stdMappings = mappings.filter((m) => m.standardCode === code);
+    if (stdMappings.length === 0) continue;
+
+    const applicable   = stdMappings.filter((m) => m.applicable !== false);
+    const excluded     = stdMappings.filter((m) => m.applicable === false);
+    const noJustification = excluded.filter((m) => !m.justification);
+
+    // Standard heading
+    doc.fillColor(NAVY).fontSize(13).font('Helvetica-Bold')
+      .text(STANDARD_FULL_NAMES[code] ?? code.replace(/_/g, ' '));
+    doc.moveDown(0.3);
+
+    // Summary strip
+    const summaryY = doc.y;
+    const summaryBoxW = (doc.page.width - 100) / 3;
+    [
+      { label: 'Total Controls', value: String(stdMappings.length) },
+      { label: 'Applicable',     value: String(applicable.length) },
+      { label: 'Excluded',       value: String(excluded.length) },
+    ].forEach((item, i) => {
+      const x = 50 + i * summaryBoxW;
+      doc.rect(x, summaryY, summaryBoxW - 6, 40).fill(LIGHT);
+      doc.fillColor(i === 2 && excluded.length > 0 ? CORAL : NAVY)
+        .fontSize(16).font('Helvetica-Bold')
+        .text(item.value, x + 6, summaryY + 4, { width: summaryBoxW - 12, align: 'center' });
+      doc.fillColor(MUTED).fontSize(7).font('Helvetica')
+        .text(item.label, x + 6, summaryY + 24, { width: summaryBoxW - 12, align: 'center' });
+    });
+    doc.y = summaryY + 48;
+    doc.moveDown(0.5);
+
+    if (noJustification.length > 0) {
+      doc.rect(50, doc.y, doc.page.width - 100, 18).fill('#FEF3C7');
+      doc.fillColor('#92400E').fontSize(8).font('Helvetica-Bold')
+        .text(
+          `⚠  ${noJustification.length} excluded control${noJustification.length > 1 ? 's' : ''} lack a justification — required for certification.`,
+          58, doc.y + 5, { width: doc.page.width - 116 }
+        );
+      doc.y += 22;
+      doc.moveDown(0.3);
+    }
+
+    // Column headers
+    const colX = { clause: 50, title: 100, applicable: 310, status: 355, justification: 405 };
+    const headerY = doc.y;
+    doc.rect(50, headerY, doc.page.width - 100, 16).fill(NAVY);
+    doc.fillColor('white').fontSize(7).font('Helvetica-Bold');
+    doc.text('Clause',        colX.clause + 2,       headerY + 4, { width: 48 });
+    doc.text('Control Title', colX.title,             headerY + 4, { width: 205 });
+    doc.text('Applicable',    colX.applicable,        headerY + 4, { width: 42 });
+    doc.text('Status',        colX.status,            headerY + 4, { width: 47 });
+    doc.text('Justification', colX.justification,     headerY + 4, { width: doc.page.width - colX.justification - 50 });
+    doc.y = headerY + 20;
+
+    // Rows
+    let rowIndex = 0;
+    for (const m of stdMappings) {
+      const isApplicable = m.applicable !== false;
+      const rowHeight = 18;
+
+      // Page break guard
+      if (doc.y + rowHeight > doc.page.height - 60) {
+        doc.addPage();
+        doc.y = 50;
+      }
+
+      const rowY = doc.y;
+      const bg = rowIndex % 2 === 0 ? '#FFFFFF' : '#F8FAFC';
+      doc.rect(50, rowY, doc.page.width - 100, rowHeight).fill(bg);
+
+      doc.fillColor(isApplicable ? SLATE : MUTED).fontSize(7).font(isApplicable ? 'Helvetica' : 'Helvetica-Oblique');
+      doc.text(m.clauseNumber, colX.clause + 2, rowY + 5, { width: 48, ellipsis: true });
+      doc.text(m.clauseTitle,  colX.title,       rowY + 5, { width: 205, ellipsis: true });
+
+      // Applicable tick/cross
+      doc.fillColor(isApplicable ? '#10B981' : '#EF4444').font('Helvetica-Bold').fontSize(8)
+        .text(isApplicable ? '✓' : '✗', colX.applicable + 10, rowY + 5, { width: 22, align: 'center' });
+
+      // Status (only meaningful when applicable)
+      if (isApplicable) {
+        const statusColour = m.status === 'COMPLIANT' ? '#10B981' : m.status === 'PARTIAL' ? CORAL : MUTED;
+        doc.fillColor(statusColour).font('Helvetica').fontSize(7)
+          .text(statusLabel(m.status), colX.status, rowY + 5, { width: 47, ellipsis: true });
+      } else {
+        doc.fillColor(MUTED).font('Helvetica').fontSize(7).text('—', colX.status + 14, rowY + 5);
+      }
+
+      // Justification
+      const justText = m.justification ?? (isApplicable ? '' : 'No justification provided');
+      doc.fillColor(isApplicable ? MUTED : (m.justification ? SLATE : '#EF4444'))
+        .font('Helvetica').fontSize(7)
+        .text(justText, colX.justification, rowY + 5, { width: doc.page.width - colX.justification - 50, ellipsis: true });
+
+      doc.y = rowY + rowHeight;
+      rowIndex++;
+    }
+
+    doc.moveDown(1.5);
+  }
+
+  // ── Sign-off block ─────────────────────────────────────────────────────────
+  if (doc.y + 80 > doc.page.height - 60) doc.addPage();
+  doc.moveDown(0.5);
+  doc.fillColor(NAVY).fontSize(11).font('Helvetica-Bold').text('Approval & Sign-off');
+  doc.moveDown(0.5);
+  const signY = doc.y;
+  const signW = (doc.page.width - 130) / 2;
+  ['Prepared by', 'Approved by'].forEach((label, i) => {
+    const x = 50 + i * (signW + 30);
+    doc.fillColor(MUTED).fontSize(8).font('Helvetica').text(label, x, signY);
+    doc.rect(x, signY + 12, signW, 1).fill(MUTED);
+    doc.fillColor(MUTED).fontSize(7).text('Name / Signature / Date', x, signY + 16);
+  });
+  doc.y = signY + 36;
+  doc.moveDown(1);
+
+  // ── Footer ────────────────────────────────────────────────────────────────
+  doc.rect(0, doc.page.height - 40, doc.page.width, 40).fill(NAVY);
+  doc.fillColor('#CBD5E0').fontSize(8).font('Helvetica')
+    .text(
+      `Statement of Applicability · ${orgName} · ${formatDate(today)} · Keep Me ISO`,
+      50, doc.page.height - 26, { align: 'center', width: doc.page.width - 100 },
+    );
+
+  doc.end();
+}

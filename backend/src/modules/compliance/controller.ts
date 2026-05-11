@@ -61,6 +61,9 @@ export async function updateMapping(req: Request, res: Response): Promise<void> 
   if (req.body.status && req.body.status !== existing.status) {
     changes.push(`Status: ${existing.status} → ${req.body.status}`);
   }
+  if (req.body.applicable !== undefined && req.body.applicable !== existing.applicable) {
+    changes.push(`Applicable: ${existing.applicable ? 'Yes' : 'No'} → ${req.body.applicable ? 'Yes' : 'No'}`);
+  }
   await logActivity(req, 'UPDATE', 'CONTROL_MAPPING', mapping.id, `${mapping.clauseNumber} ${mapping.clauseTitle}`, changes.join(', ') || undefined);
   res.json({ mapping });
 }

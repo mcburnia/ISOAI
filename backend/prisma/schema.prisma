@@ -283,6 +283,8 @@ model ControlMapping {
   evidenceDescription   String?
   status                String               @default("NOT_STARTED")
   linkedDocuments       String?
+  applicable            Boolean              @default(true)
+  justification         String?              // Required reason when applicable = false; optional context when true
   harmonizedGroupId     String?              // Links to HarmonizedRequirement for cross-standard dedup
   harmonizedGroup       HarmonizedRequirement? @relation(fields: [harmonizedGroupId], references: [id])
   updatedAt             DateTime             @updatedAt
