@@ -8,7 +8,8 @@ import Textarea from '../../components/ui/Textarea';
 import api from '../../api/client';
 import { useAuth } from '../../context/AuthContext';
 import { CheckCircle, ChevronDown, ChevronRight, Shield, Filter, Paperclip } from 'lucide-react';
-import EvidenceUploader, { AttachedFile } from '../../components/EvidenceUploader';
+import EvidenceUploader from '../../components/EvidenceUploader';
+import type { AttachedFile } from '../../components/EvidenceUploader';
 
 interface Mapping {
   id: string;

@@ -9,7 +9,8 @@ import Textarea from '../../components/ui/Textarea';
 import api from '../../api/client';
 import { useAuth } from '../../context/AuthContext';
 import { GraduationCap, Plus, Clock, BookOpen, ChevronRight, CheckCircle, Paperclip, FileText } from 'lucide-react';
-import EvidenceUploader, { AttachedFile } from '../../components/EvidenceUploader';
+import EvidenceUploader from '../../components/EvidenceUploader';
+import type { AttachedFile } from '../../components/EvidenceUploader';
 
 interface Record {
   id: string;
